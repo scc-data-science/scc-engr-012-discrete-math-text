@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-2-predicate-logic" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Introduction to Predicate Logic</title>
+
+  <introduction>
+    <p> Coming soon! </p>
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="sec-2-1-predicates.ptx" />
+
+</chapter>

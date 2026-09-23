@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-5-3-modular-arithmetic" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Modular Arithmetic</title>
+
+  <introduction>
+    <p> Text of section. </p>
+  
+  </introduction>
+  
+  <subsection>
+    <!-- <idx><h>properties</h></idx> -->
+    <title>Properties</title>
+
+    <p>
+      Text of subsection.
+    </p>
+  
+  </subsection>
+
+  <subsection>
+    <!-- <idx><h>solving congruences</h></idx> -->
+    <title>Solving Congruences</title>
+
+    <p>
+      Text of subsection.
+    </p>
+  
+  </subsection>
+
+</section>
