@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-5-2-primes" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>The Prime Numbers</title>
+
+  <p>
+    Much of modern number theory is concerned with the nature and distribution <em>prime numbers</em>, in no small part because they can be considered the "building blocks" of the positive integers in much the same way that atoms can be considered the building blocks of molecules in chemistry. As such, it behooves us to spend some time talking about them here.
+  </p>
+
+  <definition xml:id="def-prime">
+    <statement>
+      <p> An integer <m>p > 1</m> is called a <em>prime number</em> if its only positive factors are <m>1</m> and <m>p</m>. A positive integer greater than <m>1</m> that is not prime is called <em>composite</em>. </p>
+    </statement>
+  </definition>
+
+  <p>
+    Said another way, if <m>p</m> is prime, then <m>n \mid p</m> implies <m>n \in \{-p, -1, 1, p\}</m>.
+  </p>
+
+  <p>
+    You might ask why <m>1</m> is not considered prime. Hold on to this quesiton.
+  </p>
+
+  <p>
+    To (naivly) check if a number <m>n</m> is prime, you would need to check if <m>k \mid n</m> for every positive integer <m>k = 2, \ldots, n - 1</m>. But this is far more work than is actually needed. In fact, it turns out that every positive integer is divisible by at least one prime, and therefore one need only check if <m>p \mid n</m> for each of the primes <m>p \lt n</m>. This is illustrated by the following theorem.
+  </p>
+
+  <theorem xml:id="thm-div-by-primes">
+    <statement>
+      <p> Any integer <m>n > 1</m> is divisible by a prime number. </p>
+    </statement>
+
+    <proof>
+      <p> Coming soon... </p>
+    </proof>
+  </theorem>
+  
+  <p>
+    For example, <m>60</m> is composite since, e.g., <m>6 \mid 60</m>. That is, <m>60 = 10 \cdot 6</m>. But both <m>10</m> and <m>6</m> are composite too, since <m>10 = 2 \cdot 5</m> and <m>6 = 2 \cdot 3</m>. Recursivly applying <xref ref="thm-div-by-primes"/>, one finds:
+
+    <md> 60 = 2^2 \cdot 3 \cdot 5. </md>
+    
+    Crtically, each of the remaining factors is prime. We can apply this same recursive logic to any integer greater than 1 and arrive at the same result. Each integer can be factored into a product of primes.  And, in fact, that decomposition into a product of primes is <em>unique</em> (up to the ordering of the factors). This result, trivial though it may sound, is so significant that mathematicians have given it the pompous name of the "Fundamental Theorem of Arithmetic."
+  </p>
+
+  <theorem xml:id="thm-fta">
+    <title> Fundamental Theorem of Arithmetic </title>  
+    <statement>
+      <p> Every integer greater than 1 can be be written uniquely (up to reordering) as a product of prime numbers. </p>
+    </statement>
+
+    <proof>
+      <p> Not happening. </p>
+    </proof>
+  </theorem>
+
+  <p>
+    That is, one can write any integer <m>n > 1</m> in the following way:
+
+    <md> n = p_1^{e_1}p_2^{e_2} \cdots p_k^{e_k} = \prod_{i=1}^k p_i^{e_i}, </md>
+    
+    where each <m>p_i</m> is a prime number and each <m>e_i</m> is a nonnegative integer. Uniqueness up to reordering means that, for any integer <m>n > 1</m>, the decomposition into primes is fixed, but since multiplication is commutative, the ordering of the factors is not.
+  </p>
+
+  <p>
+    <xref ref="thm-fta"/> is one of the reasons we exclude <m>1</m> from the list of primes. If we were to include <m>1</m> as a prime, the theorem would be false, since any integer <m>n > 1</m> can be written as:
+
+    <md> n = \prod_{i=1}^k 1^{m}p_i^{e_i}, </md>
+
+    for any arbitrary <m>m</m>, and thus uniqueness is violated. If you continue your study of number theorey beyond this class, you will find more and more exmples like this one that make the exclusion of <m>1</m> feel natural.
+  </p>
+
+  <p>
+    As you move further and futher along in the list of positive integers, you will find that primes become less and less common. For example, between <m>1</m> and <m>10</m>, there are four primes (<m>2, 3, 5, 7</m>), but between <m>1001</m> and <m>1010</m>, there is only one (<m>1009</m>). This may feel like a convincing argument that there are finitely many primes, but this is in fact false. The infinitude of the primes has been known since the days of Euclid, and we'll prove this using the same proof he did.
+  </p>
+
+  <lemma xml:id="lem-subsequent-ints">
+    <statement>
+      <p>
+        Suppose by way of contradiction that there are finitely many primes. Then, we can enumerate them in a set:
+
+        <md> P := \{p_1, p_2, \ldots, p_n\}. </md>
+        
+        Consider the positive integer:
+        
+        <md> Q = p_1 p_2 \cdots p_n + 1. </md>
+
+        Since <m>Q</m> is an integer greater than <m>1</m>, we have from <xref ref="thm-div-by-primes"/> that there exists a prime <m>p</m> such that <m>p \mid Q</m>. However, since <m>P</m> is finite, we have <m>p \in P</m>. Then, <m>p \mid p_1 p_2 \cdots p_n</m>.
+      </p>
+
+      <p>
+        From part 1 of <xref ref="thm-div-basics"/>, <m>p \mid Q</m> and <m>p \mid p_1 p_2 \cdots p_n</m> implies <m>p \mid 1</m>. From <xref ref="thm-div1"/>, we find that this implies <m>p \in \{-1, 1\}</m>, which is a contradiction. Thus, there must be infinitely many primes.
+      </p>
+    </statement>
+  </lemma>
+
+  <p>
+    Even though there are infinitely many primes, their density among the naturals vanishes rapidly once you move far enough away from zero. If <m>\pi(x)</m> denotes the number of prime numbers less than or equal to <m>x</m>, then we have the following result from the study of <em>analytic number theory</em>:
+  </p>
+
+  <theorem xml:id="thm-prime-number">
+    <title> Prime Number Theorem </title>
+    <statement>
+      <p><md> \lim_{x \to \infty} \frac{\pi(x)}{x / \log x} = 1 </md></p>
+    </statement>
+
+    <proof>
+      <p> Not happening. </p>
+    </proof>
+  </theorem>
+
+  <p>
+    This tells us that as <m>n</m> gets larger and larger, <m>x / \log x</m> becomes a better and better approximation of the number of primes numbers less than or equal to <m>x</m>.
+  </p>
+
+</section>

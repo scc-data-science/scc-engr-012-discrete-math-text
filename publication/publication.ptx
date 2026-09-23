@@ -220,7 +220,7 @@
   <!--   that copies an iframe snippet for your website or LMS.         -->
   <!-- @design-width is an integer, default 600, used as the base when  -->
   <!--   a percentage width for an interactive must become pixels.      -->
-  <html>
+  <!-- <html short-answer-responses="always" embed-button="yes"> -->
   <!-- Replace the <html> tag above with the one below to try these-->
   <!--
     <html
@@ -401,13 +401,50 @@
               statcounter-project="0123456"
               statcounter-security="0123456"
             /> -->
-  </html>
+  <!-- </html> -->
 
-  <epub>
+  <html short-answer-responses="always" embed-button="yes">
+        <!-- Set platform; @host="web" is default, @host="runestone" also possible -->
+        <platform host="web"/>
+        <!-- Whether to knowl a particular elements is set here    -->
+        <!-- Lots of elements have this possibility; see the guide -->
+        <knowl 
+            theorem="no" 
+            definition="no" 
+            remark="no" 
+            example="no"
+            figure="no"
+            table="no"
+            listing="no"
+            exercise-inline="no"
+            exercise-divisional="no"
+            project="no" 
+            proof="no"
+        />
+        <webwork reading="dynamic" divisional="dynamic" inline="dynamic" worksheet="dynamic" />
+
+        <!-- <css theme="denver" color-main="#2e1657" color-do="#163c57" color-fact="#162957" color-meta="#571657" primary-color-dark="#9482b3"/> -->
+        <css theme="denver"
+          provide-dark-mode="yes"
+          color-main="#5f3f7f"
+          color-do="#315b7d"
+          color-fact="#477548"
+          color-meta="#814f73"
+          primary-color-dark="#ca9ee6"
+        /> 
+
+        <!-- 9482b3 -->
+
+        <tableofcontents focused="yes" preexpanded-levels="1"/>
+        <search variant="default"/>
+        <feedback href="mailto:cody.vig@solano.edu" />
+    </html>
+
+  <!-- <epub> -->
     <!-- The cover element takes a @front attribute naming a cover image, -->
     <!-- as a path relative to your external assets directory.            -->
       <!-- <cover front="cover.jpg"/> -->
-  </epub>
+  <!-- </epub> -->
 
   <!-- Conversion to Jupyter notebooks.  @kernel names the kernel that -->
   <!-- runs the code cells: "sagemath" (the default) or "python3".     -->

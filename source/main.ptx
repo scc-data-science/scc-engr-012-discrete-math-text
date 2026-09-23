@@ -5,14 +5,18 @@
   <xi:include href="./docinfo.ptx" />
 
   <book xml:id="my-great-book">
-    <title>My Great Book</title>
-    <subtitle>An example to get you started</subtitle>
+    <title>ENGR 012 Course Notes</title>
+    <subtitle>Discrete Mathematics for Scientists and Engineers</subtitle>
 
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />
 
     <!-- Include chapters -->
-    <xi:include href="./ch-chapter-title.ptx" />
+    <xi:include href="./ch-1-propositional-logic.ptx" />
+    <xi:include href="./ch-2-predicate-logic.ptx" />
+    <xi:include href="./ch-3-proof-theory.ptx" />
+    <xi:include href="./ch-4-set-theory.ptx" />
+    <xi:include href="./ch-5-number-theory.ptx" />
 
 
     <!-- Include backmatter -->

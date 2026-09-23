@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-5-1-divisibility" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Divisibility</title>
+
+  <p>
+    
+  </p>
+
+  <definition xml:id="def-divisibility">
+    <statement>
+      <p>
+        If <m>d</m> and <m>n</m> are integers with <m>d \neq 0</m>, we say that <em> <m>d</m> divides <m>n</m> </em> if there exists an integer <m>k</m> such that <m>n = kd</m>. That is, <m>d</m> divides <m>n</m> if <m>n / d</m> is an integer. If <m>d</m> divides <m>n</m>, we write <m>d \mid n</m>.
+      </p>
+      <p>
+        In this context, <m>d</m> is called the <em>divisor</em> and <m>n</m> is called the <em>multiple</em> or sometimes the <em>dividend</em>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    Note that "<m>d \mid n</m>" is a <em>statement</em>; it is either true or false. Contrast this with notation like "<m>n / d</m>," which represents the mathematical operation implied by "<m>d \mid n</m>." As such, we would never write something like "<m>3 \mid 6</m> = 2." Instead, we would say something like "<m>3 \mid 6</m> because <m>6/3 \in \mathbb{Z}</m>."
+  </p>
+
+  <p>
+    Similarly, you'll want to avoid writing expressions like "<m>p \mid (2 + 3) = p \mid 5</m>," because this would be read as "<m>p</m> divides the quantity <m>2 + 3</m> is equal to <m>p</m> divides <m>5</m>," which is clearly not what we are intending to communicate.
+  </p>
+
+  <p>
+    Some additional comments about <xref ref="def-divisibility"/>:
+  </p>
+
+  <p>
+    <ol>
+      <li> <p> If <m>d \mid n</m>, we might say that "<m>n</m> is a multiple of <m>d</m>" or that "<m>d</m> is a factor of <m>n</m>." </p> </li>
+      <li> <p> "<m>d \mid n</m>" is equivalent to the more familiar "<m>n</m> is divisible by <m>d</m>." </p> </li>
+      <li> <p> If it is not the case that <m>d \mid n</m>, we write <m>d \not\mid n</m>. </p> </li>
+    </ol>
+  </p>
+
+  <example xml:id="ex-div-intro">
+    <statement>
+      <p>
+        <ol>
+          <li><p>Is <m>21</m> divisible by <m>3</m>?</p></li>
+          <li><p>Does <m>17 \mid 51</m>?</p></li>
+          <li><p>Does <m>42</m> divide <m>-42</m>?</p></li>
+          <li><p>Is <m>32</m> a multiple of <m>-16</m>?</p></li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li><p>Yes, since <m>21 = 7 \cdot 3</m>.</p></li>
+          <li><p>Yes, since <m>51 = 3 \cdot 17</m>.</p></li>
+          <li><p>Yes, since <m>-42 = -1 \cdot 42</m>.</p></li>
+          <li><p>Yes, since <m>32 = (-2) \cdot (-16)</m>.</p></li>
+        </ol>
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    The sub-problems in <xref ref="ex-div-intro"/> are all asking essentially the same question, just in different ways. In number theory and related mathematical applications, we almost exclusively use the notion of <em>divides</em>, since it allows us to discuss division in terms of multiplication.
+  </p>
+
+  <example xml:id="ex-div0">
+    <statement>
+      <p>
+        <ol>
+          <li>
+            <p>If <m>n \in \mathbb{N}</m>, does <m>0 \mid n</m>?</p>
+          </li>
+          <li>
+            <p>If <m>d \in \mathbb{N}</m>, does <m>d \mid 0</m>?</p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Remember, <m>d \mid n</m> if <m>d \neq 0</m> and <m>n = kd</m> for some integer <m>k</m>.
+      </p>
+    </hint>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>No. By definition, <m>d \mid n</m> implies <m>d \neq 0</m>. Said another way, <m>d \mid n</m> implies <m>n/d \in \mathbb{Z}</m>. <m>n/0</m> isn't even defined. </p>
+          </li>
+          <li>
+            <p>Yes. In this case, <m>0 = 0 \cdot d</m>, so <m>d \mid 0</m>.</p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    The following theorem will be useful in a future section, so we'll state it and prove it here.
+  </p>
+
+  <lemma xml:id="lem-pos-div">
+    <statement>
+      <p> For all integers <m>a</m> and <m>b</m>, if <m>a</m> and <m>b</m> are positive and <m>a \mid b</m>, then <m>a \leq b</m>. </p>
+    </statement>
+
+    <proof>
+      <p>
+        Suppose <m>a</m> and <m>b</m> are positive integers such that <m>a \mid b</m>. Then, there exists an integer <m>k</m> such that <m>b = ka</m>. Moreover, <m>k > 0</m> (and hence <m>k \geq 1</m>) since <m>a, b > 0</m>. Therefore, <m>b = ka \geq 1 \cdot a = a</m>.
+      </p>
+    </proof>
+  </lemma>
+
+  <theorem xml:id="thm-div1">
+    <statement>
+      <p> The only divisors of <m>1</m> are <m>1</m> and <m>-1</m>. </p>
+    </statement>
+
+    <proof>
+      <p>
+        Note that <m>1 = 1 \cdot 1</m>, and so <m>1 \mid 1</m>. Similarly, <m>1 = (-1) \cdot (-1)</m>, and so <m>-1 \mid 1</m>.
+      </p>
+      <p>
+        Now, suppose <m>d</m> is another integer that divides <m>1</m>. Then, there exists an integer <m>k</m> such that <m>1 = kd</m>. Note that since <m>1</m> is positive, <m>k</m> and <m>d</m> are either both positive or both negative. Assume without loss of generality that both <m>k</m> and <m>d</m> are positive (the argument would be identical if they were both negative; I would encourage you to think about why). Hence, <m>d</m> is positive, and therefore, by <xref ref="lem-pos-div"/>, <m>d \leq 1</m>. Since <m>d</m> is a positive integer, we conclude <m>d = 1</m>.
+      </p>
+    </proof>
+  </theorem>
+  
+  <p>
+    Some of the basic properties of divisibility are summarized in the theorem below.
+  </p>
+
+  <theorem xml:id="thm-div-basics">
+    <statement>
+      <p> Let <m>a</m>, <m>b</m>, and <m>c</m> be integers with <m>a \neq 0</m>. Then: </p>
+      <p>
+        <ol>
+          <li><p> If <m>a \mid b</m> and <m>a \mid c</m>, then <m>a \mid (b + c)</m>. </p></li>
+          <li><p> If <m>a \mid b</m>, then <m>a \mid bc</m> for any integer <m>c</m>. </p></li>
+          <li><p> If <m>a \mid b</m> and <m>b \mid c</m>, then <m>a \mid c</m>. </p></li>
+        </ol>
+      </p>
+    </statement>
+
+    <proof>
+      <p> Let <m>a</m>, <m>b</m>, and <m>c</m> be integers with <m>a \neq 0</m>. </p>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Suppose <m>a \mid b</m> and <m>a \mid c</m>. Then there exists integers <m>k</m> and <m>\ell</m> such that <m>b = ka</m> and <m>c = \ell a</m>. Then,
+              
+              <md>b + c = ka + \ell a = (k + \ell) a,</md>
+              
+              and so <m>a \mid (b + c)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Suppose <m>a \mid b</m>. Then there exists an integer <m>k</m> such that <m>b = ka</m>. Then,
+              
+              <md>bc = (ka)c = (kc)a,</md>
+              
+              and so <m>a \mid bc</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Left as an exercise.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </proof>
+  </theorem>
+
+</section>

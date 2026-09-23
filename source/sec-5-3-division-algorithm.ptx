@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-5-3-division-algorithm" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>The Division Algorithm</title>
+
+  <p>
+    When working with relatively small numbers, determining whether or not <m>d \mid n</m> is not a difficult task. But what if you were asked to determine if <m>27,182 \mid 314,159</m>? How would you do it?
+  </p>
+  
+  <p>
+    One way is list all of the multiples of the divisor until you meet or exceed the dividend. In our case: 
+  </p>
+
+  <p>
+    <md number="no">
+      <mrow> 27,182 \cdot \phantom{0} 1 \amp = 27,182 </mrow>
+      <mrow> 27,182 \cdot \phantom{0} 2 \amp = 54,364 </mrow>
+      <mrow> \amp \vdots </mrow>
+      <mrow> 27,182 \cdot 11 \amp = 299,002 </mrow>
+      <mrow> 27,182 \cdot 12 \amp = 326,184 </mrow>
+    </md>
+  </p>
+
+  <p>
+    In the penultimate step, the product was smaller than our target, but in the final step, the product exceeded it. That means that:
+  </p>
+
+  <p>
+    <md>27,182 \cdot 11 \lt 314,159 \lt 27,182 \cdot 12.</md>
+  </p>
+
+  <p>
+    But we can do better. Notice that:
+  </p>
+
+  <p>
+    <md>314,159 - 27,182 \cdot 11 = 15,751.</md>
+  </p>
+
+  <p>
+    This allows us to write:
+  </p>
+
+  <p>
+    <md>314,159 = 11 \cdot 27,182 + 5,751.</md>
+  </p>
+
+  <p>
+    In this context, <m>11</m> is known as the <em>quotient</em> and <m>5,751</m> is known as the <em>remainder</em> when <m>314,159</m> is divided by <m>5,751</m>. Note that this is the same quotient and remainder you would have gotten if you used the standard division-with-remainder process you learned when you were younger.
+  </p>
+
+  <p>
+    We formalize this idea below.
+  </p>
+
+  <theorem xml:id="thm-div-alg">
+    <title> The Division Algorithm </title>
+    <statement>
+      <p>
+        Let <m>n, d</m> be integers with <m>d > 0</m>. Then, there exist unique integers <m>q</m> and <m>r</m>, with <m>0 \leq r \lt d</m>, such that <m>n = qd + r</m>.
+      </p>
+    </statement>
+
+    <proof>
+      <p>Omitted, but the intuition above is the important takeaway.</p>
+    </proof>
+  </theorem>
+  
+  <definition xml:id="def-div-alg">
+    <statement>
+      <p>
+        In the context of <xref ref="thm-div-alg"/>, <m>d</m> is called the <em>divisor</em>, <m>n</m> is called the <em>dividend</em>, <m>q</m> is called the <em>quotient</em>, and <m>r</m> is called the <em>remainder</em>. We write:
+      </p>
+
+      <p>
+        <md>
+          <mrow> q \amp = n \text{ div } d </mrow>
+          <mrow> r \amp = n \text{ mod } d </mrow>
+        </md>
+      </p>
+
+    </statement>
+  </definition>
+
+</section>
