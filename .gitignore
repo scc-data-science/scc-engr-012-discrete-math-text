@@ -1,3 +1,6 @@
+.cache
+logs/
+
 user/*
 script/mjsre/node_modules/
 script/mjsre/package-lock.json
