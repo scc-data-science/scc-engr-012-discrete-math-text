@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Valid and Invalid Arguments</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="ENGR 012 Course Notes">
+<meta property="og:title" content="ENGR 012 Course Notes">
+<meta property="book:title" content="ENGR 012 Course Notes">
+<meta name="twitter:description" content="Discrete Mathematics for Scientists and Engineers">
+<meta property="og:description" content="Discrete Mathematics for Scientists and Engineers">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.52"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.52"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.3.2';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.6ad113829064d43a.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.02090e9f6a81e70e.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.347e2ecdeacfed99.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="my-great-book.html"><span class="title">ENGR 012 Course Notes</span> <span class="subtitle">Discrete Mathematics for Scientists and Engineers</span></a></div>
+<p class="byline">Cody Vig</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-embed-button" class="ptx-embed-button button" title="Embed this page"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe86f;</span><span class="name">Embed</span></button><dialog class="ptx-dialog ptx-embed-popup" id="ptx-embed-popup"><div class="ptx-embed-popup-controls">
+<p>Copy the code below to embed this page in your own website or LMS page.</p>
+<button class="ptx-embed-close-button button" id="ptx-embed-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-embed-code-container">
+<textarea class="ptx-embed-code-textbox" id="ptx-embed-code-textbox" readonly aria-label="Embed"><iframe src="https://example.com/embed" width="100%" height="1000"></iframe></textarea><button autofocus="autofocus" class="ptx-embed-copy-button button" id="ptx-embed-copy-button" title="Copy"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe14d;</span><span class="name">Copy</span></button>
+</div></dialog><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="sec-1-2-conditionals.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-1-propositional-logic.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-2-predicate-logic.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="1" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-1-propositional-logic.html" class="internal"><span class="codenumber">1</span> <span class="title">Introduction to Propositional Logic</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-ch-1-propositional-logic">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-1-propositional-logic-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-1-1-statements.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Statements, Arguments, and Truth Tables</span></a></div>
+<ul id="ptx-toc-group-sec-1-1-statements" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-1-statements.html#logic-overview" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Overview</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-1-1-statements.html#stmt-and-args" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Statements and Arguments.</span></a></div>
+<ul id="ptx-toc-group-stmt-and-args" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-1-statements.html#truth-tables" class="internal"><span class="codenumber">1.1.2.1</span> <span class="title">Truth Tables</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-1-statements.html#logical-equivalence" class="internal"><span class="codenumber">1.1.2.2</span> <span class="title">Logical Equivalence</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-1-statements.html#de-morgans-laws" class="internal"><span class="codenumber">1.1.2.3</span> <span class="title">De Morgan’s Laws</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-1-statements.html#tautologies-and-contradictions" class="internal"><span class="codenumber">1.1.2.4</span> <span class="title">Tautologies and Contradictions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-1-2-conditionals.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Conditionals and Biconditionals</span></a></div>
+<ul id="ptx-toc-group-sec-1-2-conditionals" class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-1-2-conditionals.html#conditionals" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Conditionals</span></a></div>
+<ul id="ptx-toc-group-conditionals" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-2-conditionals.html#representation-as-an-or-statement" class="internal"><span class="codenumber">1.2.1.1</span> <span class="title">Representation as an “Or” Statement</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-2-conditionals.html#contrapositive-converse-and-inverse" class="internal"><span class="codenumber">1.2.1.2</span> <span class="title">Contrapositive, Converse, and Inverse</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-1-2-conditionals.html#biconditionals" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Biconditionals</span></a></div>
+<ul id="ptx-toc-group-biconditionals" class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-2-conditionals.html#necessary-and-sufficient-conditions" class="internal"><span class="codenumber">1.2.2.1</span> <span class="title">Necessary and Sufficient Conditions</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-1-3-valid-arguments.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Valid and Invalid Arguments</span></a></div>
+<ul class="structural toc-item-list active" id="ptx-toc-group-sec-1-3-valid-arguments">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-3-valid-arguments.html#valid-arguments" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Valid Arguments</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-3-valid-arguments.html#invalid-arguments" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Invalid Arguments</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-3-valid-arguments.html#sound-vs-unsound-arguments" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Sound vs Unsound Arguments</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-2-predicate-logic.html" class="internal"><span class="codenumber">2</span> <span class="title">Introduction to Predicate Logic</span></a></div>
+<ul id="ptx-toc-group-ch-2-predicate-logic" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-2-predicate-logic-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-2-1-predicates.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Predicates</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-3-proof-theory.html" class="internal"><span class="codenumber">3</span> <span class="title">Introduction to Proof Theory</span></a></div>
+<ul id="ptx-toc-group-ch-3-proof-theory" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-3-proof-theory-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-3-1-proofs.html" class="internal"><span class="codenumber">3.1</span> <span class="title">An Introduction to Proofs</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-4-set-theory.html" class="internal"><span class="codenumber">4</span> <span class="title">Introduction to Set Theory</span></a></div>
+<ul id="ptx-toc-group-ch-4-set-theory" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-4-set-theory-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-4-1-basics.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Basics of Sets</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-5-number-theory.html" class="internal"><span class="codenumber">5</span> <span class="title">Introduction to Number Theory</span></a></div>
+<ul id="ptx-toc-group-ch-5-number-theory" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-5-number-theory-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-5-1-divisibility.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Divisibility</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-5-2-primes.html" class="internal"><span class="codenumber">5.2</span> <span class="title">The Prime Numbers</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-5-3-division-algorithm.html" class="internal"><span class="codenumber">5.3</span> <span class="title">The Division Algorithm</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-5-3-modular-arithmetic.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Modular Arithmetic</span></a></div>
+<ul id="ptx-toc-group-sec-5-3-modular-arithmetic" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-3-modular-arithmetic.html#sec-5-3-modular-arithmetic-3" class="internal"><span class="codenumber">5.4.1</span> <span class="title">Properties</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-3-modular-arithmetic.html#sec-5-3-modular-arithmetic-4" class="internal"><span class="codenumber">5.4.2</span> <span class="title">Solving Congruences</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-1-3-valid-arguments">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Valid and Invalid Arguments</span>
+</h1>
+<section class="subsection" id="valid-arguments">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Valid Arguments</span>
+</h2>
+<div class="para" id="valid-arguments-2">In this lecture, we’ll discuss how to use the work we’ve been doing to determine whether or not arguments are logically valid or invalid; i.e., whether or not the truth of the conclusion necessarily follows from the truth of the hypotheses.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#valid-arguments-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="valid-arguments-3"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="valid-arguments-3-1-1">An <dfn class="terminology">argument</dfn> is a sequence of statements.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#valid-arguments-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 1.3.1"><a tabindex="-1" href="#valid-arguments-3" title="Copy heading and permalink for Definition 1.3.1" aria-label="Copy heading and permalink for Definition 1.3.1">🔗</a></div>
+</article>
+<article class="definition definition-like" id="valid-arguments-4"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="valid-arguments-4-1-1">All statements in an argument, except for the final one, are called <dfn class="terminology">premises</dfn> (or <dfn class="terminology">assumptions</dfn> or <dfn class="terminology">hypotheses</dfn>). The final statement is called the <dfn class="terminology">conclusion</dfn>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#valid-arguments-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 1.3.2"><a tabindex="-1" href="#valid-arguments-4" title="Copy heading and permalink for Definition 1.3.2" aria-label="Copy heading and permalink for Definition 1.3.2">🔗</a></div>
+</article>
+<article class="definition definition-like" id="valid-arguments-5"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="valid-arguments-5-1-1">An argument is <dfn class="terminology">valid</dfn> if the following is true: For any choice of statements substituted for the statement variables in the argument’s premises, if the resulting premises are all true, then the conclusion is also true.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#valid-arguments-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 1.3.3"><a tabindex="-1" href="#valid-arguments-5" title="Copy heading and permalink for Definition 1.3.3" aria-label="Copy heading and permalink for Definition 1.3.3">🔗</a></div>
+</article>
+<article class="example example-like" id="valid-arguments-6"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Modus Ponens.</span>
+</h3>
+<div class="para" id="valid-arguments-6-2-1">The following argument is valid:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#valid-arguments-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="valid-arguments-6-2-2">
+<div class="displaymath process-math" id="valid-arguments-6-2-2-1">
+\begin{align*}
+\begin{aligned}
+\amp p \implies q \\
+\amp p \\
+\hline
+\therefore \amp q
+\end{aligned}
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#valid-arguments-6-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="valid-arguments-6-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="valid-arguments-6-3-1">We can prove this using a truth table:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#valid-arguments-6-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c m b3 r0 l0 t0 lines"><span class="process-math">\(p\)</span></th>
+<th scope="col" class="c m b3 r0 l0 t0 lines"><span class="process-math">\(q\)</span></th>
+<th scope="col" class="c m b3 r0 l0 t0 lines"><span class="process-math">\(p \implies q\)</span></th>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(T\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(T\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(T\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(T\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(F\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(F\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(F\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(T\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(T\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(F\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(F\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(T\)</span></td>
+</tr>
+</table></div>
+<div class="para logical" id="valid-arguments-6-3-3">
+<ul class="disc" id="valid-arguments-6-3-3-1">
+<li id="valid-arguments-6-3-3-1-1">
+<div class="para" id="p-derived-valid-arguments-6-3-3-1-1">The premise “<span class="process-math">\(p \implies q\)</span>” is true in rows 1, 3, and 4.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#valid-arguments-6-3-3-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="valid-arguments-6-3-3-1-2">
+<div class="para" id="p-derived-valid-arguments-6-3-3-1-2">The premise “<span class="process-math">\(p\)</span>” is true in rows 1 and 2.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#valid-arguments-6-3-3-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="valid-arguments-6-3-3-1-3">
+<div class="para" id="p-derived-valid-arguments-6-3-3-1-3">Thus, the premises are all true only in row 1.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#valid-arguments-6-3-3-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="valid-arguments-6-3-3-1-4">
+<div class="para" id="p-derived-valid-arguments-6-3-3-1-4">The conclusion “<span class="process-math">\(q\)</span>” is true only in row 1.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#valid-arguments-6-3-3-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="valid-arguments-6-3-3-1-5">
+<div class="para" id="p-derived-valid-arguments-6-3-3-1-5">Hence, all rows in which the premises are true, the conclusion is also true, and so the argument is valid.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#valid-arguments-6-3-3-1-5" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#valid-arguments-6-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 1.3.4.1"><a tabindex="-1" href="#valid-arguments-6-3" title="Copy heading and permalink for Solution 1.3.4.1" aria-label="Copy heading and permalink for Solution 1.3.4.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 1.3.4: Modus Ponens"><a tabindex="-1" href="#valid-arguments-6" title="Copy heading and permalink for Example 1.3.4: Modus Ponens" aria-label="Copy heading and permalink for Example 1.3.4: Modus Ponens">🔗</a></div>
+</article>
+<article class="example example-like" id="valid-arguments-7"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Modus Tollens.</span>
+</h3>
+<div class="para" id="valid-arguments-7-2-1">The following argument is valid:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#valid-arguments-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="valid-arguments-7-2-2">
+<div class="displaymath process-math" id="valid-arguments-7-2-2-1">
+\begin{align*}
+\begin{aligned}
+\amp p \implies q \\
+\amp \lnot q \\
+\hline
+\therefore \amp \lnot p
+\end{aligned}
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#valid-arguments-7-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="valid-arguments-7-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="valid-arguments-7-3-1">Prove this!<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#valid-arguments-7-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 1.3.5.1"><a tabindex="-1" href="#valid-arguments-7-3" title="Copy heading and permalink for Solution 1.3.5.1" aria-label="Copy heading and permalink for Solution 1.3.5.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 1.3.5: Modus Tollens"><a tabindex="-1" href="#valid-arguments-7" title="Copy heading and permalink for Example 1.3.5: Modus Tollens" aria-label="Copy heading and permalink for Example 1.3.5: Modus Tollens">🔗</a></div>
+</article>
+<article class="example example-like" id="valid-arguments-8"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="valid-arguments-8-1-1">Show that the following argument is valid.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#valid-arguments-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="valid-arguments-8-1-2">
+<div class="displaymath process-math" id="valid-arguments-8-1-2-1">
+\begin{align*}
+\begin{aligned}
+\amp p \implies q \\
+\amp \lnot p \implies q \\
+\hline
+\therefore \amp q
+\end{aligned}
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#valid-arguments-8-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="valid-arguments-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="valid-arguments-8-2-1">Again, we do this using a truth table:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#valid-arguments-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c m b3 r0 l0 t0 lines"><span class="process-math">\(p\)</span></th>
+<th scope="col" class="c m b3 r0 l0 t0 lines"><span class="process-math">\(q\)</span></th>
+<th scope="col" class="c m b3 r0 l0 t0 lines"><span class="process-math">\(p \implies q\)</span></th>
+<th scope="col" class="c m b3 r0 l0 t0 lines"><span class="process-math">\(\lnot p\)</span></th>
+<th scope="col" class="c m b3 r0 l0 t0 lines"><span class="process-math">\(\lnot p \implies q\)</span></th>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(T\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(T\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(T\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(F\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(T\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(T\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(F\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(F\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(F\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(T\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(F\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(T\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(T\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(T\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(T\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(F\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(F\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(T\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(T\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(F\)</span></td>
+</tr>
+</table></div>
+<div class="para logical" id="valid-arguments-8-2-3">
+<ul class="disc" id="valid-arguments-8-2-3-1">
+<li id="valid-arguments-8-2-3-1-1">
+<div class="para" id="p-derived-valid-arguments-8-2-3-1-1">The premise “<span class="process-math">\(p \implies q\)</span>” is true in rows 1, 3, and 4.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#valid-arguments-8-2-3-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="valid-arguments-8-2-3-1-2">
+<div class="para" id="p-derived-valid-arguments-8-2-3-1-2">The premise <span class="process-math">\(\lnot p \implies q\)</span> is true in rows 1, 2, and 3.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#valid-arguments-8-2-3-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="valid-arguments-8-2-3-1-3">
+<div class="para" id="p-derived-valid-arguments-8-2-3-1-3">Thus, the premises are all true only in rows 1 and 3.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#valid-arguments-8-2-3-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="valid-arguments-8-2-3-1-4">
+<div class="para" id="p-derived-valid-arguments-8-2-3-1-4">The conclusion is true only in rows 1 and 3.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#valid-arguments-8-2-3-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="valid-arguments-8-2-3-1-5">
+<div class="para" id="p-derived-valid-arguments-8-2-3-1-5">Hence, all rows in which the premises are true, the conclusion is also true, and so the argument is valid.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#valid-arguments-8-2-3-1-5" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#valid-arguments-8-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 1.3.6.1"><a tabindex="-1" href="#valid-arguments-8-2" title="Copy heading and permalink for Solution 1.3.6.1" aria-label="Copy heading and permalink for Solution 1.3.6.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 1.3.6"><a tabindex="-1" href="#valid-arguments-8" title="Copy heading and permalink for Example 1.3.6" aria-label="Copy heading and permalink for Example 1.3.6">🔗</a></div>
+</article>
+<div class="para" id="valid-arguments-9">Arguments that are valid are also called <dfn class="terminology">rules of inference</dfn>. Other rules of inference include:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#valid-arguments-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="valid-arguments-10">
+<ul class="disc" id="valid-arguments-10-1">
+<li id="valid-arguments-10-1-1">
+<div class="para" id="valid-arguments-10-1-1-1">Generalization:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#valid-arguments-10-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="valid-arguments-10-1-1-2">
+<div class="displaymath process-math" id="valid-arguments-10-1-1-2-1">
+\begin{align*}
+\begin{aligned}
+\amp p \\
+\hline
+\therefore \amp p \lor q
+\end{aligned}
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#valid-arguments-10-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#valid-arguments-10-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="valid-arguments-10-1-2">
+<div class="para" id="valid-arguments-10-1-2-1">Specialization:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#valid-arguments-10-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="valid-arguments-10-1-2-2">
+<div class="displaymath process-math" id="valid-arguments-10-1-2-2-1">
+\begin{align*}
+\begin{aligned}
+\amp p \land q \\
+\hline
+\therefore \amp p
+\end{aligned}
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#valid-arguments-10-1-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#valid-arguments-10-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="valid-arguments-10-1-3">
+<div class="para" id="valid-arguments-10-1-3-1">Elimination:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#valid-arguments-10-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="valid-arguments-10-1-3-2">
+<div class="displaymath process-math" id="valid-arguments-10-1-3-2-1">
+\begin{align*}
+\begin{aligned}
+\amp p \lor q \\
+\amp \lnot p \\
+\hline
+\therefore \amp q
+\end{aligned}
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#valid-arguments-10-1-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#valid-arguments-10-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="valid-arguments-10-1-4">
+<div class="para" id="valid-arguments-10-1-4-1">Transitivity:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#valid-arguments-10-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="valid-arguments-10-1-4-2">
+<div class="displaymath process-math" id="valid-arguments-10-1-4-2-1">
+\begin{align*}
+\begin{aligned}
+\amp p \implies q \\
+\amp q \implies r \\
+\hline
+\therefore \amp p \implies r
+\end{aligned}
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#valid-arguments-10-1-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#valid-arguments-10-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="valid-arguments-10-1-5">
+<div class="para" id="valid-arguments-10-1-5-1">Proof by Division Into Cases:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#valid-arguments-10-1-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="valid-arguments-10-1-5-2">
+<div class="displaymath process-math" id="valid-arguments-10-1-5-2-1">
+\begin{align*}
+\begin{aligned}
+\amp p \implies r \\
+\amp q \implies r \\
+\amp p \lor q \\
+\hline
+\therefore \amp r
+\end{aligned}
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#valid-arguments-10-1-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#valid-arguments-10-1-5" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#valid-arguments-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Subsection 1.3.1: Valid Arguments"><a tabindex="-1" href="#valid-arguments" title="Copy heading and permalink for Subsection 1.3.1: Valid Arguments" aria-label="Copy heading and permalink for Subsection 1.3.1: Valid Arguments">🔗</a></div>
+</section>
+<section class="subsection" id="invalid-arguments">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Invalid Arguments</span>
+</h2>
+<article class="definition definition-like" id="def-invalid-argument"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="def-invalid-argument-1-1">An argument that is not valid is called an <dfn class="terminology">invalid argument</dfn>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-invalid-argument-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 1.3.7"><a tabindex="-1" href="#def-invalid-argument" title="Copy heading and permalink for Definition 1.3.7" aria-label="Copy heading and permalink for Definition 1.3.7">🔗</a></div>
+</article>
+<article class="definition definition-like" id="def-logical-fallacy"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="def-logical-fallacy-1-1">Errors in logic that produce invalid arguments are called <dfn class="terminology">logical fallacies</dfn>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-logical-fallacy-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 1.3.8"><a tabindex="-1" href="#def-logical-fallacy" title="Copy heading and permalink for Definition 1.3.8" aria-label="Copy heading and permalink for Definition 1.3.8">🔗</a></div>
+</article>
+<div class="para" id="invalid-arguments-4">We noted in the previous sections that <em class="emphasis">contrapositives</em> are logically equivalent to their corresponding conditional statements, but that <em class="emphasis">converses</em> and <em class="emphasis">inveres</em> are not. Using the converse or the inverse in an argument produces a logical fallacy.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#invalid-arguments-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="ex-converse-error"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Converse Error.</span>
+</h3>
+<div class="para" id="ex-converse-error-2-1">The following argument is invalid:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-converse-error-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="ex-converse-error-2-2">
+<div class="displaymath process-math" id="ex-converse-error-2-2-1">
+\begin{align*}
+\begin{aligned}
+\amp p \implies q \\
+\amp q \\
+\hline
+\therefore \amp p
+\end{aligned}
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-converse-error-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="ex-converse-error-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="ex-converse-error-3-1">You can prove that this is invalid by drawing a truth table and finding at least one row for which the premises are both true and the conclusion is not. It is also fairly easy to see intiuitively that this argument is invalid by producing an example that is clearly false by choosing <span class="process-math">\(p\)</span> and <span class="process-math">\(q\)</span> judiciously. For example,<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-converse-error-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<blockquote class="blockquote" id="ex-converse-error-3-2">
+<div class="para" id="ex-converse-error-3-2-1">If I love all branches of math, then I will love discrete mathematics.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-converse-error-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-converse-error-3-2-2">I love discrete mathematics.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-converse-error-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-converse-error-3-2-3">Therefore, I love all branches of math.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-converse-error-3-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Quotation"><a tabindex="-1" href="#ex-converse-error-3-2" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
+</blockquote>
+<div class="para" id="ex-converse-error-3-3">It is fairly easy to imagine a scenario in which someone loves discrete mathematics but does not like, say, differential equations. A computer scientist, for example, whose career replies on discrete objects might feel this way.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-converse-error-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 1.3.9.1"><a tabindex="-1" href="#ex-converse-error-3" title="Copy heading and permalink for Solution 1.3.9.1" aria-label="Copy heading and permalink for Solution 1.3.9.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 1.3.9: Converse Error"><a tabindex="-1" href="#ex-converse-error" title="Copy heading and permalink for Example 1.3.9: Converse Error" aria-label="Copy heading and permalink for Example 1.3.9: Converse Error">🔗</a></div>
+</article>
+<article class="example example-like" id="ex-inverse-error"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Inverse Error.</span>
+</h3>
+<div class="para" id="ex-inverse-error-2-1">The following argument is invalid:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-inverse-error-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="ex-inverse-error-2-2">
+<div class="displaymath process-math" id="ex-inverse-error-2-2-1">
+\begin{align*}
+\begin{aligned}
+\amp p \implies q \\
+\amp \lnot p \\
+\hline
+\therefore \amp \lnot q
+\end{aligned}
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-inverse-error-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="ex-inverse-error-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="ex-inverse-error-3-1">Try to come up with a particular example that gives intuitive justification for the fact that this is a fallacy!<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-inverse-error-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 1.3.10.1"><a tabindex="-1" href="#ex-inverse-error-3" title="Copy heading and permalink for Solution 1.3.10.1" aria-label="Copy heading and permalink for Solution 1.3.10.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 1.3.10: Inverse Error"><a tabindex="-1" href="#ex-inverse-error" title="Copy heading and permalink for Example 1.3.10: Inverse Error" aria-label="Copy heading and permalink for Example 1.3.10: Inverse Error">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Subsection 1.3.2: Invalid Arguments"><a tabindex="-1" href="#invalid-arguments" title="Copy heading and permalink for Subsection 1.3.2: Invalid Arguments" aria-label="Copy heading and permalink for Subsection 1.3.2: Invalid Arguments">🔗</a></div>
+</section>
+<section class="subsection" id="sound-vs-unsound-arguments">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Sound vs Unsound Arguments</span>
+</h2>
+<div class="para" id="sound-vs-unsound-arguments-2">We’ve defined valid arguments via conditionals: an argument is valid if all premises being true implies the conclusion is true. This leaves room for an argument that is valid, but has false premises. In such cases, it is not possible to know, from the structure of the argument alone, if the argument is valid, since knowledge about the truth values of the premises is necessary.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sound-vs-unsound-arguments-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sound-vs-unsound-arguments-3">In order to be sure that the conclusion of an argument is true regardless of the particular realizations of the premises, we need a more specific notion of “validity.”<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sound-vs-unsound-arguments-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="sound-vs-unsound-arguments-4"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="sound-vs-unsound-arguments-4-1-1">An argument is called <dfn class="terminology">sound</dfn> if, and only if, it is valid and all its premises are true.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sound-vs-unsound-arguments-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 1.3.11"><a tabindex="-1" href="#sound-vs-unsound-arguments-4" title="Copy heading and permalink for Definition 1.3.11" aria-label="Copy heading and permalink for Definition 1.3.11">🔗</a></div>
+</article>
+<article class="definition definition-like" id="sound-vs-unsound-arguments-5"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="sound-vs-unsound-arguments-5-1-1">An argument that is not sound is called <dfn class="terminology">unsound</dfn>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sound-vs-unsound-arguments-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 1.3.12"><a tabindex="-1" href="#sound-vs-unsound-arguments-5" title="Copy heading and permalink for Definition 1.3.12" aria-label="Copy heading and permalink for Definition 1.3.12">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Subsection 1.3.3: Sound vs Unsound Arguments"><a tabindex="-1" href="#sound-vs-unsound-arguments" title="Copy heading and permalink for Subsection 1.3.3: Sound vs Unsound Arguments" aria-label="Copy heading and permalink for Subsection 1.3.3: Sound vs Unsound Arguments">🔗</a></div>
+</section><div class="autopermalink" aria-hidden="true" data-description="Section 1.3: Valid and Invalid Arguments"><a tabindex="-1" href="#sec-1-3-valid-arguments" title="Copy heading and permalink for Section 1.3: Valid and Invalid Arguments" aria-label="Copy heading and permalink for Section 1.3: Valid and Invalid Arguments">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-1-2-conditionals.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-2-predicate-logic.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="feedback-link" href="mailto:cody.vig@solano.edu" target="_blank">Feedback</a><a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
