@@ -4,10 +4,81 @@
   <title>Introduction to Propositional Logic</title>
 
   <introduction>
-    <p> Coming soon! </p>
+    <p>
+      What <em>is</em> math?
+    </p>
+
+    <p>
+      (The question is contrived, but I would encourage you to think about
+      it!)
+    </p>
+
+    <p>
+      To me, most of math can be summarized by following procedure:
+    </p>
+
+    <p>
+      <ul>
+        <li>Create some kind of mathematical space.</li>
+        <li>Impose additional structure on that space.</li>
+        <li>Explore the consequences of that structure and observe
+        patterns and other nontrivial results.</li>
+        <li>Prove that those results hold.</li>
+      </ul>
+    </p>
+
+    <p>
+      For example, suppose we are interested in a more formal treatment of
+      the integers:
+    </p>
+
+    <p>
+      <md>\mathbb{Z} := \{\ldots, -2, -1, 0, 1, 2, \ldots\}.</md>
+    </p>
+
+    <p>
+      This set is playing the role of the <term>mathematical space</term>
+      referenced above. Next, we might be interested in imposing some
+      structure on that space. For example, we might define
+      <em>addition</em> of integers as a function (<q><m>+</m></q>) that
+      takes in two integers (<m>m</m> and <m>n</m>) and spits out a new
+      integer (<m>m + n</m>) (in the usual way):
+    </p>
+
+    <p>
+      <md>+: (m, n) \mapsto m + n.</md>
+    </p>
+
+    <p>
+      Then, we start to explore the consequences of this structure. For
+      example, one might start to notice that every time you add two odd
+      numbers together (after you <em>define</em> <q>odd,</q> of course),
+      you get an even number:
+    </p>
+
+    <p>
+    </p>
+
+    <p>
+      Is this just a fortunate coincidence of the numbers you chose to
+      add, or is there something inherent to the structure of your space
+      that gives rise to this result? The only way to know for sure if it
+      is the latter is to <em>prove</em> the result using nothing but the
+      definition of the structure you've imposed and your understanding of
+      mathematical logic. Thus, to really understand math, one must
+      understand logic. How else can you be confident that your proofs are
+      actually proofs?
+    </p>
+
+    <p>
+      For the next two chapters, we'll be studying mathematical logic in
+      detail to get us ready for proofs in chapter 3.
+    </p>
   </introduction>
 
   <!-- include sections -->
   <xi:include href="sec-1-1-statements.ptx" />
+  <xi:include href="sec-1-2-conditionals.ptx" />
+  <xi:include href="sec-1-3-valid-arguments.ptx" />
 
 </chapter>
