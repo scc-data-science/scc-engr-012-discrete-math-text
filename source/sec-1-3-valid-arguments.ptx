@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-1-3-valid-arguments" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Valid and Invalid Arguments</title>
+
+  <subsection xml:id="valid-arguments">
+    <title>Valid Arguments</title>
+
+    <p>
+      In this lecture, we'll discuss how to use the work we've been
+      doing to determine whether or not arguments are logically valid or
+      invalid; i.e., whether or not the truth of the conclusion
+      necessarily follows from the truth of the hypotheses.
+    </p>
+
+    <definition>
+      <statement>
+        <p> An <term>argument</term> is a sequence of statements. </p>
+      </statement>
+    </definition>
+
+    <definition>
+      <statement>
+        <p>
+          All statements in an argument, except for the final
+          one, are called <term>premises</term> (or <term>assumptions</term> or
+          <term>hypotheses</term>). The final statement is called the
+          <term>conclusion</term>.
+        </p>
+      </statement>
+    </definition>
+
+    <definition>
+      <statement>
+        <p>
+          An argument is <term>valid</term> if the following is true:
+          For any choice of statements substituted for the statement
+          variables in the argument's premises, if the resulting premises
+          are all true, then the conclusion is also true.
+        </p>
+      </statement>
+    </definition>
+
+    <example>
+      <title>Modus Ponens</title>
+
+      <statement>
+        <p>
+          The following argument is valid:
+        </p>
+        <p>
+          <md>
+            <mrow>
+              \begin{aligned}
+                \amp p \implies q \\
+                \amp p \\
+                \hline
+                \therefore \amp q
+              \end{aligned}
+            </mrow>
+          </md>
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          We can prove this using a truth table:
+        </p>
+
+        <tabular>
+          <col halign="center" />
+          <col halign="center" />
+          <col halign="center" />
+          <row header="yes" bottom="major"> 
+            <cell><m>p</m></cell>
+            <cell><m>q</m></cell>
+            <cell><m>p \implies q</m></cell>
+          </row>
+          <row>
+            <cell><m>T</m></cell>
+            <cell><m>T</m></cell>
+            <cell><m>T</m></cell>
+          </row>
+          <row>
+            <cell><m>T</m></cell>
+            <cell><m>F</m></cell>
+            <cell><m>F</m></cell>
+          </row>
+          <row>
+            <cell><m>F</m></cell>
+            <cell><m>T</m></cell>
+            <cell><m>T</m></cell>
+          </row>
+          <row>
+            <cell><m>F</m></cell>
+            <cell><m>F</m></cell>
+            <cell><m>T</m></cell>
+          </row>
+        </tabular>
+
+        <p>
+          <ul>
+            <li>The premise <q><m>p \implies q</m></q> is true in rows 1,
+            3, and 4.</li>
+            <li>The premise <q><m>p</m></q> is true in rows 1 and 2.</li>
+            <li>Thus, the premises are all true only in row 1.</li>
+            <li>The conclusion <q><m>q</m></q> is true only in row 1.</li>
+            <li>Hence, all rows in which the premises are true, the
+            conclusion is also true, and so the argument is valid.</li>
+          </ul>
+        </p>
+      </solution>
+    </example>
+
+    <example>
+      <title>Modus Tollens</title>
+      <statement>
+        <p>
+          The following argument is valid:
+        </p>
+        <p>
+          <md>
+            <mrow>
+              \begin{aligned}
+                \amp p \implies q \\
+                \amp \lnot q \\
+                \hline
+                \therefore \amp \lnot p
+              \end{aligned}
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Prove this!
+        </p>
+      </solution>
+    </example>
+
+    <example>
+      <statement>
+        <p>
+          Show that the following argument is valid.
+        </p>
+        <p>
+          <md>
+            <mrow>
+              \begin{aligned}
+                \amp p \implies q \\
+                \amp \lnot p \implies q \\
+                \hline
+                \therefore \amp q
+              \end{aligned}
+            </mrow>
+          </md>
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          Again, we do this using a truth table:
+        </p>
+
+        <tabular>
+          <col halign="center" />
+          <col halign="center" />
+          <col halign="center" />
+          <col halign="center" />
+          <col halign="center" />
+          <row header="yes" bottom="major">
+            <cell><m>p</m></cell>
+            <cell><m>q</m></cell>
+            <cell><m>p \implies q</m></cell>
+            <cell><m>\lnot p</m></cell>
+            <cell><m>\lnot p \implies q</m></cell>
+          </row>
+          <row>
+            <cell><m>T</m></cell>
+            <cell><m>T</m></cell>
+            <cell><m>T</m></cell>
+            <cell><m>F</m></cell>
+            <cell><m>T</m></cell>
+          </row>
+          <row>
+            <cell><m>T</m></cell>
+            <cell><m>F</m></cell>
+            <cell><m>F</m></cell>
+            <cell><m>F</m></cell>
+            <cell><m>T</m></cell>
+          </row>
+          <row>
+            <cell><m>F</m></cell>
+            <cell><m>T</m></cell>
+            <cell><m>T</m></cell>
+            <cell><m>T</m></cell>
+            <cell><m>T</m></cell>
+          </row>
+          <row>
+            <cell><m>F</m></cell>
+            <cell><m>F</m></cell>
+            <cell><m>T</m></cell>
+            <cell><m>T</m></cell>
+            <cell><m>F</m></cell>
+          </row>
+        </tabular>
+
+        <p>
+          <ul>
+            <li>The premise <q><m>p \implies q</m></q> is true in rows 1,
+            3, and 4.</li>
+            <li>The premise <m>\lnot p \implies q</m> is true in rows 1,
+            2, and 3.</li>
+            <li>Thus, the premises are all true only in rows 1 and 3.</li>
+            <li>The conclusion is true only in rows 1 and 3.</li>
+            <li>Hence, all rows in which the premises are true, the
+            conclusion is also true, and so the argument is valid.</li>
+          </ul>
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      Arguments that are valid are also called <term>rules of
+      inference</term>. Other rules of inference include:
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <p> Generalization: </p>
+          <p>
+            <md>
+              <mrow>
+                \begin{aligned}
+                  \amp p \\
+                  \hline
+                  \therefore \amp p \lor q
+                \end{aligned}
+              </mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p> Specialization: </p>
+          <p>
+            <md>
+              <mrow>
+                \begin{aligned}
+                  \amp p \land q \\
+                  \hline
+                  \therefore \amp p
+                \end{aligned}
+              </mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p> Elimination: </p>
+          <p>
+            <md>
+              <mrow>
+                \begin{aligned}
+                  \amp p \lor q \\
+                  \amp \lnot p \\
+                  \hline
+                  \therefore \amp q
+                \end{aligned}
+              </mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p> Transitivity: </p>
+          <p>
+            <md>
+              <mrow>
+                \begin{aligned}
+                  \amp p \implies q \\
+                  \amp q \implies r \\
+                  \hline
+                  \therefore \amp p \implies r
+                \end{aligned}
+              </mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p> Proof by Division Into Cases: </p>
+          <p>
+            <md>
+              <mrow>
+                \begin{aligned}
+                  \amp p \implies r \\
+                  \amp q \implies r \\
+                  \amp p \lor q \\
+                  \hline
+                  \therefore \amp r
+                \end{aligned}
+              </mrow>
+            </md>
+          </p>
+        </li>
+      </ul>
+    </p>
+  </subsection>
+
+  <subsection xml:id="invalid-arguments">
+    <title>Invalid Arguments</title>
+
+    <definition xml:id="def-invalid-argument">
+      <statement>
+        <p>
+          An argument that is not valid is called an
+          <term>invalid argument</term>.
+        </p>
+      </statement>
+    </definition>
+
+    <definition xml:id="def-logical-fallacy">
+      <statement>
+        <p>
+          Errors in logic that produce invalid arguments are called
+          <term>logical fallacies</term>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      We noted in the previous sections that <em>contrapositives</em>
+      are logically equivalent to their corresponding conditional
+      statements, but that <em>converses</em> and <em>inveres</em> are
+      not. Using the converse or the inverse in an argument produces a
+      logical fallacy.
+    </p>
+
+    <example xml:id="ex-converse-error">
+      <title>Converse Error</title>
+      
+      <statement>
+        <p>
+          The following argument is invalid:
+        </p>
+        <p>
+          <md>
+            <mrow>
+              \begin{aligned}
+                \amp p \implies q \\
+                \amp q \\
+                \hline
+                \therefore \amp p
+              \end{aligned}
+            </mrow>
+          </md>
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          You can prove that this is invalid by drawing a truth table and
+          finding at least one row for which the premises are both true
+          and the conclusion is not. It is also fairly easy to see
+          intiuitively that this argument is invalid by producing an
+          example that is clearly false by choosing <m>p</m> and <m>q</m>
+          judiciously. For example,
+        </p>
+
+        <blockquote>
+          <p>
+            If I love all branches of math, then I will love discrete
+            mathematics.
+          </p>
+          <p>
+            I love discrete mathematics.
+          </p>
+          <p>
+            Therefore, I love all branches of math.
+          </p>
+        </blockquote>
+
+        <p>
+        It is fairly easy to imagine a scenario in which someone loves
+        discrete mathematics but does not like, say, differential
+        equations. A computer scientist, for example, whose career
+        replies on discrete objects might feel this way.
+      </p>
+      </solution>
+    </example>
+
+    <example xml:id="ex-inverse-error">
+      <title>Inverse Error</title>
+      
+      <statement>
+        <p>
+          The following argument is invalid:
+        </p>
+        <p>
+          <md>
+            <mrow>
+              \begin{aligned}
+                \amp p \implies q \\
+                \amp \lnot p \\
+                \hline
+                \therefore \amp \lnot q
+              \end{aligned}
+            </mrow>
+          </md>
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          Try to come up with a particular example that gives intuitive
+          justification for the fact that this is a fallacy!
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="sound-vs-unsound-arguments">
+    <title>Sound vs Unsound Arguments</title>
+
+    <p>
+      We've defined valid arguments via conditionals: an argument is
+      valid if all premises being true implies the conclusion is true.
+      This leaves room for an argument that is valid, but has false
+      premises. In such cases, it is not possible to know, from the
+      structure of the argument alone, if the argument is valid, since
+      knowledge about the truth values of the premises is necessary.
+    </p>
+
+    <p>
+      In order to be sure that the conclusion of an argument is true
+      regardless of the particular realizations of the premises, we need
+      a more specific notion of <q>validity.</q>
+    </p>
+
+    <definition>
+      <statement> 
+        <p>
+          An argument is called <term>sound</term> if, and only if, it is valid
+          and all its premises are true.
+        </p>
+      </statement>
+    </definition>
+
+    <definition>
+      <statement> 
+        <p>
+          An argument that is not sound is called <term>unsound</term>.
+        </p>
+      </statement>
+    </definition>
+
+  </subsection>
+</section>
+
