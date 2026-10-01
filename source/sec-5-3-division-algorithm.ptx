@@ -82,4 +82,56 @@
     </statement>
   </definition>
 
+  <example xml:id="ex-div-alg">
+    <statement>
+      <p>
+        Find the quotient and remainder when:
+      </p>
+
+      <p>
+        <ol>
+          <li><p><m> 22</m> is divided by <m>7</m>.</p></li>
+          <li><p><m>-22</m> is divided by <m>7</m>.</p></li>
+        </ol>
+      </p>
+    </statement>
+
+    <hint>
+      <p>
+        Remember, <m>0 \leq r \lt d</m> by definition!
+      </p>
+    </hint>
+
+    <solution>
+      <p>
+        <ol>
+          <li><p>We write <m>22 = 3 \cdot 7 + 1</m>, and so <m>22 \text{ div } 7 = 3</m> and <m>22 \text{ mod } 7 = 1</m>.</p></li>
+          <li><p>We write <m>-22 = (-4) \cdot 7 + 6</m>, and so <m>-22 \text{ div } 7 = -4</m> and <m>-22 \text{ mod } 7 = 6</m>.</p></li>
+        </ol>
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    The solution to part 2 may have been counterintuitive to you. Your instict may have been to write <m>-22 = (-3) \cdot 7 - 1</m>, similar to part (a). While this is perfectly valid, mathematically, this does not satisfy the condition in <xref ref="thm-div-alg"/> that <m>0 \leq r \lt d</m>. The remainder, under these conventions, is <em>always</em> nonnegative. This convention may seem arbitrary (and in some sense, it is), but it gives us a very nice property: for a fixed integer <m>d</m>, the function <m>f: \mathbb{Z} \to \{0, 1, \ldots, d\}</m> such that <m>f(n) = n \text{ mod } d</m> generates a <em>partition</em> of the integers. We will explore this in the next section. 
+  </p>
+
+  <example xml:id="ex-mod-practice">
+    <statement>
+      <p>
+        If today is Tuesday, what day will it be 1000 days from today?
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        The day of the week repeats every seven days. We're not really interested in <em>how many times</em> we cycle through those seven days, we just need to know  how many days we go over on the very last cycle. Said another way, we need to find the remainder when 1000 is divided by 7.
+      </p>
+
+      <p>
+        Note that <m>1000 = 142 \cdot 7 + 6</m>. Therefore, 1000 days after today occurs 142 weeks and 6 days from today. Six days after Tuesday is Monday, so if today is Tuesday, then it will be a Monday in 1000 days.
+      </p>
+    </solution>
+  </example>
+
 </section>
