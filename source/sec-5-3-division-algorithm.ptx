@@ -3,135 +3,337 @@
 <section xml:id="sec-5-3-division-algorithm" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>The Division Algorithm</title>
 
-  <p>
-    When working with relatively small numbers, determining whether or not <m>d \mid n</m> is not a difficult task. But what if you were asked to determine if <m>27,182 \mid 314,159</m>? How would you do it?
-  </p>
+  <introduction>
+
+    <p>
+      When working with relatively small numbers, determining whether or not <m>d \mid n</m> is not a difficult task. But what if you were asked to determine if <m>27,182 \mid 314,159</m>? How would you do it?
+    </p>
+  
+  </introduction>
+
+  <subsection xml:id="sec-div-alg">
+    <title>The Division Algorithm</title>
+  
+    <p>
+      One way is list all of the multiples of the divisor until you meet or exceed the dividend. In our case: 
+    </p>
+
+    <p>
+      <md number="no">
+        <mrow> 27,182 \cdot \phantom{0} 1 \amp = 27,182 </mrow>
+        <mrow> 27,182 \cdot \phantom{0} 2 \amp = 54,364 </mrow>
+        <mrow> \amp \vdots </mrow>
+        <mrow> 27,182 \cdot 11 \amp = 299,002 </mrow>
+        <mrow> 27,182 \cdot 12 \amp = 326,184 </mrow>
+      </md>
+    </p>
+
+    <p>
+      In the penultimate step, the product was smaller than our target, but in the final step, the product exceeded it. That means that:
+    </p>
+
+    <p>
+      <md>27,182 \cdot 11 \lt 314,159 \lt 27,182 \cdot 12.</md>
+    </p>
+
+    <p>
+      But we can do better. Notice that:
+    </p>
+
+    <p>
+      <md>314,159 - 27,182 \cdot 11 = 15,751.</md>
+    </p>
+
+    <p>
+      This allows us to write:
+    </p>
+
+    <p>
+      <md>314,159 = 11 \cdot 27,182 + 5,751.</md>
+    </p>
+
+    <p>
+      In this context, <m>11</m> is known as the <em>quotient</em> and <m>5,751</m> is known as the <em>remainder</em> when <m>314,159</m> is divided by <m>5,751</m>. Note that this is the same quotient and remainder you would have gotten if you used the standard division-with-remainder process you learned when you were younger.
+    </p>
+
+    <p>
+      We formalize this idea below.
+    </p>
+
+    <theorem xml:id="thm-div-alg">
+      <title> The Division Algorithm </title>
+      <statement>
+        <p>
+          Let <m>n, d</m> be integers with <m>d > 0</m>. Then, there exist unique integers <m>q</m> and <m>r</m>, with <m>0 \leq r \lt d</m>, such that <m>n = qd + r</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>Omitted, but the intuition above is the important takeaway.</p>
+      </proof>
+    </theorem>
+    
+    <definition xml:id="def-div-alg">
+      <statement>
+        <p>
+          In the context of <xref ref="thm-div-alg"/>, <m>d</m> is called the <em>divisor</em>, <m>n</m> is called the <em>dividend</em>, <m>q</m> is called the <em>quotient</em>, and <m>r</m> is called the <em>remainder</em>. We write:
+        </p>
+
+        <p>
+          <md>
+            <mrow> q \amp = n \text{ div } d </mrow>
+            <mrow> r \amp = n \text{ mod } d </mrow>
+          </md>
+        </p>
+
+      </statement>
+    </definition>
+
+    <example xml:id="ex-div-alg">
+      <statement>
+        <p>
+          Find the quotient and remainder when:
+        </p>
+
+        <p>
+          <ol>
+            <li><p><m> 22</m> is divided by <m>7</m>.</p></li>
+            <li><p><m>-22</m> is divided by <m>7</m>.</p></li>
+          </ol>
+        </p>
+      </statement>
+
+      <hint>
+        <p>
+          Remember, <m>0 \leq r \lt d</m> by definition!
+        </p>
+      </hint>
+
+      <solution>
+        <p>
+          <ol>
+            <li><p>We write <m>22 = 3 \cdot 7 + 1</m>, and so <m>22 \text{ div } 7 = 3</m> and <m>22 \text{ mod } 7 = 1</m>.</p></li>
+            <li><p>We write <m>-22 = (-4) \cdot 7 + 6</m>, and so <m>-22 \text{ div } 7 = -4</m> and <m>-22 \text{ mod } 7 = 6</m>.</p></li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      The solution to part 2 may have been counterintuitive. Your instict may have been to write <m>-22 = (-3) \cdot 7 - 1</m>, similar to part (a). While this is perfectly valid, mathematically, this does not satisfy the condition in <xref ref="thm-div-alg"/> that <m>0 \leq r \lt d</m>. The remainder, under these conventions, is <em>always</em> nonnegative. This convention may seem arbitrary (and in some sense, it is), but it gives us a very nice property: for a fixed integer <m>d</m>, the function <m>f: \mathbb{Z} \to \{0, 1, \ldots, d\}</m> such that <m>f(n) = n \text{ mod } d</m> generates a <em>partition</em> of the integers. We will explore this in the next section. 
+    </p>
+
+    <example xml:id="ex-mod-practice">
+      <statement>
+        <p>
+          If today is Tuesday, what day will it be 1000 days from today?
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          The day of the week repeats every seven days. We're not really interested in <em>how many times</em> we cycle through those seven days, we just need to know  how many days we go over on the very last cycle. Said another way, we need to find the remainder when 1000 is divided by 7.
+        </p>
+
+        <p>
+          Note that <m>1000 = 142 \cdot 7 + 6</m>. Therefore, 1000 days after today occurs 142 weeks and 6 days from today. Six days after Tuesday is Monday, so if today is Tuesday, then it will be a Monday in 1000 days.
+        </p>
+      </solution>
+    </example>
+
+  </subsection>
+
+  <subsection xml:id="subsec-gcd">
+    <title>The Greatest Common Divisor</title>
+
+    <p>
+      We now switch gears and introduce one of the most important concepts in elementary number theory: the <em>greatest common divisor</em>.
+    </p>
+
+    <p>
+      Let <m>a</m> and <m>b</m> be integers. A <em>divisor</em> of <m>a</m> is an integer <m>d</m> such that <m>d \mid a</m>. A <em>common divisor</em> of <m>a</m> and <m>b</m> is a divisor of <m>a</m> and <m>b</m> simmultaneously. It stands to reason that if <m>a</m> and <m>b</m> have any common divisors, they have a largest one.
+    </p>
+
+    <definition xml:id="def-gcd">
+      <statement>
+        <p>
+          Let <m>a</m> and <m>b</m> be integers. The <em>greatest common divisor</em> of <m>a</m> and <m>b</m> is an integer satisfying the following properties:
+        </p>
+        <p>
+          <ol>
+            <li><p> <m>d \gt 0</m>; </p></li>
+            <li><p> <m>d \mid a</m> and <m>d \mid b</m>; </p></li>
+            <li><p> Whenever <m>e \mid a</m> and <m>e \mid b</m>, we have <m>e \mid d</m>. </p></li>
+          </ol>
+        </p>
+        <p>
+          We write <m>d = \mathrm{gcd}(a, b)</m>. If <m>\mathrm{gcd}(a, b) = 1</m>, we say that <m>a</m> and <m>b</m> are <em>relatively prime</em>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      Property 2 of <xref ref="def-gcd"/> asserts that <m>d</m> is a common divisor of <m>a</m> and <m>b</m>, while Property 3 asserts that <m>d</m> is the largest common divisor of <m>a</m> and <m>b</m> (since all other common divisors also divide <m>d</m>). 
+    </p>
+
+    <p>
+      It is not immediately clear from this definition that a gcd always exists or, assuming that it does exist, that it is unique. Proving this fact is actually rather challenging insofar as most proofs require a good deal of cleverness. We present one such proof below.
+    </p>
+
+    <theorem xml:id="thm-gcd-exists">
+      <statement>
+        <p>
+          Let <m>a</m> and <m>b</m> be integers that are not both zero. Then <m>d = \mathrm{gcd}(a, b)</m> exists and is unique.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Consider the set <m>S</m> of all <em>integer linear combinations</em> of <m>a</m> and <m>b</m>: 
+        </p>
+
+        <p>
+          <md>
+            S = \{ ax + by \mid x, y \in \mathbb{Z} \}.
+          </md>
+        </p>
+
+        <p>
+          Note that <m>S</m> contains at least one positive element, since it contains the integers <m>a</m>, <m>-a</m>, <m>b</m>, and <m>-b</m>. Let <m>d</m> be the smallest positive element in <m>S</m>. We claim that <m>d = \mathrm{gcd}(a, b)</m>.
+        </p>
+
+        <p>
+          By definition, <m>d \in S</m> implies <m>d = ax_0 + by_0</m> for some integers <m>x_0</m> and <m>y_0</m>. In order to show that <m>d = \mathrm{gcd}(a, b)</m>, we need to verify Properties 1, 2, and 3 of <xref ref="def-gcd"/>. We know that <m>d \gt 0</m> by definition, so Property 1 is satisfied. If any other integer <m>e</m>, if <m>e \mid a</m> and <m>e \mid b</m>, then <m>e \mid d</m> by <xref ref="thm-div-basics"/>, so Property 3 is satisfied. To show that <m>d \mid a</m>, we use the division algorithm (<xref ref="thm-div-alg"/>) to write:
+        </p>
+
+        <p>
+          <md>
+            a = qd + r,
+          </md>
+        </p>
+
+        <p>
+          where <m>0 \leq r \lt d</m>. Our goal therefore reduces to showing that <m>r = 0</m>. Indeed,
+        </p>
+
+        <p>
+          <md>
+            r = a - qd = a - q(ax_0 + by_0) = a(1 - qx_0) + b(-qy_0).
+          </md>
+        </p>
+
+        <p>
+          Thus, <m>r \in S</m>. But this is a contradiction, since we assumed <m>d</m> was the smallest positive element in <m>S</m> and we know <m>0 \leq r \lt d</m>. Thus, by contradiciton, we conclude <m>r = 0</m> and therefore <m>d \mid a</m>. The proof that <m>d \mid b</m> is identical. Thus, Property 2 is satisfied, and we conclude <m>d = \mathrm{gcd}(a, b)</m>.
+        </p>
+      </proof>
+    </theorem>
+
+    <p>
+      From the proof of <xref ref="thm-gcd-exists"/> we have the following exceedingly important corollary:
+    </p>
+
+    <corollary xml:id="cor-extended-gcd">
+      <statement>
+        <p> There exists integers <m>x</m> and <m>y</m> such that: </p>
+        <p><md> \mathrm{gcd}(a, b) = ax + by. </md></p>
+      </statement>
+    </corollary>
+
+    <p>
+      The corollary above will become extremely useful in a later section when we start to talk about the Extended Euclidean Algorithm and modular inverses. For now, it is an interesting observation.
+    </p>
+
+  </subsection>
+
+  <subsection xml:id="sec-euc-alg">
+    <title>The Euclidean Algorithm</title>
+
+    <p>
+      A naïve the calculate the greatest common divisor <m>\mathrm{gcd}(a, b)</m> is to calculate all of the divisors of <m>a</m> and of <m>b</m>, find the intersection of the two sets, and report the largest element. However, in most real-world applications of number theory (e.g., cryptography), we are working with <m>a, b &gt; 10^{200}</m>, so doing this is not feasible. It turns out, we can use the division algorithm to help us.
+    </p>
+
+    <theorem xml:id="thm-div-alg-gcd">
+      <statement>
+        <p>
+          Suppose <m>a</m> and <m>b</m> are positive integers with <m>a = bq + r</m>. Then, <m>\mathrm{gcd}(a, b) = \mathrm{gcd}(b, r)</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Our strategy will be to show that all of the common divisors are the same, and hence the greatest is also the same. As such, we will show that <m>d</m> is a common divisor of <m>a</m> and <m>b</m> if and only if it is a common divisor of <m>b</m> and <m>r</m>.
+        </p>
+
+        <p>
+          <m>(\implies)</m> Assume <m>d \mid a</m> and <m>d \mid b</m>. Since <m>a = bq + r</m>, we have <m>r = a - bq</m>. Then, <m>d \mid b \implies d \mid (bq)</m>. Since <m>d \mid a</m> and <m>d \mid (bq)</m>, we have <m>d \mid r</m>. Thus, <m>d \mid a</m> and <m>d \mid b</m> implies <m>d \mid b</m> and <m>d \mid r</m>.
+        </p>
+
+        <p>
+          <m>(\impliedby)</m> Left as an exercise. (Hint: Run the argument above in reverse.)
+        </p>
+      </proof>
+    </theorem>
+    
+    <p>
+      This is a truly amazing result, because it allows us to recursively simplify a hard problem until it is easy. From here on, our strategy for calculating <m>\mathrm{gcd}(a, b)</m> will be to successively long-divide until the process naturally terminates. In particular,
+    </p>
+
+    <p>
+      <ol>
+        <li><p> Long-divide <m>a</m> and <m>b</m> to get <m>a = bq + r</m> so that <m>\mathrm{gcd}(a, b) = \mathrm{gcd}(b, r)</m>. </p></li>
+        <li><p> Long-divide <m>b</m> and <m>r</m> to get <m>b = rq_1 + r_1</m> so that <m>\mathrm{gcd}(b, r) = \mathrm{gcd}(r, r_1)</m>. </p></li>
+        <li><p> Long-divide <m>r</m> and <m>r_1</m> to get <m>r = r_1q_2 + r_2</m> so that <m>\mathrm{gcd}(r, r_1) = \mathrm{gcd}(r_1, r_2)</m>. </p></li>
+        <li><p> Proceed inductively. </p></li>
+      </ol>
+    </p>
+
+    <p>
+      Eventually, this process will terminate with <m>r_n = q_nr_{n+1} + 0</m>, so that:
+    </p>
+
+    <p>
+      <md>
+        \mathrm{gcd}(a, b) = \mathrm{gcd}(r, r_1) = \cdots = \mathrm{gcd}(r_n, r_{n + 1}) = \mathrm{gcd}(r_{n+1}, 0) = r_{n+1}.
+      </md>
+    </p>
+    
+    <example xml:id="ex-euclid-alg">
+      <statement>
+        <p>
+          Find the greatest common divisor of <m>2024</m> and <m>748</m>.
+        </p>
+      </statement>
+      
+      <solution>
+        <p>
+          We run the algorithm above.
+        </p>
+
+        <p>
+          <md number="no">
+            <mrow> \mathrm{gcd}(2024, 748) \amp = \mathrm{gcd}(748, 528) \amp \text{since } \amp 2024 \amp = \amp 748 \cdot 2 + 528 \amp </mrow>
+            <mrow>                         \amp = \mathrm{gcd}(528, 220) \amp \text{since } \amp 748  \amp = \amp 528 \cdot 1 + 220 \amp </mrow>
+            <mrow>                         \amp = \mathrm{gcd}(220, 88)  \amp \text{since } \amp 528  \amp = \amp 220 \cdot 2 + 88  \amp </mrow>
+            <mrow>                         \amp = \mathrm{gcd}(88, 44)   \amp \text{since } \amp 220  \amp = \amp  88 \cdot 2 + 44  \amp </mrow>
+            <mrow>                         \amp = \mathrm{gcd}(44, 0)    \amp \text{since } \amp 88   \amp = \amp  44 \cdot 2 + 0   \amp </mrow>
+            <mrow>                         \amp = 44. \amp \amp \amp \amp \amp </mrow>
+          </md>
+        </p>
+
+        <p>
+          Hence <m>\mathrm{gcd}(2024, 748) = 44</m>.
+        </p>
+      </solution>
+  </example>
   
   <p>
-    One way is list all of the multiples of the divisor until you meet or exceed the dividend. In our case: 
+    The example illustrates how powerful this concept is. Even if you asked a computer to find the greatest common divisor of two large numbers by the naïve method, it would struggle to resolve quickly. However, you implemented the above algorithm, it would compute the gcd very fast.
   </p>
 
   <p>
-    <md number="no">
-      <mrow> 27,182 \cdot \phantom{0} 1 \amp = 27,182 </mrow>
-      <mrow> 27,182 \cdot \phantom{0} 2 \amp = 54,364 </mrow>
-      <mrow> \amp \vdots </mrow>
-      <mrow> 27,182 \cdot 11 \amp = 299,002 </mrow>
-      <mrow> 27,182 \cdot 12 \amp = 326,184 </mrow>
-    </md>
+    The algorithm defined above to compute the gcd through successive applications of the division algorithm is called <em>the Euclidean algorithm</em> and is very important in number theory.
   </p>
-
-  <p>
-    In the penultimate step, the product was smaller than our target, but in the final step, the product exceeded it. That means that:
-  </p>
-
-  <p>
-    <md>27,182 \cdot 11 \lt 314,159 \lt 27,182 \cdot 12.</md>
-  </p>
-
-  <p>
-    But we can do better. Notice that:
-  </p>
-
-  <p>
-    <md>314,159 - 27,182 \cdot 11 = 15,751.</md>
-  </p>
-
-  <p>
-    This allows us to write:
-  </p>
-
-  <p>
-    <md>314,159 = 11 \cdot 27,182 + 5,751.</md>
-  </p>
-
-  <p>
-    In this context, <m>11</m> is known as the <em>quotient</em> and <m>5,751</m> is known as the <em>remainder</em> when <m>314,159</m> is divided by <m>5,751</m>. Note that this is the same quotient and remainder you would have gotten if you used the standard division-with-remainder process you learned when you were younger.
-  </p>
-
-  <p>
-    We formalize this idea below.
-  </p>
-
-  <theorem xml:id="thm-div-alg">
-    <title> The Division Algorithm </title>
-    <statement>
-      <p>
-        Let <m>n, d</m> be integers with <m>d > 0</m>. Then, there exist unique integers <m>q</m> and <m>r</m>, with <m>0 \leq r \lt d</m>, such that <m>n = qd + r</m>.
-      </p>
-    </statement>
-
-    <proof>
-      <p>Omitted, but the intuition above is the important takeaway.</p>
-    </proof>
-  </theorem>
   
-  <definition xml:id="def-div-alg">
-    <statement>
-      <p>
-        In the context of <xref ref="thm-div-alg"/>, <m>d</m> is called the <em>divisor</em>, <m>n</m> is called the <em>dividend</em>, <m>q</m> is called the <em>quotient</em>, and <m>r</m> is called the <em>remainder</em>. We write:
-      </p>
-
-      <p>
-        <md>
-          <mrow> q \amp = n \text{ div } d </mrow>
-          <mrow> r \amp = n \text{ mod } d </mrow>
-        </md>
-      </p>
-
-    </statement>
-  </definition>
-
-  <example xml:id="ex-div-alg">
-    <statement>
-      <p>
-        Find the quotient and remainder when:
-      </p>
-
-      <p>
-        <ol>
-          <li><p><m> 22</m> is divided by <m>7</m>.</p></li>
-          <li><p><m>-22</m> is divided by <m>7</m>.</p></li>
-        </ol>
-      </p>
-    </statement>
-
-    <hint>
-      <p>
-        Remember, <m>0 \leq r \lt d</m> by definition!
-      </p>
-    </hint>
-
-    <solution>
-      <p>
-        <ol>
-          <li><p>We write <m>22 = 3 \cdot 7 + 1</m>, and so <m>22 \text{ div } 7 = 3</m> and <m>22 \text{ mod } 7 = 1</m>.</p></li>
-          <li><p>We write <m>-22 = (-4) \cdot 7 + 6</m>, and so <m>-22 \text{ div } 7 = -4</m> and <m>-22 \text{ mod } 7 = 6</m>.</p></li>
-        </ol>
-      </p>
-    </solution>
-  </example>
-
-  <p>
-    The solution to part 2 may have been counterintuitive to you. Your instict may have been to write <m>-22 = (-3) \cdot 7 - 1</m>, similar to part (a). While this is perfectly valid, mathematically, this does not satisfy the condition in <xref ref="thm-div-alg"/> that <m>0 \leq r \lt d</m>. The remainder, under these conventions, is <em>always</em> nonnegative. This convention may seem arbitrary (and in some sense, it is), but it gives us a very nice property: for a fixed integer <m>d</m>, the function <m>f: \mathbb{Z} \to \{0, 1, \ldots, d\}</m> such that <m>f(n) = n \text{ mod } d</m> generates a <em>partition</em> of the integers. We will explore this in the next section. 
-  </p>
-
-  <example xml:id="ex-mod-practice">
-    <statement>
-      <p>
-        If today is Tuesday, what day will it be 1000 days from today?
-      </p>
-    </statement>
-
-    <solution>
-      <p>
-        The day of the week repeats every seven days. We're not really interested in <em>how many times</em> we cycle through those seven days, we just need to know  how many days we go over on the very last cycle. Said another way, we need to find the remainder when 1000 is divided by 7.
-      </p>
-
-      <p>
-        Note that <m>1000 = 142 \cdot 7 + 6</m>. Therefore, 1000 days after today occurs 142 weeks and 6 days from today. Six days after Tuesday is Monday, so if today is Tuesday, then it will be a Monday in 1000 days.
-      </p>
-    </solution>
-  </example>
+  </subsection>
 
 </section>
