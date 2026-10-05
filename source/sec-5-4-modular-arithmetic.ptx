@@ -4,12 +4,96 @@
   <title>Modular Arithmetic</title>
 
   <introduction>
-    <p> Text of section. </p>
+    <p>
+      In the last section, we remaked that, for a fixed integer <m>d</m>, the function <m>f: \mathbb{Z} \to \{0, 1, \ldots, d\}</m> such that <m>f(n) = n \text{ mod } d</m> generates a <em>partition</em> of the integers. We make this idea formal here.
+    </p>
   
   </introduction>
+
+  <subsection xml:id="subsec-residue-classes">
+    <title>Residue Classes Modulo <m>m</m></title>
+
+    <p>
+      We'll illustrate this using an example. Consider the function <m>f : \mathbb{Z} \to \{0, 1, 2\}</m> given by <m>f(n) = n \text{ mod } 3</m>. Then, following <xref ref="thm-div-alg"/> closely, notice that:
+    </p>
+
+    <p>
+      <md number="no">
+        <mrow> f^{-1}(0) \amp = \{ \ldots, -6, -3, 0, 3, 6, \ldots \}, </mrow>
+        <mrow> f^{-1}(1) \amp = \{ \ldots, -5, -2, 1, 4, 7, \ldots \}, </mrow>
+        <mrow> f^{-1}(2) \amp = \{ \ldots, -4, -1, 2, 5, 8, \ldots \}. </mrow>
+      </md>
+    </p>
+
+    <p>
+      We see that <m>f^{-1}(0) \cup f^{-1}(1) \cup f^{-1}(2) = \mathbb{Z}</m> and that <m>f^{-1}(k) \cap f^{-1}(j) = \varnothing</m> for any <m>k \neq j</m>. As we saw in Homework 4, this implies that division by 3 <em>partitions</em> the integers into nonoverlapping sets. We call these sets <em>residue classes modulo 3</em>.
+    </p>
+
+    <p>
+      Since all of the numbers in a given residue class <q>behave</q> the same way under <m>f</m>, we might consider each of these numbers to be <q>equivalent</q> in some sense. For example, since <m>1 \text{ mod } 3 = 7 \text{ mod } 3</m>, <m>1</m> and <m>7</m> are the same up to division by <m>3</m>. We capture this equivalence with the following definition.
+    </p>
+
+    <definition xml:id="def-congruence">
+      <statement>
+        <p>
+          If <m>a</m> and <m>b</m> are integers and <m>m</m> is a positive integer, then <em><m>a</m> is congruent to <m>b</m> modulo <m>m</m></em> if <m>m \mid a - b</m>. If <m>a</m> is congruent to <m>b</m> modulo <m>m</m>, we write <m>a \equiv b \; (\text{mod } m)</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <example xml:id="ex-congruence">
+    <statement>
+      <p>
+        Determine whether
+      </p>
+
+      <p>
+        <ol>
+          <li><p><m>22</m> is congruent to <m>7</m> modulo <m>5</m>.</p></li>
+          <li><p><m>24</m> is congruent to <m>14</m> module <m>6</m>.</p></li>
+        </ol>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        <ol>
+          <li><p>Since <m>5</m> divides <m>22 - 7 = 15</m>, we have <m>22 \equiv 7 \, (\text{mod } 5)</m>.</p></li>
+          <li><p>Since <m>6</m> does not divide <m>24 - 14 = 10</m>, we have <m>24 \not\equiv 14 \, (\text{mod } 5)</m>.</p></li>
+        </ol>
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    <xref ref="def-congruence"/> tells us how to map between the world of congruences and the world of equations. Being able quickly code switch between the two is an important skill in number theory.
+  </p>
+
+  <theorem xml:id="thm-congruence-equation">
+    <statement>
+      <p>
+        Let <m>a</m> and <m>b</m> be integers and <m>m</m> be a positive integer. Then <m>a</m> is congruent to <m>b</m> modulo <m>m</m> if any only if there exists an integer <m>k</m> such that <m>a = b + km</m>.
+      </p>
+    </statement>
+
+    <proof>
+      <p></p>
+      <p>
+        <m>(\implies)</m> Suppose <m>a \equiv b \, (\text{mod }m)</m>. Then <m>m \mid a - b</m>, and so there exists an integer <m>k</m> such that <m>a - b = km</m>. Therefore, <m>a = b + km</m>.
+      </p>
+      <p>
+        <m>(\impliedby)</m> Suppose <m>a = b + km</m> for some integer <m>k</m>. Then equivalently <m>a - b = km</m>, and hence <m>m \mid a - b</m>. Hence, <m>a \equiv b \, (\text{mod }m)</m>.
+      </p>
+    </proof>
+  </theorem>
   
-  <subsection>
-    <!-- <idx><h>properties</h></idx> -->
+  <p>
+    More coming soon...
+  </p>
+  
+  </subsection>
+  
+  <!-- <subsection>
     <title>Properties</title>
 
     <p>
@@ -19,13 +103,12 @@
   </subsection>
 
   <subsection>
-    <!-- <idx><h>solving congruences</h></idx> -->
     <title>Solving Congruences</title>
 
     <p>
       Text of subsection.
     </p>
   
-  </subsection>
+  </subsection>  -->
 
 </section>

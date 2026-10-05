@@ -138,8 +138,10 @@
       <p>
         <ol>
           <li><p> If <m>a \mid b</m> and <m>a \mid c</m>, then <m>a \mid (b + c)</m>. </p></li>
+          <li><p> If <m>a \mid b</m> and <m>a \mid c</m>, then <m>a \mid (bx + cy)</m> for any integers <m>x</m> and <m>y</m>. </p></li>
           <li><p> If <m>a \mid b</m>, then <m>a \mid bc</m> for any integer <m>c</m>. </p></li>
           <li><p> If <m>a \mid b</m> and <m>b \mid c</m>, then <m>a \mid c</m>. </p></li>
+          <li><p> If <m>a \mid b</m> and <m>b \mid a</m>, then <m>a \pm b</m>. </p></li>
         </ol>
       </p>
     </statement>
@@ -159,11 +161,21 @@
           </li>
           <li>
             <p>
+              Left as an exercise.
+            </p>
+          </li>
+          <li>
+            <p>
               Suppose <m>a \mid b</m>. Then there exists an integer <m>k</m> such that <m>b = ka</m>. Then,
               
               <md>bc = (ka)c = (kc)a,</md>
               
               and so <m>a \mid bc</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Left as an exercise.
             </p>
           </li>
           <li>
