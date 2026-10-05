@@ -205,13 +205,17 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-5-number-theory-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-5-1-divisibility.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Divisibility</span></a></div></li>
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-5-2-primes.html" class="internal"><span class="codenumber">5.2</span> <span class="title">The Prime Numbers</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-5-3-division-algorithm.html" class="internal"><span class="codenumber">5.3</span> <span class="title">The Division Algorithm</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-5-3-division-algorithm.html" class="internal"><span class="codenumber">5.3</span> <span class="title">The Division Algorithm</span></a></div>
+<ul id="ptx-toc-group-sec-5-3-division-algorithm" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-3-division-algorithm.html#sec-div-alg" class="internal"><span class="codenumber">5.3.1</span> <span class="title">The Division Algorithm</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-3-division-algorithm.html#subsec-gcd" class="internal"><span class="codenumber">5.3.2</span> <span class="title">The Greatest Common Divisor</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-3-division-algorithm.html#sec-euc-alg" class="internal"><span class="codenumber">5.3.3</span> <span class="title">The Euclidean Algorithm</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-5-3-modular-arithmetic.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Modular Arithmetic</span></a></div>
-<ul id="ptx-toc-group-sec-5-3-modular-arithmetic" class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-3-modular-arithmetic.html#sec-5-3-modular-arithmetic-3" class="internal"><span class="codenumber">5.4.1</span> <span class="title">Properties</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-3-modular-arithmetic.html#sec-5-3-modular-arithmetic-4" class="internal"><span class="codenumber">5.4.2</span> <span class="title">Solving Congruences</span></a></div></li>
-</ul>
+<ul id="ptx-toc-group-sec-5-3-modular-arithmetic" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-3-modular-arithmetic.html#subsec-residue-classes" class="internal"><span class="codenumber">5.4.1</span> <span class="title">Residue Classes Modulo <span class="process-math">\(m\)</span></span></a></div></li></ul>
 </li>
 </ul>
 </li>
@@ -233,7 +237,7 @@ eBookConfig.enable_chatcodes =  false;
 </article>
 <div class="para" id="sec-5-2-primes-4">Said another way, if <span class="process-math">\(p\)</span> is prime, then <span class="process-math">\(n \mid p\)</span> implies <span class="process-math">\(n \in \{-p, -1, 1, p\}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-5-2-primes-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-5-2-primes-5">You might ask why <span class="process-math">\(1\)</span> is not considered prime. Hold on to this quesiton.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-5-2-primes-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-5-2-primes-5">You might ask why <span class="process-math">\(1\)</span> is not considered prime. Hold on to this question.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-5-2-primes-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="sec-5-2-primes-6">To (naïvly) check if a number <span class="process-math">\(n\)</span> is prime, you would need to check if <span class="process-math">\(k \mid n\)</span> for every positive integer <span class="process-math">\(k = 2, \ldots, n - 1\text{.}\)</span> But this is far more work than is actually needed. In fact, it turns out that every positive integer is divisible by at least one prime, and therefore one need only check if <span class="process-math">\(p \mid n\)</span> for each of the primes <span class="process-math">\(p \lt n\text{.}\)</span> This is illustrated by the following theorem.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-5-2-primes-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
