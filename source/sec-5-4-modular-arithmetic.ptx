@@ -211,17 +211,17 @@
 
     <exercise xml:id="ex-mod-arithmetic-power-2">
       <statement>
-        <p> Find the remainder when <m>3^{271}</m> is divided by <m>11</m>. </p>
+        <p> Find the remainder when <m>5^{271}</m> is divided by <m>7</m>. </p>
       </statement>
       <hint>
-        <p> Exploring the powers of <m>3</m> modulo <m>11</m> may take a littler longer than it did in the previous example. Don't give up! </p>
+        <p> Exploring the powers of <m>5</m> modulo <m>7</m> may take a littler longer than it did in the previous example. Don't give up! </p>
       </hint>
     </exercise>
 
     <example>
       <statement>
         <p>
-          If you did <xref ref="ex-mod-arithmetic-power-2"/>, you hopefully found that there is a number <m>n</m> such that <m>3^{n} \equiv 1 \, (\text{mod } 11)</m>. In <xref ref="ex-mod-arithmetic-power"/>, we found that <m>2^{4} \equiv 1 \, (\text{mod } 5)</m>. It turns out, the base does not matter; <m>a^{n} \equiv 1 \, (\text{mod } 11)</m> for any <m>a</m> (for the particular value of <m>n</m> you found in <xref ref="ex-mod-arithmetic-power-2"/>), and simialry <m>a^{4} \equiv 1 \, (\text{mod } 5)</m> for any <m>a</m>.
+          If you did <xref ref="ex-mod-arithmetic-power-2"/>, you hopefully found that there is a number <m>n</m> such that <m>5^{n} \equiv 1 \, (\text{mod } 7)</m>. In <xref ref="ex-mod-arithmetic-power"/>, we found that <m>2^{4} \equiv 1 \, (\text{mod } 5)</m>. It turns out, the base does not matter; <m>a^{n} \equiv 1 \, (\text{mod } 7)</m> for any <m>a</m> (for the particular value of <m>n</m> you found in <xref ref="ex-mod-arithmetic-power-2"/>), and simialry <m>a^{4} \equiv 1 \, (\text{mod } 5)</m> for any <m>a</m>.
         </p>
         <p>
           Can you conjecture a relationship between the exponent and the modulus? Does it hold for any modulus? For what kinds of moduli does it seem to hold?
