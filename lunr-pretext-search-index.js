@@ -646,7 +646,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.4",
   "title": "Modular Arithmetic",
-  "body": " Modular Arithmetic   In the last section, we remaked that, for a fixed integer , the function such that generates a partition of the integers. We make this idea formal here.    Residue Classes Modulo  We'll illustrate this using an example. Consider the function given by . Then, following closely, notice that:     We see that and that for any . As we saw in Homework 4, this implies that division by 3 partitions the integers into nonoverlapping sets. We call these sets residue classes modulo 3 .  Since all of the numbers in a given residue class behave the same way under , we might consider each of these numbers to be equivalent in some sense. For example, since , and are the same up to division by . We capture this equivalence with the following definition.    If and are integers and is a positive integer, then is congruent to modulo if . If is congruent to modulo , we write .      Determine whether    is congruent to modulo .  is congruent to module .        Since divides , we have .  Since does not divide , we have .       tells us how to map between the world of congruences and the world of equations. Being able quickly code switch between the two is an important skill in number theory.    Let and be integers and be a positive integer. Then is congruent to modulo if any only if there exists an integer such that .      Suppose . Then , and so there exists an integer such that . Therefore, .   Suppose for some integer . Then equivalently , and hence . Hence, .    More coming soon...    "
+  "body": " Modular Arithmetic   In the last section, we remaked that, for a fixed integer , the function such that generates a partition of the integers. We make this idea formal here.    Residue Classes Modulo  We'll illustrate this using an example. Consider the function given by . Then, following closely, notice that:     We see that and that for any . As we saw in Homework 4, this implies that division by 3 partitions the integers into nonoverlapping sets. We call these sets residue classes modulo 3 .  Since all of the numbers in a given residue class behave the same way under , we might consider each of these numbers to be equivalent in some sense. For example, since , and are the same up to division by . We capture this equivalence with the following definition.    Modular Arithmetic    If and are integers and is a positive integer, then is congruent to modulo if . If is congruent to modulo , we write .      Determine whether    is congruent to modulo .  is congruent to module .        Since divides , we have .  Since does not divide , we have .       tells us how to map between the world of congruences and the world of equations. Being able quickly code switch between the two is an important skill in number theory.    Let and be integers and be a positive integer. Then is congruent to modulo if any only if there exists an integer such that .      Suppose . Then , and so there exists an integer such that . Therefore, .   Suppose for some integer . Then equivalently , and hence . Hence, .    If this is really a meaningful notion of equivalence, then it should preserve some of the arithmetic structure that we're used to from normal quality. That is, we should be able to add, subtract, and multiply. And indeed, we can!    Suppose and . Then:     .   .   .      Homework.    The above is actually quite powerful. In standard arithmetic, in order to preserve equality, we have to do the same thing to both sides of an equation. In modular arithmetic, The numbers you apply to each side of a congruence can be different, as long as they are part of the same residue class modulo . This allows us to answer questions about extremely large numbers computationally efficiently.    Find the remainder when is divided by .    Note that you could just use the division algorithm. These numbers are not large, so it would not take too much time. However, to illustrate the utility of , we'll use modular arithmetic.  Note that we can write exlicitly the decimal expansion of :     Now, to find the remainder upon division by , we need to find . That is, we need to find such that . The reason the decimal expansion is useful here is because . Moreover, from , for any positive integer . So:     It turns out, is divisible by .      Find the remainder when is divided by .    The reason a decimal expansion (i.e., base 10) was so useful in was because . What base might be useful here?      Find the remainder when is divided by .    Here's an example of a type of number with which you cannot reasonably use the division algorithm. , which is far too large to deal with by hand in regular settings. However, with modular arithmetic, it is much more manageable. Let's look at the first few powers of modulo 5:     So, ! We can use this to make our problem much, much easier. Notice that , and so if , then:     And so has remainder when divided by .      Find the remainder when is divided by .    Exploring the powers of modulo may take a littler longer than it did in the previous example. Don't give up!      If you did , you hopefully found that there is a number such that . In , we found that . It turns out, the base does not matter; for any (for the particular value of you found in ), and simialry for any .  Can you conjecture a relationship between the exponent and the modulus? Does it hold for any modulus? For what kinds of moduli does it seem to hold?    Homework.     leads to a natural question. We can add, subtract, and multiply numbers in modular arithmetic. Can we divide? It turns out, not always, but more frequently than you might think. Hold on to this question, as this will be one of the topics for next week.   "
 },
 {
   "id": "def-congruence",
@@ -674,6 +674,60 @@ var ptx_lunr_docs = [
   "number": "5.4.3",
   "title": "",
   "body": "  Let and be integers and be a positive integer. Then is congruent to modulo if any only if there exists an integer such that .      Suppose . Then , and so there exists an integer such that . Therefore, .   Suppose for some integer . Then equivalently , and hence . Hence, .   "
+},
+{
+  "id": "thm-mod-arith",
+  "level": "2",
+  "url": "sec-5-3-modular-arithmetic.html#thm-mod-arith",
+  "type": "Theorem",
+  "number": "5.4.4",
+  "title": "",
+  "body": "  Suppose and . Then:     .   .   .      Homework.   "
+},
+{
+  "id": "ex-mod-arithmetic-add",
+  "level": "2",
+  "url": "sec-5-3-modular-arithmetic.html#ex-mod-arithmetic-add",
+  "type": "Example",
+  "number": "5.4.5",
+  "title": "",
+  "body": "  Find the remainder when is divided by .    Note that you could just use the division algorithm. These numbers are not large, so it would not take too much time. However, to illustrate the utility of , we'll use modular arithmetic.  Note that we can write exlicitly the decimal expansion of :     Now, to find the remainder upon division by , we need to find . That is, we need to find such that . The reason the decimal expansion is useful here is because . Moreover, from , for any positive integer . So:     It turns out, is divisible by .   "
+},
+{
+  "id": "ex-mod-arithmetic-add-2",
+  "level": "2",
+  "url": "sec-5-3-modular-arithmetic.html#ex-mod-arithmetic-add-2",
+  "type": "Checkpoint",
+  "number": "5.4.6",
+  "title": "",
+  "body": "  Find the remainder when is divided by .    The reason a decimal expansion (i.e., base 10) was so useful in was because . What base might be useful here?   "
+},
+{
+  "id": "ex-mod-arithmetic-power",
+  "level": "2",
+  "url": "sec-5-3-modular-arithmetic.html#ex-mod-arithmetic-power",
+  "type": "Example",
+  "number": "5.4.7",
+  "title": "",
+  "body": "  Find the remainder when is divided by .    Here's an example of a type of number with which you cannot reasonably use the division algorithm. , which is far too large to deal with by hand in regular settings. However, with modular arithmetic, it is much more manageable. Let's look at the first few powers of modulo 5:     So, ! We can use this to make our problem much, much easier. Notice that , and so if , then:     And so has remainder when divided by .   "
+},
+{
+  "id": "ex-mod-arithmetic-power-2",
+  "level": "2",
+  "url": "sec-5-3-modular-arithmetic.html#ex-mod-arithmetic-power-2",
+  "type": "Checkpoint",
+  "number": "5.4.8",
+  "title": "",
+  "body": "  Find the remainder when is divided by .    Exploring the powers of modulo may take a littler longer than it did in the previous example. Don't give up!   "
+},
+{
+  "id": "subsec-mod-arith-13",
+  "level": "2",
+  "url": "sec-5-3-modular-arithmetic.html#subsec-mod-arith-13",
+  "type": "Example",
+  "number": "5.4.9",
+  "title": "",
+  "body": "  If you did , you hopefully found that there is a number such that . In , we found that . It turns out, the base does not matter; for any (for the particular value of you found in ), and simialry for any .  Can you conjecture a relationship between the exponent and the modulus? Does it hold for any modulus? For what kinds of moduli does it seem to hold?    Homework.   "
 },
 {
   "id": "backmatter-2",
