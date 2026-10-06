@@ -33,6 +33,11 @@
       Since all of the numbers in a given residue class <q>behave</q> the same way under <m>f</m>, we might consider each of these numbers to be <q>equivalent</q> in some sense. For example, since <m>1 \text{ mod } 3 = 7 \text{ mod } 3</m>, <m>1</m> and <m>7</m> are the same up to division by <m>3</m>. We capture this equivalence with the following definition.
     </p>
 
+  </subsection>
+
+  <subsection xml:id="subsec-mod-arith">
+    <title>Modular Arithmetic</title>
+
     <definition xml:id="def-congruence">
       <statement>
         <p>
@@ -42,73 +47,195 @@
     </definition>
 
     <example xml:id="ex-congruence">
-    <statement>
-      <p>
-        Determine whether
-      </p>
+      <statement>
+        <p>
+          Determine whether
+        </p>
 
-      <p>
-        <ol>
-          <li><p><m>22</m> is congruent to <m>7</m> modulo <m>5</m>.</p></li>
-          <li><p><m>24</m> is congruent to <m>14</m> module <m>6</m>.</p></li>
-        </ol>
-      </p>
-    </statement>
+        <p>
+          <ol>
+            <li><p><m>22</m> is congruent to <m>7</m> modulo <m>5</m>.</p></li>
+            <li><p><m>24</m> is congruent to <m>14</m> module <m>6</m>.</p></li>
+          </ol>
+        </p>
+      </statement>
 
-    <solution>
-      <p>
-        <ol>
-          <li><p>Since <m>5</m> divides <m>22 - 7 = 15</m>, we have <m>22 \equiv 7 \, (\text{mod } 5)</m>.</p></li>
-          <li><p>Since <m>6</m> does not divide <m>24 - 14 = 10</m>, we have <m>24 \not\equiv 14 \, (\text{mod } 5)</m>.</p></li>
-        </ol>
-      </p>
-    </solution>
-  </example>
-
-  <p>
-    <xref ref="def-congruence"/> tells us how to map between the world of congruences and the world of equations. Being able quickly code switch between the two is an important skill in number theory.
-  </p>
-
-  <theorem xml:id="thm-congruence-equation">
-    <statement>
-      <p>
-        Let <m>a</m> and <m>b</m> be integers and <m>m</m> be a positive integer. Then <m>a</m> is congruent to <m>b</m> modulo <m>m</m> if any only if there exists an integer <m>k</m> such that <m>a = b + km</m>.
-      </p>
-    </statement>
-
-    <proof>
-      <p></p>
-      <p>
-        <m>(\implies)</m> Suppose <m>a \equiv b \, (\text{mod }m)</m>. Then <m>m \mid a - b</m>, and so there exists an integer <m>k</m> such that <m>a - b = km</m>. Therefore, <m>a = b + km</m>.
-      </p>
-      <p>
-        <m>(\impliedby)</m> Suppose <m>a = b + km</m> for some integer <m>k</m>. Then equivalently <m>a - b = km</m>, and hence <m>m \mid a - b</m>. Hence, <m>a \equiv b \, (\text{mod }m)</m>.
-      </p>
-    </proof>
-  </theorem>
-  
-  <p>
-    More coming soon...
-  </p>
-  
-  </subsection>
-  
-  <!-- <subsection>
-    <title>Properties</title>
+      <solution>
+        <p>
+          <ol>
+            <li><p>Since <m>5</m> divides <m>22 - 7 = 15</m>, we have <m>22 \equiv 7 \, (\text{mod } 5)</m>.</p></li>
+            <li><p>Since <m>6</m> does not divide <m>24 - 14 = 10</m>, we have <m>24 \not\equiv 14 \, (\text{mod } 5)</m>.</p></li>
+          </ol>
+        </p>
+      </solution>
+    </example>
 
     <p>
-      Text of subsection.
+      <xref ref="def-congruence"/> tells us how to map between the world of congruences and the world of equations. Being able quickly code switch between the two is an important skill in number theory.
+    </p>
+
+    <theorem xml:id="thm-congruence-equation">
+      <statement>
+        <p>
+          Let <m>a</m> and <m>b</m> be integers and <m>m</m> be a positive integer. Then <m>a</m> is congruent to <m>b</m> modulo <m>m</m> if any only if there exists an integer <m>k</m> such that <m>a = b + km</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p></p>
+        <p>
+          <m>(\implies)</m> Suppose <m>a \equiv b \, (\text{mod }m)</m>. Then <m>m \mid a - b</m>, and so there exists an integer <m>k</m> such that <m>a - b = km</m>. Therefore, <m>a = b + km</m>.
+        </p>
+        <p>
+          <m>(\impliedby)</m> Suppose <m>a = b + km</m> for some integer <m>k</m>. Then equivalently <m>a - b = km</m>, and hence <m>m \mid a - b</m>. Hence, <m>a \equiv b \, (\text{mod }m)</m>.
+        </p>
+      </proof>
+    </theorem>
+    
+    <p>
+      If this is really a meaningful notion of equivalence, then it should preserve some of the arithmetic structure that we're used to from normal quality. That is, we should be able to add, subtract, and multiply. And indeed, we can!
+    </p>
+
+    <theorem xml:id="thm-mod-arith">
+      <statement>
+        <p>
+          Suppose <m>a \equiv a' \, (\text{mod } m)</m> and <m>b \equiv b' \, (\text{mod } m)</m>. Then:
+        </p>
+        <p>
+          <ol>
+            <li><p> <m>a + b \equiv a' + b' \, (\text{mod } m)</m>. </p></li>
+            <li><p> <m>a - b \equiv a' - b' \, (\text{mod } m)</m>. </p></li>
+            <li><p> <m>ab \equiv a'b' \, (\text{mod } m)</m>. </p></li>
+          </ol>
+        </p>
+      </statement>
+
+      <proof>
+        <p>Homework.</p>
+      </proof>
+    </theorem>
+
+    <p>
+      The above is actually quite powerful. In standard arithmetic, in order to preserve equality, we have to do the same thing to both sides of an equation. In modular arithmetic, The numbers you apply to each side of a congruence can be different, as long as they are part of the same residue class modulo <m>m</m>. This allows us to answer questions about extremely large numbers computationally efficiently.
+    </p>
+    
+    <example xml:id="ex-mod-arithmetic-add">
+      <statement>
+        <p> Find the remainder when <m>2718</m> is divided by <m>9</m>. </p>
+      </statement>
+
+      <solution>
+        <p>
+          Note that you could just use the division algorithm. These numbers are not large, so it would not take too much time. However, to illustrate the utility of <xref ref="thm-mod-arith"/>, we'll use modular arithmetic.
+        </p>
+
+        <p>
+          Note that we can write exlicitly the decimal expansion of <m>2718</m>:
+        </p>
+
+        <p>
+          <md>
+            2718 = 2 \cdot 10^3 + 7 \cdot 10^2 + 1 \cdot 10^1 + 8.
+          </md>
+        </p>
+
+        <p>
+          Now, to find the remainder upon division by <m>9</m>, we need to find <m>2719 \text{ mod } 9</m>. That is, we need to find <m>x</m> such that <m>x \equiv 2718 \, (\text{mod } 9)</m>. The reason the decimal expansion is useful here is because <m>10 \equiv 1 \, (\text{mod } 9)</m>. Moreover, from <xref ref="thm-mod-arith"/>, <m>10^n \equiv 1^n \equiv 1 \, (\text{mod } 9)</m> for any positive integer <m>n</m>. So:
+        </p>
+
+        <p>
+          <md number="no">
+            <mrow> x \amp \equiv 2718 \amp (\text{mod } 9) </mrow>
+            <mrow>   \amp \equiv 2 \cdot 10^3 + 7 \cdot 10^2 + 1 \cdot 10^1 + 8 \amp (\text{mod } 9) </mrow>
+            <mrow>   \amp \equiv 2 \cdot 1^3 + 7 \cdot 1^2 + 1 \cdot 1^1 + 8 \amp (\text{mod } 9) </mrow>
+            <mrow>   \amp \equiv 2 + 7 + 1 + 8 \amp (\text{mod } 9) </mrow>
+            <mrow>   \amp \equiv 18 \amp (\text{mod } 9) </mrow>
+            <mrow>   \amp \equiv 0 \amp (\text{mod } 9) </mrow>
+          </md>
+        </p>
+
+        <p>
+          It turns out, <m>2718</m> is divisible by <m>9</m>.
+        </p>
+      </solution>
+    </example>
+
+    <exercise xml:id="ex-mod-arithmetic-add-2">
+      <statement>
+        <p> Find the remainder when <m>314159</m> is divided by <m>8</m>. </p>
+      </statement>
+      <hint>
+        <p> The reason a decimal expansion (i.e., base 10) was so useful in <xref ref="ex-mod-arithmetic-add"/> was because <m>10 \equiv 1 \, (\text{mod } 9)</m>. What base might be useful here? </p>
+      </hint>
+    </exercise>
+
+    <example xml:id="ex-mod-arithmetic-power">
+      <statement>
+        <p> Find the remainder when <m>2^{314}</m> is divided by <m>5</m>. </p>
+      </statement>
+      <solution>
+        <p>
+          Here's an example of a type of number with which you cannot reasonably use the division algorithm. <m>2^{314} \approx 10^{94}</m>, which is far too large to deal with by hand in regular settings. However, with modular arithmetic, it is much more manageable. Let's look at the first few powers of <m>2</m> modulo 5: 
+        </p>
+
+        <p>
+          <md number="no">
+            <mrow> 2^1 \amp = 2 \equiv 2 \amp (\text{mod } 5)  </mrow>
+            <mrow> 2^2 \amp = 4 \equiv 4 \amp (\text{mod } 5)  </mrow>
+            <mrow> 2^3 \amp = 8 \equiv 3 \amp (\text{mod } 5)  </mrow>
+            <mrow> 2^4 \amp = 16 \equiv 1 \amp (\text{mod } 5)  </mrow>
+          </md>
+        </p>
+
+        <p>
+          So, <m>2^4 \equiv 1 \, (\text{mod } 5)</m>! We can use this to make our problem much, much easier. Notice that <m>314 = 4 \cdot 78 + 2</m>, and so if <m>x \equiv 2^{314} \, (\text{mod }5)</m>, then:
+        </p>
+
+        <p>
+          <md number="no">
+            <mrow> x \amp\equiv 2^{314} \amp (\text{mod } 5) </mrow>
+            <mrow>   \amp\equiv 2^{4 \cdot 78 + 2} \amp (\text{mod } 5) </mrow>
+            <mrow>   \amp\equiv 2^{4 \cdot 78} \cdot 2^{2} \amp (\text{mod } 5) </mrow>
+            <mrow>   \amp\equiv (2^{4})^{78} \cdot 2^{2} \amp (\text{mod } 5) </mrow>
+            <mrow>   \amp\equiv (1)^{78} \cdot 2^{2} \amp (\text{mod } 5) </mrow>
+            <mrow>   \amp\equiv 2^{2} \amp (\text{mod } 5) </mrow>
+            <mrow>   \amp\equiv 4 \amp (\text{mod } 5) </mrow>
+          </md>
+        </p>
+
+        <p>
+          And so <m>2^{314}</m> has remainder <m>4</m> when divided by <m>5</m>.
+        </p>
+      </solution>
+    </example>
+
+    <exercise xml:id="ex-mod-arithmetic-power-2">
+      <statement>
+        <p> Find the remainder when <m>3^{271}</m> is divided by <m>11</m>. </p>
+      </statement>
+      <hint>
+        <p> Exploring the powers of <m>3</m> modulo <m>11</m> may take a littler longer than it did in the previous example. Don't give up! </p>
+      </hint>
+    </exercise>
+
+    <example>
+      <statement>
+        <p>
+          If you did <xref ref="ex-mod-arithmetic-power-2"/>, you hopefully found that there is a number <m>n</m> such that <m>3^{n} \equiv 1 \, (\text{mod } 11)</m>. In <xref ref="ex-mod-arithmetic-power"/>, we found that <m>2^{4} \equiv 1 \, (\text{mod } 5)</m>. It turns out, the base does not matter; <m>a^{n} \equiv 1 \, (\text{mod } 11)</m> for any <m>a</m> (for the particular value of <m>n</m> you found in <xref ref="ex-mod-arithmetic-power-2"/>), and simialry <m>a^{4} \equiv 1 \, (\text{mod } 5)</m> for any <m>a</m>.
+        </p>
+        <p>
+          Can you conjecture a relationship between the exponent and the modulus? Does it hold for any modulus? For what kinds of moduli does it seem to hold?
+        </p>
+      </statement>
+      <solution>
+        <p> Homework. </p>
+      </solution>
+    </example>
+
+    <p>
+      <xref ref="thm-mod-arith"/> leads to a natural question. We can add, subtract, and multiply numbers in modular arithmetic. Can we divide? It turns out, not always, but more frequently than you might think. Hold on to this question, as this will be one of the topics for next week.
     </p>
   
   </subsection>
-
-  <subsection>
-    <title>Solving Congruences</title>
-
-    <p>
-      Text of subsection.
-    </p>
-  
-  </subsection>  -->
 
 </section>
