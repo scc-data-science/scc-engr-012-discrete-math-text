@@ -25,10 +25,14 @@
     </p>
   </introduction>
 
-  <!-- include sections -->
+  <!-- Week 1 -->
   <xi:include href="sec-5-1-divisibility.ptx" />
   <xi:include href="sec-5-2-primes.ptx" />
   <xi:include href="sec-5-3-division-algorithm.ptx" />
   <xi:include href="sec-5-4-modular-arithmetic.ptx" />
+  <!-- Week 2 -->
+  <xi:include href="sec-5-5-modular-division.ptx" />
+  <xi:include href="sec-5-6-diophantine-equations.ptx" />
+  <xi:include href="sec-5-7-sunzi.ptx" />
 
 </chapter>
