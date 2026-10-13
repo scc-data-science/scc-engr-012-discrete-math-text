@@ -39,7 +39,7 @@
 
     <p>
       <ol>
-        <li><p> Solve <m>ax \equiv b</m> (mod <m>m</m>) to get <m>a^{-1}</m>. </p></li>
+        <li><p> Solve <m>ax \equiv 1</m> (mod <m>m</m>) to get <m>a^{-1}</m>. </p></li>
         <li><p> Multiple by <m>a^{-1}</m>. </p></li>
       </ol>
     </p>
@@ -135,7 +135,7 @@
     </example>
 
     <p>
-      The strategy used in <xref ref="ex-div-by-2"/> works for small numbers, but if we're working with <m>m \equiv 10^{100}</m>, it is not feasible. In those cases, we can use the Euclidean algorithm!
+      The strategy used in <xref ref="ex-div-by-2"/> works for small numbers, but if we're working with <m>m \approx 10^{100}</m>, it is not feasible. In those cases, we can use the Euclidean algorithm!
     </p>
 
     <example xml:id="ex-div-by-17">
