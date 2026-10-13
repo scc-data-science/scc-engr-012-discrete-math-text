@@ -772,7 +772,25 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.6",
   "title": "Diophantine Equations",
-  "body": " Diophantine Equations   .    Equations of the form (mod )  .    Equations of the form (mod )  .    Beyond Linearity  .   "
+  "body": " Diophantine Equations   A special class of equations that are of interest to number theorists are those called Diophantine equations , which are polynomial equation with integer coefficients for which only integer solutions are of interest.  These range quite substantially in difficulty. Perhaps the most famous Diophantine equation is the equation:     for unkowns . The solutions to this equation are the Pythagorean triples . Some solutions are , , etc. In fact, you could probably name quite a few solutions to this equation off the top of your head.  However, if we increase the exponents, even by one, the problem suddenly becomes much harder.   Fermat's Last Theorem   The Diophantine equation has no nontrivial solutions for .    Definitely not happening.    Even though the two equations above are very similar, one has infinitely many solutions, and the other has none. One is trivial to exhibit solutions, and the other took almost 400 years to prove that no solution existed.  As you might imagine, it is very difficult in general to solve Diophantine equations, in much the same way as it is very difficult to solve differential equations in calculus. However, there are a few distinct classes of Diophantine equations that we definitely can solve. We explore a survey of such problems below.    Equations of the form (mod )  .    Equations of the form (mod )  .    Beyond Linearity  .   Taxicab Numbers   Find a solution to for distinct.    .     "
+},
+{
+  "id": "thm-flt",
+  "level": "2",
+  "url": "sec-5-6-diophantine-equations.html#thm-flt",
+  "type": "Theorem",
+  "number": "5.6.1",
+  "title": "Fermat’s Last Theorem.",
+  "body": " Fermat's Last Theorem   The Diophantine equation has no nontrivial solutions for .    Definitely not happening.   "
+},
+{
+  "id": "ex-hardy-ramanujan",
+  "level": "2",
+  "url": "sec-5-6-diophantine-equations.html#ex-hardy-ramanujan",
+  "type": "Example",
+  "number": "5.6.2",
+  "title": "Taxicab Numbers.",
+  "body": " Taxicab Numbers   Find a solution to for distinct.    .   "
 },
 {
   "id": "sec-5-7-sunzi",
