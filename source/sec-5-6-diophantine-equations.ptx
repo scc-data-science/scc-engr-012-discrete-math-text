@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-5-6-diophantine-equations" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Diophantine Equations</title>
+
+  <introduction>
+    <p>
+      .
+    </p>
+  
+  </introduction>
+
+  <subsection xml:id="subsec-mod-linear">
+    <title>Equations of the form <m>ax \equiv b</m> (mod <m>m</m>)</title>
+
+    <p>
+      .
+    </p>
+
+  </subsection>
+
+  <subsection xml:id="subsec-mod-linear-2">
+    <title>Equations of the form <m>ax + by \equiv c</m> (mod <m>m</m>)</title>
+
+    <p>
+      .
+    </p>
+
+  </subsection>
+
+  <subsection xml:id="subsec-mod-nonlinear">
+    <title>Beyond Linearity</title>
+
+    <p>
+      .
+    </p>
+  
+  </subsection>
+
+</section>
