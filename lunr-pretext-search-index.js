@@ -640,9 +640,9 @@ var ptx_lunr_docs = [
   "body": "  Find the greatest common divisor of and .    We run the algorithm above.     Hence .   "
 },
 {
-  "id": "sec-5-3-modular-arithmetic",
+  "id": "sec-5-4-modular-arithmetic",
   "level": "1",
-  "url": "sec-5-3-modular-arithmetic.html",
+  "url": "sec-5-4-modular-arithmetic.html",
   "type": "Section",
   "number": "5.4",
   "title": "Modular Arithmetic",
@@ -651,7 +651,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-congruence",
   "level": "2",
-  "url": "sec-5-3-modular-arithmetic.html#def-congruence",
+  "url": "sec-5-4-modular-arithmetic.html#def-congruence",
   "type": "Definition",
   "number": "5.4.1",
   "title": "",
@@ -660,7 +660,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-congruence",
   "level": "2",
-  "url": "sec-5-3-modular-arithmetic.html#ex-congruence",
+  "url": "sec-5-4-modular-arithmetic.html#ex-congruence",
   "type": "Example",
   "number": "5.4.2",
   "title": "",
@@ -669,7 +669,7 @@ var ptx_lunr_docs = [
 {
   "id": "thm-congruence-equation",
   "level": "2",
-  "url": "sec-5-3-modular-arithmetic.html#thm-congruence-equation",
+  "url": "sec-5-4-modular-arithmetic.html#thm-congruence-equation",
   "type": "Theorem",
   "number": "5.4.3",
   "title": "",
@@ -678,7 +678,7 @@ var ptx_lunr_docs = [
 {
   "id": "thm-mod-arith",
   "level": "2",
-  "url": "sec-5-3-modular-arithmetic.html#thm-mod-arith",
+  "url": "sec-5-4-modular-arithmetic.html#thm-mod-arith",
   "type": "Theorem",
   "number": "5.4.4",
   "title": "",
@@ -687,7 +687,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-mod-arithmetic-add",
   "level": "2",
-  "url": "sec-5-3-modular-arithmetic.html#ex-mod-arithmetic-add",
+  "url": "sec-5-4-modular-arithmetic.html#ex-mod-arithmetic-add",
   "type": "Example",
   "number": "5.4.5",
   "title": "",
@@ -696,7 +696,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-mod-arithmetic-add-2",
   "level": "2",
-  "url": "sec-5-3-modular-arithmetic.html#ex-mod-arithmetic-add-2",
+  "url": "sec-5-4-modular-arithmetic.html#ex-mod-arithmetic-add-2",
   "type": "Checkpoint",
   "number": "5.4.6",
   "title": "",
@@ -705,7 +705,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-mod-arithmetic-power",
   "level": "2",
-  "url": "sec-5-3-modular-arithmetic.html#ex-mod-arithmetic-power",
+  "url": "sec-5-4-modular-arithmetic.html#ex-mod-arithmetic-power",
   "type": "Example",
   "number": "5.4.7",
   "title": "",
@@ -714,7 +714,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-mod-arithmetic-power-2",
   "level": "2",
-  "url": "sec-5-3-modular-arithmetic.html#ex-mod-arithmetic-power-2",
+  "url": "sec-5-4-modular-arithmetic.html#ex-mod-arithmetic-power-2",
   "type": "Checkpoint",
   "number": "5.4.8",
   "title": "",
@@ -723,11 +723,65 @@ var ptx_lunr_docs = [
 {
   "id": "subsec-mod-arith-13",
   "level": "2",
-  "url": "sec-5-3-modular-arithmetic.html#subsec-mod-arith-13",
+  "url": "sec-5-4-modular-arithmetic.html#subsec-mod-arith-13",
   "type": "Example",
   "number": "5.4.9",
   "title": "",
   "body": "  If you did , you hopefully found that there is a number such that . In , we found that . It turns out, the base does not matter; for any (for the particular value of you found in ), and simialry for any .  Can you conjecture a relationship between the exponent and the modulus? Does it hold for any modulus? For what kinds of moduli does it seem to hold?    Homework.   "
+},
+{
+  "id": "sec-5-5-modular-division",
+  "level": "1",
+  "url": "sec-5-5-modular-division.html",
+  "type": "Section",
+  "number": "5.5",
+  "title": "Modular Division",
+  "body": " Modular Division   In the previous section, we discussed addition, subtraction, and multiplication modulo . Here, we discuss when it is possible to divide modulo .    What is Division?  How do we formally define division in standard arthmetic? We do it through multiplication. Note:     What, then, is ? It is the unique solution to the equation:     We define division in modular arithmetic the same way. In general, to divide by :    Solve (mod ) to get .  Multiple by .      Modular Inverses    Let and . Then:     There exists some such that (mod ) if and only if .    If (mod ), then (mod ).     If such a number exists, then we write and call it the inverse of modulo .         Suppose . Then, by , there exists integers and such that . Therefore, (mod ). Letting completes the proof.   Assume (mod ). Then there exists an integer such that , which implies . We know from the proof of that and therefore . Hence, .     Notice:     Hence, (mod ).        Division by modulo    We know that , so exists modulo . What is it?    One way to do this is to guess and check.     Hence, (mod ).    The strategy used in works for small numbers, but if we're working with , it is not feasible. In those cases, we can use the Euclidean algorithm!   Division by modulo    Use the Euclidean algorithm to find modulo .     Step 1 : Run the Euclidean algorithm:      Step 2 : Solve each equation above for the remainders, starting from the top. Let and . Then:      Step 3 : Reduce modulo .     Since (mod ). Thus, modulo .    The process outlined in is referred to as the extended Euclidean algorithm and is the practical standard for computing modular inverses for moduli .   "
+},
+{
+  "id": "thm-mod-div",
+  "level": "2",
+  "url": "sec-5-5-modular-division.html#thm-mod-div",
+  "type": "Theorem",
+  "number": "5.5.1",
+  "title": "",
+  "body": "  Let and . Then:     There exists some such that (mod ) if and only if .    If (mod ), then (mod ).     If such a number exists, then we write and call it the inverse of modulo .         Suppose . Then, by , there exists integers and such that . Therefore, (mod ). Letting completes the proof.   Assume (mod ). Then there exists an integer such that , which implies . We know from the proof of that and therefore . Hence, .     Notice:     Hence, (mod ).      "
+},
+{
+  "id": "ex-div-by-2",
+  "level": "2",
+  "url": "sec-5-5-modular-division.html#ex-div-by-2",
+  "type": "Example",
+  "number": "5.5.2",
+  "title": "Division by <span class=\"process-math\">\\(2\\)<\/span> modulo <span class=\"process-math\">\\(5\\)<\/span>.",
+  "body": " Division by modulo    We know that , so exists modulo . What is it?    One way to do this is to guess and check.     Hence, (mod ).   "
+},
+{
+  "id": "ex-div-by-17",
+  "level": "2",
+  "url": "sec-5-5-modular-division.html#ex-div-by-17",
+  "type": "Example",
+  "number": "5.5.3",
+  "title": "Division by <span class=\"process-math\">\\(17\\)<\/span> modulo <span class=\"process-math\">\\(74\\)<\/span>.",
+  "body": " Division by modulo    Use the Euclidean algorithm to find modulo .     Step 1 : Run the Euclidean algorithm:      Step 2 : Solve each equation above for the remainders, starting from the top. Let and . Then:      Step 3 : Reduce modulo .     Since (mod ). Thus, modulo .   "
+},
+{
+  "id": "sec-5-6-diophantine-equations",
+  "level": "1",
+  "url": "sec-5-6-diophantine-equations.html",
+  "type": "Section",
+  "number": "5.6",
+  "title": "Diophantine Equations",
+  "body": " Diophantine Equations   .    Equations of the form (mod )  .    Equations of the form (mod )  .    Beyond Linearity  .   "
+},
+{
+  "id": "sec-5-7-sunzi",
+  "level": "1",
+  "url": "sec-5-7-sunzi.html",
+  "type": "Section",
+  "number": "5.7",
+  "title": "Sunzi’s Theorem",
+  "body": " Sunzi's Theorem  .  "
 },
 {
   "id": "backmatter-2",

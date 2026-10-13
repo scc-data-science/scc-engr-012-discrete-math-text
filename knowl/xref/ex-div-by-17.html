@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.5.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Division by <span class="process-math">\(17\)</span> modulo <span class="process-math">\(74\)</span>.</span>
+</h2>
+<div class="para">Use the Euclidean algorithm to find <span class="process-math">\(17^{-1}\)</span> modulo <span class="process-math">\(74\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-div-by-17-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para">
+<em class="emphasis">Step 1</em>: Run the Euclidean algorithm:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-div-by-17-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="displaymath process-math">
+\begin{align*}
+74 \amp = 17 \cdot 4 + 6 \\
+17 \amp = 6  \cdot 2 + 5 \\
+6 \amp = 5  \cdot 1 + 1 
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-div-by-17-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">
+<em class="emphasis">Step 2</em>: Solve each equation above for the remainders, starting from the top. Let <span class="process-math">\(a = 74\)</span> and <span class="process-math">\(b = 17\text{.}\)</span> Then:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-div-by-17-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="displaymath process-math">
+\begin{alignat*}{3}
+6 \amp = 74 - 17 \cdot 4 \amp\amp = a - 4b.                      \amp\amp             \\
+5 \amp = 17 - 6  \cdot 2 \amp\amp = b - (a - 4b) \cdot 2         \amp\amp = 9b - 2a.  \\
+1 \amp =  6 - 5  \cdot 1 \amp\amp = (a - 4b) - (9b - 2a) \cdot 1 \amp\amp = 3a - 13b. 
+\end{alignat*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-div-by-17-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">
+<em class="emphasis">Step 3</em>: Reduce modulo <span class="process-math">\(a = 74\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-div-by-17-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="displaymath process-math">
+\begin{equation*}
+3a - 13b = 1 \implies -13b \equiv 1 \, (\text{mod } 74) \implies 61b \equiv 1 \, (\text{mod } 74),
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-div-by-17-3-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">Since <span class="process-math">\(-13 \equiv 61\)</span> (mod <span class="process-math">\(74\)</span>). Thus, <span class="process-math">\(17^{-1} = 63\)</span> modulo <span class="process-math">\(74\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-div-by-17-3-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 5.5.3.1"><a tabindex="-1" href="#ex-div-by-17-3" title="Copy heading and permalink for Solution 5.5.3.1" aria-label="Copy heading and permalink for Solution 5.5.3.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 5.5.3: Division by 17 modulo 74"><a tabindex="-1" href="#ex-div-by-17" title="Copy heading and permalink for Example 5.5.3: Division by 17 modulo 74" aria-label="Copy heading and permalink for Example 5.5.3: Division by 17 modulo 74">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="sec-5-5-modular-division.html#ex-div-by-17">In Context</a></span>
+</body>
+</html>
