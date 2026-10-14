@@ -3,8 +3,195 @@
 <section xml:id="sec-5-7-sunzi" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Sunzi's Theorem</title>
 
-  <p>
-    .
-  </p>
+  <introduction>
+    <p>
+      In the previous section, we discussed how we might solve some linear congruences. In this section, we concern ourselves with systems of linear congruences. That is, can we find a procedure to find solutions to:
+    </p>
+
+    <p>
+      <md number="no">
+        <mrow>x \equiv \amp \; a_1 \pmod{m_1}</mrow>
+        <mrow>x \equiv \amp \; a_2 \pmod{m_2}</mrow>
+        <mrow>  \vdots \amp \; </mrow>
+        <mrow>x \equiv \amp \; a_k \pmod{m_k}</mrow>
+      </md>
+    </p>
+
+    <p>
+      It turns out, like many of our results in number theory, a solution exists provided that the moduli <m>m_1, \ldots, m_k</m> are pairwise coprime.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-5-7-sunzi">
+    <title>Sunzi's Theorem</title>
+
+    <p>
+      We start with a motivating example.
+    </p>
+
+    <example xml:id="ex-5-7-sunzi-ex-1">
+        <statement>
+          <p>
+            Suppose:
+          </p>
+
+          <p>
+            <md>
+              <mrow> x \amp \equiv 2 \pmod 3 </mrow>
+              <mrow> x \amp \equiv 3 \pmod 7 </mrow>
+            </md>
+          </p>
+
+          <p>
+            What is <m>x</m>?
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            Perhaps the best thing to do right now is to just list out all the values of <m>x</m> that satisfy both congruences.
+          </p>
+
+          <p>
+            <md>
+              <mrow> x \amp \equiv 2 \pmod 3 \implies x \in \{\ldots, 2, 5, 8, 11, 14, 17, \ldots \} </mrow>
+              <mrow> x \amp \equiv 3 \pmod 7 \implies x \in \{\ldots, 3, 10, 17, \ldots \} </mrow>
+            </md>
+          </p>
+
+          <p>
+            So, it looks like <m>17</m> is a solution.
+          </p>
+
+          <p>
+            There is a better way. Instead, we turn the first congruence back into an equation and write <m>x = 2 + 3k</m> for some integer <m>k</m>. Then, we substitute this back into the second congruence:
+          </p>
+
+          <p>
+            <md>
+              <mrow>x \equiv 3 \pmod 7 \amp \implies 2 + 3k \equiv 3 \pmod 7</mrow>
+              <mrow>                   \amp \implies 3k \equiv 1 \pmod 7</mrow>
+            </md>
+          </p>
+
+          <p>
+            This is now a familiar problem! We know this can be solved, provided <m>3^{-1}</m> exists modulo <m>7</m>. Since <m>\mathrm{gcd}(3, 7) = 1</m>, an inverse does indeed exists. Here, <m>k \equiv 3^{-1} (1) \equiv 5 \pmod 7</m>.
+          </p>
+
+          <p>
+            Finally, this gives <m>x = 2 + 3k = 2 + 3(5) = 17</m>.
+          </p>
+
+          <p>
+            In fact, all solutions to the system are of the form <m>x \equiv 17 \pmod{3 \cdot 7 = 21}</m>. We'll motivate why this is true in the homework.
+          </p>
+        </solution>
+    </example>
+
+    <p>
+      The key idea was that we could write one of the congruences as an equation and substitute that equation into the other congruence. This provides us with a linear congruence that we can solve, in theory, using the methods outlined in <xref ref="sec-5-6-diophantine-equations-and-congruences"/>. We can naturally extend this idea to more moduli.
+    </p>
+
+    <example xml:id="ex-5-7-sunzi-ex-2">
+        <statement>
+          <p>
+            Suppose:
+          </p>
+
+          <p>
+            <md>
+              <mrow> x \amp \equiv 2 \pmod{3}  </mrow>
+              <mrow> x \amp \equiv 3 \pmod{7}  </mrow>
+              <mrow> x \amp \equiv 4 \pmod{16} </mrow>
+            </md>
+          </p>
+
+          <p>
+            What is <m>x</m>?
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            We can use the result of <xref ref="ex-5-7-sunzi-ex-1"/> on the first two congruences. The first two congruences imply <m>x \equiv 17 \pmod{3 \cdot 7 = 21}</m>.
+          </p>
+
+          <p>
+            From this, our set of three congruences reduces to a set of two:
+          </p>
+
+          <p>
+            <md>
+              <mrow> x \amp \equiv 17 \pmod{21} </mrow>
+              <mrow> x \amp \equiv 4  \pmod{16} </mrow>
+            </md>
+          </p>
+
+          <p>
+            Now, we can solve these two new congruences using exactly the same process. Try it! The answer is <m>x \equiv 164 \pmod{3 \cdot 7 \cdot 16 = 336}</m>.
+          </p>
+        </solution>
+    </example>
+
+    <p>
+      We can further extend this process, naturally, to arbitrarily many moduli. The key assumption is that each pair of moduli, <m>m_i</m> and <m>m_j</m>, satisfy <m>\mathrm{gcd}(m_i, m_j) = 1</m>. If this process holds for any pair of moduli, we say that <m>m_1, \ldots, m_k</m> are <em>pairwise coprime</em>.
+    </p>
+
+    <theorem xml:id="thm-5-7-sunzi">
+      <title>Sunzi's Theorem</title>
+      
+      <statement>
+        <p>
+          Let <m>m_1, m_2, \ldots, m_k \geq 2</m> be pairwise coprime. Suppose <m>a_1, a_2, \ldots, a_k \in \mathbb{Z}</m>. Then: 
+        </p>
+
+        <p>
+          <md number="no">
+            <mrow>x \equiv \amp \; a_1 \pmod{m_1}</mrow>
+            <mrow>x \equiv \amp \; a_2 \pmod{m_2}</mrow>
+            <mrow>  \vdots \amp \; </mrow>
+            <mrow>x \equiv \amp \; a_k \pmod{m_k}</mrow>
+          </md>
+        </p>
+
+        <p>
+          <ol>
+            <li><p>Has a solution.</p></li>
+            <li><p>If <m>x</m> and <m>y</m> are both solutions, then <m>x \equiv y \pmod{\prod_{j=1}^k m_j}</m>.</p></li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+
+    <p>
+      In most (Western) mathematical literature, <xref ref="thm-5-7-sunzi"/> is called <em>the Chinese remainder theorem</em>. I take some issue with this name. Generally in math, we like to celebrate the <em>people</em> that make great discoveries, which is why we have names like <q>the Pythagorean Theorem</q> or <q>Euler's identntiy.</q> However, if the discoverers are not Euro-American, the mathematical community tends to over-generalize and name such discoveries after broad geographic, linguistic, or cultural groups. This theorem was first studied by the Chinese mathematician Sunzi in the mathematical treatise <em>Sunzi Suanjing</em> somewhere between the 3rd and 5th centuries CE. 
+    </p>
+
+    <p>
+      The proof of <xref ref="thm-5-7-sunzi"/> relies on the ideas presented in the examples above.
+    </p>
+
+    <p>
+      <ol>
+        <li>
+          <p>
+            We can start by solving the first two congruences in the same way we did in <xref ref="ex-5-7-sunzi-ex-1"/>. This will give us a new congruence modulo <m>m_1m_2</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Solve your new congruence modulo <m>m_1m_2</m> together with the third congruence in the same way we did in <xref ref="ex-5-7-sunzi-ex-2"/>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Repeat this process inductively until you've exhausted all congruences.
+          </p>
+        </li>
+      </ol>
+    </p>
+    
+    
+  </subsection>
 
 </section>
