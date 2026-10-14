@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-5-6-diophantine-equations-and-congruences" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Diophantine Equations and Congruences</title>
+
+  <subsection xml:id="subsec-diophantine">
+    <title>Diophantine Equations</title>
+    
+    <p>
+      A special class of equations that are of interest to number theorists are those called <em>Diophantine equations</em>, which are polynomial equation with integer coefficients for which only integer solutions are of interest.
+    </p>
+
+    <p>
+      These range quite substantially in difficulty. Perhaps the most famous Diophantine equation is the equation:
+    </p>
+
+    <p>
+      <md>
+        x^2 + y^2 = z^2,
+      </md>
+    </p>
+
+    <p>
+      for unkowns <m>(x, y, z)</m>. The solutions to this equation are the <em>Pythagorean triples</em>. Some solutions are <m>(3, 4, 5)</m>, <m>(5, 12, 13)</m>, etc. In fact, you could probably name quite a few solutions to this equation off the top of your head.
+    </p>
+
+    <p>
+      However, if we increase the exponents, even by one, the problem suddenly becomes <em>much</em> harder.
+    </p>
+
+    <theorem xml:id="thm-flt">
+      <title> Fermat's Last Theorem </title>
+
+      <statement>
+        <p>
+          The Diophantine equation <m>x^n + y^n = z^n</m> has no nontrivial solutions for <m>n \gt 2</m>. 
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Definitely not happening.
+        </p>
+      </proof>
+    </theorem>
+
+    <p>
+      Even though the two equations above are very similar, one has infinitely many solutions, and the other has none.  One is trivial to exhibit solutions, and the other took almost 400 years to prove that no solution existed.
+    </p>
+
+    <p>
+      As you might imagine, it is very difficult in general to solve Diophantine equations, in much the same way as it is very difficult to solve differential equations in calculus.  However, there are a few distinct classes of Diophantine equations that we definitely can solve, and we can employ modular arithmetic to do so.
+    </p>
+
+    <theorem xml:id="thm-5-6-dio-to-mod">
+      <statement>
+        <p> If a Diophantine equation of the form <m>P(x_1, \ldots, x_n) = 0</m> has solution <m>(x'_1, \ldots, x'_n)</m>, then <m>P(x'_1, \ldots, x'_n) \equiv 0</m> (mod <m>m</m>) for every <m>m \in \mathbb{N}</m>. </p>
+      </statement>
+
+      <proof>
+        <p>
+          Follows from the fact that <m>0 \equiv 0</m> (mod <m>m</m>) for every <m>m \in \mathbb{N}</m>.
+        </p>
+      </proof>
+    </theorem>
+
+    <p>
+      <xref ref="thm-5-6-dio-to-mod"/> is not particularly surprising, but its contrapositive can be very useful.
+    </p>
+    
+    <example xml:id="ex-5-6-dio-to-mod">
+        <statement>
+          <p>
+            Show that the Diophantine equation <m>x^2 - 5y^2 = 2</m> has no solutions.
+          </p>
+        </statement>
+        
+        <solution>
+          <p>
+            If we want to employ <xref ref="thm-5-6-dio-to-mod"/>, the trick is to find a modulus <m>m</m> for which reducing modulo <m>m</m> yields a much simpler problem. In this case, we can get rid of the <m>-5y^2</m> term if we reduce mod <m>5</m>. Consider, then, the congruence found by reducing both sides of our equation modulo <m>5</m>:
+          </p>
+
+          <p>
+            <md>
+              x^2 \equiv 2 \, (\text{mod } 5).
+            </md>
+          </p>
+
+          <p>
+            Is there a solution to this congruence?  Well, notice:
+          </p>
+
+          <p>
+            <md number="no">
+              <mrow> 0^2 \amp \equiv 0 \, (\text{mod } 5) </mrow>
+              <mrow> 1^2 \amp \equiv 1 \, (\text{mod } 5) </mrow>
+              <mrow> 2^2 \amp \equiv 4 \, (\text{mod } 5) </mrow>
+              <mrow> 3^2 \amp \equiv 4 \, (\text{mod } 5) </mrow>
+              <mrow> 4^2 \amp \equiv 1 \, (\text{mod } 5) </mrow>
+            </md>
+          </p>
+
+          <p>
+            Therefore, there is no number that squares to <m>2</m> modulo <m>5</m>, so the congruence has no solutions. Thus, by the contrapositive of <xref ref="thm-5-6-dio-to-mod"/>, the Diophantine equation <m>x^2 - 5y^2 = 2</m> has no solutions.
+          </p>
+        </solution>
+    </example>
+
+    <p>
+      It is for reasons like the one above that knowing how to solve congruences is of particular interest. As such, we'll spend the rest of this section talking about how to solve certain classes of congruences.
+    </p>
+  </subsection>
+
+  <subsection xml:id="subsec-mod-linear">
+    <title>Congruences of the form <m>ax \equiv b</m> (mod <m>m</m>)</title>
+
+    <p>
+      We already know how to solve these kinds of congruences when <m>\mathrm{gcd}(a, m) = 1</m>; we just apply <xref ref="thm-mod-div"/> to find <m>a^{-1}</m> modulo <m>m</m>. Then,
+    </p>
+
+    <p>
+      <md>
+        ax \equiv b \implies a^{-1}(b) \equiv a^{-1}(ax) \equiv (a^{-1}a)x \equiv (1)x \equiv x \, (\text{mod } m).
+      </md>
+    </p>
+
+    <p>
+      Hence, <m>x \equiv a^{-1}b</m> (mod <m>m</m>), meaning that the solution is unique up to a multiple of <m>m</m>.
+    </p>
+
+    <p>
+      So what if <m>\mathrm{gcd}(a, m) \neq 1</m>? Well, if <m>ax \equiv b</m> (mod <m>m</m>), then there exists an integer <m>k</m> such that <m>ax = b - km</m>, and so <m>ax + km = b</m>. But, by the proof of <xref ref="thm-gcd-exists"/>, we know that <m>ax + km = \ell \cdot \mathrm{gcd}(a, m)</m> for some integer <m>\ell</m>. Hence, our equation reduces to:
+    </p>
+
+    <p>
+      <md>
+        \ell \cdot \mathrm{gcd}(a, m) = b.
+      </md>
+    </p>
+
+    <p>
+      This equation has an integer solution if and only if <m>\mathrm{gcd}(a, m) \mid b</m>, which means <m>ax \equiv b</m> (mod <m>m</m>) has a solution if and only if <m>\mathrm{gcd}(a, m) \mid b</m>.
+    </p>
+
+    <theorem xml:id="thm-5-6-solve-ax-equiv-b">
+      <statement>
+        <p>
+          The congruence <m>ax \equiv b</m> (mod <m>m</m>) has a solution if and only if <m>\mathrm{gcd}(a, m) \mid b</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          The linear congruence <m>ax \equiv b \pmod m</m> is logically equivalent to the existence of integers <m>x</m> and <m>y</m> such that:
+          <md>
+              ax - my = b
+          </md>
+          Let <m>d = \gcd(a, m)</m>.
+        </p>
+
+        <p>
+          <m>(\implies)</m> Assume a solution exists. By definition, <m>d \mid a</m> and <m>d \mid m</m>. Since <m>d</m> divides both coefficients, it must divide any integer linear combination of them:
+          <md>
+              d \mid (ax - my)
+          </md>
+          Because <m>ax - my = b</m>, it follows directly that <m>d \mid b</m>.
+        </p>
+
+        <p>
+          <m>(\impliedby)</m> Assume <m>d \mid b</m>. This implies <m>b = kd</m> for some integer <m>k</m>. By <xref ref="cor-extended-gcd"/>, there exist integers <m>x_{1}</m> and <m>y_{1}</m> such that:
+          <md>
+              ax_{1} + my_{1} = d
+          </md>
+          Multiplying both sides of this identity by <m>k</m> yields:
+          <md>
+              a(kx_{1}) + m(ky_{1}) = kd
+          </md>
+          Substituting <m>b = kd</m> gives:
+          <md>
+              a(kx_{1}) + m(ky_{1}) = b
+          </md>
+          Rewriting this equation modulo <m>m</m>, the term <m>m(ky_{1})</m> becomes <m>0</m>, leaving:
+          <md>
+              a(kx_{1}) \equiv b \pmod m
+          </md>
+          Thus, <m>x = kx_{1}</m> is an integer solution to the congruence.
+        </p>
+      </proof>
+    </theorem>
+
+    <p>
+      So, if a solution exists, how do we find it? We could guess-and-check, but as we have mentioned, this does not scale particularly well. It turns out, we can reduce the case in which <m>\mathrm{gcd}(a, m) \gt 1</m> to the case in which <m>\mathrm{gcd}(a, m) = 1</m> by dividing everything by <m>\mathrm{gcd}(a, m)</m>.
+    </p>
+
+    <algorithm xml:id="alg-">
+      <statement>
+        <p>
+          To solve <m>ax \equiv b \pmod m</m> when <m>d = \mathrm{gcd}(a, m) \gt 1</m>:
+        </p>
+
+        <p>
+          <em>Step 1</em>: Reduce the congruence:
+        </p>
+
+        <p>
+          <md>
+            \frac{a}{d} x \equiv \frac{b}{d} \; \left( \text{mod } \frac{m}{d} \right)
+            \iff a' x \equiv b' \; (\text{mod } m').
+          </md>
+        </p>
+
+        <p>
+          Now, <m>\mathrm{gcd}(a', m') = 1</m>.
+        </p>
+
+        <p>
+          <em>Step 2</em>: Find a particular solution <m>x = x_0</m> of the congruence <m>a' x \equiv b' \; (\text{mod } m')</m>. Since <m>\mathrm{gcd}(a', m') = 1</m>, we can compute <m>(a')^{-1}</m> modulo <m>m'</m> and write:
+        </p>
+
+        <p>
+          <md>
+            x_0 \equiv (a')^{-1} b' \pmod{m'}.
+          </md>
+        </p>
+
+        <p>
+          <em>Step 3</em>: Generate all solutions modulo <m>m</m> by converting the above to an equation and reducing modulo <m>m</m>. That is,
+        </p>
+
+        <p>
+          <md>
+            x_k \equiv x_0 + k m' \pmod m \quad \text{for } k = 0, 1, \ldots, d - 1,
+          </md>
+        </p>
+
+        <p>
+          is the set of mutually incongruent solutions modulo <m>m</m>.
+        </p>
+      </statement>
+    </algorithm>
+
+    <example xml:id="ex-5-6-ax-equiv-b-with-gcd">
+        <statement>
+          <p>
+            Find all solutions to <m>6x \equiv 9 \pmod{15}</m>.
+          </p>
+        </statement>
+        
+        <solution>
+          <p>
+            <alert>Step 1</alert>: Reduce the congruence.
+          </p>
+          
+          <p>
+            First, we find the greatest common divisor of <m>a</m> and <m>m</m>:
+            <md>
+                d = \gcd(6, 15) = 3
+            </md>
+            Since <m>3 \mid 9</m>, a solution exists, and there will be exactly <m>3</m> mutually incongruent solutions modulo <m>15</m>. We reduce the congruence by dividing <m>a</m>, <m>b</m>, and <m>m</m> by <m>d</m>:
+            <md>
+                \frac{6}{3}x \equiv \frac{9}{3} \pmod{\frac{15}{3}} \implies 2x \equiv 3 \pmod 5
+            </md>
+          </p>
+
+          <p>
+            <alert>Step 2</alert>: Find the particular solution <m>x = x_0</m>.
+          </p>
+
+          <p>
+            We now find the modular inverse of <m>2 \pmod 5</m>. Since <m>2 \cdot 3 = 6 \equiv 1 \pmod 5</m>, the inverse is <m>3</m>. Multiplying both sides by <m>3</m> yields:
+            <md>
+                x \equiv 3 \cdot 3 \equiv 9 \equiv 4 \pmod 5
+            </md>
+            Thus, our particular solution is <m>x_{0} = 4</m>.
+          </p>
+
+          <p>
+            <alert>Step 3</alert>: Generate all <m>d = 3</m> solutions modulo <m>15</m>.
+          </p>
+
+          <p>
+            The complete set of solutions modulo the original modulus <m>m = 15</m> is generated by adding multiples of the reduced modulus <m>m' = 5</m>:
+            <md>
+                x_{k} = x_{0} + k m' \pmod m \quad \text{for } k = 0, 1, 2
+            </md>
+          </p>
+
+          <p>
+            So:
+          </p>
+
+          <p>
+            <md number="no">
+                <mrow>k = 0: \quad x \amp \equiv 4</mrow>
+                <mrow>k = 1: \quad x \amp \equiv 4 + 1(5) \equiv 9</mrow>
+                <mrow>k = 2: \quad x \amp \equiv 4 + 2(5) \equiv 14.</mrow>
+            </md>
+          </p>
+
+          <p>
+            Therefore, the three distinct solutions are
+            <m>x \equiv 4, 9, 14 \pmod{15}</m>.
+          </p>
+        </solution>
+    </example>
+
+  </subsection>
+
+</section>
