@@ -736,7 +736,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.5",
   "title": "Modular Division",
-  "body": " Modular Division   In the previous section, we discussed addition, subtraction, and multiplication modulo . Here, we discuss when it is possible to divide modulo .    What is Division?  How do we formally define division in standard arthmetic? We do it through multiplication. Note:     What, then, is ? It is the unique solution to the equation:     We define division in modular arithmetic the same way. In general, to divide by :    Solve (mod ) to get .  Multiple by .      Modular Inverses    Let and . Then:     There exists some such that (mod ) if and only if .    If (mod ), then (mod ).     If such a number exists, then we write and call it the inverse of modulo .         Suppose . Then, by , there exists integers and such that . Therefore, (mod ). Letting completes the proof.   Assume (mod ). Then there exists an integer such that , which implies . We know from the proof of that and therefore . Hence, .     Notice:     Hence, (mod ).        Division by modulo    We know that , so exists modulo . What is it?    One way to do this is to guess and check.     Hence, (mod ).    The strategy used in works for small numbers, but if we're working with , it is not feasible. In those cases, we can use the Euclidean algorithm!   Division by modulo    Use the Euclidean algorithm to find modulo .     Step 1 : Run the Euclidean algorithm:      Step 2 : Solve each equation above for the remainders, starting from the top. Let and . Then:      Step 3 : Reduce modulo .     Since (mod ). Thus, modulo .    The process outlined in is referred to as the extended Euclidean algorithm and is the practical standard for computing modular inverses for moduli .   "
+  "body": " Modular Division   In the previous section, we discussed addition, subtraction, and multiplication modulo . Here, we discuss when it is possible to divide modulo .    What is Division?  How do we formally define division in standard arithmetic? We do it through multiplication. Note:     What, then, is ? It is the unique solution to the equation:     We define division in modular arithmetic the same way. In general, to divide by :    Solve (mod ) to get .  Multiple by .      Modular Inverses    Let and . Then:     There exists some such that (mod ) if and only if .    If (mod ), then (mod ).     If such a number exists, then we write and call it the inverse of modulo .         Suppose . Then, by , there exists integers and such that . Therefore, (mod ). Letting completes the proof.   Assume (mod ). Then there exists an integer such that , which implies . We know from the proof of that and therefore . Hence, .     Notice:     Hence, (mod ).        Division by modulo    We know that , so exists modulo . What is it?    One way to do this is to guess and check.     Hence, (mod ).    The strategy used in works for small numbers, but if we're working with , it is not feasible. In those cases, we can use the Euclidean algorithm!   Division by modulo    Use the Euclidean algorithm to find modulo .     Step 1 : Run the Euclidean algorithm:      Step 2 : Solve each equation above for the remainders, starting from the top. Let and . Then:      Step 3 : Reduce modulo .     Since (mod ). Thus, modulo .    The process outlined in is referred to as the extended Euclidean algorithm and is the practical standard for computing modular inverses for moduli .   "
 },
 {
   "id": "thm-mod-div",
@@ -766,31 +766,67 @@ var ptx_lunr_docs = [
   "body": " Division by modulo    Use the Euclidean algorithm to find modulo .     Step 1 : Run the Euclidean algorithm:      Step 2 : Solve each equation above for the remainders, starting from the top. Let and . Then:      Step 3 : Reduce modulo .     Since (mod ). Thus, modulo .   "
 },
 {
-  "id": "sec-5-6-diophantine-equations",
+  "id": "sec-5-6-diophantine-equations-and-congruences",
   "level": "1",
-  "url": "sec-5-6-diophantine-equations.html",
+  "url": "sec-5-6-diophantine-equations-and-congruences.html",
   "type": "Section",
   "number": "5.6",
-  "title": "Diophantine Equations",
-  "body": " Diophantine Equations   A special class of equations that are of interest to number theorists are those called Diophantine equations , which are polynomial equation with integer coefficients for which only integer solutions are of interest.  These range quite substantially in difficulty. Perhaps the most famous Diophantine equation is the equation:     for unkowns . The solutions to this equation are the Pythagorean triples . Some solutions are , , etc. In fact, you could probably name quite a few solutions to this equation off the top of your head.  However, if we increase the exponents, even by one, the problem suddenly becomes much harder.   Fermat's Last Theorem   The Diophantine equation has no nontrivial solutions for .    Definitely not happening.    Even though the two equations above are very similar, one has infinitely many solutions, and the other has none. One is trivial to exhibit solutions, and the other took almost 400 years to prove that no solution existed.  As you might imagine, it is very difficult in general to solve Diophantine equations, in much the same way as it is very difficult to solve differential equations in calculus. However, there are a few distinct classes of Diophantine equations that we definitely can solve. We explore a survey of such problems below.    Equations of the form (mod )  .    Equations of the form (mod )  .    Beyond Linearity  .   Taxicab Numbers   Find a solution to for distinct.    .     "
+  "title": "Diophantine Equations and Congruences",
+  "body": " Diophantine Equations and Congruences   Diophantine Equations  A special class of equations that are of interest to number theorists are those called Diophantine equations , which are polynomial equation with integer coefficients for which only integer solutions are of interest.  These range quite substantially in difficulty. Perhaps the most famous Diophantine equation is the equation:     for unkowns . The solutions to this equation are the Pythagorean triples . Some solutions are , , etc. In fact, you could probably name quite a few solutions to this equation off the top of your head.  However, if we increase the exponents, even by one, the problem suddenly becomes much harder.   Fermat's Last Theorem   The Diophantine equation has no nontrivial solutions for .    Definitely not happening.    Even though the two equations above are very similar, one has infinitely many solutions, and the other has none. One is trivial to exhibit solutions, and the other took almost 400 years to prove that no solution existed.  As you might imagine, it is very difficult in general to solve Diophantine equations, in much the same way as it is very difficult to solve differential equations in calculus. However, there are a few distinct classes of Diophantine equations that we definitely can solve, and we can employ modular arithmetic to do so.    If a Diophantine equation of the form has solution , then (mod ) for every .    Follows from the fact that (mod ) for every .     is not particularly surprising, but its contrapositive can be very useful.    Show that the Diophantine equation has no solutions.    If we want to employ , the trick is to find a modulus for which reducing modulo yields a much simpler problem. In this case, we can get rid of the term if we reduce mod . Consider, then, the congruence found by reducing both sides of our equation modulo :     Is there a solution to this congruence? Well, notice:     Therefore, there is no number that squares to modulo , so the congruence has no solutions. Thus, by the contrapositive of , the Diophantine equation has no solutions.    It is for reasons like the one above that knowing how to solve congruences is of particular interest. As such, we'll spend the rest of this section talking about how to solve certain classes of congruences.    Congruences of the form (mod )  We already know how to solve these kinds of congruences when ; we just apply to find modulo . Then,     Hence, (mod ), meaning that the solution is unique up to a multiple of .  So what if ? Well, if (mod ), then there exists an integer such that , and so . But, by the proof of , we know that for some integer . Hence, our equation reduces to:     This equation has an integer solution if and only if , which means (mod ) has a solution if and only if .    The congruence (mod ) has a solution if and only if .    The linear congruence is logically equivalent to the existence of integers and such that: Let .   Assume a solution exists. By definition, and . Since divides both coefficients, it must divide any integer linear combination of them: Because , it follows directly that .   Assume . This implies for some integer . By , there exist integers and such that: Multiplying both sides of this identity by yields: Substituting gives: Rewriting this equation modulo , the term becomes , leaving: Thus, is an integer solution to the congruence.    So, if a solution exists, how do we find it? We could guess-and-check, but as we have mentioned, this does not scale particularly well. It turns out, we can reduce the case in which to the case in which by dividing everything by .    To solve when :   Step 1 : Reduce the congruence:     Now, .   Step 2 : Find a particular solution of the congruence . Since , we can compute modulo and write:      Step 3 : Generate all solutions modulo by converting the above to an equation and reducing modulo . That is,     is the set of mutually incongruent solutions modulo .      Find all solutions to .     Step 1 : Reduce the congruence.  First, we find the greatest common divisor of and : Since , a solution exists, and there will be exactly mutually incongruent solutions modulo . We reduce the congruence by dividing , , and by :    Step 2 : Find the particular solution .  We now find the modular inverse of . Since , the inverse is . Multiplying both sides by yields: Thus, our particular solution is .   Step 3 : Generate all solutions modulo .  The complete set of solutions modulo the original modulus is generated by adding multiples of the reduced modulus :   So:     Therefore, the three distinct solutions are .     "
 },
 {
   "id": "thm-flt",
   "level": "2",
-  "url": "sec-5-6-diophantine-equations.html#thm-flt",
+  "url": "sec-5-6-diophantine-equations-and-congruences.html#thm-flt",
   "type": "Theorem",
   "number": "5.6.1",
   "title": "Fermat’s Last Theorem.",
   "body": " Fermat's Last Theorem   The Diophantine equation has no nontrivial solutions for .    Definitely not happening.   "
 },
 {
-  "id": "ex-hardy-ramanujan",
+  "id": "thm-5-6-dio-to-mod",
   "level": "2",
-  "url": "sec-5-6-diophantine-equations.html#ex-hardy-ramanujan",
-  "type": "Example",
+  "url": "sec-5-6-diophantine-equations-and-congruences.html#thm-5-6-dio-to-mod",
+  "type": "Theorem",
   "number": "5.6.2",
-  "title": "Taxicab Numbers.",
-  "body": " Taxicab Numbers   Find a solution to for distinct.    .   "
+  "title": "",
+  "body": "  If a Diophantine equation of the form has solution , then (mod ) for every .    Follows from the fact that (mod ) for every .   "
+},
+{
+  "id": "ex-5-6-dio-to-mod",
+  "level": "2",
+  "url": "sec-5-6-diophantine-equations-and-congruences.html#ex-5-6-dio-to-mod",
+  "type": "Example",
+  "number": "5.6.3",
+  "title": "",
+  "body": "  Show that the Diophantine equation has no solutions.    If we want to employ , the trick is to find a modulus for which reducing modulo yields a much simpler problem. In this case, we can get rid of the term if we reduce mod . Consider, then, the congruence found by reducing both sides of our equation modulo :     Is there a solution to this congruence? Well, notice:     Therefore, there is no number that squares to modulo , so the congruence has no solutions. Thus, by the contrapositive of , the Diophantine equation has no solutions.   "
+},
+{
+  "id": "thm-5-6-solve-ax-equiv-b",
+  "level": "2",
+  "url": "sec-5-6-diophantine-equations-and-congruences.html#thm-5-6-solve-ax-equiv-b",
+  "type": "Theorem",
+  "number": "5.6.4",
+  "title": "",
+  "body": "  The congruence (mod ) has a solution if and only if .    The linear congruence is logically equivalent to the existence of integers and such that: Let .   Assume a solution exists. By definition, and . Since divides both coefficients, it must divide any integer linear combination of them: Because , it follows directly that .   Assume . This implies for some integer . By , there exist integers and such that: Multiplying both sides of this identity by yields: Substituting gives: Rewriting this equation modulo , the term becomes , leaving: Thus, is an integer solution to the congruence.   "
+},
+{
+  "id": "alg-",
+  "level": "2",
+  "url": "sec-5-6-diophantine-equations-and-congruences.html#alg-",
+  "type": "Algorithm",
+  "number": "5.6.5",
+  "title": "",
+  "body": "  To solve when :   Step 1 : Reduce the congruence:     Now, .   Step 2 : Find a particular solution of the congruence . Since , we can compute modulo and write:      Step 3 : Generate all solutions modulo by converting the above to an equation and reducing modulo . That is,     is the set of mutually incongruent solutions modulo .   "
+},
+{
+  "id": "ex-5-6-ax-equiv-b-with-gcd",
+  "level": "2",
+  "url": "sec-5-6-diophantine-equations-and-congruences.html#ex-5-6-ax-equiv-b-with-gcd",
+  "type": "Example",
+  "number": "5.6.6",
+  "title": "",
+  "body": "  Find all solutions to .     Step 1 : Reduce the congruence.  First, we find the greatest common divisor of and : Since , a solution exists, and there will be exactly mutually incongruent solutions modulo . We reduce the congruence by dividing , , and by :    Step 2 : Find the particular solution .  We now find the modular inverse of . Since , the inverse is . Multiplying both sides by yields: Thus, our particular solution is .   Step 3 : Generate all solutions modulo .  The complete set of solutions modulo the original modulus is generated by adding multiples of the reduced modulus :   So:     Therefore, the three distinct solutions are .   "
 },
 {
   "id": "sec-5-7-sunzi",
