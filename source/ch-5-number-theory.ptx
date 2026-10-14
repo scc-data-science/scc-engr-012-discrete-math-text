@@ -32,7 +32,7 @@
   <xi:include href="sec-5-4-modular-arithmetic.ptx" />
   <!-- Week 2 -->
   <xi:include href="sec-5-5-modular-division.ptx" />
-  <xi:include href="sec-5-6-diophantine-equations.ptx" />
+  <xi:include href="sec-5-6-diophantine-equations-and-congruences.ptx" />
   <xi:include href="sec-5-7-sunzi.ptx" />
 
 </chapter>
