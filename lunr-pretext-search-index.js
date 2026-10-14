@@ -835,7 +835,34 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.7",
   "title": "Sunzi’s Theorem",
-  "body": " Sunzi's Theorem  .  "
+  "body": " Sunzi's Theorem   In the previous section, we discussed how we might solve some linear congruences. In this section, we concern ourselves with systems of linear congruences. That is, can we find a procedure to find solutions to:     It turns out, like many of our results in number theory, a solution exists provided that the moduli are pairwise coprime.    Sunzi's Theorem  We start with a motivating example.    Suppose:     What is ?    Perhaps the best thing to do right now is to just list out all the values of that satisfy both congruences.     So, it looks like is a solution.  There is a better way. Instead, we turn the first congruence back into an equation and write for some integer . Then, we substitute this back into the second congruence:     This is now a familiar problem! We know this can be solved, provided exists modulo . Since , an inverse does indeed exists. Here, .  Finally, this gives .  In fact, all solutions to the system are of the form . We'll motivate why this is true in the homework.    The key idea was that we could write one of the congruences as an equation and substitute that equation into the other congruence. This provides us with a linear congruence that we can solve, in theory, using the methods outlined in . We can naturally extend this idea to more moduli.    Suppose:     What is ?    We can use the result of on the first two congruences. The first two congruences imply .  From this, our set of three congruences reduces to a set of two:     Now, we can solve these two new congruences using exactly the same process. Try it! The answer is .    We can further extend this process, naturally, to arbitrarily many moduli. The key assumption is that each pair of moduli, and , satisfy . If this process holds for any pair of moduli, we say that are pairwise coprime .   Sunzi's Theorem   Let be pairwise coprime. Suppose . Then:       Has a solution.  If and are both solutions, then .      In most (Western) mathematical literature, is called the Chinese remainder theorem . I take some issue with this name. Generally in math, we like to celebrate the people that make great discoveries, which is why we have names like the Pythagorean Theorem or Euler's identntiy. However, if the discoverers are not Euro-American, the mathematical community tends to over-generalize and name such discoveries after broad geographic, linguistic, or cultural groups. This theorem was first studied by the Chinese mathematician Sunzi in the mathematical treatise Sunzi Suanjing somewhere between the 3rd and 5th centuries CE.  The proof of relies on the ideas presented in the examples above.     We can start by solving the first two congruences in the same way we did in . This will give us a new congruence modulo .    Solve your new congruence modulo together with the third congruence in the same way we did in .    Repeat this process inductively until you've exhausted all congruences.      "
+},
+{
+  "id": "ex-5-7-sunzi-ex-1",
+  "level": "2",
+  "url": "sec-5-7-sunzi.html#ex-5-7-sunzi-ex-1",
+  "type": "Example",
+  "number": "5.7.1",
+  "title": "",
+  "body": "  Suppose:     What is ?    Perhaps the best thing to do right now is to just list out all the values of that satisfy both congruences.     So, it looks like is a solution.  There is a better way. Instead, we turn the first congruence back into an equation and write for some integer . Then, we substitute this back into the second congruence:     This is now a familiar problem! We know this can be solved, provided exists modulo . Since , an inverse does indeed exists. Here, .  Finally, this gives .  In fact, all solutions to the system are of the form . We'll motivate why this is true in the homework.   "
+},
+{
+  "id": "ex-5-7-sunzi-ex-2",
+  "level": "2",
+  "url": "sec-5-7-sunzi.html#ex-5-7-sunzi-ex-2",
+  "type": "Example",
+  "number": "5.7.2",
+  "title": "",
+  "body": "  Suppose:     What is ?    We can use the result of on the first two congruences. The first two congruences imply .  From this, our set of three congruences reduces to a set of two:     Now, we can solve these two new congruences using exactly the same process. Try it! The answer is .   "
+},
+{
+  "id": "thm-5-7-sunzi",
+  "level": "2",
+  "url": "sec-5-7-sunzi.html#thm-5-7-sunzi",
+  "type": "Theorem",
+  "number": "5.7.3",
+  "title": "Sunzi’s Theorem.",
+  "body": " Sunzi's Theorem   Let be pairwise coprime. Suppose . Then:       Has a solution.  If and are both solutions, then .     "
 },
 {
   "id": "backmatter-2",
