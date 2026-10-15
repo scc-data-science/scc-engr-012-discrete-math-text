@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-5-8-group-theory" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>The Group Theoretic Perspective</title>
+
+  <introduction>
+    <p>
+      The last few sections have focused on the additive properties of modular arithmetic. In the next few sections, we'll discuss the multiplicative properties.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-5-8-z-mod-mz">
+    <title>The Integers Modulo <m>m</m> as a Set</title>
+
+    <p>
+      To make things easier to work with, we define the following set.
+    </p>
+
+    <definition xml:id="def-5-8-z-mod-m-z">
+      <statement>
+        <p>
+          Let <m>\mathbb{Z} / m \mathbb{Z} = \{0, 1, \ldots, m - 1\}</m> be the set of integers modulo <m>m</m>, equipped with the following definitions of addition (<m>+</m>) and multiplication (<m>\cdot</m>):
+        </p>
+
+        <p>
+          <md>
+            <mrow>a + b     := a + b \pmod m</mrow>
+            <mrow>a \cdot b := a \cdot b \pmod m</mrow>
+          </md>
+        </p>
+
+        <p>
+          for any <m>a, b \in \mathbb{Z} / m \mathbb{Z}</m>. We read <m>\mathbb{Z} / m \mathbb{Z}</m> as <q>Z mod <m>m</m> Z</q> or say "the integers modulo <m>m</m>."
+        </p>
+
+        <p>
+          It is common to abbreviate and write <m>\mathbb{Z}_m := \mathbb{Z} / m \mathbb{Z}</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      In <xref ref="def-5-8-z-mod-m-z"/>, the <m>+</m> and <m>\cdot</m> on the left side of each equality are the <m>+</m> and <m>\cdot</m> operators defined in <m>\mathbb{Z} / m \mathbb{Z}</m>, while the <m>+</m> and <m>\cdot</m> on the right side of each equality are the <m>+</m> and <m>\cdot</m> operators defined in <m>\mathbb{Z}</m>.
+    </p>
+    
+    <example xml:id="ex-5-8-z-mod-m-z">
+        <statement>
+          <p>
+            In <m>\mathbb{Z} / 7 \mathbb{Z}</m>, what is <m>4 + 5</m>? <m>4 \cdot 5</m>?
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            In <m>\mathbb{Z} / 7 \mathbb{Z}</m>, <m>4 + 5 = 2</m>.
+          </p>
+
+          <p>
+            In <m>\mathbb{Z} / 7 \mathbb{Z}</m>, <m>4 \cdot 5 = 6</m>.
+          </p>
+        </solution>
+    </example>
+
+    <p>
+      This set allows us to discuss modular arithmetic without use of congruences and the modulo operator.
+    </p>
+
+    <p>
+      We found in previous section that lots of interesting structure arises when you examine numbers in <m>\mathbb{Z} / m \mathbb{Z}</m> that are <em>coprime</em> to the modulus <m>m</m>. Motivated by this, we define the following subset of <m>\mathbb{Z} / m \mathbb{Z}</m>.
+    </p>
+
+    <definition xml:id="def-5-8-group-of-units">
+      <title>The Group of Units Modulo <m>m</m></title>
+
+      <statement>
+        <p>
+          Let <m>(\mathbb{Z} / m \mathbb{Z})^{\times} = \{ a \in \mathbb{Z} / m \mathbb{Z} \; \mid \; \mathrm{gcd}(a, m) = 1 \}</m> be the set of elements of <m>\mathbb{Z} / m \mathbb{Z}</m> that are coprime to <m>m</m>.
+        </p>
+        <p>
+          We read this set as <q>Z mod <m>m</m> Z star</q> and occasionally write <m>\mathbb{Z}_m^{\times} := (\mathbb{Z} / m \mathbb{Z})^{\times}</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <example xml:id="ex-5-8-z-mod-m-z-star">
+        <statement>
+          <p>
+            Write down the elements of <m>(\mathbb{Z} / 6 \mathbb{Z})^{\times}</m>.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            By definition, <m>(\mathbb{Z} / 6 \mathbb{Z})^{\times} = \{ a \in \mathbb{Z} / 6 \mathbb{Z} \; \mid \; \mathrm{gcd}(a, 6) = 1 \}</m>. Since the factors of <m>6</m> are <m>2</m> and <m>3</m>, we know <m>2</m>, <m>3</m>, and <m>4</m> are not elements of <m>(\mathbb{Z} / 6 \mathbb{Z})^{\times}</m>. Therefore, we have <m>(\mathbb{Z} / 6 \mathbb{Z})^{\times} = \{ 1, 5 \}</m>.
+          </p>
+        </solution>
+    </example>
+
+    <theorem xml:id="thm-5-8-z-mod-p-z">
+      <statement>
+        <p>
+          For any prime <m>p</m>, <m>(\mathbb{Z} / p \mathbb{Z})^{\times} = \{1, 2, \ldots, p - 1\} = \mathbb{Z} / p \mathbb{Z} \smallsetminus \{0\}</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Since <m>p</m> is prime, all positive integers less than <m>p</m> are coprime to <m>p</m>.
+        </p>
+      </proof>
+    </theorem>
+    
+
+    <p>
+      This set, as suggested by the name of <xref ref="def-5-8-group-of-units"/>, is an example of a mathematical <em>group</em>. Let's take some time to define groups, prove that this is indeed a group, and discuss the consequences.
+    </p>
+
+  </subsection>
+
+  <subsection xml:id="subsec-5-8-groups">
+    <title>The Group of Units</title>
+
+    <definition xml:id="def-5-8-group">
+      <statement>
+        <p>
+          A <em>group</em> is a nonempty set <m>G</m> equipped with a binary operation <m>\times</m>, that maps pairs of elements of <m>G</m> to an element of <m>G</m>, that satisfies:
+        </p>
+
+        <p>
+          <ol>
+            <li>
+              <p>
+                <em>Closure</em>: For every <m>g_1, g_2 \in G</m>, <m>g_1 \cdot g_2 \in G</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Associativity</em>: For every <m>g_1, g_2, g_3 \in G</m>, <m>(g_1 \cdot g_2) \cdot g_3 = g_1 \cdot (g_2 \cdot g_3)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Identity</em>: There exists an element <m>e \in G</m> such that <m>e \cdot g = g \cdot e = g</m> for any <m>g \in G</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Inverse</em>: For every <m>g \in G</m>, there exists <m>g' \in G</m> such that <m>g \cdot g' = g' \cdot g = e</m>, the identity element in <m>G</m>. 
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </definition>
+
+    <theorem xml:id="thm-5-8-z-mod-m-z-star-group">
+      <statement>
+        <p>
+          The set <m>(\mathbb{Z} / m \mathbb{Z})^{\times}</m> is a group under multiplication.
+        </p>
+        <p>
+          That is, <m>(\mathbb{Z} / m \mathbb{Z})^{\times}</m>, together with the notion of multiplication defined in <xref ref="def-5-8-z-mod-m-z"/>, is a group as defined by <xref ref="def-5-8-group"/>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          We need to prove the four conditions defined in <xref ref="def-5-8-group"/>.
+        </p>
+
+        <p>
+          <ol>
+            <li>
+              <p>
+                <em>Closure</em>: Let <m>a, b \in (\mathbb{Z} / m \mathbb{Z})^{\times}</m>. Then, by definition, <m>\mathrm{gcd}(a, m) = \mathrm{gcd}(b, m) = 1</m>, meaning that neither <m>a</m> nor <m>b</m> share any common factors with <m>m</m>. It follows that <m>a \cdot b</m> shares no common factors with <m>m</m>. It follows from the division algorithm that <m>a \cdot b \pmod{m}</m> shares no common factors with <m>m</m>, and so <m>a \cdot b \in (\mathbb{Z} / m \mathbb{Z})^{\times}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Associativity</em>: This follows from the associativity of multiplication in <m>\mathbb{Z}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Identity</em>: For any <m>m \gt 1</m>, <m>1 \in (\mathbb{Z} / m \mathbb{Z})^{\times}</m>, since <m>\mathrm{gcd}(1, m) = 1</m> independent of <m>m</m>. Additionally, <m>1 \cdot g = g \cdot 1 = g</m> for any <m>g \in (\mathbb{Z} / m \mathbb{Z})^{\times}</m>. Hence, the idenitity exists and is equal to <m>1</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Inverse</em>: Since every element <m>a \in (\mathbb{Z} / m \mathbb{Z})^{\times}</m> satisfies <m>\mathrm{gcd}(a, m) = 1</m>, every element in <m>(\mathbb{Z} / m \mathbb{Z})^{\times}</m> has an inverse by <xref ref="thm-mod-div"/>.
+              </p>
+            </li>
+          </ol>
+        </p>
+
+        <p>
+          Hence, <m>(\mathbb{Z} / m \mathbb{Z})^{\times}</m> is a group under multiplication.
+        </p>
+      </proof>
+    </theorem>
+
+    <p>
+      Perhaps the most important takeaways are that <m>(\mathbb{Z} / m \mathbb{Z})^{\times}</m> is closed under multiplication and that inverses exist for each element.
+    </p>  
+        
+  </subsection>
+
+  <subsection xml:id="subsec-powers">
+    <title>Powers of elements of <m>(\mathbb{Z} / m \mathbb{Z})^{\times}</m></title>
+
+    <p>
+      Let's explore some consequences of the closure of <m>(\mathbb{Z} / m \mathbb{Z})^{\times}</m>.
+    </p>
+    <p>
+      Lets work in <m>(\mathbb{Z} / 5 \mathbb{Z})^{\times}</m> and consider the powers of all of the elements.
+    </p>
+
+    <table>
+      <title>Powers of the elements of
+        <m>\left(\mathbb{Z}/5\mathbb{Z}\right)^\times</m>
+      </title>
+      <tabular row-headers="yes" halign="center">
+        <col right="minor"/>
+        <col/>
+        <col/>
+        <col/>
+        <col/>
+        <row header="yes" bottom="minor">
+          <cell><m>n</m></cell>
+          <cell><m>1^n</m></cell>
+          <cell><m>2^n</m></cell>
+          <cell><m>3^n</m></cell>
+          <cell><m>4^n</m></cell>
+        </row>
+        <row>
+          <cell><m>1</m></cell>
+          <cell><m>1</m></cell>
+          <cell><m>2</m></cell>
+          <cell><m>3</m></cell>
+          <cell><m>4</m></cell>
+        </row>
+        <row>
+          <cell><m>2</m></cell>
+          <cell><m>1</m></cell>
+          <cell><m>4</m></cell>
+          <cell><m>4</m></cell>
+          <cell><m>1</m></cell>
+        </row>
+        <row>
+          <cell><m>3</m></cell>
+          <cell><m>1</m></cell>
+          <cell><m>3</m></cell>
+          <cell><m>2</m></cell>
+          <cell><m>4</m></cell>
+        </row>
+        <row>
+          <cell><m>4</m></cell>
+          <cell><m>1</m></cell>
+          <cell><m>1</m></cell>
+          <cell><m>1</m></cell>
+          <cell><m>1</m></cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>
+      There are three interesting results here.
+    </p>
+
+    <p>
+      <ol>
+        <li><p>The last row is all ones.</p></li>
+        <li><p>Some columns appear to reach <m>1</m> early and cycle.</p></li>
+        <li><p>The columns that don't cycle seem to generate all elements of <m>(\mathbb{Z} / 5 \mathbb{Z})^{\times}</m>.</p></li>
+      </ol>
+    </p>
+    
+    <p>
+      Does this result hold? Consider now <m>(\mathbb{Z} / 7 \mathbb{Z})^{\times}</m>:
+    </p>
+
+    <table>
+      <title>Powers of the elements of
+        <m>\left(\mathbb{Z}/7\mathbb{Z}\right)^\times</m>
+      </title>
+      <tabular row-headers="yes" halign="center">
+        <col right="minor"/>
+        <col/>
+        <col/>
+        <col/>
+        <col/>
+        <col/>
+        <col/>
+        <row header="yes" bottom="minor">
+          <cell><m>n</m></cell>
+          <cell><m>1^n</m></cell>
+          <cell><m>2^n</m></cell>
+          <cell><m>3^n</m></cell>
+          <cell><m>4^n</m></cell>
+          <cell><m>5^n</m></cell>
+          <cell><m>6^n</m></cell>
+        </row>
+        <row>
+          <cell><m>1</m></cell>
+          <cell><m>1</m></cell>
+          <cell><m>2</m></cell>
+          <cell><m>3</m></cell>
+          <cell><m>4</m></cell>
+          <cell><m>5</m></cell>
+          <cell><m>6</m></cell>
+        </row>
+        <row>
+          <cell><m>2</m></cell>
+          <cell><m>1</m></cell>
+          <cell><m>4</m></cell>
+          <cell><m>2</m></cell>
+          <cell><m>2</m></cell>
+          <cell><m>4</m></cell>
+          <cell><m>1</m></cell>
+        </row>
+        <row>
+          <cell><m>3</m></cell>
+          <cell><m>1</m></cell>
+          <cell><m>1</m></cell>
+          <cell><m>6</m></cell>
+          <cell><m>1</m></cell>
+          <cell><m>6</m></cell>
+          <cell><m>6</m></cell>
+        </row>
+        <row>
+          <cell><m>4</m></cell>
+          <cell><m>1</m></cell>
+          <cell><m>2</m></cell>
+          <cell><m>4</m></cell>
+          <cell><m>4</m></cell>
+          <cell><m>2</m></cell>
+          <cell><m>1</m></cell>
+        </row>
+        <row>
+          <cell><m>5</m></cell>
+          <cell><m>1</m></cell>
+          <cell><m>4</m></cell>
+          <cell><m>5</m></cell>
+          <cell><m>2</m></cell>
+          <cell><m>3</m></cell>
+          <cell><m>6</m></cell>
+        </row>
+        <row>
+          <cell><m>6</m></cell>
+          <cell><m>1</m></cell>
+          <cell><m>1</m></cell>
+          <cell><m>1</m></cell>
+          <cell><m>1</m></cell>
+          <cell><m>1</m></cell>
+          <cell><m>1</m></cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>
+      The results do hold! You'll explore a bit more about when these results hold and when they don't in the homework, and we'll formalize them over the next two sections.
+    </p>
+
+  </subsection>
+
+</section>
