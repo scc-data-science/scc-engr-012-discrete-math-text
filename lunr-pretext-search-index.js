@@ -865,6 +865,96 @@ var ptx_lunr_docs = [
   "body": " Sunzi's Theorem   Let be pairwise coprime. Suppose . Then:       Has a solution.  If and are both solutions, then .     "
 },
 {
+  "id": "sec-5-8-group-theory",
+  "level": "1",
+  "url": "sec-5-8-group-theory.html",
+  "type": "Section",
+  "number": "5.8",
+  "title": "The Group Theoretic Perspective",
+  "body": " The Group Theoretic Perspective   The last few sections have focused on the additive properties of modular arithmetic. In the next few sections, we'll discuss the multiplicative properties.    The Integers Modulo as a Set  To make things easier to work with, we define the following set.    Let be the set of integers modulo , equipped with the following definitions of addition ( ) and multiplication ( ):     for any . We read as Z mod Z or say \"the integers modulo .\"  It is common to abbreviate and write .    In , the and on the left side of each equality are the and operators defined in , while the and on the right side of each equality are the and operators defined in .    In , what is ? ?    In , .  In , .    This set allows us to discuss modular arithmetic without use of congruences and the modulo operator.  We found in previous section that lots of interesting structure arises when you examine numbers in that are coprime to the modulus . Motivated by this, we define the following subset of .   The Group of Units Modulo   Let be the set of elements of that are coprime to .  We read this set as Z mod Z star and occasionally write .      Write down the elements of .    By definition, . Since the factors of are and , we know , , and are not elements of . Therefore, we have .      For any prime , .    Since is prime, all positive integers less than are coprime to .    This set, as suggested by the name of , is an example of a mathematical group . Let's take some time to define groups, prove that this is indeed a group, and discuss the consequences.    The Group of Units    A group is a nonempty set equipped with a binary operation , that maps pairs of elements of to an element of , that satisfies:      Closure : For every , .     Associativity : For every , .     Identity : There exists an element such that for any .     Inverse : For every , there exists such that , the identity element in .         The set is a group under multiplication.  That is, , together with the notion of multiplication defined in , is a group as defined by .    We need to prove the four conditions defined in .      Closure : Let . Then, by definition, , meaning that neither nor share any common factors with . It follows that shares no common factors with . It follows from the division algorithm that shares no common factors with , and so .     Associativity : This follows from the associativity of multiplication in .     Identity : For any , , since independent of . Additionally, for any . Hence, the idenitity exists and is equal to .     Inverse : Since every element satisfies , every element in has an inverse by .     Hence, is a group under multiplication.    Perhaps the most important takeaways are that is closed under multiplication and that inverses exist for each element.    Powers of elements of  Let's explore some consequences of the closure of .  Lets work in and consider the powers of all of the elements.   Powers of the elements of                                              There are three interesting results here.    The last row is all ones.  Some columns appear to reach early and cycle.  The columns that don't cycle seem to generate all elements of .    Does this result hold? Consider now :   Powers of the elements of                                                                            The results do hold! You'll explore a bit more about when these results hold and when they don't in the homework, and we'll formalize them over the next two sections.   "
+},
+{
+  "id": "def-5-8-z-mod-m-z",
+  "level": "2",
+  "url": "sec-5-8-group-theory.html#def-5-8-z-mod-m-z",
+  "type": "Definition",
+  "number": "5.8.1",
+  "title": "",
+  "body": "  Let be the set of integers modulo , equipped with the following definitions of addition ( ) and multiplication ( ):     for any . We read as Z mod Z or say \"the integers modulo .\"  It is common to abbreviate and write .   "
+},
+{
+  "id": "ex-5-8-z-mod-m-z",
+  "level": "2",
+  "url": "sec-5-8-group-theory.html#ex-5-8-z-mod-m-z",
+  "type": "Example",
+  "number": "5.8.2",
+  "title": "",
+  "body": "  In , what is ? ?    In , .  In , .   "
+},
+{
+  "id": "def-5-8-group-of-units",
+  "level": "2",
+  "url": "sec-5-8-group-theory.html#def-5-8-group-of-units",
+  "type": "Definition",
+  "number": "5.8.3",
+  "title": "The Group of Units Modulo <span class=\"process-math\">\\(m\\)<\/span>.",
+  "body": " The Group of Units Modulo   Let be the set of elements of that are coprime to .  We read this set as Z mod Z star and occasionally write .   "
+},
+{
+  "id": "ex-5-8-z-mod-m-z-star",
+  "level": "2",
+  "url": "sec-5-8-group-theory.html#ex-5-8-z-mod-m-z-star",
+  "type": "Example",
+  "number": "5.8.4",
+  "title": "",
+  "body": "  Write down the elements of .    By definition, . Since the factors of are and , we know , , and are not elements of . Therefore, we have .   "
+},
+{
+  "id": "thm-5-8-z-mod-p-z",
+  "level": "2",
+  "url": "sec-5-8-group-theory.html#thm-5-8-z-mod-p-z",
+  "type": "Theorem",
+  "number": "5.8.5",
+  "title": "",
+  "body": "  For any prime , .    Since is prime, all positive integers less than are coprime to .   "
+},
+{
+  "id": "def-5-8-group",
+  "level": "2",
+  "url": "sec-5-8-group-theory.html#def-5-8-group",
+  "type": "Definition",
+  "number": "5.8.6",
+  "title": "",
+  "body": "  A group is a nonempty set equipped with a binary operation , that maps pairs of elements of to an element of , that satisfies:      Closure : For every , .     Associativity : For every , .     Identity : There exists an element such that for any .     Inverse : For every , there exists such that , the identity element in .      "
+},
+{
+  "id": "thm-5-8-z-mod-m-z-star-group",
+  "level": "2",
+  "url": "sec-5-8-group-theory.html#thm-5-8-z-mod-m-z-star-group",
+  "type": "Theorem",
+  "number": "5.8.7",
+  "title": "",
+  "body": "  The set is a group under multiplication.  That is, , together with the notion of multiplication defined in , is a group as defined by .    We need to prove the four conditions defined in .      Closure : Let . Then, by definition, , meaning that neither nor share any common factors with . It follows that shares no common factors with . It follows from the division algorithm that shares no common factors with , and so .     Associativity : This follows from the associativity of multiplication in .     Identity : For any , , since independent of . Additionally, for any . Hence, the idenitity exists and is equal to .     Inverse : Since every element satisfies , every element in has an inverse by .     Hence, is a group under multiplication.   "
+},
+{
+  "id": "subsec-powers-4",
+  "level": "2",
+  "url": "sec-5-8-group-theory.html#subsec-powers-4",
+  "type": "Table",
+  "number": "5.8.8",
+  "title": "Powers of the elements of <span class=\"process-math\">\\(\\left(\\mathbb{Z}\/5\\mathbb{Z}\\right)^\\times\\)<\/span>",
+  "body": " Powers of the elements of                                             "
+},
+{
+  "id": "subsec-powers-8",
+  "level": "2",
+  "url": "sec-5-8-group-theory.html#subsec-powers-8",
+  "type": "Table",
+  "number": "5.8.9",
+  "title": "Powers of the elements of <span class=\"process-math\">\\(\\left(\\mathbb{Z}\/7\\mathbb{Z}\\right)^\\times\\)<\/span>",
+  "body": " Powers of the elements of                                                                           "
+},
+{
   "id": "backmatter-2",
   "level": "1",
   "url": "backmatter-2.html",
