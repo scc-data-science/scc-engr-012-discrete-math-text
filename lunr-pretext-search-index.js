@@ -1009,6 +1009,69 @@ var ptx_lunr_docs = [
   "body": "  Let be prime. Then for every .  Let be the set of all multiples of modulo . Then, by , . If two sets are equal, then the products of their elements is equal, and so:     By , has an inverse, , modulo . Multiplying both side of the above congruence by that inverse yields:     which completes the proof.   "
 },
 {
+  "id": "sec-5-10-cryptography",
+  "level": "1",
+  "url": "sec-5-10-cryptography.html",
+  "type": "Section",
+  "number": "5.10",
+  "title": "Introduction to Cryptography",
+  "body": " Introduction to Cryptography   Cryptography is the study of mathematical secret sharing. We often share very sensitive information across the internet, like passwords, data files that contain personally identifiable information, etc. We cannot just send these messages in plain text, because is generally not difficult for a malicious third party to gain access to the information we send through the internet. At the same time, we also want to intended receiver to be able to easily read the information we send. So, we need a process by which we can alter our message so that it is unintelligible to everyone except for our intended audience. We study some ways to do this below.    The Discrete Log Problem  Before we dive into cryptography, we need a little more theory. Recall back to the exercise at the end of , in which we examined powers in . We said that there were three interesting results of our exploration. The third result was that there were some elements for which the powers of appear to generate . Elements that satisfy this property are called primitive roots modulo .    An integer is called a primitive root modulo if the smallest positive exponent for which is .      Let be a primitive root modulo . Then, .    Omitted for brevity, but you can prove this!    We've already seen examples of this at the end of :      Show that and are primitive roots modulo ,  Show that and are primitive roots modulo .      We see from the tables at the end of that the powers of these elements generate all of the elements of and , respectively. Hence, these elements are indeed primitive roots.    Now, suppose is a primitive root modulo . We can define the exponential function  such that . By our conversation above, is a bijection, and so has an inverse!  The inverse is such that is the unique such that . This is known as the discrete logarithm . It turns out, finding given is very hard when is large.   The Discrete Log Problem (DLP)   Let be prime, be a primitive root, and . The discrete log problem is the task of finding the unique such that and .    The reason this construct is useful is that finding from and is hard, but finding from and is easy! In general, cryptography relies on problems that are easy to do in one direction (encryption) and difficult to do in the other direction (decryption).    The Setup  We're ready to talk about cryptography! The theoretical idea is to assume that two parties, Alice and Bob, want to share some information over an insecure channel (e.g., the internet) where an eavesdropper, Eve, might be listening. In general, any of the communication between Alice and Bob is assumed to be known by Eve, so Alice and Bob cannot share any information securely. Keep this in mind as we discuss the following two cryptosystems.    Symmetric Key Encrypton: Diffie Hellman  The first official cryptosystem that we're going to examine is a symmetric key exchange protocol called Diffie Hellman .   Diffie Hellman Key Exchange      Alice and Bob agree on a prime and a primitive root . They assume Eve knows , all of the information shared publicly below, and the algorithm itself.    Alice chooses a secrete integer and computes .    Bob chooses a secrete integer and computes .    Alice sends Bob and Bob sends Alice . Eve intercepts and .    Alice computes , and Bob computes .     Then, , and so Alice and Bob have a shared secret.    Note that . Similarly, . Hence, Alice and Bob have the same number modulo .    Importantly, Eve cannot reasonably determine the secret. She knows , and she knows how and were constructed. Critically, however, she does not know and . So, in order for Eve to decrypt the message, she'll need to solve:     and then compute modulo . But, finding is equivalent to solving the discrete log problem, which is not feasible with current technology and mathematical understanding. So, Alice's and Bob's secret is safe!    Public Key Cryptography: ElGamal  Symmetric key encryption, like Diffie Hellman, is useful if you want to generate a one-time password or something similar, but it is not useful if you want to send a specific message across an insecure channel. TO do this, we'll need public key cryptography, and the example we'll use here is the ElGamal cryptosystem. Another famous example is RSA, which relies on difficulty of factoring two large numbers.  Here, we assume Bob wants to send a message to Alice using Alice's cryptosystem.   The ElGamal Cryptosystem      Alice chooses a large prime , picks a primitive root , and calculates for some integer with .    Alice publishes her public key and keeps her private key a secret. Eve knows .    Bob encrypts a message and chooses a random integer .    Bob computes:       Bob sends to Alice. Eve intercepts .    Alice computes:        Then, , Bob's message.         Again, Eve cannot reasonably determine . She knows , and she knows how and were constructed, but she does not know and . So, in order for Eve to decrypt the message, she'll need to again solve:     for , and then she can solve modulo for . Again, finding is equivalent to solving the discrete log problem, which is not feasible with current technology and mathematical understanding. So, Bob's secret message is safe!   "
+},
+{
+  "id": "def-5-10-prim-roots",
+  "level": "2",
+  "url": "sec-5-10-cryptography.html#def-5-10-prim-roots",
+  "type": "Definition",
+  "number": "5.10.1",
+  "title": "",
+  "body": "  An integer is called a primitive root modulo if the smallest positive exponent for which is .   "
+},
+{
+  "id": "thm-5-10-prim-roots",
+  "level": "2",
+  "url": "sec-5-10-cryptography.html#thm-5-10-prim-roots",
+  "type": "Theorem",
+  "number": "5.10.2",
+  "title": "",
+  "body": "  Let be a primitive root modulo . Then, .    Omitted for brevity, but you can prove this!   "
+},
+{
+  "id": "ex-5-10-prim-roots",
+  "level": "2",
+  "url": "sec-5-10-cryptography.html#ex-5-10-prim-roots",
+  "type": "Example",
+  "number": "5.10.3",
+  "title": "",
+  "body": "    Show that and are primitive roots modulo ,  Show that and are primitive roots modulo .      We see from the tables at the end of that the powers of these elements generate all of the elements of and , respectively. Hence, these elements are indeed primitive roots.   "
+},
+{
+  "id": "def-5-10-dlp",
+  "level": "2",
+  "url": "sec-5-10-cryptography.html#def-5-10-dlp",
+  "type": "Definition",
+  "number": "5.10.4",
+  "title": "The Discrete Log Problem (DLP).",
+  "body": " The Discrete Log Problem (DLP)   Let be prime, be a primitive root, and . The discrete log problem is the task of finding the unique such that and .   "
+},
+{
+  "id": "alg-5-10-diffie-hellman",
+  "level": "2",
+  "url": "sec-5-10-cryptography.html#alg-5-10-diffie-hellman",
+  "type": "Algorithm",
+  "number": "5.10.5",
+  "title": "Diffie Hellman Key Exchange.",
+  "body": " Diffie Hellman Key Exchange      Alice and Bob agree on a prime and a primitive root . They assume Eve knows , all of the information shared publicly below, and the algorithm itself.    Alice chooses a secrete integer and computes .    Bob chooses a secrete integer and computes .    Alice sends Bob and Bob sends Alice . Eve intercepts and .    Alice computes , and Bob computes .     Then, , and so Alice and Bob have a shared secret.    Note that . Similarly, . Hence, Alice and Bob have the same number modulo .   "
+},
+{
+  "id": "alg-5-10-elgamal",
+  "level": "2",
+  "url": "sec-5-10-cryptography.html#alg-5-10-elgamal",
+  "type": "Algorithm",
+  "number": "5.10.6",
+  "title": "The ElGamal Cryptosystem.",
+  "body": " The ElGamal Cryptosystem      Alice chooses a large prime , picks a primitive root , and calculates for some integer with .    Alice publishes her public key and keeps her private key a secret. Eve knows .    Bob encrypts a message and chooses a random integer .    Bob computes:       Bob sends to Alice. Eve intercepts .    Alice computes:        Then, , Bob's message.        "
+},
+{
   "id": "backmatter-2",
   "level": "1",
   "url": "backmatter-2.html",
