@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-5-10-cryptography" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Introduction to Cryptography</title>
+
+  <introduction>
+    <p>
+      Cryptography is the study of mathematical secret sharing. We often share very sensitive information across the internet, like passwords, data files that contain personally identifiable information, etc. We cannot just send these messages in plain text, because is generally not difficult for a malicious third party to gain access to the information we send through the internet.  At the same time, we also want to intended receiver to be able to easily read the information we send. So, we need a process by which we can alter our message so that it is unintelligible to everyone except for our intended audience. We study some ways to do this below. 
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-5-10-dlp">
+    <title>The Discrete Log Problem</title>
+    
+    <p>
+      Before we dive into cryptography, we need a little more theory. Recall back to the exercise at the end of <xref ref="sec-5-8-group-theory"/>, in which we examined powers in <m>(\mathbb{Z} / p \mathbb{Z})^{\times}</m>. We said that there were three interesting results of our exploration. The third result was that there were some elements <m>g \in (\mathbb{Z} / p \mathbb{Z})^{\times}</m> for which the powers of <m>g</m> appear to generate <m>(\mathbb{Z} / p \mathbb{Z})^{\times}</m>. Elements that satisfy this property are called <em>primitive roots</em> modulo <m>p</m>.
+    </p>
+
+    <definition xml:id="def-5-10-prim-roots">
+      <statement>
+        <p>
+          An integer <m>g</m> is called a <em>primitive root modulo <m>p</m></em> if the smallest positive exponent <m>k</m> for which <m>g^{k} \equiv 1 \pmod{p}</m> is <m>k = p - 1</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <theorem xml:id="thm-5-10-prim-roots">
+      <statement>
+        <p>
+          Let <m>g</m> be a primitive root modulo <m>p</m>. Then, <m>\{g^1, g^2, \ldots, g^{p - 1}\} = (\mathbb{Z} / p \mathbb{Z})^{\times}</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Omitted for brevity, but you can prove this!
+        </p>
+      </proof>
+    </theorem>
+
+    <p>
+      We've already seen examples of this at the end of <xref ref="sec-5-8-group-theory"/>:
+    </p>
+
+    <example xml:id="ex-5-10-prim-roots">
+        <statement>
+          <p>
+            <ol>
+              <li><p>Show that <m>2</m> and <m>3</m> are primitive roots modulo <m>5</m>,</p></li>
+              <li><p>Show that <m>2</m> and <m>4</m> are primitive roots modulo <m>7</m>.</p></li>
+            </ol>
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            We see from the tables at the end of <xref ref="sec-5-8-group-theory"/> that the powers of these elements generate all of the elements of <m>(\mathbb{Z} / 5 \mathbb{Z})^{\times}</m> and <m>(\mathbb{Z} / 5 \mathbb{Z})^{\times}</m>, respectively. Hence, these elements are indeed primitive roots.
+          </p>
+        </solution>
+    </example>
+
+    <p>
+      Now, suppose <m>g</m> is a primitive root modulo <m>p</m>. We can define the <em>exponential function</em> <m>f: (\mathbb{Z} / p \mathbb{Z})^{\times} \to (\mathbb{Z} / p \mathbb{Z})^{\times}</m> such that <m>f(k) = g^{k}</m>. By our conversation above, <m>f</m> is a bijection, and so <m>f</m> has an inverse!
+    </p>
+    
+    <p>
+      The inverse is <m>f^{-1}: (\mathbb{Z} / p \mathbb{Z})^{\times} \to (\mathbb{Z} / p \mathbb{Z})^{\times}</m> such that <m>f^{-1}(a)</m> is the unique <m>k</m> such that <m>g^{k} = a</m>. This is known as the <em>discrete logarithm</em>. It turns out, finding <m>k</m> given <m>(a, p)</m> is <em>very</em> hard when <m>p</m> is large.
+    </p>
+
+    <definition xml:id="def-5-10-dlp">
+    <title>The Discrete Log Problem (DLP)</title>
+      <statement>
+        <p>
+          Let <m>p</m> be prime, <m>g \in (\mathbb{Z} / p \mathbb{Z})^{\times}</m> be a primitive root, and <m>a \in (\mathbb{Z} / p \mathbb{Z})^{\times}</m>. The <em>discrete log problem</em> is the task of finding the unique <m>k</m> such that <m>0 \lt k \lt p</m> and <m>g^{k} = a</m>.
+        </p>
+      </statement>
+    </definition>
+    
+    <p>
+      The reason this construct is useful is that finding <m>k</m> from <m>g</m> and <m>a</m> is hard, but finding <m>a</m> from <m>g</m> and <m>k</m> is easy! In general, cryptography relies on problems that are easy to do in one direction (encryption) and difficult to do in the other direction (decryption). 
+    </p>
+
+  </subsection>
+
+  <subsection xml:id="subsec-5-10-setup">
+    <title>The Setup</title>
+    
+    <p>
+      We're ready to talk about cryptography! The theoretical idea is to assume that two parties, Alice and Bob, want to share some information over an insecure channel (e.g., the internet) where an eavesdropper, Eve, might be listening. In general, any of the communication between Alice and Bob is assumed to be known by Eve, so Alice and Bob cannot share <em>any</em> information securely. Keep this in mind as we discuss the following two cryptosystems.
+    </p>
+
+  </subsection>
+
+  <subsection xml:id="subsec-5-10-diffie-hellman">
+    <title>Symmetric Key Encrypton: Diffie Hellman</title>
+    
+    <p>
+      The first official cryptosystem that we're going to examine is a symmetric key exchange protocol called <em>Diffie Hellman</em>.
+    </p>
+
+    <algorithm xml:id="alg-5-10-diffie-hellman">
+      <title>Diffie Hellman Key Exchange</title>
+      <statement>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Alice and Bob agree on a prime <m>p</m> and a primitive root <m>g \in (\mathbb{Z} / p \mathbb{Z})^{\times}</m>. They assume Eve knows <m>g, p</m>, all of the information shared publicly below, and the algorithm itself.
+              </p>
+            </li>
+            <li>
+              <p>
+                Alice chooses a secrete integer <m>a</m> and computes <m>A := g^{a} \pmod{p}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Bob chooses a secrete integer <m>b</m> and computes <m>B := g^{b} \pmod{p}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Alice sends Bob <m>A</m> and Bob sends Alice <m>B</m>. Eve intercepts <m>A</m> and <m>B</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Alice computes <m>A' = B^{a} \pmod{p}</m>, and Bob computes <m>B' = A^{b} \pmod{p}</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+
+        <p>
+          Then, <m>A' \equiv B' \pmod{p}</m>, and so Alice and Bob have a shared secret.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Note that <m>A' \equiv B^{a} \equiv (g^{b})^{a} \equiv g^{ab} \pmod{p}</m>. Similarly, <m>B' \equiv A^{b} \equiv (g^{a})^{b} \equiv g^{ab} \pmod{p}</m>. Hence, Alice and Bob have the same number modulo <m>p</m>.
+        </p>
+      </proof>
+    </algorithm>
+
+    <p>
+      Importantly, Eve cannot reasonably determine the secret. She knows <m>(p, g, A, B)</m>, and she knows how <m>A</m> and <m>B</m> were constructed. Critically, however, she <em>does not</em> know <m>a</m> and <m>b</m>. So, in order for Eve to decrypt the message, she'll need to solve:
+    </p>
+
+    <p>
+      <md>
+        <mrow>                g^{a} \amp \equiv A \pmod{p} \quad \text{for} \quad a,</mrow>
+        <mrow>\text{or} \quad g^{b} \amp \equiv B \pmod{p} \quad \text{for} \quad b,</mrow>
+      </md>
+    </p>
+
+    <p>
+      and then compute <m>g^{ab}</m> modulo <m>p</m>. But, finding <m>(a, b)</m> is equivalent to solving the discrete log problem, which is not feasible with current technology and mathematical understanding. So, Alice's and Bob's secret is safe!
+    </p>
+
+  </subsection>
+
+  <subsection xml:id="subsec-5-10-el-gamal">
+    <title>Public Key Cryptography: ElGamal</title>
+    
+    <p>
+      Symmetric key encryption, like Diffie Hellman, is useful if you want to generate a one-time password or something similar, but it is not useful if you want to <em>send a specific message</em> across an insecure channel. TO do this, we'll need public key cryptography, and the example we'll use here is the ElGamal cryptosystem. Another famous example is RSA, which relies on difficulty of factoring two large numbers.
+    </p>
+
+    <p>
+      Here, we assume Bob wants to send a message to Alice using Alice's cryptosystem.
+    </p>
+
+    <algorithm xml:id="alg-5-10-elgamal">
+      <title>The ElGamal Cryptosystem</title>
+      <statement>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Alice chooses a large prime <m>p</m>, picks a primitive root <m>g \in (\mathbb{Z} / p \mathbb{Z})^{\times}</m>, and calculates <m>A = g^{a} \pmod{p}</m> for some integer <m>a</m> with <m>0 \lt a \lt p</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Alice publishes her public key <m>k_{pub} := (p, g, A)</m> and keeps her private key <m>k_{priv} = a</m> a secret. Eve knows <m>k_{pub} := (p, g, A)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Bob encrypts a message <m>m \in (\mathbb{Z} / p \mathbb{Z})^{\times}</m> and chooses a random integer <m>b</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Bob computes:              
+              </p>
+              <p>
+                <md>
+                  <mrow> c_1 \amp = g^{b} \; \text{mod } p </mrow>
+                  <mrow> c_2 \amp = m \cdot A^{b} \; \text{mod } p </mrow>
+                </md>
+              </p>
+            </li>
+            <li>
+              <p>
+                Bob sends <m>(c_1, c_2)</m> to Alice. Eve intercepts <m>(c_1, c_2)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Alice computes:
+              </p>
+              <p>
+                <md>
+                  <mrow> x \amp = (c_1^a)^{-1} \; \text{mod } p </mrow>
+                  <mrow> y \amp = c_2 x        \; \text{mod } p </mrow>
+                </md>
+              </p>
+            </li>
+          </ol>
+        </p>
+
+        <p>
+          Then, <m>y = m</m>, Bob's message.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          <md>
+            <mrow> y \amp \equiv c_2 \cdot x </mrow>
+            <mrow>   \amp \equiv c_2 \cdot (c_1^a)^{-1} </mrow>
+            <mrow>   \amp \equiv m \cdot A^{b} \cdot [(g^{b})^{a}]^{-1} </mrow>
+            <mrow>   \amp \equiv m \cdot g^{ab} \cdot [g^{ab}]^{-1} </mrow>
+            <mrow>   \amp \equiv m </mrow>
+          </md>
+        </p>
+      </proof>
+    </algorithm>
+
+    <p>
+      Again, Eve cannot reasonably determine <m>m</m>. She knows <m>(p, g, A, c_1, c_2)</m>, and she knows how <m>c_1</m> and <m>c_2</m> were constructed, but she <em>does not</em> know <m>a</m> and <m>b</m>. So, in order for Eve to decrypt the message, she'll need to again solve:
+    </p>
+
+    <p>
+      <md>
+        g^{a} \equiv c_1 \pmod{p}
+      </md>
+    </p>
+
+    <p>
+      for <m>a</m>, and then she can solve <m>c_2 = m \cdot A^{b}</m> modulo <m>p</m> for <m>m</m>. Again, finding <m>a</m> is equivalent to solving the discrete log problem, which is not feasible with current technology and mathematical understanding. So, Bob's secret message is safe!
+    </p>
+
+  </subsection>
+
+</section>

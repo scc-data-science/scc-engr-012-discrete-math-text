@@ -36,5 +36,6 @@
   <xi:include href="sec-5-7-sunzi.ptx" />
   <xi:include href="sec-5-8-group-theory.ptx" />
   <xi:include href="sec-5-9-fermat-little-theorem.ptx" />
+  <xi:include href="sec-5-10-cryptography.ptx" />
 
 </chapter>
