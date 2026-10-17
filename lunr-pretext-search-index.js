@@ -955,6 +955,60 @@ var ptx_lunr_docs = [
   "body": " Powers of the elements of                                                                           "
 },
 {
+  "id": "sec-5-9-fermat-little-theorem",
+  "level": "1",
+  "url": "sec-5-9-fermat-little-theorem.html",
+  "type": "Section",
+  "number": "5.9",
+  "title": "Fermat’s Little Theorem",
+  "body": " Fermat's Little Theorem   One of the revelations we had at the end of the last section was that, for prime , it seemed to be the case that:     for any . This result is known as Fermat's Little Theorem . We present the proof of this theorem in this section.  However, I'd recommend you read this section out of order. Too often in formal mathematics education, we start with definitions, then prove lemmas, and finally arrive at big results and prove them. I find that approach to be unsatisfying and actually quite contradictory to how real mathematical discoveries are actually made. Mathematical discoveries are made by making conjectures about interesting new topics after lots of trial and error. Once you feel good about the conjecture you've made, only then do you go back and build the relevant theory.  Motivated by this, I would actually recommend you skip to the main result of this section, , and try to read the proof. Once you reach a step that you don't fully understand, look back at the linked lemma for intuition. This, together with your exploratory analysis about Fermat's Little Theorem in your last homework, more accurately reflects what doing math actually looks like.    Proving Fermat's Little Theorem  The proof of the theorem itself is actually not terribly compicated, but we'll need some additional backgroud theory to make the proof rigorous. To that end, we introduce the following four lemmas. Some of them might feel completely arbitrary. They will pay off, I promise!  The first is a nice review of set theory.    Suppose and are finite sets with and . Then .    The key idea is to write as a disjoint union of two sets. Since , we can write:     Since contains (that is, is a subset of ), we can think of as all of the elements of together with all the rest of the elements of that are not in .  Importantly, these two sets, and are disjoint by construction (that is, ). As such,     But, by assumption, so the left-hand size is zero, and so:     Hence, there are no elements in that are not also in , and so .  Thus, since and , we conclude .    The remaining three lemmas are all about modular arithmetic.    Let be prime. Then is invertible modulo .    Recall from that is invertible mod if and only if . Since is prime, as long as is not a multiple of .  Well, is not a mutiple of , so , and therefore exists.  You can also prove this by converting the statement into to group of units and using . I'd encourage you to think through the proof and try it!    For the next two lemmas, fix an arbitrary and define:       The elements of are all distinct.    Suppose not. That is, suppose that there exists such that . Then, by definition,     Since , is inveritble by . Multiplying both side of our congurence by yields:     The last step follows from the fact that , and so congruence modulo is the same as equality.  Hence, by way of contradiction, we've proved that no two elements of can be equal, and so all elements of are distinct.    One more! The next one tells is that the set that we defined contains all of the same elements as , except possibly in a different order. This is an interesting fact in and of itself, and I'd encourage you to play around with it by picking a prime and an element (say, and ) and showing that all of the muliples of generate all of the elements of . For our purposes, though, it will help us prove Fermat's Little Theorem.     .    Because is a group, it is closed under multiplication (see ). Hence, all of the elements of are elements of , and so .  And, by , all of the elements of are distinct, which means .  So, by , since and , we conclude     And now we finally have everything we need to prove Fermat's Little Theorem!    Let be prime. Then for every .  Let be the set of all multiples of modulo . Then, by , . If two sets are equal, then the products of their elements is equal, and so:     By , has an inverse, , modulo . Multiplying both side of the above congruence by that inverse yields:     which completes the proof.     "
+},
+{
+  "id": "lem-5-8-subsets-with-same-cardinality",
+  "level": "2",
+  "url": "sec-5-9-fermat-little-theorem.html#lem-5-8-subsets-with-same-cardinality",
+  "type": "Lemma",
+  "number": "5.9.1",
+  "title": "",
+  "body": "  Suppose and are finite sets with and . Then .    The key idea is to write as a disjoint union of two sets. Since , we can write:     Since contains (that is, is a subset of ), we can think of as all of the elements of together with all the rest of the elements of that are not in .  Importantly, these two sets, and are disjoint by construction (that is, ). As such,     But, by assumption, so the left-hand size is zero, and so:     Hence, there are no elements in that are not also in , and so .  Thus, since and , we conclude .   "
+},
+{
+  "id": "lem-5-9-p-less-1-fact",
+  "level": "2",
+  "url": "sec-5-9-fermat-little-theorem.html#lem-5-9-p-less-1-fact",
+  "type": "Lemma",
+  "number": "5.9.2",
+  "title": "",
+  "body": "  Let be prime. Then is invertible modulo .    Recall from that is invertible mod if and only if . Since is prime, as long as is not a multiple of .  Well, is not a mutiple of , so , and therefore exists.  You can also prove this by converting the statement into to group of units and using . I'd encourage you to think through the proof and try it!   "
+},
+{
+  "id": "lem-5-9-elements-distinct",
+  "level": "2",
+  "url": "sec-5-9-fermat-little-theorem.html#lem-5-9-elements-distinct",
+  "type": "Lemma",
+  "number": "5.9.3",
+  "title": "",
+  "body": "  The elements of are all distinct.    Suppose not. That is, suppose that there exists such that . Then, by definition,     Since , is inveritble by . Multiplying both side of our congurence by yields:     The last step follows from the fact that , and so congruence modulo is the same as equality.  Hence, by way of contradiction, we've proved that no two elements of can be equal, and so all elements of are distinct.   "
+},
+{
+  "id": "lem-5-9-s-is-zmpzs",
+  "level": "2",
+  "url": "sec-5-9-fermat-little-theorem.html#lem-5-9-s-is-zmpzs",
+  "type": "Lemma",
+  "number": "5.9.4",
+  "title": "",
+  "body": "   .    Because is a group, it is closed under multiplication (see ). Hence, all of the elements of are elements of , and so .  And, by , all of the elements of are distinct, which means .  So, by , since and , we conclude    "
+},
+{
+  "id": "thm-5-9-fermat-little-theorem",
+  "level": "2",
+  "url": "sec-5-9-fermat-little-theorem.html#thm-5-9-fermat-little-theorem",
+  "type": "Theorem",
+  "number": "5.9.5",
+  "title": "",
+  "body": "  Let be prime. Then for every .  Let be the set of all multiples of modulo . Then, by , . If two sets are equal, then the products of their elements is equal, and so:     By , has an inverse, , modulo . Multiplying both side of the above congruence by that inverse yields:     which completes the proof.   "
+},
+{
   "id": "backmatter-2",
   "level": "1",
   "url": "backmatter-2.html",
