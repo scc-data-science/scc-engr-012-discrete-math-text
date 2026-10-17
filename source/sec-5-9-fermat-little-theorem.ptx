@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-5-9-fermat-little-theorem" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Fermat's Little Theorem</title>
+
+  <introduction>
+    <p>
+      One of the revelations we had at the end of the last section was that, for prime <m>p</m>, it seemed to be the case that:
+    </p>
+
+    <p>
+      <md>
+        a^{p - 1} \equiv 1 \pmod{p}
+      </md>
+    </p>
+
+    <p>
+      for any <m>a \in (\mathbb{Z} / p \mathbb{Z})^{\times}</m>. This result is known as <em>Fermat's Little Theorem</em>. We present the proof of this theorem in this section.
+    </p>
+
+    <p>
+      However, I'd recommend you read this section out of order. Too often in formal mathematics education, we start with definitions, then prove lemmas, and finally arrive at big results and prove them. I find that approach to be unsatisfying and actually quite contradictory to how real mathematical discoveries are actually made. Mathematical discoveries are made by making conjectures about interesting new topics after lots of trial and error. Once you feel good about the conjecture you've made, only then do you go back and build the relevant theory.
+    </p>
+
+    <p>
+      Motivated by this, I would actually recommend you <em>skip</em> to the main result of this section, <xref ref="thm-5-9-fermat-little-theorem"/>, and try to read the proof. Once you reach a step that you don't fully understand, look back at the linked lemma for intuition. This, together with your exploratory analysis about Fermat's Little Theorem in your last homework, more accurately reflects what <em>doing math</em> actually looks like.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-5-9-fermat">
+    <title>Proving Fermat's Little Theorem</title>
+    
+    <p>
+      The proof of the theorem itself is actually not terribly compicated, but we'll need some additional backgroud theory to make the proof rigorous. To that end, we introduce the following four lemmas. Some of them might feel completely arbitrary. They will pay off, I promise!
+    </p>
+
+    <p>
+      The first is a nice review of set theory.
+    </p>
+
+    <lemma xml:id="lem-5-8-subsets-with-same-cardinality">
+      <statement>
+        <p>
+          Suppose <m>A</m> and <m>B</m> are finite sets with <m>A \subseteq B</m> and <m>\lvert A \rvert = \lvert B \rvert</m>. Then <m>A = B</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          The key idea is to write <m>B</m> as a disjoint union of two sets. Since <m>A \subseteq B</m>, we can write:
+        </p>
+
+        <p>
+          <md>
+            B = A \cup (B \smallsetminus A).
+          </md>
+        </p>
+
+        <p>
+          Since <m>B</m> contains <m>A</m> (that is, <m>A</m> is a subset of <m>B</m>), we can think of <m>B</m> as all of the elements of <m>A</m> together with all the rest of the elements of <m>B</m> that are not in <m>A</m>.
+        </p>
+
+        <p>
+          Importantly, these two sets, <m>A</m> and <m>B \smallsetminus A</m> are <em>disjoint</em> by construction (that is, <m>A \smallsetminus (B \smallsetminus A) = \varnothing</m>). As such,
+        </p>
+
+        <p>
+          <md>
+            <mrow> \lvert B \rvert \amp = \lvert A \cup (B \smallsetminus A) \rvert </mrow>
+            <mrow>                 \amp = \lvert A \rvert + \lvert B \smallsetminus A \rvert </mrow>
+            <mrow> \implies \lvert B \rvert - \lvert A \rvert \amp = \lvert B \smallsetminus A \rvert </mrow>
+          </md>
+        </p>
+
+        <p>
+          But, <m>\lvert A \rvert = \lvert B \rvert</m> by assumption, so the left-hand size is zero, and so:
+        </p>
+
+        <p>
+          <md>
+            \lvert B \smallsetminus A \rvert = 0.
+          </md>
+        </p>
+
+        <p>
+          Hence, there are no elements in <m>B</m> that are not also in <m>A</m>, and so <m>B \subseteq A</m>.
+        </p>
+
+        <p>
+          Thus, since <m>A \subseteq B</m> and <m>B \subseteq A</m>, we conclude <m>A = B</m>.
+        </p>
+      </proof>
+    </lemma>
+
+    <p>
+      The remaining three lemmas are all about modular arithmetic.
+    </p>
+
+    <lemma xml:id="lem-5-9-p-less-1-fact">
+      <statement>
+        <p>
+          Let <m>p</m> be prime. Then <m>(p - 1)! := 1 \cdot 2 \cdot \cdots \cdot (p - 1)</m> is invertible modulo <m>p</m>. 
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Recall from <xref ref="thm-mod-div"/> that <m>a</m> is invertible mod <m>p</m> if and only if <m>\mathrm{gcd}(a, p) = 1</m>. Since <m>p</m> is prime, <m>\mathrm{gcd}(a, p) = 1</m> as long as <m>a</m> is not a multiple of <m>p</m>.
+        </p>
+        <p>
+          Well, <m>(p - 1)!</m> is not a mutiple of <m>p</m>, so <m>\mathrm{gcd}((p - 1)!, p) = 1</m>, and therefore <m>[(p - 1)!]^{-1}</m> exists.
+        </p>
+        <p>
+          You can also prove this by converting the statement into to group of units <m>(\mathrm{Z} / p\mathrm{Z})^{\times}</m> and using <xref ref="thm-5-8-z-mod-m-z-star-group"/>. I'd encourage you to think through the proof and try it!
+        </p>
+      </proof>
+    </lemma>
+
+    <p>
+      For the next two lemmas, fix an arbitrary <m>a \in (\mathbb{Z} / p\mathbb{Z})^{\times}</m> and define:
+    </p>
+
+    <p>
+      <md>
+        S := \{a, 2a, 3a, \ldots, (p - 1)a\}.
+      </md>
+    </p>
+
+    <lemma xml:id="lem-5-9-elements-distinct">
+      <statement>
+        <p>
+          The elements of <m>S</m> are all distinct.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Suppose not. That is, suppose that there exists <m>k, \ell \in \{1, 2 \ldots, p - 1\}</m> such that <m>ka = \ell a</m>. Then, by definition,
+        </p>
+
+        <p>
+          <md>
+            ka \equiv \ell a \pmod{p} \quad \implies \quad (k - \ell)a \equiv 0 \pmod{p}.
+          </md>
+        </p>
+
+        <p>
+          Since <m>a \in (\mathbb{Z} / p\mathbb{Z})^{\times}</m>, <m>a</m> is inveritble by <xref ref="thm-mod-div"/>. Multiplying both side of our congurence by <m>a^{-1}</m> yields:
+        </p>
+
+        <p>
+          <md>
+            <mrow>(k - \ell)aa^{-1} \amp \equiv 0 \cdot a^{-1} \pmod{p}</mrow>
+            <mrow>\implies k - \ell \amp \equiv 0 \pmod{p}</mrow>
+            <mrow>\implies        k \amp = \ell.</mrow>
+          </md>
+        </p>
+
+        <p>
+          The last step follows from the fact that <m>0 \lt k, \ell \lt p</m>, and so congruence modulo <m>p</m> is the same as equality.
+        </p>
+
+        <p>
+          Hence, by way of contradiction, we've proved that no two elements of <m>S</m> can be equal, and so all elements of <m>S</m> are distinct.
+        </p>
+      </proof>
+    </lemma>
+
+    <p>
+      One more! The next one tells is that the set <m>S</m> that we defined contains all of the same elements as <m>(\mathbb{Z} / p\mathbb{Z})^{\times}</m>, except possibly in a different order. This is an interesting fact in and of itself, and I'd encourage you to play around with it by picking a prime <m>p</m> and an element <m>a \in (\mathbb{Z} / p\mathbb{Z})^{\times}</m> (say, <m>p = 7</m> and <m>a = 4</m>) and showing that all of the muliples of <m>a</m> generate all of the elements of <m>(\mathbb{Z} / p\mathbb{Z})^{\times}</m>. For our purposes, though, it will help us prove Fermat's Little Theorem.
+    </p>
+
+    <lemma xml:id="lem-5-9-s-is-zmpzs">
+      <statement>
+        <p>
+          <m>S = (\mathbb{Z} / p\mathbb{Z})^{\times}</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Because <m>(\mathbb{Z} / p\mathbb{Z})^{\times}</m> is a group, it is closed under multiplication (see <xref ref="thm-5-8-z-mod-m-z-star-group"/>). Hence, all of the elements of <m>S</m> are elements of <m>(\mathbb{Z} / p\mathbb{Z})^{\times}</m>, and so <m>S \subseteq (\mathbb{Z} / p\mathbb{Z})^{\times}</m>.
+        </p>
+
+        <p>
+          And, by <xref ref="lem-5-9-elements-distinct"/>, all of the elements of <m>S</m> are distinct, which means <m>\lvert S \rvert = p - 1 = \lvert (\mathbb{Z} / p\mathbb{Z})^{\times} \rvert</m>.
+        </p>
+
+        <p>
+          So, by <xref ref="lem-5-8-subsets-with-same-cardinality"/>, since <m>S \subseteq (\mathbb{Z} / p\mathbb{Z})^{\times}</m> and <m>\lvert S \rvert = \lvert (\mathbb{Z} / p\mathbb{Z})^{\times} \rvert</m>, we conclude <m>S = (\mathbb{Z} / p\mathbb{Z})^{\times}</m>
+        </p>
+      </proof>
+    </lemma>
+
+    <p>
+      And now we finally have everything we need to prove Fermat's Little Theorem!
+    </p>
+
+    <theorem xml:id="thm-5-9-fermat-little-theorem">
+      <statement>
+        <p>
+          Let <m>p</m> be prime. Then <m>a^{p - 1} \equiv 1 \pmod{p}</m> for every <m>a \not\mid p</m>.
+        </p>
+
+        <p>
+          Let <m>S = \{a, 2a, \ldots, (p - 1)a\}</m> be the set of all multiples of <m>a</m> modulo <m>p</m>. Then, by <xref ref="lem-5-9-s-is-zmpzs"/>, <m>S = (\mathbb{Z} / p\mathbb{Z})^{\times}</m>. If two sets are equal, then the products of their elements is equal, and so: 
+        </p>
+
+        <p>
+          <md>
+            <mrow>a \cdot 2a \cdot \cdots \cdot (p - 1) a \amp \equiv 1 \cdot 2 \cdot \cdots \cdot (p - 1) \pmod{p}</mrow>
+            <mrow>\implies (p - 1)! a^{p - 1} \amp \equiv (p - 1)! \pmod{p}</mrow>
+          </md>
+        </p>
+
+        <p>
+          By <xref ref="lem-5-9-p-less-1-fact"/>, <m>(p - 1)!</m> has an inverse, <m>[(p - 1)!]^{-1}</m>, modulo <m>p</m>. Multiplying both side of the above congruence by that inverse yields:
+        </p>
+
+        <p>
+          <md>
+            <mrow>[(p - 1)!]^{-1} (p - 1)! a^{p - 1} \amp \equiv [(p - 1)!]^{-1} (p - 1)! \pmod{p}</mrow>
+            <mrow>\implies                 a^{p - 1} \amp \equiv 1 \pmod{p}</mrow>
+          </md>
+        </p>
+
+        <p>
+          which completes the proof.
+        </p>
+      </statement>
+    </theorem>
+
+  </subsection>
+
+</section>
