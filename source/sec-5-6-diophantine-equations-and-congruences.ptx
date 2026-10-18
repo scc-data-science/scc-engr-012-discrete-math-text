@@ -192,7 +192,7 @@
       So, if a solution exists, how do we find it? We could guess-and-check, but as we have mentioned, this does not scale particularly well. It turns out, we can reduce the case in which <m>\mathrm{gcd}(a, m) \gt 1</m> to the case in which <m>\mathrm{gcd}(a, m) = 1</m> by dividing everything by <m>\mathrm{gcd}(a, m)</m>.
     </p>
 
-    <algorithm xml:id="alg-">
+    <algorithm xml:id="alg-complex-congruence">
       <statement>
         <p>
           To solve <m>ax \equiv b \pmod m</m> when <m>d = \mathrm{gcd}(a, m) \gt 1</m>:
