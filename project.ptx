@@ -7,6 +7,15 @@
   <targets>
     <target name="web" format="html" />
     <target name="print" format="pdf" />
+    <target
+        name="exercises-5"
+        format="pdf"
+        source="exercises-5.ptx"
+        publication="publication-exercises.ptx"
+        output-dir="exercises-5"
+        output-filename="scc_202680_engr_012_homework_07.pdf"
+        standalone="yes"
+    />
   </targets>
 </project>
 

@@ -37,5 +37,6 @@
   <!-- Specify the default type of cross reference: -->
   <!-- <cross-references text="type-global" /> -->
 
+  <rename element="inlineexercise">Exercise</rename>
 
 </docinfo>
