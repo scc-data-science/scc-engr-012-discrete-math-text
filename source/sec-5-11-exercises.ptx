@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-5-11-exercises" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Exercises</title>
+
+  <p>
+    Please complete the following problems. Show your work and simplify your answers whenever possible.
+  </p>
+
+  <exercise xml:id="ch-5-1-euclid">
+    <statement>
+      <p>
+        Using the extended Euclidean algorithm, find the inverse of <m>89</m> modulo <m>201</m>. Show your work.
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="ch-5-2-simple-congruence">
+    <statement>
+      <p>
+        Solve the linear congruence <m>89x \equiv 32 \pmod{201}</m>. Is the solution unique in <m>\mathbb{Z} / 209\mathbb{Z}</m>? Why or why not?
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="ch-5-3-complex-congruence">
+    <statement>
+      <p>
+        Solve the linear congruence <m>12x \equiv 31 \pmod{81}</m>.
+      </p>
+
+      <p>
+        <em>Hint: What is <m>\mathrm{gcd}(12, 31)</m>?</em>
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="ch-5-4-sunzi">
+    <statement>
+      <p>
+        Solve the system of congruences:
+        <md>
+          <mrow> x \amp \equiv 3 \pmod{5} </mrow>
+          <mrow> x \amp \equiv 1 \pmod{7} </mrow>
+          <mrow> x \amp \equiv 4 \pmod{11} </mrow>
+        </md>
+      </p>
+
+      <p>
+        Before doing any computations, how do you know a solution exists?
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="ch-5-5-wilson">
+    <statement>
+      <p>
+        In this problem, we are going to prove <em>Wilson's Theorem</em>, which aims to understand the value of <m>(p - 1)!</m> modulo <m>p</m>. Recall, <m>(p - 1)! = 1 \cdot 2 \cdot \cdots \cdot (p - 1)</m>. Equivalently, <m>(p - 1)!</m> is the product of all of the elements of <m>(\mathbb{Z} / 5p\mathbb{Z})^{\times}</m>
+      </p>
+
+      <p>
+        <ol>
+          <li>
+            <p>
+              Compute <m>(p - 1)!</m> in <m>(\mathbb{Z} / 5\mathbb{Z})^{\times}</m> and in <m>(\mathbb{Z} / 7\mathbb{Z})^{\times}</m>. What do you notice?
+            </p>
+          </li>
+          <li>
+            <p>
+              To prove your conjecture, we need to understand how elements interact with their multiplicative inverses when multiplied together in a large chain.
+            </p>
+            <p>
+              List all of the elements in <m>(\mathbb{Z} / 7\mathbb{Z})^{\times}</m> and pair up each element with its unique multiplicative inverse. Which elements are paired up with <em>different</em> numbers? Which elements are paired with <em>themselves</em>?
+            </p>
+          </li>
+          <li>
+            <p>
+              Here, we examine the numbers which are their own inverses. An element <m>x \in (\mathbb{Z} / p\mathbb{Z})^{\times}</m> is its own inverse if and only if <m>x^2 \equiv 1 \pmod{p}</m>.
+              <ol>
+                <li>
+                  <p>
+                    Rewrite the above congruence as <m>x^2 - 1 \equiv 0 \pmod{p}</m> and factor the left side.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Use <em>Euclid's Lemma</em> (if a prime divides a product, it must divide at least one of the factors) to prove that the only elements in <m>(\mathbb{Z} / p\mathbb{Z})^{\times}</m> that are their own inverses are <m>1</m> and <m>p - 1</m> (i.e., <m>-1</m>).
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </li>
+          <li>
+            <p>
+              We're ready for the proof. Write <m>(p - 1)! = 1 \cdot 2 \cdot \cdots \cdot (p - 1)</m>.
+              <ol>
+                <li>
+                  <p>
+                    Based on your findings above, explain what happens to the numbers <m>2</m> through <m>p - 2</m>?
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Conclude that <m>(p - 1)! \equiv -1 \pmod{p}</m>.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="ch-5-6-square-roots">
+    <statement>
+      <p>
+        We'll conclude this assignment with a study of square roots modulo <m>p</m> for some prime <m>p</m> (adapted from Exercises 1.36 and 1.39 in Hoffstein, Piper, and Silverman's <em>Introduction to Mathematical Cryptography</em>). We will see that the behaviour is similar to that of <m>\mathbb{Z}</m>, where every number has either 2 square roots, or none at all.
+      </p>
+
+      <p>
+        <ol>
+          <li>
+            <p>
+              Let p be prime, and suppose <m>p \neq 2</m>, and <m>b \in (\mathbb{Z}/ p\mathbb{Z})^{\times}</m>. Show that <m>b</m> either has 2 square roots modulo <m>p</m>, or none. That is, show that the congruence:
+              <md>
+                x^2 \equiv 0 \pmod{p}
+              </md>
+              has either 2 or 0 solutions in <m>\mathbb{Z}/ p\mathbb{Z}</m>. What happens if <m>p = 2</m>?
+            </p>
+            <p>
+              <em>Hint: Think about solutions to the equation <m>x^{2} = b</m> and reduce modulo <m>p</m>.</em>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              Test that this works by finding all solutions to the following two congruences:
+              <md>
+                <mrow> x^2 \amp \equiv 2 \pmod{7}; </mrow>
+                <mrow> x^2 \amp \equiv 3 \pmod{11}. </mrow>
+              </md>
+            </p>
+          </li>
+          <li>
+            <p>
+              Much like the integers, if a number has a square root modulo <m>p</m>, we call it a <em>perfect square</em> modulo <m>p</m>. Find all the perfect squares in <m>\mathbb{Z}/ 5\mathbb{Z}</m> and <m>\mathbb{Z}/ 7\mathbb{Z}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Notice that in each case exactly half of the nonzero elements were perfect squares (suggesting that perfect squares are more common mod <m>p</m> than in <m>\mathbb{Z}</m>). Let's prove this in general.
+            </p>
+
+            <p>
+              Let <m>p</m> be an odd prime and <m>g \in (\mathbb{Z} / p\mathbb{Z})^{\times}</m> be a primitive root. Then any <m>a \in (\mathbb{Z} / p\mathbb{Z})^{\times}</m> is congruent to a power of <m>g</m> modulo <m>p</m>, say <m>a \equiv g^k</m> mod <m>p</m>. Show that <m>a</m> is a perfect square if and only if <m>k</m> is even. Conclude that exactly half of the nonzero elements of <m>\mathbb{Z} / p\mathbb{Z}</m> are perfect squares.
+            </p>
+          </li>
+          <li>
+            <p>
+              With these tools in hand we can prove the following variant of Fermat's little theorem.
+            </p>
+
+            <p>
+              For a few (small) primes <m>p \geq 3</m>, compute <m>b^{(p - 1)/2}</m> mod <m>p</m> for various nonzero values of <m>b \in \mathbb{Z} / p\mathbb{Z}</m>. You should notice a pattern, make a conjecture as to the possible values of <m>b^{(p - 1)/2}</m> for <m>p \nmid b</m>, and prove it is correct. (Hint: Use Fermat's little theorem and part (a) above.)
+            </p>
+          </li>
+        </ol>
+      </p>
+
+    </statement>
+  </exercise>
+
+</section>

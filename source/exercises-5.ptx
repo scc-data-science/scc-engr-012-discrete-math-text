@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext xml:lang="en-US"
+         xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <xi:include href="./docinfo.ptx" />
+
+  <article xml:id="chapter-5-exercises">
+    <title>Chapter 5: Number Theory</title>
+    <subtitle>Solano Community College ENGR 012</subtitle>
+
+    <xi:include href="./sec-5-11-exercises.ptx" />
+
+  </article>
+
+</pretext>
