@@ -697,7 +697,7 @@ var ptx_lunr_docs = [
   "id": "ex-mod-arithmetic-add-2",
   "level": "2",
   "url": "sec-5-4-modular-arithmetic.html#ex-mod-arithmetic-add-2",
-  "type": "Checkpoint",
+  "type": "Exercise",
   "number": "5.4.6",
   "title": "",
   "body": "  Find the remainder when is divided by .    The reason a decimal expansion (i.e., base 10) was so useful in was because . What base might be useful here?   "
@@ -715,7 +715,7 @@ var ptx_lunr_docs = [
   "id": "ex-mod-arithmetic-power-2",
   "level": "2",
   "url": "sec-5-4-modular-arithmetic.html#ex-mod-arithmetic-power-2",
-  "type": "Checkpoint",
+  "type": "Exercise",
   "number": "5.4.8",
   "title": "",
   "body": "  Find the remainder when is divided by .    Exploring the powers of modulo may take a littler longer than it did in the previous example. Don't give up!   "
@@ -811,9 +811,9 @@ var ptx_lunr_docs = [
   "body": "  The congruence (mod ) has a solution if and only if .    The linear congruence is logically equivalent to the existence of integers and such that: Let .   Assume a solution exists. By definition, and . Since divides both coefficients, it must divide any integer linear combination of them: Because , it follows directly that .   Assume . This implies for some integer . By , there exist integers and such that: Multiplying both sides of this identity by yields: Substituting gives: Rewriting this equation modulo , the term becomes , leaving: Thus, is an integer solution to the congruence.   "
 },
 {
-  "id": "alg-",
+  "id": "alg-complex-congruence",
   "level": "2",
-  "url": "sec-5-6-diophantine-equations-and-congruences.html#alg-",
+  "url": "sec-5-6-diophantine-equations-and-congruences.html#alg-complex-congruence",
   "type": "Algorithm",
   "number": "5.6.5",
   "title": "",
@@ -1070,6 +1070,69 @@ var ptx_lunr_docs = [
   "number": "5.10.6",
   "title": "The ElGamal Cryptosystem.",
   "body": " The ElGamal Cryptosystem      Alice chooses a large prime , picks a primitive root , and calculates for some integer with .    Alice publishes her public key and keeps her private key a secret. Eve knows .    Bob encrypts a message and chooses a random integer .    Bob computes:       Bob sends to Alice. Eve intercepts .    Alice computes:        Then, , Bob's message.        "
+},
+{
+  "id": "sec-5-11-exercises",
+  "level": "1",
+  "url": "sec-5-11-exercises.html",
+  "type": "Section",
+  "number": "5.11",
+  "title": "Exercises",
+  "body": " Exercises  Please complete the following problems. Show your work and simplify your answers whenever possible.    Using the extended Euclidean algorithm, find the inverse of modulo . Show your work.      Solve the linear congruence . Is the solution unique in ? Why or why not?      Solve the linear congruence .   Hint: What is ?       Solve the system of congruences:   Before doing any computations, how do you know a solution exists?      In this problem, we are going to prove Wilson's Theorem , which aims to understand the value of modulo .  Recall, . Equivalently, is the product of all of the elements of      Compute in and in . What do you notice?    To prove your conjecture, we need to understand how elements interact with their multiplicative inverses when multiplied together in a large chain.  List all of the elements in and pair up each element with its unique multiplicative inverse. Which elements are paired up with different numbers? Which elements are paired with themselves ?    Here, we examine the numbers which are their own inverses. An element is its own inverse if and only if .   Rewrite the above congruence as and factor the left side.    Use Euclid's Lemma (if a prime divides a product, it must divide at least one of the factors) to prove that the only elements in that are their own inverses are and (i.e., ).       We're ready for the proof. Write .   Based on your findings above, explain what happens to the numbers through ?    Conclude that .            We'll conclude this assignment with a study of square roots modulo for some prime (adapted from Exercises 1.36 and 1.39 in Hoffstein, Piper, and Silverman's Introduction to Mathematical Cryptography ). We will see that the behaviour is similar to that of , where every number has either 2 square roots, or none at all.     Let p be prime, and suppose , and . Show that either has 2 square roots modulo , or none. That is, show that the congruence: has either 2 or 0 solutions in . What happens if ?   Hint: Think about solutions to the equation and reduce modulo .     Test that this works by finding all solutions to the following two congruences:     Much like the integers, if a number has a square root modulo , we call it a perfect square modulo . Find all the perfect squares in and .    Notice that in each case exactly half of the nonzero elements were perfect squares (suggesting that perfect squares are more common mod than in ). Let's prove this in general.  Let be an odd prime and be a primitive root. Then any is congruent to a power of modulo , say mod . Show that is a perfect square if and only if is even. Conclude that exactly half of the nonzero elements of are perfect squares.    With these tools in hand we can prove the following variant of Fermat's little theorem.  For a few (small) primes , compute mod for various nonzero values of . You should notice a pattern, make a conjecture as to the possible values of for , and prove it is correct. (Hint: Use Fermat's little theorem and part (a) above.)       "
+},
+{
+  "id": "ch-5-1-euclid",
+  "level": "2",
+  "url": "sec-5-11-exercises.html#ch-5-1-euclid",
+  "type": "Exercise",
+  "number": "5.11.1",
+  "title": "",
+  "body": "  Using the extended Euclidean algorithm, find the inverse of modulo . Show your work.   "
+},
+{
+  "id": "ch-5-2-simple-congruence",
+  "level": "2",
+  "url": "sec-5-11-exercises.html#ch-5-2-simple-congruence",
+  "type": "Exercise",
+  "number": "5.11.2",
+  "title": "",
+  "body": "  Solve the linear congruence . Is the solution unique in ? Why or why not?   "
+},
+{
+  "id": "ch-5-3-complex-congruence",
+  "level": "2",
+  "url": "sec-5-11-exercises.html#ch-5-3-complex-congruence",
+  "type": "Exercise",
+  "number": "5.11.3",
+  "title": "",
+  "body": "  Solve the linear congruence .   Hint: What is ?    "
+},
+{
+  "id": "ch-5-4-sunzi",
+  "level": "2",
+  "url": "sec-5-11-exercises.html#ch-5-4-sunzi",
+  "type": "Exercise",
+  "number": "5.11.4",
+  "title": "",
+  "body": "  Solve the system of congruences:   Before doing any computations, how do you know a solution exists?   "
+},
+{
+  "id": "ch-5-5-wilson",
+  "level": "2",
+  "url": "sec-5-11-exercises.html#ch-5-5-wilson",
+  "type": "Exercise",
+  "number": "5.11.5",
+  "title": "",
+  "body": "  In this problem, we are going to prove Wilson's Theorem , which aims to understand the value of modulo .  Recall, . Equivalently, is the product of all of the elements of      Compute in and in . What do you notice?    To prove your conjecture, we need to understand how elements interact with their multiplicative inverses when multiplied together in a large chain.  List all of the elements in and pair up each element with its unique multiplicative inverse. Which elements are paired up with different numbers? Which elements are paired with themselves ?    Here, we examine the numbers which are their own inverses. An element is its own inverse if and only if .   Rewrite the above congruence as and factor the left side.    Use Euclid's Lemma (if a prime divides a product, it must divide at least one of the factors) to prove that the only elements in that are their own inverses are and (i.e., ).       We're ready for the proof. Write .   Based on your findings above, explain what happens to the numbers through ?    Conclude that .         "
+},
+{
+  "id": "ch-5-6-square-roots",
+  "level": "2",
+  "url": "sec-5-11-exercises.html#ch-5-6-square-roots",
+  "type": "Exercise",
+  "number": "5.11.6",
+  "title": "",
+  "body": "  We'll conclude this assignment with a study of square roots modulo for some prime (adapted from Exercises 1.36 and 1.39 in Hoffstein, Piper, and Silverman's Introduction to Mathematical Cryptography ). We will see that the behaviour is similar to that of , where every number has either 2 square roots, or none at all.     Let p be prime, and suppose , and . Show that either has 2 square roots modulo , or none. That is, show that the congruence: has either 2 or 0 solutions in . What happens if ?   Hint: Think about solutions to the equation and reduce modulo .     Test that this works by finding all solutions to the following two congruences:     Much like the integers, if a number has a square root modulo , we call it a perfect square modulo . Find all the perfect squares in and .    Notice that in each case exactly half of the nonzero elements were perfect squares (suggesting that perfect squares are more common mod than in ). Let's prove this in general.  Let be an odd prime and be a primitive root. Then any is congruent to a power of modulo , say mod . Show that is a perfect square if and only if is even. Conclude that exactly half of the nonzero elements of are perfect squares.    With these tools in hand we can prove the following variant of Fermat's little theorem.  For a few (small) primes , compute mod for various nonzero values of . You should notice a pattern, make a conjecture as to the possible values of for , and prove it is correct. (Hint: Use Fermat's little theorem and part (a) above.)      "
 },
 {
   "id": "backmatter-2",
