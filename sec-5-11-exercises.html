@@ -319,66 +319,64 @@ x \amp \equiv 4 \pmod{11}
 <article class="exercise exercise-like" id="ch-5-5-wilson"><h2 class="heading">
 <span class="type">Exercise</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.11.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h2>
-<div class="para" id="ch-5-5-wilson-1-1">In this problem, we are going to prove <em class="emphasis">Wilson’s Theorem</em>, which aims to understand the value of <span class="process-math">\((p - 1)!\)</span> modulo <span class="process-math">\(p\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-5-5-wilson-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ch-5-5-wilson-1-1">In this problem, we are going to prove <em class="emphasis">Wilson’s Theorem</em>, which aims to understand the value of <span class="process-math">\((p - 1)!\)</span> modulo <span class="process-math">\(p\text{.}\)</span> Recall, <span class="process-math">\((p - 1)! = 1 \cdot 2 \cdot \cdots \cdot (p - 1)\text{.}\)</span> Equivalently, <span class="process-math">\((p - 1)!\)</span> is the product of all of the elements of <span class="process-math">\((\mathbb{Z} / p\mathbb{Z})^{\times}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-5-5-wilson-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> 
-<div class="para" id="ch-5-5-wilson-1-2">Recall, <span class="process-math">\((p - 1)! = 1 \cdot 2 \cdot \cdots \cdot (p - 1)\text{.}\)</span> Equivalently, <span class="process-math">\((p - 1)!\)</span> is the product of all of the elements of <span class="process-math">\((\mathbb{Z} / 5p\mathbb{Z})^{\times}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-5-5-wilson-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> 
-<div class="para logical" id="ch-5-5-wilson-1-3">
-<ol class="decimal" id="ch-5-5-wilson-1-3-1">
-<li id="ch-5-5-wilson-1-3-1-1">
-<div class="para" id="ch-5-5-wilson-1-3-1-1-1">Compute <span class="process-math">\((p - 1)!\)</span> in <span class="process-math">\((\mathbb{Z} / 5\mathbb{Z})^{\times}\)</span> and in <span class="process-math">\((\mathbb{Z} / 7\mathbb{Z})^{\times}\text{.}\)</span> What do you notice?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-5-5-wilson-1-3-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para logical" id="ch-5-5-wilson-1-2">
+<ol class="decimal" id="ch-5-5-wilson-1-2-1">
+<li id="ch-5-5-wilson-1-2-1-1">
+<div class="para" id="ch-5-5-wilson-1-2-1-1-1">Compute <span class="process-math">\((p - 1)!\)</span> in <span class="process-math">\((\mathbb{Z} / 5\mathbb{Z})^{\times}\)</span> and in <span class="process-math">\((\mathbb{Z} / 7\mathbb{Z})^{\times}\text{.}\)</span> What do you notice?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-5-5-wilson-1-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item 5.11.5.1"><a tabindex="-1" href="#ch-5-5-wilson-1-3-1-1" title="Copy heading and permalink for Item 5.11.5.1" aria-label="Copy heading and permalink for Item 5.11.5.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 5.11.5.1"><a tabindex="-1" href="#ch-5-5-wilson-1-2-1-1" title="Copy heading and permalink for Item 5.11.5.1" aria-label="Copy heading and permalink for Item 5.11.5.1">🔗</a></div>
 </li>
-<li id="ch-5-5-wilson-1-3-1-2">
-<div class="para" id="ch-5-5-wilson-1-3-1-2-1">To prove your conjecture, we need to understand how elements interact with their multiplicative inverses when multiplied together in a large chain.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-5-5-wilson-1-3-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<li id="ch-5-5-wilson-1-2-1-2">
+<div class="para" id="ch-5-5-wilson-1-2-1-2-1">To prove your conjecture, we need to understand how elements interact with their multiplicative inverses when multiplied together in a large chain.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-5-5-wilson-1-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ch-5-5-wilson-1-3-1-2-2">List all of the elements in <span class="process-math">\((\mathbb{Z} / 7\mathbb{Z})^{\times}\)</span> and pair up each element with its unique multiplicative inverse. Which elements are paired up with <em class="emphasis">different</em> numbers? Which elements are paired with <em class="emphasis">themselves</em>?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-5-5-wilson-1-3-1-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ch-5-5-wilson-1-2-1-2-2">List all of the elements in <span class="process-math">\((\mathbb{Z} / 7\mathbb{Z})^{\times}\)</span> and pair up each element with its unique multiplicative inverse. Which elements are paired up with <em class="emphasis">different</em> numbers? Which elements are paired with <em class="emphasis">themselves</em>?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-5-5-wilson-1-2-1-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item 5.11.5.2"><a tabindex="-1" href="#ch-5-5-wilson-1-3-1-2" title="Copy heading and permalink for Item 5.11.5.2" aria-label="Copy heading and permalink for Item 5.11.5.2">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 5.11.5.2"><a tabindex="-1" href="#ch-5-5-wilson-1-2-1-2" title="Copy heading and permalink for Item 5.11.5.2" aria-label="Copy heading and permalink for Item 5.11.5.2">🔗</a></div>
 </li>
-<li id="ch-5-5-wilson-1-3-1-3">
-<div class="para logical" id="ch-5-5-wilson-1-3-1-3-1">
+<li id="ch-5-5-wilson-1-2-1-3">
+<div class="para logical" id="ch-5-5-wilson-1-2-1-3-1">
 <div class="para">Here, we examine the numbers which are their own inverses. An element <span class="process-math">\(x \in (\mathbb{Z} / p\mathbb{Z})^{\times}\)</span> is its own inverse if and only if <span class="process-math">\(x^2 \equiv 1 \pmod{p}\text{.}\)</span>
 </div>
-<ol class="lower-alpha" style="list-style: ptx-marker-0;" id="ch-5-5-wilson-1-3-1-3-1-3">
-<li id="ch-5-5-wilson-1-3-1-3-1-3-1">
-<div class="para" id="ch-5-5-wilson-1-3-1-3-1-3-1-1">Rewrite the above congruence as <span class="process-math">\(x^2 - 1 \equiv 0 \pmod{p}\)</span> and factor the left side.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-5-5-wilson-1-3-1-3-1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<ol class="lower-alpha" style="list-style: ptx-marker-0;" id="ch-5-5-wilson-1-2-1-3-1-3">
+<li id="ch-5-5-wilson-1-2-1-3-1-3-1">
+<div class="para" id="ch-5-5-wilson-1-2-1-3-1-3-1-1">Rewrite the above congruence as <span class="process-math">\(x^2 - 1 \equiv 0 \pmod{p}\)</span> and factor the left side.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-5-5-wilson-1-2-1-3-1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item 5.11.5.3.a"><a tabindex="-1" href="#ch-5-5-wilson-1-3-1-3-1-3-1" title="Copy heading and permalink for Item 5.11.5.3.a" aria-label="Copy heading and permalink for Item 5.11.5.3.a">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 5.11.5.3.a"><a tabindex="-1" href="#ch-5-5-wilson-1-2-1-3-1-3-1" title="Copy heading and permalink for Item 5.11.5.3.a" aria-label="Copy heading and permalink for Item 5.11.5.3.a">🔗</a></div>
 </li>
-<li id="ch-5-5-wilson-1-3-1-3-1-3-2">
-<div class="para" id="ch-5-5-wilson-1-3-1-3-1-3-2-1">Use <em class="emphasis">Euclid’s Lemma</em> (if a prime divides a product, it must divide at least one of the factors) to prove that the only elements in <span class="process-math">\((\mathbb{Z} / p\mathbb{Z})^{\times}\)</span> that are their own inverses are <span class="process-math">\(1\)</span> and <span class="process-math">\(p - 1\)</span> (i.e., <span class="process-math">\(-1\)</span>).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-5-5-wilson-1-3-1-3-1-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<li id="ch-5-5-wilson-1-2-1-3-1-3-2">
+<div class="para" id="ch-5-5-wilson-1-2-1-3-1-3-2-1">Use <em class="emphasis">Euclid’s Lemma</em> (if a prime divides a product, it must divide at least one of the factors) to prove that the only elements in <span class="process-math">\((\mathbb{Z} / p\mathbb{Z})^{\times}\)</span> that are their own inverses are <span class="process-math">\(1\)</span> and <span class="process-math">\(p - 1\)</span> (i.e., <span class="process-math">\(1\)</span> and <span class="process-math">\(-1\)</span>).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-5-5-wilson-1-2-1-3-1-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item 5.11.5.3.b"><a tabindex="-1" href="#ch-5-5-wilson-1-3-1-3-1-3-2" title="Copy heading and permalink for Item 5.11.5.3.b" aria-label="Copy heading and permalink for Item 5.11.5.3.b">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 5.11.5.3.b"><a tabindex="-1" href="#ch-5-5-wilson-1-2-1-3-1-3-2" title="Copy heading and permalink for Item 5.11.5.3.b" aria-label="Copy heading and permalink for Item 5.11.5.3.b">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-5-5-wilson-1-3-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-5-5-wilson-1-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item 5.11.5.3"><a tabindex="-1" href="#ch-5-5-wilson-1-3-1-3" title="Copy heading and permalink for Item 5.11.5.3" aria-label="Copy heading and permalink for Item 5.11.5.3">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 5.11.5.3"><a tabindex="-1" href="#ch-5-5-wilson-1-2-1-3" title="Copy heading and permalink for Item 5.11.5.3" aria-label="Copy heading and permalink for Item 5.11.5.3">🔗</a></div>
 </li>
-<li id="ch-5-5-wilson-1-3-1-4">
-<div class="para logical" id="ch-5-5-wilson-1-3-1-4-1">
+<li id="ch-5-5-wilson-1-2-1-4">
+<div class="para logical" id="ch-5-5-wilson-1-2-1-4-1">
 <div class="para">We’re ready for the proof. Write <span class="process-math">\((p - 1)! = 1 \cdot 2 \cdot \cdots \cdot (p - 1)\text{.}\)</span>
 </div>
-<ol class="lower-alpha" style="list-style: ptx-marker-0;" id="ch-5-5-wilson-1-3-1-4-1-2">
-<li id="ch-5-5-wilson-1-3-1-4-1-2-1">
-<div class="para" id="ch-5-5-wilson-1-3-1-4-1-2-1-1">Based on your findings above, explain what happens to the numbers <span class="process-math">\(2\)</span> through <span class="process-math">\(p - 2\text{?}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-5-5-wilson-1-3-1-4-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<ol class="lower-alpha" style="list-style: ptx-marker-0;" id="ch-5-5-wilson-1-2-1-4-1-2">
+<li id="ch-5-5-wilson-1-2-1-4-1-2-1">
+<div class="para" id="ch-5-5-wilson-1-2-1-4-1-2-1-1">Based on your findings above, explain what happens to the numbers <span class="process-math">\(2\)</span> through <span class="process-math">\(p - 2\text{?}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-5-5-wilson-1-2-1-4-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item 5.11.5.4.a"><a tabindex="-1" href="#ch-5-5-wilson-1-3-1-4-1-2-1" title="Copy heading and permalink for Item 5.11.5.4.a" aria-label="Copy heading and permalink for Item 5.11.5.4.a">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 5.11.5.4.a"><a tabindex="-1" href="#ch-5-5-wilson-1-2-1-4-1-2-1" title="Copy heading and permalink for Item 5.11.5.4.a" aria-label="Copy heading and permalink for Item 5.11.5.4.a">🔗</a></div>
 </li>
-<li id="ch-5-5-wilson-1-3-1-4-1-2-2">
-<div class="para" id="ch-5-5-wilson-1-3-1-4-1-2-2-1">Conclude that <span class="process-math">\((p - 1)! \equiv -1 \pmod{p}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-5-5-wilson-1-3-1-4-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<li id="ch-5-5-wilson-1-2-1-4-1-2-2">
+<div class="para" id="ch-5-5-wilson-1-2-1-4-1-2-2-1">Conclude that <span class="process-math">\((p - 1)! \equiv -1 \pmod{p}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-5-5-wilson-1-2-1-4-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item 5.11.5.4.b"><a tabindex="-1" href="#ch-5-5-wilson-1-3-1-4-1-2-2" title="Copy heading and permalink for Item 5.11.5.4.b" aria-label="Copy heading and permalink for Item 5.11.5.4.b">🔗</a></div>
-</li>
-</ol>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-5-5-wilson-1-3-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" aria-hidden="true" data-description="Item 5.11.5.4"><a tabindex="-1" href="#ch-5-5-wilson-1-3-1-4" title="Copy heading and permalink for Item 5.11.5.4" aria-label="Copy heading and permalink for Item 5.11.5.4">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 5.11.5.4.b"><a tabindex="-1" href="#ch-5-5-wilson-1-2-1-4-1-2-2" title="Copy heading and permalink for Item 5.11.5.4.b" aria-label="Copy heading and permalink for Item 5.11.5.4.b">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-5-5-wilson-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-5-5-wilson-1-2-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 5.11.5.4"><a tabindex="-1" href="#ch-5-5-wilson-1-2-1-4" title="Copy heading and permalink for Item 5.11.5.4" aria-label="Copy heading and permalink for Item 5.11.5.4">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-5-5-wilson-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Exercise 5.11.5"><a tabindex="-1" href="#ch-5-5-wilson" title="Copy heading and permalink for Exercise 5.11.5" aria-label="Copy heading and permalink for Exercise 5.11.5">🔗</a></div>
 </article>
@@ -434,7 +432,7 @@ x^2 \amp \equiv 3 \pmod{11}.
 <li id="ch-5-6-square-roots-1-2-1-5">
 <div class="para" id="ch-5-6-square-roots-1-2-1-5-1">With these tools in hand we can prove the following variant of Fermat’s little theorem.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-5-6-square-roots-1-2-1-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ch-5-6-square-roots-1-2-1-5-2">For a few (small) primes <span class="process-math">\(p \geq 3\text{,}\)</span> compute <span class="process-math">\(b^{(p - 1)/2}\)</span> mod <span class="process-math">\(p\)</span> for various nonzero values of <span class="process-math">\(b \in \mathbb{Z} / p\mathbb{Z}\text{.}\)</span> You should notice a pattern, make a conjecture as to the possible values of <span class="process-math">\(b^{(p - 1)/2}\)</span> for <span class="process-math">\(p \nmid b\text{,}\)</span> and prove it is correct. (Hint: Use Fermat’s little theorem and part (a) above.)<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-5-6-square-roots-1-2-1-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ch-5-6-square-roots-1-2-1-5-2">For a few (small) primes <span class="process-math">\(p \geq 3\text{,}\)</span> compute <span class="process-math">\(b^{(p - 1)/2}\)</span> mod <span class="process-math">\(p\)</span> for various nonzero values of <span class="process-math">\(b \in \mathbb{Z} / p\mathbb{Z}\text{.}\)</span> You should notice a pattern, make a conjecture as to the possible values of <span class="process-math">\(b^{(p - 1)/2}\)</span> for <span class="process-math">\(p \nmid b\text{,}\)</span> and prove it is correct. (Hint: Use Fermat’s little theorem and part 1 above.)<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-5-6-square-roots-1-2-1-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Item 5.11.6.5"><a tabindex="-1" href="#ch-5-6-square-roots-1-2-1-5" title="Copy heading and permalink for Item 5.11.6.5" aria-label="Copy heading and permalink for Item 5.11.6.5">🔗</a></div>
 </li>
