@@ -55,7 +55,7 @@
   <exercise xml:id="ch-5-5-wilson">
     <statement>
       <p>
-        In this problem, we are going to prove <em>Wilson's Theorem</em>, which aims to understand the value of <m>(p - 1)!</m> modulo <m>p</m>. Recall, <m>(p - 1)! = 1 \cdot 2 \cdot \cdots \cdot (p - 1)</m>. Equivalently, <m>(p - 1)!</m> is the product of all of the elements of <m>(\mathbb{Z} / 5p\mathbb{Z})^{\times}</m>
+        In this problem, we are going to prove <em>Wilson's Theorem</em>, which aims to understand the value of <m>(p - 1)!</m> modulo <m>p</m>. Recall, <m>(p - 1)! = 1 \cdot 2 \cdot \cdots \cdot (p - 1)</m>. Equivalently, <m>(p - 1)!</m> is the product of all of the elements of <m>(\mathbb{Z} / p\mathbb{Z})^{\times}</m>
       </p>
 
       <p>
@@ -84,7 +84,7 @@
                 </li>
                 <li>
                   <p>
-                    Use <em>Euclid's Lemma</em> (if a prime divides a product, it must divide at least one of the factors) to prove that the only elements in <m>(\mathbb{Z} / p\mathbb{Z})^{\times}</m> that are their own inverses are <m>1</m> and <m>p - 1</m> (i.e., <m>-1</m>).
+                    Use <em>Euclid's Lemma</em> (if a prime divides a product, it must divide at least one of the factors) to prove that the only elements in <m>(\mathbb{Z} / p\mathbb{Z})^{\times}</m> that are their own inverses are <m>1</m> and <m>p - 1</m> (i.e., <m>1</m> and <m>-1</m>).
                   </p>
                 </li>
               </ol>
@@ -162,7 +162,7 @@
             </p>
 
             <p>
-              For a few (small) primes <m>p \geq 3</m>, compute <m>b^{(p - 1)/2}</m> mod <m>p</m> for various nonzero values of <m>b \in \mathbb{Z} / p\mathbb{Z}</m>. You should notice a pattern, make a conjecture as to the possible values of <m>b^{(p - 1)/2}</m> for <m>p \nmid b</m>, and prove it is correct. (Hint: Use Fermat's little theorem and part (a) above.)
+              For a few (small) primes <m>p \geq 3</m>, compute <m>b^{(p - 1)/2}</m> mod <m>p</m> for various nonzero values of <m>b \in \mathbb{Z} / p\mathbb{Z}</m>. You should notice a pattern, make a conjecture as to the possible values of <m>b^{(p - 1)/2}</m> for <m>p \nmid b</m>, and prove it is correct. (Hint: Use Fermat's little theorem and part 1 above.)
             </p>
           </li>
         </ol>
