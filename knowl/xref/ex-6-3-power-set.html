@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para">Let <span class="process-math">\(X\)</span> be a set with <span class="process-math">\(n\)</span> elements. Find the cardinality of the power set of <span class="process-math">\(X\text{,}\)</span> <span class="process-math">\(\mathcal{P}(X)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-6-3-power-set-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para">Recall that <span class="process-math">\(\mathcal{P}(X)\)</span> is the set of all subsets of <span class="process-math">\(X\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-6-3-power-set-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para">You may recognize this question. It’s identical to <a href="sec-6-1-counting.html#ex-6-1-power-set" class="xref" data-knowl="./knowl/xref/ex-6-1-power-set.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 6.1.5">Example 6.1.5</a>. We’re revisitng this question here because it has a natural solutoin in terms of binomial coefficients.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-6-3-power-set-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">Recall that <span class="process-math">\(\binom{n}{k}\)</span> counts the number of ways to choose <span class="process-math">\(k\)</span> unordered items from a set of <span class="process-math">\(n\)</span> distinct total items. Said another way, <span class="process-math">\(\binom{n}{k}\)</span> counts the number of <span class="process-math">\(k\)</span> element subsets of a set of size <span class="process-math">\(n\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-6-3-power-set-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">One way, then, to count the total number of subsets of a set of size <span class="process-math">\(n\)</span> is to count all the subsets of size <span class="process-math">\(0\)</span> – which is <span class="process-math">\(\binom{n}{0}\)</span> – then all of the subsets of size <span class="process-math">\(1\)</span> – which is <span class="process-math">\(\binom{n}{1}\)</span> – then all of the subsets of size <span class="process-math">\(2\)</span> – which is <span class="process-math">\(\binom{n}{2}\)</span> – and so on until you reach the subsets of size <span class="process-math">\(n\)</span> – which is <span class="process-math">\(\binom{n}{n}\text{.}\)</span> So,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lvert \mathcal{P}(X) \rvert = \sum_{k=0}^n \binom{n}{k}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-6-3-power-set-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 6.3.3.1"><a tabindex="-1" href="#ex-6-3-power-set-2" title="Copy heading and permalink for Solution 6.3.3.1" aria-label="Copy heading and permalink for Solution 6.3.3.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 6.3.3"><a tabindex="-1" href="#ex-6-3-power-set" title="Copy heading and permalink for Example 6.3.3" aria-label="Copy heading and permalink for Example 6.3.3">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="sec-6-3-combinations.html#ex-6-3-power-set">In Context</a></span>
+</body>
+</html>

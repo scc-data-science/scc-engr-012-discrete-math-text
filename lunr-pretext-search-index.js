@@ -1135,6 +1135,168 @@ var ptx_lunr_docs = [
   "body": "  We'll conclude this assignment with a study of square roots modulo for some prime (adapted from Exercises 1.36 and 1.39 in Hoffstein, Piper, and Silverman's Introduction to Mathematical Cryptography ). We will see that the behaviour is similar to that of , where every number has either 2 square roots, or none at all.     Let p be prime, and suppose , and . Show that either has 2 square roots modulo , or none. That is, show that the congruence: has either 2 or 0 solutions in . What happens if ?   Hint: Think about solutions to the equation and reduce modulo .     Test that this works by finding all solutions to the following two congruences:     Much like the integers, if a number has a square root modulo , we call it a perfect square modulo . Find all the perfect squares in and .    Notice that in each case exactly half of the nonzero elements were perfect squares (suggesting that perfect squares are more common mod than in ). Let's prove this in general.  Let be an odd prime and be a primitive root. Then any is congruent to a power of modulo , say mod . Show that is a perfect square if and only if is even. Conclude that exactly half of the nonzero elements of are perfect squares.    With these tools in hand we can prove the following variant of Fermat's little theorem.  For a few (small) primes , compute mod for various nonzero values of . You should notice a pattern, make a conjecture as to the possible values of for , and prove it is correct. (Hint: Use Fermat's little theorem and part 1 above.)      "
 },
 {
+  "id": "sec-6-1-counting",
+  "level": "1",
+  "url": "sec-6-1-counting.html",
+  "type": "Section",
+  "number": "6.1",
+  "title": "Basic Counting",
+  "body": " Basic Counting  Suppose that there are 10 Mathematics students and 15 Data Science students in a class, and we have a need to select one of the Mathematics students and one of the Data Science students (say, for a committee, or for a fight over which discipline is superior). How many ways can we do this?  Suppose we decide to form the committee by first selecting the Mathematics representative and then selecting the Data Science representitve. Then, we have 10 choices for the Mathematics representative, and for each choice of Math rep, we have 15 choices for a Data Science rep. So, naturally, we seem to have possible choices of committee.  If, instead, we needed to choose a student from Mathematics or Data Science, then there are possible choices.  The former logic (in which we needed to select one representative from each group) led us to multiplication, while the latter logic (in which we needed to select a representative from any group) led us to addition. We formalize these ideas into the following rules.   The Multiplication Rule   Suppose there is a sequence of events, such that:   There are outcomes associated with event ;    The number of ways an event in a sequence can occur does not depend on how the previous events in that sequence occurred.     Then, there are ways in which all of the events in the sequence can occur.     The Addition Rule   Suppose there is a sequence of events, such that:   There are outcomes associated with event ;    No two events can occur simultaneously.     Then, there are ways in which one of the events in the sequence can occur.    A surprising amount of combinatorics can be generated from these two ideas.    In 2026, California adopted a new license plate convention. Now, license plates start with three numbers, followed by three letters, and conclude with another number. Assuming that letters and numebers are allowed to repeat, how many distinct license plates are possible under California's new system?    There are 7 alphanumeric events in a sequence, and each event is independent from the events preceeding it (e.g., the second number does not depend on the first). So, by , there are: distinct license plates.      How many odd numbers are there between 1 and 99? (Pretend that this question isn't obvious).    The numbers through comprise all of the two-digit numbers, if we agree to write as . Then, we can count the number of odd numbers by examining each digit separately. For a generic odd number, there are five ways to choose a units digit and, independent of the units digit, 10 ways to choose a tens digit. Thus, there are ways to select an odd number between and , inclusive.      Let be a set with elements. Find the cardinality of the power set of , .  Recall that is the set of all subsets of .    To specify a given element of , we need to decide whether each element of is included in .  Suppose . Let denote the event that . Then, for each , there are two outcomes for (either or ), and so . So, by there are: ways to select , and so .    In the next two sections, we are going to examine what it looks like to select elements from a set of under certain conditions.   If the order of selection matters, we call this selection a permutation .    If the order of selection does not matter, we call this selection a combination .     "
+},
+{
+  "id": "thm-6-1-mult-rule",
+  "level": "2",
+  "url": "sec-6-1-counting.html#thm-6-1-mult-rule",
+  "type": "Theorem",
+  "number": "6.1.1",
+  "title": "The Multiplication Rule.",
+  "body": " The Multiplication Rule   Suppose there is a sequence of events, such that:   There are outcomes associated with event ;    The number of ways an event in a sequence can occur does not depend on how the previous events in that sequence occurred.     Then, there are ways in which all of the events in the sequence can occur.   "
+},
+{
+  "id": "thm-6-1-add-rule",
+  "level": "2",
+  "url": "sec-6-1-counting.html#thm-6-1-add-rule",
+  "type": "Theorem",
+  "number": "6.1.2",
+  "title": "The Addition Rule.",
+  "body": " The Addition Rule   Suppose there is a sequence of events, such that:   There are outcomes associated with event ;    No two events can occur simultaneously.     Then, there are ways in which one of the events in the sequence can occur.   "
+},
+{
+  "id": "ex-6-1-license-plates",
+  "level": "2",
+  "url": "sec-6-1-counting.html#ex-6-1-license-plates",
+  "type": "Example",
+  "number": "6.1.3",
+  "title": "",
+  "body": "  In 2026, California adopted a new license plate convention. Now, license plates start with three numbers, followed by three letters, and conclude with another number. Assuming that letters and numebers are allowed to repeat, how many distinct license plates are possible under California's new system?    There are 7 alphanumeric events in a sequence, and each event is independent from the events preceeding it (e.g., the second number does not depend on the first). So, by , there are: distinct license plates.   "
+},
+{
+  "id": "ex-6-1-counting-odd-numbers",
+  "level": "2",
+  "url": "sec-6-1-counting.html#ex-6-1-counting-odd-numbers",
+  "type": "Example",
+  "number": "6.1.4",
+  "title": "",
+  "body": "  How many odd numbers are there between 1 and 99? (Pretend that this question isn't obvious).    The numbers through comprise all of the two-digit numbers, if we agree to write as . Then, we can count the number of odd numbers by examining each digit separately. For a generic odd number, there are five ways to choose a units digit and, independent of the units digit, 10 ways to choose a tens digit. Thus, there are ways to select an odd number between and , inclusive.   "
+},
+{
+  "id": "ex-6-1-power-set",
+  "level": "2",
+  "url": "sec-6-1-counting.html#ex-6-1-power-set",
+  "type": "Example",
+  "number": "6.1.5",
+  "title": "",
+  "body": "  Let be a set with elements. Find the cardinality of the power set of , .  Recall that is the set of all subsets of .    To specify a given element of , we need to decide whether each element of is included in .  Suppose . Let denote the event that . Then, for each , there are two outcomes for (either or ), and so . So, by there are: ways to select , and so .   "
+},
+{
+  "id": "sec-6-2-permutations",
+  "level": "1",
+  "url": "sec-6-2-permutations.html",
+  "type": "Section",
+  "number": "6.2",
+  "title": "Permutations",
+  "body": " Permutations  In the last section, we considered an example in which we were interested in selecting two students for a committee. Let's make this slightly more complicated. Suppose, in a class of 15 students, we need to nominate candidates for a committee in which one of those people will serve as the president, one will serve as the vice president, one will serve as the secretary, and one will serve as a treasurer.  In our previous example, the order in which we selected students did not matter, but here it does. Only one of the four nominated students will act as president, only one will act as vice president, and so on.  The question, then, is how many ways are there to elect such a body? To answer this question, suppose we agree to first elect the president, then elect the vice president, then elect the secretary, and finally elect the treasurer.     If there are 15 students in the room, then there are 15 ways to elect a president.    Once we elect a president, that candidate has left the pool of potential candidates. As such, there are now only 14 ways to elect a vice president.    Once the president and vice president have been elected, that leaves 13 ways to elect a secretary.    Finally, after the three other positions have been filled, there are only 12 ways to elect the fourth.     Naturally, then, there seems to be: ways to elect a committee of four people in which the order of election matters.  So, how does this look in general? Suppose we want to select an ordered list of objects from a set of . How many ways can we do this? We follow the same logic!     If there are objects initally, then there are ways to selet the first one.    Once we select the first element, it is no longer a part of our list. As such, there are only ways to select the second.    After we select the first two objects, there are only objects from which we can choose the third.     If we repeat this logic to its conclusion, once we select the first objects, there are only ways to select the 'th objection. As such, there are: to select an ordered set of objects from a set of . We can rewrite this elegantly using factorials: This expression is counts the number of -permutations of a set of objects.    Let and be nonnegative integers with and suppose we have a set of distinct objects. An -permutation is an ordered -element subset of the objects. There are: many such -permutations.      How many ways are there to arrange distinct elements?    In the case where , we have: But, this counts the number of ways to order the entire list. As such, we conclude that there are many ways to arrange the distinct objects in an element list.  An -permutation of an element set is simply called a permutation .      Assuming that any string of letters constitutes a word in some sense, how many distinct -letter words are there?    There are distinct letters in the alphabet, and we are interested in selecting a letter subset of them. According to , there are: many such words.  There's probably a Wordle joke in here somewhere.      In how many different ways can the word STRANGE be rearranged?    720.      In how many different ways can the word CONSENSUS be rearranged?    This one is a bit more complicated, because the letters are not all distinct, and so the permutation rule, , does not apply. There are several ways you can think about how to do this, but here's the one I like.  First, place subscripts on all of the letters that repeat, so that the word beccomes .  Now, all of the letters are distinct, so we can apply . In this case, there are letters in this word, there are ways to permute the distinct letters.  However, the letters weren't actually distinct. There are two copies of N and three of S . Since there are permutations of the N 's and permutations of the S 's, we've overcounted by those factors. As such, there are really only ways to arrange the letters in CONSENSUS .      In how many different ways can the word MATHEMATICS be rearranged?         We can combine the idea behind with the multiplication rule, to solve even more complicated problems.    Suppose that, for your degree, you need to take math classes, computer science classes, and statistics classes. Suppose for the sake of simplicity that you can take any class in any order (i.e., there are no prerequisites). How many different schedules are there such that the classes from a given discipline are contiguous?    We break this problem into steps, where we first examine the possible orderings of the disciplines (e.g., computer science, then math, then stats, vs math, then stats, then computer science), and then we examine the possible ordering of classes within each discipline.  There are orderings of the disciplines. Within each order, there are possible orderings of math classes, possible orderings of computer science classes, and possible orderings of statistics classes.  Notice:   the ordering of the disciplines did not affect the ordering of the math classes;    the ordering of the math classes did not affect the ordering of the computer science classes;    the ordering of the computer science classes did not affect the ordering of the statistics classes.   So, we can apply . In total, there are: possible schedule orderings.    "
+},
+{
+  "id": "def-6-2-permutation",
+  "level": "2",
+  "url": "sec-6-2-permutations.html#def-6-2-permutation",
+  "type": "Definition",
+  "number": "6.2.1",
+  "title": "",
+  "body": "  Let and be nonnegative integers with and suppose we have a set of distinct objects. An -permutation is an ordered -element subset of the objects. There are: many such -permutations.   "
+},
+{
+  "id": "ex-6-2-permutation",
+  "level": "2",
+  "url": "sec-6-2-permutations.html#ex-6-2-permutation",
+  "type": "Example",
+  "number": "6.2.2",
+  "title": "",
+  "body": "  How many ways are there to arrange distinct elements?    In the case where , we have: But, this counts the number of ways to order the entire list. As such, we conclude that there are many ways to arrange the distinct objects in an element list.  An -permutation of an element set is simply called a permutation .   "
+},
+{
+  "id": "ex-6-2-words",
+  "level": "2",
+  "url": "sec-6-2-permutations.html#ex-6-2-words",
+  "type": "Example",
+  "number": "6.2.3",
+  "title": "",
+  "body": "  Assuming that any string of letters constitutes a word in some sense, how many distinct -letter words are there?    There are distinct letters in the alphabet, and we are interested in selecting a letter subset of them. According to , there are: many such words.  There's probably a Wordle joke in here somewhere.   "
+},
+{
+  "id": "ex-6-2-strange",
+  "level": "2",
+  "url": "sec-6-2-permutations.html#ex-6-2-strange",
+  "type": "Exercise",
+  "number": "6.2.4",
+  "title": "",
+  "body": "  In how many different ways can the word STRANGE be rearranged?    720.   "
+},
+{
+  "id": "ex-6-2-consensus",
+  "level": "2",
+  "url": "sec-6-2-permutations.html#ex-6-2-consensus",
+  "type": "Example",
+  "number": "6.2.5",
+  "title": "",
+  "body": "  In how many different ways can the word CONSENSUS be rearranged?    This one is a bit more complicated, because the letters are not all distinct, and so the permutation rule, , does not apply. There are several ways you can think about how to do this, but here's the one I like.  First, place subscripts on all of the letters that repeat, so that the word beccomes .  Now, all of the letters are distinct, so we can apply . In this case, there are letters in this word, there are ways to permute the distinct letters.  However, the letters weren't actually distinct. There are two copies of N and three of S . Since there are permutations of the N 's and permutations of the S 's, we've overcounted by those factors. As such, there are really only ways to arrange the letters in CONSENSUS .   "
+},
+{
+  "id": "ex-6-2-mathematics",
+  "level": "2",
+  "url": "sec-6-2-permutations.html#ex-6-2-mathematics",
+  "type": "Exercise",
+  "number": "6.2.6",
+  "title": "",
+  "body": "  In how many different ways can the word MATHEMATICS be rearranged?        "
+},
+{
+  "id": "ex-6-2-complicated",
+  "level": "2",
+  "url": "sec-6-2-permutations.html#ex-6-2-complicated",
+  "type": "Example",
+  "number": "6.2.7",
+  "title": "",
+  "body": "  Suppose that, for your degree, you need to take math classes, computer science classes, and statistics classes. Suppose for the sake of simplicity that you can take any class in any order (i.e., there are no prerequisites). How many different schedules are there such that the classes from a given discipline are contiguous?    We break this problem into steps, where we first examine the possible orderings of the disciplines (e.g., computer science, then math, then stats, vs math, then stats, then computer science), and then we examine the possible ordering of classes within each discipline.  There are orderings of the disciplines. Within each order, there are possible orderings of math classes, possible orderings of computer science classes, and possible orderings of statistics classes.  Notice:   the ordering of the disciplines did not affect the ordering of the math classes;    the ordering of the math classes did not affect the ordering of the computer science classes;    the ordering of the computer science classes did not affect the ordering of the statistics classes.   So, we can apply . In total, there are: possible schedule orderings.   "
+},
+{
+  "id": "sec-6-3-combinations",
+  "level": "1",
+  "url": "sec-6-3-combinations.html",
+  "type": "Section",
+  "number": "6.3",
+  "title": "Combinations",
+  "body": " Combinations  Combinations are very similar to permutations, except that in this case, order does not matter. For example, suppose, in a class of 15 students, we need to nominate 5 distinct students to give a presentation of graph theory. In this case, the order of the students chosen does not matter, since we are not prescribing a structure (like a presenter, a writer, etc).  So how many different ways are there to select such a combination? We can begin using the same logic as we used for permutations, in which we have ways to select the first presenter, then ways to select the second , and so on. This would give us  permutations . But, making selections in this manner has imposed an implicit ordering, in which the first person selected was the first , etc. We want to ignore ordering. Since there are students in our collection, we need to divide out the ways in which we've overcounted. This leaves us with such combinations .  We can generalize this argument in the same way we did with permutations to arrive at the following notion of a combination.    Let and be nonnegative integers with and suppose we have a set of distinct objects. An -combination is an unordered -element subset of the objects. There are: many such -combinations.    This notion of unordered subcollections is so commoon in math that we give it special notation.    Let and be nonnegative integers with . The binomial coefficient  is the number of ways to choose unordered items from a set of distinct total items: We read as choose .     The binomial coefficient is exactly the same thing as the number of -combinations , but the former notation is significantly more common, so we'll adopt it from here on.  You might be wondering why we call this a binomial coefficient if it evidently has nothing to do with binomials. Hold on to this question; we'll answer it when we talk about Pascal's triangle.    Let be a set with elements. Find the cardinality of the power set of , .  Recall that is the set of all subsets of .    You may recognize this question. It's identical to . We're revisitng this question here because it has a natural solutoin in terms of binomial coefficients.  Recall that counts the number of ways to choose unordered items from a set of distinct total items. Said another way, counts the number of element subsets of a set of size .  One way, then, to count the total number of subsets of a set of size is to count all the subsets of size – which is – then all of the subsets of size – which is – then all of the subsets of size – which is – and so on until you reach the subsets of size – which is . So,     From that . We also know from that . Therefore, it must be the case that: And indeed it is! We'll see another proof of this in our section on Pascal's Triangle, but that proof does not invalidate this one. What we have just done is prove an identity by finding two different ways to count the same thing. This is an example of a combinatorial proof and is a powerful proof technique. We will see much more of this in the coming sections.   More coming soon...   "
+},
+{
+  "id": "def-6-3-combination",
+  "level": "2",
+  "url": "sec-6-3-combinations.html#def-6-3-combination",
+  "type": "Definition",
+  "number": "6.3.1",
+  "title": "",
+  "body": "  Let and be nonnegative integers with and suppose we have a set of distinct objects. An -combination is an unordered -element subset of the objects. There are: many such -combinations.   "
+},
+{
+  "id": "def-6-3-choose",
+  "level": "2",
+  "url": "sec-6-3-combinations.html#def-6-3-choose",
+  "type": "Definition",
+  "number": "6.3.2",
+  "title": "",
+  "body": "  Let and be nonnegative integers with . The binomial coefficient  is the number of ways to choose unordered items from a set of distinct total items: We read as choose .    "
+},
+{
+  "id": "ex-6-3-power-set",
+  "level": "2",
+  "url": "sec-6-3-combinations.html#ex-6-3-power-set",
+  "type": "Example",
+  "number": "6.3.3",
+  "title": "",
+  "body": "  Let be a set with elements. Find the cardinality of the power set of , .  Recall that is the set of all subsets of .    You may recognize this question. It's identical to . We're revisitng this question here because it has a natural solutoin in terms of binomial coefficients.  Recall that counts the number of ways to choose unordered items from a set of distinct total items. Said another way, counts the number of element subsets of a set of size .  One way, then, to count the total number of subsets of a set of size is to count all the subsets of size – which is – then all of the subsets of size – which is – then all of the subsets of size – which is – and so on until you reach the subsets of size – which is . So,    "
+},
+{
   "id": "backmatter-2",
   "level": "1",
   "url": "backmatter-2.html",
