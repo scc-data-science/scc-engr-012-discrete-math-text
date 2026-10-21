@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-6-combinatorics" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Introduction to Combinatorics</title>
+
+  <introduction>
+    <p>
+      Combinatorics is the study of finite or discrete structures and is primarily concerned with finding clever ways to count and understand the number of arrangements, combinations, permutations, assignments, and configurations of those structures.
+    </p>
+
+    <p>
+      There are essentially three categories of interest when studying combinatorics:
+      <ol>
+        <li>
+          <p>
+            <em>Existence problems.</em> Does there exist at least one arragement that has some desired structure?
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Counting problems.</em> How many possible arragements of a given set satisfy some desired property?
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Optimization problems.</em> What is the most efficient arragement of a given set, subject to some contraints?
+          </p>
+        </li>
+      </ol>
+    </p>
+
+    <p>
+      Our focus will largely be on the first two questions, with the majority of the effort spent on the second one. This type of math, while important and useful in its own right, serves as the mathematical foundation for <em>probability theory</em>, which will will study in detail in the two subsequent weeks.
+    </p>
+  </introduction>
+
+  <xi:include href="sec-6-1-counting.ptx" />
+  <xi:include href="sec-6-2-permutations.ptx" />
+  <xi:include href="sec-6-3-combinations.ptx" />
+  <!-- <xi:include href="sec-6-4-pigeonhole.ptx" />
+  <xi:include href="sec-6-5-pascal-triangle.ptx" /> -->
+
+
+</chapter>

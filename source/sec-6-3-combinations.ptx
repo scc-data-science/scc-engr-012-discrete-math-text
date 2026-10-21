@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-6-3-combinations" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Combinations</title>
+
+  <p>
+    Combinations are very similar to permutations, except that in this case, order does not matter. For example, suppose, in a class of 15 students, we need to nominate 5 distinct students to give a presentation of graph theory. In this case, the order of the students chosen does not matter, since we are not prescribing a structure (like a presenter, a writer, etc).
+  </p>
+
+  <p>
+    So how many different ways are there to select such a combination? We can begin using the same logic as we used for permutations, in which we have <m>15</m> ways to select the <q>first</q> presenter, then <m>14</m> ways to select the <q>second</q>, and so on. This would give us
+    <md>
+      P(15, 5) = \frac{15!}{(15 - 5)!}
+    </md>
+    <em>permutations</em>. But, making selections in this manner has imposed an implicit ordering, in which the first person selected was <q>the first</q>, etc. We want to ignore ordering. Since there are <m>5</m> students in our collection, we need to divide out the <m>5!</m> ways in which we've overcounted. This leaves us with
+    <md>
+      \frac{15!}{5! \cdot (15 - 5)!}
+    </md>
+    such <em>combinations</em>.    
+  </p>
+
+  <p>
+    We can generalize this argument in the same way we did with permutations to arrive at the following notion of a combination.
+  </p>
+
+  <definition xml:id="def-6-3-combination">
+    <statement>
+      <p>
+        Let <m>n</m> and <m>r</m> be nonnegative integers with <m>r \leq n</m> and suppose we have a set of <m>n</m> distinct objects. An <em><m>r</m>-combination</em> is an unordered <m>r</m>-element subset of the <m>n</m> objects. There are:
+        <md>
+          C(n, r) = \frac{n!}{r! \cdot (n - r)!}
+        </md>
+        many such <m>r</m>-combinations.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    This notion of unordered subcollections is so commoon in math that we give it special notation. 
+  </p>
+
+  <definition xml:id="def-6-3-choose">
+    <statement>
+      <p>
+        Let <m>n</m> and <m>r</m> be nonnegative integers with <m>r \leq n</m>. The <em>binomial coefficient</em> <m>\binom{n}{k}</m> is the number of ways to choose <m>k</m> unordered items from a set of <m>n</m> distinct total items:
+        <md>
+          \binom{n}{k} = C(n, r) = \frac{n!}{r! \cdot (n - r)!}.
+        </md>
+        We read <m>\binom{n}{k}</m> as <q><m>n</m> choose <m>k</m>.</q>
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    The binomial coefficient <m>\binom{n}{k}</m> is exactly the same thing as the number of <m>k</m>-combinations <m>C(n, k)</m>, but the former notation is significantly more common, so we'll adopt it from here on. 
+  </p>
+
+  <p>
+    You might be wondering why we call this a <q>binomial coefficient</q> if it evidently has nothing to do with binomials. Hold on to this question; we'll answer it when we talk about Pascal's triangle. 
+  </p>
+
+  <example xml:id="ex-6-3-power-set">
+    <statement>
+      <p>
+        Let <m>X</m> be a set with <m>n</m> elements. Find the cardinality of the power set of <m>X</m>, <m>\mathcal{P}(X)</m>.
+      </p>
+
+      <p>
+        Recall that <m>\mathcal{P}(X)</m> is the set of all subsets of <m>X</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        You may recognize this question. It's identical to <xref ref="ex-6-1-power-set"/>. We're revisitng this question here because it has a natural solutoin in terms of binomial coefficients.
+      </p>
+
+      <p>
+        Recall that <m>\binom{n}{k}</m> counts the number of ways to choose <m>k</m> unordered items from a set of <m>n</m> distinct total items. Said another way, <m>\binom{n}{k}</m> counts the number of <m>k</m> element subsets of a set of size <m>n</m>.
+      </p>
+
+      <p>
+        One way, then, to count the total number of subsets of a set of size <m>n</m> is to count all the subsets of size <m>0</m> – which is <m>\binom{n}{0}</m> – then all of the subsets of size <m>1</m> – which is <m>\binom{n}{1}</m> – then all of the subsets of size <m>2</m> – which is <m>\binom{n}{2}</m> – and so on until you reach the subsets of size <m>n</m> – which is <m>\binom{n}{n}</m>. So, 
+        <md>
+          \lvert \mathcal{P}(X) \rvert = \sum_{k=0}^n \binom{n}{k}.
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    From <xref ref="ex-6-3-power-set"/> that <m>\lvert \mathcal{P}(X) \rvert = \sum_{k=0}^n \binom{n}{k}</m>. We also know from <xref ref="ex-6-1-power-set"/> that <m>\lvert \mathcal{P}(X) \rvert = 2^n</m>. Therefore, it must be the case that:
+    <md>
+      \sum_{k=0}^n \binom{n}{k} = 2^n.
+    </md>
+    And indeed it is! We'll see another proof of this in our section on Pascal's Triangle, but that proof does not invalidate this one. What we have just done is prove an identity by finding two different ways to count the same thing. This is an example of a <em>combinatorial proof</em> and is a powerful proof technique. We will see much more of this in the coming sections.
+  </p>
+
+  <p>
+    <em>More coming soon...</em>
+  </p>
+
+</section>
