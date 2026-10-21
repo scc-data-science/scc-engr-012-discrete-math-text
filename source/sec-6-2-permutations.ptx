@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-6-2-permutations" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Permutations</title>
+
+  <p>
+    In the last section, we considered an example in which we were interested in selecting two students for a committee. Let's make this slightly more complicated. Suppose, in a class of 15 students, we need to nominate candidates for a committee in which one of those people will serve as the president, one will serve as the vice president, one will serve as the secretary, and one will serve as a treasurer.
+  </p>
+
+  <p>
+    In our previous example, the order in which we selected students did not matter, but here it does. Only one of the four nominated students will act as president, only one will act as vice president, and so on.
+  </p>
+
+  <p>
+    The question, then, is how many ways are there to elect such a body? To answer this question, suppose we agree to first elect the president, then elect the vice president, then elect the secretary, and finally elect the treasurer.
+  </p>
+
+  <p>
+    <ol>
+      <li>
+        <p>
+          If there are 15 students in the room, then there are 15 ways to elect a president.
+        </p>
+      </li>
+      <li>
+        <p>
+          Once we elect a president, that candidate has left the pool of potential candidates. As such, there are now only 14 ways to elect a vice president.
+        </p>
+      </li>
+      <li>
+        <p>
+          Once the president and vice president have been elected, that leaves 13 ways to elect a secretary.
+        </p>
+      </li>
+      <li>
+        <p>
+          Finally, after the three other positions have been filled, there are only 12 ways to elect the fourth.
+        </p>
+      </li>
+    </ol>
+  </p>
+
+  <p>
+    Naturally, then, there seems to be:
+    <md>
+      15 \cdot 14 \cdot 13 \cdot 12
+    </md>
+    ways to elect a committee of four people in which the order of election matters.
+  </p>
+
+  <p>
+    So, how does this look in general? Suppose we want to select an ordered list of <m>r</m> objects from a set of <m>n</m>. How many ways can we do this? We follow the same logic! 
+  </p>
+
+  <p>
+    <ol>
+      <li>
+        <p>
+          If there are <m>n</m> objects initally, then there are <m>n</m> ways to selet the first one.
+        </p>
+      </li>
+      <li>
+        <p>
+          Once we select the first element, it is no longer a part of our list. As such, there are only <m>n - 1</m> ways to select the second.
+        </p>
+      </li>
+      <li>
+        <p>
+          After we select the first two objects, there are only <m>n - 2</m> objects from which we can choose the third.
+        </p>
+      </li>
+    </ol>
+  </p>
+
+  <p>
+    If we repeat this logic to its conclusion, once we select the first <m>r - 1</m> objects, there are only <m>n - r + 1</m> ways to select the <m>r</m>'th objection. As such, there are:
+    <md>
+      n \cdot (n - 1) \cdot \cdots \cdot (n - r + 1)
+    </md>
+    to select an ordered set of <m>r</m> objects from a set of <m>n</m>. We can rewrite this elegantly using factorials:
+    <md>
+      <mrow>
+        n \cdot (n - 1) \cdot \cdots \cdot (n - r + 1)
+          \amp = \frac{n \cdot (n - 1) \cdot \cdots \cdot 3 \cdot 2 \cdot 1}{(n - r) \cdot (n - r - 1) \cdot \cdots \cdot 3 \cdot 2 \cdot 1}
+      </mrow>
+      <mrow>
+        \amp = \frac{n!}{(n - r)!}
+      </mrow>
+    </md>
+    This expression is counts the number of <em><m>r</m>-permutations</em> of a set of <m>n</m> objects.
+  </p>
+
+  <definition xml:id="def-6-2-permutation">
+    <statement>
+      <p>
+        Let <m>n</m> and <m>r</m> be nonnegative integers with <m>r \leq n</m> and suppose we have a set of <m>n</m> distinct objects. An <em><m>r</m>-permutation</em> is an ordered <m>r</m>-element subset of the <m>n</m> objects. There are:
+        <md>
+          P(n, r) = \frac{n!}{(n - r)!}
+        </md>
+        many such <m>r</m>-permutations.
+      </p>
+    </statement>
+  </definition>
+
+  <example xml:id="ex-6-2-permutation">
+    <statement>
+      <p>
+        How many ways are there to arrange <m>n</m> distinct elements?
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        In the case where <m>r = n</m>, we have:
+        <md>
+          P(n, n) = n! = n \cdot (n - 1) \cdot \cdots \cdot 3 \cdot 2 \cdot 1
+        </md>
+        But, this counts the number of ways to order the entire list. As such, we conclude that there are <m>n!</m> many ways to arrange the distinct objects in an <m>n</m> element list.
+      </p>
+
+      <p>
+        An <m>n</m>-permutation of an <m>n</m> element set is simply called a <em>permutation</em>.
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="ex-6-2-words">
+    <statement>
+      <p>
+        Assuming that any string of letters constitutes a <q>word</q> in some sense, how many distinct <m>5</m>-letter words are there?
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        There are <m>26</m> distinct letters in the alphabet, and we are interested in selecting a <m>5</m> letter subset of them. According to <xref ref="def-6-2-permutation"/>, there are:
+        <md>
+          <mrow>P(26, 5) \amp = \frac{26!}{(26 - 5!)} </mrow>
+          <mrow>         \amp = \frac{26!}{21!} </mrow>
+          <mrow>         \amp = \frac{26 \cdot 25 \cdot 24 \cdot 23 \cdot 22 \cdot 21!}{21!}</mrow>
+          <mrow>         \amp = 26 \cdot 25 \cdot 24 \cdot 23 \cdot 22 </mrow>
+          <mrow>         \amp = 7893600 </mrow>
+        </md>
+        many such words.
+      </p>
+
+      <p>
+        There's probably a Wordle joke in here somewhere.
+      </p>
+    </solution>
+  </example>
+
+  <exercise xml:id="ex-6-2-strange">
+    <statement>
+      <p>
+        In how many different ways can the word <em>STRANGE</em> be rearranged?
+      </p>
+    </statement>
+    <answer>
+      <p>
+        720.
+      </p>
+    </answer>
+  </exercise>
+
+  <example xml:id="ex-6-2-consensus">
+    <statement>
+      <p>
+        In how many different ways can the word <em>CONSENSUS</em> be rearranged?
+      </p>
+    </statement>
+    <solution>
+      <p>
+        This one is a bit more complicated, because the letters are not all distinct, and so the permutation rule, <xref ref="def-6-2-permutation"/>, does not apply. There are several ways you can think about how to do this, but here's the one I like.
+      </p>
+
+      <p>
+        First, place subscripts on all of the letters that repeat, so that the word beccomes <m>C O N_1 S_1 E N_2 S_2 U S_3</m>.
+      </p>
+
+      <p>
+        Now, all of the letters are distinct, so we can apply <xref ref="def-6-2-permutation"/>. In this case, there are <m>9</m> letters in this word, there are <m>9!</m> ways to permute the <q>distinct</q> letters.
+      </p>
+
+      <p>
+        However, the letters weren't actually distinct. There are two copies of <em>N</em> and three of <em>S</em>. Since there are <m>2!</m> permutations of the <em>N</em>'s and <m>3!</m> permutations of the <em>S</em>'s, we've overcounted by those factors. As such, there are really only
+        <md>
+          \frac{9!}{2! \cdot 3!}
+        </md>
+        ways to arrange the letters in <em>CONSENSUS</em>.
+      </p>
+    </solution>
+  </example>
+
+  <exercise xml:id="ex-6-2-mathematics">
+    <statement>
+      <p>
+        In how many different ways can the word <em>MATHEMATICS</em> be rearranged?
+      </p>
+    </statement>
+    <answer>
+      <p>
+        <md>
+          \frac{11!}{(2!)^3}.
+        </md>
+      </p>
+    </answer>
+  </exercise>
+
+  <p>
+    We can combine the idea behind <xref ref="def-6-2-permutation"/> with the multiplication rule, <xref ref="thm-6-1-mult-rule"/> to solve even more complicated problems.
+  </p>
+
+  <example xml:id="ex-6-2-complicated">
+    <statement>
+      <p>
+        Suppose that, for your degree, you need to take <m>n_1</m> math classes, <m>n_2</m> computer science classes, and <m>n_3</m> statistics classes. Suppose for the sake of simplicity that you can take any class in any order (i.e., there are no prerequisites). How many different schedules are there such that the classes from a given discipline are contiguous?
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We break this problem into steps, where we first examine the possible orderings of the disciplines (e.g., computer science, then math, then stats, vs math, then stats, then computer science), and then we examine the possible ordering of classes within each discipline.
+      </p>
+
+      <p>
+        There are <m>3!</m> orderings of the disciplines. Within each order, there are <m>n_1!</m> possible orderings of math classes, <m>n_2!</m> possible orderings of computer science classes, and <m>n_3!</m> possible orderings of statistics classes.
+      </p>
+
+      <p>
+        Notice:
+        <ol>
+          <li>
+            <p>
+              the ordering of the disciplines did not affect the ordering of the math classes;
+            </p>
+          </li>
+          <li>
+            <p>
+              the ordering of the math classes did not affect the ordering of the computer science classes;
+            </p>
+          </li>
+          <li>
+            <p>
+              the ordering of the computer science classes did not affect the ordering of the statistics classes.
+            </p>
+          </li>
+        </ol>
+        So, we can apply <xref ref="thm-6-1-mult-rule"/>. In total, there are:
+        <md>
+          3! \cdot n_1! \cdot n_2! \cdot n_3!
+        </md>
+        possible schedule orderings.
+      </p>
+    </solution>
+  </example>
+
+</section>

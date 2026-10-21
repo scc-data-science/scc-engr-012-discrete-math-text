@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-6-1-counting" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Basic Counting</title>
+
+  <p>
+    Suppose that there are 10 Mathematics students and 15 Data Science students in a class, and we have a need to select one of the Mathematics students and one of the Data Science students (say, for a committee, or for a fight over which discipline is superior). How many ways can we do this?
+  </p>
+
+  <p>
+    Suppose we decide to form the committee by first selecting the Mathematics representative and then selecting the Data Science representitve. Then, we have 10 choices for the Mathematics representative, and for each choice of Math rep, we have 15 choices for a Data Science rep. So, naturally, we seem to have <m>10 \cdot 15 = 150</m> possible choices of committee.
+  </p>
+
+  <p>
+    If, instead, we needed to choose a student from Mathematics <em>or</em> Data Science, then there are <m>10 + 15 = 25</m> possible choices.
+  </p>
+
+  <p>
+    The former logic (in which we needed to select one representative from each group) led us to multiplication, while the latter logic (in which we needed to select a representative from any group) led us to addition. We formalize these ideas into the following rules.
+  </p>
+
+  <theorem xml:id="thm-6-1-mult-rule">
+    <title>The Multiplication Rule</title>
+    <statement>
+      <p>
+        Suppose there is a sequence of <m>r</m> events, <m>E_1, E_2, \ldots, E_r</m> such that:
+        <ol>
+          <li>
+            <p>
+              There are <m>n_i</m> outcomes associated with event <m>E_i</m>;
+            </p>
+          </li>
+          <li>
+            <p>
+              The number of ways an event in a sequence can occur does not depend on how the previous events in that sequence occurred.
+            </p>
+          </li>
+        </ol>
+      </p>
+
+      <p>
+        Then, there are <m>n_1 \cdot n_2 \cdot \cdots \cdot n_r</m> ways in which all of the events in the sequence can occur.
+      </p>
+    </statement>
+  </theorem>
+
+  <theorem xml:id="thm-6-1-add-rule">
+    <title>The Addition Rule</title>
+    <statement>
+      <p>
+        Suppose there is a sequence of <m>r</m> events, <m>E_1, E_2, \ldots, E_r</m> such that:
+        <ol>
+          <li>
+            <p>
+              There are <m>n_i</m> outcomes associated with event <m>E_i</m>;
+            </p>
+          </li>
+          <li>
+            <p>
+              No two events can occur simultaneously.
+            </p>
+          </li>
+        </ol>
+      </p>
+
+      <p>
+        Then, there are <m>n_1 + n_2 + \cdots + n_r</m> ways in which one of the <m>r</m> events in the sequence can occur.
+      </p>
+    </statement>
+  </theorem>
+
+  <p>
+    A surprising amount of combinatorics can be generated from these two ideas.
+  </p>
+
+  <example xml:id="ex-6-1-license-plates">
+    <statement>
+      <p>
+        In 2026, California adopted a new license plate convention. Now, license plates start with three numbers, followed by three letters, and conclude with another number. Assuming that letters and numebers are allowed to repeat, how many distinct license plates are possible under California's new system?
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        There are 7 alphanumeric events in a sequence, and each event is independent from the events preceeding it (e.g., the second number does not depend on the first). So, by <xref ref="thm-6-1-mult-rule"/>, there are:
+        <md>
+          10 \cdot 10 \cdot 10 \cdot 26 \cdot 26 \cdot 26 \cdot 10 = 175760000
+        </md>
+        distinct license plates.
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="ex-6-1-counting-odd-numbers">
+    <statement>
+      <p>
+        How many odd numbers are there between 1 and 99? (Pretend that this question isn't obvious).
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        The numbers <m>1</m> through <m>99</m> comprise all of the two-digit numbers, if we agree to write <m>0, 1, \ldots, 9</m> as <m>00, 01, \ldots, 09</m>. Then, we can count the number of odd numbers by examining each digit separately. For a generic odd number, there are five ways to choose a units digit and, independent of the units digit, 10 ways to choose a tens digit. Thus, there are <m>5 \cdot 10 = 50</m> ways to select an odd number between <m>1</m> and <m>99</m>, inclusive.
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="ex-6-1-power-set">
+    <statement>
+      <p>
+        Let <m>X</m> be a set with <m>n</m> elements. Find the cardinality of the power set of <m>X</m>, <m>\mathcal{P}(X)</m>.
+      </p>
+
+      <p>
+        Recall that <m>\mathcal{P}(X)</m> is the set of all subsets of <m>X</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        To specify a given element <m>S</m> of <m>\mathcal{P}(X)</m>, we need to decide whether each element of <m>X</m> is included in <m>S</m>.
+      </p>
+
+      <p>
+        Suppose <m>X = \{x_1, x_2, \ldots, x_n\}</m>. Let <m>E_i</m> denote the event that <m>x_i \in S</m>. Then, for each <m>i = 1, 2, \ldots, n</m>, there are two outcomes for <m>E_i</m> (either <m>x_i \in S</m> or <m>x_i \not\in S</m>), and so <m>\lvert E_i \rvert = 2</m>. So, by <xref ref="thm-6-1-mult-rule"/> there are:
+        <md>
+          \lvert E_1 \rvert \cdot \lvert E_2 \rvert \cdot \cdots \cdot \lvert E_n \rvert
+          = \underbrace{2 \cdot 2 \cdot \cdots \cdot 2}_{n \text{ copies}} = 2^{n}
+        </md>
+        ways to select <m>S</m>, and so <m>\lvert \mathcal{P}(X) \rvert = 2^{n}</m>.
+      </p>
+    </solution>
+  </example>
+  
+  <p>
+    In the next two sections, we are going to examine what it looks like to select <m>r</m> elements from a set of <m>n</m> under certain conditions.
+    <ul>
+      <li>
+        <p>If the order of selection matters, we call this selection a <em>permutation</em>.</p>
+      </li>
+      <li>
+        <p>If the order of selection does not matter, we call this selection a <em>combination</em>.</p>
+      </li>
+    </ul>
+  </p>
+
+</section>
