@@ -17,6 +17,7 @@
     <xi:include href="./ch-3-proof-theory.ptx" />
     <xi:include href="./ch-4-set-theory.ptx" />
     <xi:include href="./ch-5-number-theory.ptx" />
+    <xi:include href="./ch-6-combinatorics.ptx" />
 
 
     <!-- Include backmatter -->
