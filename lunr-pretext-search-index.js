@@ -1324,6 +1324,42 @@ var ptx_lunr_docs = [
   "body": "  In , we showed that there were ways to rearrange the letters of CONSENSUS . In , you found a different expression. Show that these two expressions are equal by utilizing .   "
 },
 {
+  "id": "sec-6-4-binomial-theorem",
+  "level": "1",
+  "url": "sec-6-4-binomial-theorem.html",
+  "type": "Section",
+  "number": "6.4",
+  "title": "The Binomial Theorem",
+  "body": " The Binomial Theorem   Binomials and The Binomial Theorem  In , we referred to as the binomial coefficient . You may be wondering what on earth the notion of counting unordered subsets has to do with binomials in algebra. Let's explore that a bit here.  Consider raising the binomial to the third power; . In general, we know: For the sake of demonstration, let's label each pair of and differently so that we can trace their origins through the algebra: Interestingly, the result is just a sum of monomials that each look like selecting one of terms from each of the three original binomials and taking their product. This can allow us to reframe the idea of taking powers of binomials.  Since each monomial will have exactly three factors (why?), we can think about this as counting the number of ways to select a certain number of 's from the product .   How many ways are there to select three 's? There is only one way; just select the from each of the factors. For reasons that will become clear in a moment, we can equivalently state that there are many such ways to select three 's from a set of three binomial factors.    How many ways are there to select two 's? Well, there are three factors, and we want to select two 's from them. Therefore, there must be ways to select two 's from a set of three binomial factors.   If you continue this logic, you'll arrive at the following result: This decomposition of binomial powers into a sum over powers of one of the terms is called the binomial theorem .    Let be real numbers and be a positive integer. Then, where is the binomial coefficient.    Omitted, but the proof follows the exact same logic discussed above.    This is precisely why is referred to as the binomial coefficient .    Multinomials and The Multinomial Theorem   There is a direct analog to the notion of the binomial cofficient and the binomial theroem to higher dimensions (i.e., to multinomials ). Before we state that analog, we need to talk about partitions .    Partitions  Recall that a combination is just a choice of elements out of a set of , without regard to order. So, we can think of a combination as a partition of a set of elements into two subsets, where one subset contains the elements we selected. and the other contains the elements that we did not select. Let's generalize this into a partition into more than two subsets.  The idea is the following. Suppose we have an -element set and we want to partition the elements into subsets of size so that all subsets are distinct.  First of all, for this to even make sense, we need , otherwise we either have too many, or too few, elements to use in the desired partition. With that caveat out of the way, how many ways can we do this?  As usual, we'll consider forming the subsets one at a time.   If we want to partition of our elements into the first set, then we have many such ways to do this.    After the initial allocation, we have items left unparitioned. From this list, we want to choose elements to place into the second set. There are many such ways to do this.    Proceed inductively.   Finally, we can apply to put everything together. In total, there are: many such ways to partition the elements into subsets of sizes .  Note that this product is equivalent to: Several factors in this product cancel. Canceling those factors and noting that , we get: This is the multinomial coefficient .   The Multinomial Coefficient   Let be a positive integer. Suppose are nonnegative integers with . Then we define the multinomial coefficient to be:       The Multinomial Theorem   gives us the language to write down the analogs to to multinomials.    Let be real numbers and be a positive integer. Then,     Omitted, but the ideas are similar to the binomial case.      "
+},
+{
+  "id": "thm-6-4-binomial",
+  "level": "2",
+  "url": "sec-6-4-binomial-theorem.html#thm-6-4-binomial",
+  "type": "Theorem",
+  "number": "6.4.1",
+  "title": "",
+  "body": "  Let be real numbers and be a positive integer. Then, where is the binomial coefficient.    Omitted, but the proof follows the exact same logic discussed above.   "
+},
+{
+  "id": "def-6-4-multinomial-coefficient",
+  "level": "2",
+  "url": "sec-6-4-binomial-theorem.html#def-6-4-multinomial-coefficient",
+  "type": "Definition",
+  "number": "6.4.2",
+  "title": "The Multinomial Coefficient.",
+  "body": " The Multinomial Coefficient   Let be a positive integer. Suppose are nonnegative integers with . Then we define the multinomial coefficient to be:    "
+},
+{
+  "id": "thm-6-4-multinomial",
+  "level": "2",
+  "url": "sec-6-4-binomial-theorem.html#thm-6-4-multinomial",
+  "type": "Theorem",
+  "number": "6.4.3",
+  "title": "",
+  "body": "  Let be real numbers and be a positive integer. Then,     Omitted, but the ideas are similar to the binomial case.   "
+},
+{
   "id": "backmatter-2",
   "level": "1",
   "url": "backmatter-2.html",

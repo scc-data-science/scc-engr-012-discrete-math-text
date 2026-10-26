@@ -122,7 +122,7 @@ eBookConfig.enable_chatcodes =  false;
 <legend>Assistive technologies</legend>
 <label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
 </fieldset>
-<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="sec-6-3-combinations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-6-combinatorics.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-6-5-pascal-triangle.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="sec-6-3-combinations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-6-combinatorics.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\Q}{\mathbb Q}
@@ -272,9 +272,19 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-6-1-counting.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Basic Counting</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-6-2-permutations.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Permutations</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-6-3-combinations.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Combinations</span></a></div></li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-6-4-binomial-theorem.html" class="internal"><span class="codenumber">6.4</span> <span class="title">The Binomial Theorem</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-6-5-pascal-triangle.html" class="internal"><span class="codenumber">6.5</span> <span class="title">Pascal’s Triangle</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-6-6-pigeonhole.html" class="internal"><span class="codenumber">6.6</span> <span class="title">The Pigeonhole Principle</span></a></div></li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-6-4-binomial-theorem.html" class="internal"><span class="codenumber">6.4</span> <span class="title">The Binomial Theorem</span></a></div>
+<ul class="structural toc-item-list active" id="ptx-toc-group-sec-6-4-binomial-theorem">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-6-4-binomial-theorem.html#subsec-6-4-binomials" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Binomials and The Binomial Theorem</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-6-4-binomial-theorem.html#subsec-6-4-multinomial" class="internal"><span class="codenumber">6.4.2</span> <span class="title">Multinomials and The Multinomial Theorem</span></a></div>
+<ul id="ptx-toc-group-subsec-6-4-multinomial" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-6-4-binomial-theorem.html#subsubsec-6-4-partitions" class="internal"><span class="codenumber">6.4.2.1</span> <span class="title">Partitions</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-6-4-binomial-theorem.html#subsubsec-6-4-multinomial-thm" class="internal"><span class="codenumber">6.4.2.2</span> <span class="title">The Multinomial Theorem</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
@@ -284,13 +294,194 @@ eBookConfig.enable_chatcodes =  false;
 <h1 class="heading hide-type">
 <span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Binomial Theorem</span>
 </h1>
-<div class="para" id="sec-6-4-binomial-theorem-2">.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-6-4-binomial-theorem-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<section class="subsection" id="subsec-6-4-binomials">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Binomials and The Binomial Theorem</span>
+</h2>
+<div class="para" id="subsec-6-4-binomials-2">In <a href="sec-6-3-combinations.html#def-6-3-choose" class="xref" data-knowl="./knowl/xref/def-6-3-choose.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 6.3.2">Definition 6.3.2</a>, we referred to <span class="process-math">\(\binom{n}{k}\)</span> as the “binomial coefficient”. You may be wondering what on earth the notion of counting unordered subsets has to do with binomials in algebra. Let’s explore that a bit here.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-6-4-binomials-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Section 6.4: The Binomial Theorem"><a tabindex="-1" href="#sec-6-4-binomial-theorem" title="Copy heading and permalink for Section 6.4: The Binomial Theorem" aria-label="Copy heading and permalink for Section 6.4: The Binomial Theorem">🔗</a></div>
+<div class="para logical" id="subsec-6-4-binomials-3">
+<div class="para">Consider raising the binomial <span class="process-math">\(x + y\)</span> to the third power; <span class="process-math">\((x + y)^3\text{.}\)</span> In general, we know:</div>
+<div class="displaymath process-math" id="subsec-6-4-binomials-3-3">
+\begin{equation*}
+(x + y)^3 = (x + y) \cdot (x + y) \cdot (x + y).
+\end{equation*}
+</div>
+<div class="para">For the sake of demonstration, let’s label each pair of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> differently so that we can trace their origins through the algebra:</div>
+<div class="displaymath process-math" id="subsec-6-4-binomials-3-6">
+\begin{align*}
+(x + y)^3 \amp = (x + y) \cdot (x + y) \cdot (x + y) \\
+\amp = (x_1 + y_1) \cdot (x_2 + y_2) \cdot (x_3 + y_3) \\
+\amp = (x_1x_2 + x_1y_2 + y_1x_2 + y_1y_2) \cdot (x_3 + y_3) \\
+\amp = x_1x_2x_3 + x_1y_2x_3 + y_1x_2x_3 + y_1y_2x_3 + x_1x_2y_3 + x_1y_2y_3 + y_1x_2y_3 + y_1y_2y_3 
+\end{align*}
+</div>
+<div class="para">Interestingly, the result is just a sum of monomials that each look like selecting one of terms from each of the three original binomials and taking their product. This can allow us to reframe the idea of taking powers of binomials.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-6-4-binomials-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-6-4-binomials-4">
+<div class="para">Since each monomial will have exactly three factors (why?), we can think about this as counting the number of ways to select a certain number of <span class="process-math">\(x\)</span>’s from the product <span class="process-math">\((x + y)^3\text{.}\)</span>
+</div>
+<ol class="decimal" id="subsec-6-4-binomials-4-3">
+<li id="subsec-6-4-binomials-4-3-1">
+<div class="para" id="subsec-6-4-binomials-4-3-1-1">How many ways are there to select three <span class="process-math">\(x\)</span>’s? There is only one way; just select the <span class="process-math">\(x\)</span> from each of the factors. For reasons that will become clear in a moment, we can equivalently state that there are <span class="process-math">\(\binom{3}{3}\)</span> many such ways to select three <span class="process-math">\(x\)</span>’s from a set of three binomial factors.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-6-4-binomials-4-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#subsec-6-4-binomials-4-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="subsec-6-4-binomials-4-3-2">
+<div class="para" id="subsec-6-4-binomials-4-3-2-1">How many ways are there to select two <span class="process-math">\(x\)</span>’s? Well, there are three factors, and we want to select two <span class="process-math">\(x\)</span>’s from them. Therefore, there must be <span class="process-math">\(\binom{3}{2}\)</span> ways to select two <span class="process-math">\(x\)</span>’s from a set of three binomial factors.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-6-4-binomials-4-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#subsec-6-4-binomials-4-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="para">If you continue this logic, you’ll arrive at the following result:</div>
+<div class="displaymath process-math" id="subsec-6-4-binomials-4-4">
+\begin{equation*}
+(x + y)^3 = \binom{3}{3} x^3 y^0 + \binom{3}{2} x^2 y + \binom{3}{1} x^1 y^2 + \binom{3}{0} x^0 y^3 = \sum_{k = 0}^{3} \binom{3}{k} x^{k} y^{3 - k}.
+\end{equation*}
+</div>
+<div class="para">This decomposition of binomial powers into a sum over powers of one of the terms is called <em class="emphasis">the binomial theorem</em>.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-6-4-binomials-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-6-4-binomial"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="thm-6-4-binomial-1-1">
+<div class="para">Let <span class="process-math">\(x, y\)</span> be real numbers and <span class="process-math">\(n\)</span> be a positive integer. Then,</div>
+<div class="displaymath process-math" id="thm-6-4-binomial-1-1-3">
+\begin{equation*}
+(x + y)^n = \sum_{k = 0}^{n} \binom{n}{k} x^{k} y^{n - k}.
+\end{equation*}
+</div>
+<div class="para">where</div>
+<div class="displaymath process-math" id="thm-6-4-binomial-1-1-4">
+\begin{equation*}
+\binom{n}{k} = \frac{n!}{k! \cdot (n - k)!}
+\end{equation*}
+</div>
+<div class="para">is the binomial coefficient.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-6-4-binomial-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 6.4.1"><a tabindex="-1" href="#thm-6-4-binomial" title="Copy heading and permalink for Theorem 6.4.1" aria-label="Copy heading and permalink for Theorem 6.4.1">🔗</a></div>
+</article>
+<article class="proof" id="thm-6-4-binomial-2"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="thm-6-4-binomial-2-1">Omitted, but the proof follows the exact same logic discussed above.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-6-4-binomial-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.4.1.1"><a tabindex="-1" href="#thm-6-4-binomial-2" title="Copy heading and permalink for Proof 6.4.1.1" aria-label="Copy heading and permalink for Proof 6.4.1.1">🔗</a></div>
+</article>
+<div class="para" id="subsec-6-4-binomials-6">This is precisely why <span class="process-math">\(\binom{n}{k}\)</span> is referred to as <em class="emphasis">the binomial coefficient</em>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-6-4-binomials-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Subsection 6.4.1: Binomials and The Binomial Theorem"><a tabindex="-1" href="#subsec-6-4-binomials" title="Copy heading and permalink for Subsection 6.4.1: Binomials and The Binomial Theorem" aria-label="Copy heading and permalink for Subsection 6.4.1: Binomials and The Binomial Theorem">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-6-4-multinomial">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Multinomials and The Multinomial Theorem</span>
+</h2>
+<section class="introduction" id="subsec-6-4-multinomial-2">
+<div class="para" id="subsec-6-4-multinomial-2-1">There is a direct analog to the notion of the binomial cofficient and the binomial theroem to higher dimensions (i.e., to <em class="emphasis">multinomials</em>). Before we state that analog, we need to talk about <em class="emphasis">partitions</em>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-6-4-multinomial-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<section class="subsubsection" id="subsubsec-6-4-partitions">
+<h3 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.2.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Partitions</span>
+</h3>
+<div class="para" id="subsubsec-6-4-partitions-2">Recall that a combination is just a choice of <span class="process-math">\(k\)</span> elements out of a set of <span class="process-math">\(n\text{,}\)</span> without regard to order. So, we can think of a combination as a partition of a set of <span class="process-math">\(n\)</span> elements into two subsets, where one subset contains the <span class="process-math">\(k\)</span> elements we selected. and the other contains the <span class="process-math">\(n - k\)</span> elements that we did not select. Let’s generalize this into a partition into more than two subsets.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsubsec-6-4-partitions-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsubsec-6-4-partitions-3">The idea is the following. Suppose we have an <span class="process-math">\(n\)</span>-element set and we want to partition the elements into <span class="process-math">\(r\)</span> subsets of size <span class="process-math">\(n_1, n_2, \ldots, n_r\)</span> so that all subsets are distinct.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsubsec-6-4-partitions-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsubsec-6-4-partitions-4">First of all, for this to even make sense, we need <span class="process-math">\(n_1 + n_2 + \cdots n_r = n\text{,}\)</span> otherwise we either have too many, or too few, elements to use in the desired partition. With that caveat out of the way, how many ways can we do this?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsubsec-6-4-partitions-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsubsec-6-4-partitions-5">
+<div class="para">As usual, we’ll consider forming the subsets one at a time.</div>
+<ol class="decimal" id="subsubsec-6-4-partitions-5-1">
+<li id="subsubsec-6-4-partitions-5-1-1">
+<div class="para" id="subsubsec-6-4-partitions-5-1-1-1">If we want to partition <span class="process-math">\(n_1\)</span> of our <span class="process-math">\(n\)</span> elements into the first set, then we have <span class="process-math">\(\binom{n}{n_1}\)</span> many such ways to do this.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsubsec-6-4-partitions-5-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#subsubsec-6-4-partitions-5-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="subsubsec-6-4-partitions-5-1-2">
+<div class="para" id="subsubsec-6-4-partitions-5-1-2-1">After the initial allocation, we have <span class="process-math">\(n - n_1\)</span> items left unparitioned. From this list, we want to choose <span class="process-math">\(n_2\)</span> elements to place into the second set. There are <span class="process-math">\(\binom{n - n_1}{n_2}\)</span> many such ways to do this.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsubsec-6-4-partitions-5-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#subsubsec-6-4-partitions-5-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="subsubsec-6-4-partitions-5-1-3">
+<div class="para" id="subsubsec-6-4-partitions-5-1-3-1">Proceed inductively.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsubsec-6-4-partitions-5-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#subsubsec-6-4-partitions-5-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="para">Finally, we can apply <a href="sec-6-1-counting.html#thm-6-1-mult-rule" class="xref" data-knowl="./knowl/xref/thm-6-1-mult-rule.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.1.1: The Multiplication Rule">Theorem 6.1.1</a> to put everything together. In total, there are:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-6-1-mult-rule.html" id="subsubsec-6-4-partitions-5-3">
+\begin{equation*}
+\binom{n}{n_1} \cdot \binom{n - n_1}{n_2} \cdot \cdots \cdot \binom{n - n_1 - \cdots - n_{r - 1}}{n_r}
+\end{equation*}
+</div>
+<div class="para">many such ways to partition the <span class="process-math">\(n\)</span> elements into <span class="process-math">\(r\)</span> subsets of sizes <span class="process-math">\(n_1, \ldots, n_r\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsubsec-6-4-partitions-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsubsec-6-4-partitions-6">
+<div class="para">Note that this product is equivalent to:</div>
+<div class="displaymath process-math" id="subsubsec-6-4-partitions-6-1">
+\begin{equation*}
+\frac{n!}{n_1! \cdot (n - n_1)!} \cdot \frac{(n - n_1)!}{n_2! \cdot (n - n_1 - n2)!} \cdot \cdots \cdot \frac{(n - n_1 - \cdots - n_{r - 1})!}{n_r! \cdot (n - n_1 - \cdots - n_{r - 1} - n_r)!}
+\end{equation*}
+</div>
+<div class="para">Several factors in this product cancel. Canceling those factors and noting that <span class="process-math">\(n - n_1 - \cdots - n_{r - 1} - n_r = 0\text{,}\)</span> we get:</div>
+<div class="displaymath process-math" id="subsubsec-6-4-partitions-6-3">
+\begin{equation*}
+\frac{n!}{n_1! \cdot n_2! \cdot \cdots \cdot n_r!}.
+\end{equation*}
+</div>
+<div class="para">This is the <em class="emphasis">multinomial coefficient</em>.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsubsec-6-4-partitions-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-6-4-multinomial-coefficient"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Multinomial Coefficient.</span>
+</h4>
+<div class="para logical" id="def-6-4-multinomial-coefficient-2-1">
+<div class="para">Let <span class="process-math">\(n\)</span> be a positive integer. Suppose <span class="process-math">\(n_1, n_2, \ldots, n_r\)</span> are nonnegative integers with <span class="process-math">\(n_1 + n_2 + \cdots + n_r = n\text{.}\)</span> Then we define <em class="emphasis">the multinomial coefficient</em> to be:</div>
+<div class="displaymath process-math" id="def-6-4-multinomial-coefficient-2-1-5">
+\begin{equation*}
+\binom{n}{n_1, n_2, \ldots, n_r} = \frac{n!}{n_1! \cdot n_2! \cdot \cdots \cdot n_r!}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-6-4-multinomial-coefficient-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 6.4.2: The Multinomial Coefficient"><a tabindex="-1" href="#def-6-4-multinomial-coefficient" title="Copy heading and permalink for Definition 6.4.2: The Multinomial Coefficient" aria-label="Copy heading and permalink for Definition 6.4.2: The Multinomial Coefficient">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Subsubsection 6.4.2.1: Partitions"><a tabindex="-1" href="#subsubsec-6-4-partitions" title="Copy heading and permalink for Subsubsection 6.4.2.1: Partitions" aria-label="Copy heading and permalink for Subsubsection 6.4.2.1: Partitions">🔗</a></div>
+</section>
+<section class="subsubsection" id="subsubsec-6-4-multinomial-thm">
+<h3 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.2.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Multinomial Theorem</span>
+</h3>
+<div class="para" id="subsubsec-6-4-multinomial-thm-2">
+<a href="sec-6-4-binomial-theorem.html#def-6-4-multinomial-coefficient" class="xref" data-knowl="./knowl/xref/def-6-4-multinomial-coefficient.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 6.4.2: The Multinomial Coefficient">Definition 6.4.2</a> gives us the language to write down the analogs to <a href="sec-6-4-binomial-theorem.html#thm-6-4-binomial" class="xref" data-knowl="./knowl/xref/thm-6-4-binomial.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.4.1">Theorem 6.4.1</a> to multinomials.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsubsec-6-4-multinomial-thm-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-6-4-multinomial"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical" id="thm-6-4-multinomial-1-1">
+<div class="para">Let <span class="process-math">\(x_1, x_2, \ldots, x_r\)</span> be real numbers and <span class="process-math">\(n\)</span> be a positive integer. Then,</div>
+<div class="displaymath process-math" id="thm-6-4-multinomial-1-1-3">
+\begin{equation*}
+(x_1 + x_2 + \cdots + x_r)^n = \sum_{n_1 + n_2 + \cdots + n_r = n} \binom{n}{n_1, n_2, \ldots, n_r} x_1^{r_1} x_2^{r_2} \cdots x_r^{r_r}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-6-4-multinomial-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 6.4.3"><a tabindex="-1" href="#thm-6-4-multinomial" title="Copy heading and permalink for Theorem 6.4.3" aria-label="Copy heading and permalink for Theorem 6.4.3">🔗</a></div>
+</article>
+<article class="proof" id="thm-6-4-multinomial-2"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="thm-6-4-multinomial-2-1">Omitted, but the ideas are similar to the binomial case.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-6-4-multinomial-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.4.3.1"><a tabindex="-1" href="#thm-6-4-multinomial-2" title="Copy heading and permalink for Proof 6.4.3.1" aria-label="Copy heading and permalink for Proof 6.4.3.1">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Subsubsection 6.4.2.2: The Multinomial Theorem"><a tabindex="-1" href="#subsubsec-6-4-multinomial-thm" title="Copy heading and permalink for Subsubsection 6.4.2.2: The Multinomial Theorem" aria-label="Copy heading and permalink for Subsubsection 6.4.2.2: The Multinomial Theorem">🔗</a></div>
+</section><div class="autopermalink" aria-hidden="true" data-description="Subsection 6.4.2: Multinomials and The Multinomial Theorem"><a tabindex="-1" href="#subsec-6-4-multinomial" title="Copy heading and permalink for Subsection 6.4.2: Multinomials and The Multinomial Theorem" aria-label="Copy heading and permalink for Subsection 6.4.2: Multinomials and The Multinomial Theorem">🔗</a></div>
+</section><div class="autopermalink" aria-hidden="true" data-description="Section 6.4: The Binomial Theorem"><a tabindex="-1" href="#sec-6-4-binomial-theorem" title="Copy heading and permalink for Section 6.4: The Binomial Theorem" aria-label="Copy heading and permalink for Section 6.4: The Binomial Theorem">🔗</a></div>
 </section>
 </div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="sec-6-3-combinations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-6-5-pascal-triangle.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-6-3-combinations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
