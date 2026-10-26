@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-6-4-binomial-theorem" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>The Binomial Theorem</title>
+
+  <subsection xml:id="subsec-6-4-binomials">
+    <title>Binomials and The Binomial Theorem</title>
+    
+    <p>
+      In <xref ref="def-6-3-choose"/>, we referred to <m>\binom{n}{k}</m> as the <q>binomial coefficient</q>. You may be wondering what on earth the notion of counting unordered subsets has to do with binomials in algebra. Let's explore that a bit here.
+    </p>
+
+    <p>
+      Consider raising the binomial <m>x + y</m> to the third power; <m>(x + y)^3</m>. In general, we know:
+      <md>
+        (x + y)^3 = (x + y) \cdot (x + y) \cdot (x + y).
+      </md>
+      For the sake of demonstration, let's label each pair of <m>x</m> and <m>y</m> differently so that we can trace their origins through the algebra:
+      <md>
+        <mrow> (x + y)^3 \amp = (x + y) \cdot (x + y) \cdot (x + y) </mrow>
+        <mrow> \amp = (x_1 + y_1) \cdot (x_2 + y_2) \cdot (x_3 + y_3) </mrow>
+        <mrow> \amp = (x_1x_2 + x_1y_2 + y_1x_2 + y_1y_2) \cdot (x_3 + y_3) </mrow>
+        <mrow> \amp = x_1x_2x_3 + x_1y_2x_3 + y_1x_2x_3 + y_1y_2x_3 + x_1x_2y_3 + x_1y_2y_3 + y_1x_2y_3 + y_1y_2y_3 </mrow>
+      </md>
+      Interestingly, the result is just a sum of monomials that each look like selecting one of terms from each of the three original binomials and taking their product. This can allow us to reframe the idea of taking powers of binomials.
+    </p>
+
+    <p>
+      Since each monomial will have exactly three factors (why?), we can think about this as counting the number of ways to select a certain number of <m>x</m>'s from the product <m>(x + y)^3</m>.
+      <ol>
+        <li>
+          <p>
+            How many ways are there to select three <m>x</m>'s? There is only one way; just select the <m>x</m> from each of the factors. For reasons that will become clear in a moment, we can equivalently state that there are <m>\binom{3}{3}</m> many such ways to select three <m>x</m>'s from a set of three binomial factors.
+          </p>
+        </li>
+        <li>
+          <p>
+            How many ways are there to select two <m>x</m>'s? Well, there are three factors, and we want to select two <m>x</m>'s from them. Therefore, there must be <m>\binom{3}{2}</m> ways to select two <m>x</m>'s from a set of three binomial factors.
+          </p>
+        </li>
+      </ol>
+      If you continue this logic, you'll arrive at the following result:
+      <md>
+        (x + y)^3 = \binom{3}{3} x^3 y^0 + \binom{3}{2} x^2 y + \binom{3}{1} x^1 y^2 + \binom{3}{0} x^0 y^3 = \sum_{k = 0}^{3} \binom{3}{k} x^{k} y^{3 - k}.
+      </md>
+      This decomposition of binomial powers into a sum over powers of one of the terms is called <em>the binomial theorem</em>.
+    </p>
+
+    <theorem xml:id="thm-6-4-binomial">
+      <statement>
+        <p>
+          Let <m>x, y</m> be real numbers and <m>n</m> be a positive integer. Then,
+          <md>
+            (x + y)^n = \sum_{k = 0}^{n} \binom{n}{k} x^{k} y^{n - k}.
+          </md>
+          where
+          <md>
+            \binom{n}{k} = \frac{n!}{k! \cdot (n - k)!}
+          </md>
+          is the binomial coefficient.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Omitted, but the proof follows the exact same logic discussed above.
+        </p>
+      </proof>
+    </theorem>
+
+    <p>
+      This is precisely why <m>\binom{n}{k}</m> is referred to as <em>the binomial coefficient</em>.
+    </p>
+    
+  </subsection>
+
+  <subsection xml:id="subsec-6-4-multinomial">
+    <title>Multinomials and The Multinomial Theorem</title>
+    
+    <introduction>
+      <p>
+        There is a direct analog to the notion of the binomial cofficient and the binomial theroem to higher dimensions (i.e., to <em>multinomials</em>). Before we state that analog, we need to talk about <em>partitions</em>.
+      </p>
+    </introduction>
+
+    <subsubsection xml:id="subsubsec-6-4-partitions">
+      <title>Partitions</title>
+      
+        <p>
+          Recall that a combination is just a choice of <m>k</m> elements out of a set of <m>n</m>, without regard to order. So, we can think of a combination as a partition of a set of <m>n</m> elements into two subsets, where one subset contains the <m>k</m> elements we selected. and the other contains the <m>n - k</m> elements that we did not select. Let's generalize this into a partition into more than two subsets. 
+        </p>
+
+        <p>
+          The idea is the following. Suppose we have an <m>n</m>-element set and we want to partition the elements into <m>r</m> subsets of size <m>n_1, n_2, \ldots, n_r</m> so that all subsets are distinct.
+        </p>
+        
+        <p>
+          First of all, for this to even make sense, we need <m>n_1 + n_2 + \cdots n_r = n</m>, otherwise we either have too many, or too few, elements to use in the desired partition. With that caveat out of the way, how many ways can we do this?
+        </p>
+
+        <p>
+          As usual, we'll consider forming the subsets one at a time.
+          <ol>
+            <li>
+              <p>
+                If we want to partition <m>n_1</m> of our <m>n</m> elements into the first set, then we have <m>\binom{n}{n_1}</m> many such ways to do this. 
+              </p>
+            </li>
+            <li>
+              <p>
+                After the initial allocation, we have <m>n - n_1</m> items left unparitioned. From this list, we want to choose <m>n_2</m> elements to place into the second set. There are <m>\binom{n - n_1}{n_2}</m> many such ways to do this.
+              </p>
+            </li>
+            <li>
+              <p>
+                Proceed inductively.
+              </p>
+            </li>
+          </ol>
+          Finally, we can apply <xref ref="thm-6-1-mult-rule"/> to put everything together. In total, there are:
+          <md>
+            \binom{n}{n_1} \cdot \binom{n - n_1}{n_2} \cdot \cdots \cdot \binom{n - n_1 - \cdots - n_{r - 1}}{n_r}
+          </md>
+          many such ways to partition the <m>n</m> elements into <m>r</m> subsets of sizes <m>n_1, \ldots, n_r</m>.
+        </p>
+
+        <p>
+          Note that this product is equivalent to:
+          <md>
+            \frac{n!}{n_1! \cdot (n - n_1)!} \cdot \frac{(n - n_1)!}{n_2! \cdot (n - n_1 - n2)!} \cdot \cdots \cdot \frac{(n - n_1 - \cdots - n_{r - 1})!}{n_r! \cdot (n - n_1 - \cdots - n_{r - 1} - n_r)!}
+          </md>
+          Several factors in this product cancel. Canceling those factors and noting that <m>n - n_1 - \cdots - n_{r - 1} - n_r = 0</m>, we get:
+          <md>
+            \frac{n!}{n_1! \cdot n_2! \cdot \cdots \cdot n_r!}.
+          </md>
+          This is the <em>multinomial coefficient</em>.
+        </p>
+
+        <definition xml:id="def-6-4-multinomial-coefficient">
+          <title>The Multinomial Coefficient</title>
+          <statement>
+            <p>
+              Let <m>n</m> be a positive integer. Suppose <m>n_1, n_2, \ldots, n_r</m> are nonnegative integers with <m>n_1 + n_2 + \cdots + n_r = n</m>. Then we define <em>the multinomial coefficient</em> to be:
+              <md>
+                \binom{n}{n_1, n_2, \ldots, n_r} = \frac{n!}{n_1! \cdot n_2! \cdot \cdots \cdot n_r!}.
+              </md>
+            </p>
+          </statement>
+        </definition>
+
+    </subsubsection>
+
+  <subsubsection xml:id="subsubsec-6-4-multinomial-thm">
+    <title>The Multinomial Theorem</title>
+    
+    <p>
+      <xref ref="def-6-4-multinomial-coefficient"/> gives us the language to write down the analogs to <xref ref="thm-6-4-binomial"/> to multinomials.
+    </p>
+
+    <theorem xml:id="thm-6-4-multinomial">
+      <statement>
+        <p>
+          Let <m>x_1, x_2, \ldots, x_r</m> be real numbers and <m>n</m> be a positive integer. Then,
+          <md>
+            (x_1 + x_2 + \cdots + x_r)^n = \sum_{n_1 + n_2 + \cdots + n_r = n} \binom{n}{n_1, n_2, \ldots, n_r} x_1^{r_1} x_2^{r_2} \cdots x_r^{r_r}.
+          </md>
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Omitted, but the ideas are similar to the binomial case.
+        </p>
+      </proof>
+    </theorem>
+    
+
+  </subsubsection>
+
+  </subsection>
+
+</section>
