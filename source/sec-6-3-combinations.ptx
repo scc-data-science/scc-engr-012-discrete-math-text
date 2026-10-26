@@ -96,8 +96,99 @@
     And indeed it is! We'll see another proof of this in our section on Pascal's Triangle, but that proof does not invalidate this one. What we have just done is prove an identity by finding two different ways to count the same thing. This is an example of a <em>combinatorial proof</em> and is a powerful proof technique. We will see much more of this in the coming sections.
   </p>
 
-  <p>
-    <em>More coming soon...</em>
-  </p>
+  <example xml:id="ex-6-3-coins">
+    <statement>
+      <p>
+        Suppose a fair coin is tossed 10 times and the results are recorded.
+        <ol>
+          <li><p>How many total outcomes are there?</p></li>
+          <li><p>How many outcomes have exactly 5 heads?</p></li>
+          <li><p>How many outcomes have at least 8 heads?</p></li>
+          <li><p>How many outcomes have at least 3 heads?</p></li>
+        </ol>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              There are 10 total coin flips, and each flip can result in exactly two possible outcomes. By <xref ref="thm-6-1-mult-rule"/>, there are <m>2^{10}</m> possible outcomes.
+            </p>
+          </li>
+          <li>
+            <p>
+              If there are exactly five heads among the 10 coins, then the problem is equivalent to asking in which position those five heads occurred. That is, we need to count the number of ways to distribute five heads into a collection of ten coins. From <xref ref="def-6-3-choose"/>, there are <m>\binom{10}{5}</m> many such ways to do this.
+            </p>
+          </li>
+          <li>
+            <p>
+              Since there are ten total coins, the phrase <q>at least 8</q> really means <q>8, 9, or 10</q>. As such, the question is equivalent to the question <q>how many outcomes have 8, or 9, or 10 heads?</q>
+            </p>
+
+            <p>
+              We know how to answer each of these questions indivdually. For example, there are <m>\binom{10}{8}</m> many such ways to count the number of outcomes that have exactly 8 heads. So how to we combine the results?
+            </p>
+            
+            <p>
+              Notice that no two events can occur simultaneously (e.g., it is not possible for a single outcome to have 8 heads and 9 heads simultaneously). So, we can apply <xref ref="thm-6-1-add-rule"/>. In total, there are:
+              <md>
+                \binom{10}{8} + \binom{10}{9} + \binom{10}{10}
+              </md>
+              many such ways for an outcome to have at least 8 heads.
+            </p>
+          </li>
+          <li>
+            <p>
+              Left an an exercise.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="ex-6-3-consensus">
+    <statement>
+      <p>
+        In how many different ways can the word <em>CONSENSUS</em> be rearranged?
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We solved this problem in the previous section (see <xref ref="ex-6-2-consensus"/>), but we'll use a sligtly different approach here that utilizes this new notation.  
+      </p>
+      
+      <p>
+        We imagine having all of the letters of <em>CONSENSUS</em> set aside, while in front of us we have nine empty slots to which we'll assign each of the letters. One way to do this is to first place the three <em>S</em>'s into any of the nine slots. How many ways are there to do that? There are <m>\binom{9}{3}</m> many such ways.
+      </p>
+
+      <p>
+        Now that we have placed each of the <em>S</em>'s, we only have <m>9 - 3 = 6</m> spaces left. Now, how many ways can we place the two <em>N</em>'s? There are <m>\binom{6}{2}</m> many such ways.
+      </p>
+
+      <p>
+        After placing the <em>N</em>'s, we're down to <m>9 - 3 - 2 = 4</m> open slots on the table. For each of the remaining letters, there is only letter from which to choose, so in each case there will be <m>\binom{n_i}{1}</m> many ways to place that letter, where <m>n_i</m> denotes the number of open slots left on the table.
+      </p>
+
+      <p>
+        Finally, we can apply <xref ref="thm-6-1-mult-rule"/> to put everything together. In total, there are:
+        <md>
+          \binom{9}{3} \cdot \binom{6}{2} \cdot \binom{4}{1} \cdot \binom{3}{1} \cdot \binom{2}{1} \cdot \binom{1}{1} 
+        </md>
+        many such ways to rearrange the letters of <em>CONSENSUS</em>
+      </p>
+    </solution>
+  </example>
+
+  <exercise xml:id="ex-6-3-consensus-2">
+    <statement>
+      <p>
+      In <xref ref="ex-6-2-consensus"/>, we showed that there were <m>9! / (3! \cdot 2!)</m> ways to rearrange the letters of <em>CONSENSUS</em>. In <xref ref="ex-6-3-consensus"/>, you found a different expression. Show that these two expressions are equal by utilizing <xref ref="def-6-3-choose"/>.
+    </p>
+    </statement>
+  </exercise>
+
 
 </section>
