@@ -37,7 +37,7 @@
   <xi:include href="sec-6-1-counting.ptx" />
   <xi:include href="sec-6-2-permutations.ptx" />
   <xi:include href="sec-6-3-combinations.ptx" />
-  <!-- <xi:include href="sec-6-4-binomial-theorem.ptx" /> -->
+  <xi:include href="sec-6-4-binomial-theorem.ptx" />
   <!-- <xi:include href="sec-6-5-pascal-triangle.ptx" /> -->
   <!-- <xi:include href="sec-6-6-pigeonhole.ptx" /> -->
 
