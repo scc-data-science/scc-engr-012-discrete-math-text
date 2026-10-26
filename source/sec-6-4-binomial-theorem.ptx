@@ -162,7 +162,7 @@
         <p>
           Let <m>x_1, x_2, \ldots, x_r</m> be real numbers and <m>n</m> be a positive integer. Then,
           <md>
-            (x_1 + x_2 + \cdots + x_r)^n = \sum_{n_1 + n_2 + \cdots + n_r = n} \binom{n}{n_1, n_2, \ldots, n_r} x_1^{r_1} x_2^{r_2} \cdots x_r^{r_r}.
+            (x_1 + x_2 + \cdots + x_r)^n = \sum_{n_1 + n_2 + \cdots + n_r = n} \binom{n}{n_1, n_2, \ldots, n_r} x_1^{n_1} x_2^{n_2} \cdots x_r^{n_r}.
           </md>
         </p>
       </statement>
