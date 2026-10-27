@@ -1360,6 +1360,87 @@ var ptx_lunr_docs = [
   "body": "  Let be real numbers and be a positive integer. Then,     Omitted, but the ideas are similar to the binomial case.   "
 },
 {
+  "id": "sec-6-7-exercises",
+  "level": "1",
+  "url": "sec-6-7-exercises.html",
+  "type": "Section",
+  "number": "6.5",
+  "title": "Exercises",
+  "body": " Exercises  Please complete the following problems. Show your work and simplify your answers whenever possible.    The social security number of a person is a sequence of nine digits that are not necessarily distinct. If is the set of all social security numbers, find the number of elements of .      Find the number of ways of picking:  a king and a queen;  a king or a queen;  a king and a red card;  a king or a queen;  from a deck of cards.      Find the number of ways to form a four-letter sequence using the letters A, B, C, D, and E, if:  repetitions of letters are permitted.  repetitions of letters are not permitted.  the sequence contains the letter A but repetitions of letters are permitted.  the sequence contains the letter A but repetitions of letters are not permitted.        There are three bridges connecting two towns, A and B. Between towns B and C, there are four bridges. A traveler wishes to travel from town A to town C. Find:  the number of possible choices of bridges from A to C.  the number of possible choices of bridges for a round-trip travel from A to C.  the number of possible choices of bridges for a round-trip travel from A to C if no bridge is to be repeated.        Prove Pascal's formula, algebraically by using the definition of in terms of factorials.      A bit is a binary digit, i.e., either a 0 or a 1. A byte is a sequence of eight bits. Find the number of bytes that can be formed using exactly six zeros.      Suppose we roll a die and write down the number that shows us. Suppose we repeat this process until we've recorded five numbers, and then we add the results. The five throws constitute a trial. Find the number of possible trials for which the sum is at most 12.      Suppose athe Data Science department at some university offers 8 lower division courses, and 10 upper division courses, . A valid curriculum consists of 4 lower division courses and 3 upper division courses.  How many different curricula are possible?  Suppose that have as a prerequisite, and have both and as a prerequisite. How many different curricula are possible?      "
+},
+{
+  "id": "ch-6-1-ssn",
+  "level": "2",
+  "url": "sec-6-7-exercises.html#ch-6-1-ssn",
+  "type": "Exercise",
+  "number": "6.5.1",
+  "title": "",
+  "body": "  The social security number of a person is a sequence of nine digits that are not necessarily distinct. If is the set of all social security numbers, find the number of elements of .   "
+},
+{
+  "id": "ch-6-2-cards",
+  "level": "2",
+  "url": "sec-6-7-exercises.html#ch-6-2-cards",
+  "type": "Exercise",
+  "number": "6.5.2",
+  "title": "",
+  "body": "  Find the number of ways of picking:  a king and a queen;  a king or a queen;  a king and a red card;  a king or a queen;  from a deck of cards.   "
+},
+{
+  "id": "ch-6-3-letters",
+  "level": "2",
+  "url": "sec-6-7-exercises.html#ch-6-3-letters",
+  "type": "Exercise",
+  "number": "6.5.3",
+  "title": "",
+  "body": "  Find the number of ways to form a four-letter sequence using the letters A, B, C, D, and E, if:  repetitions of letters are permitted.  repetitions of letters are not permitted.  the sequence contains the letter A but repetitions of letters are permitted.  the sequence contains the letter A but repetitions of letters are not permitted.     "
+},
+{
+  "id": "ch-6-4-bridges",
+  "level": "2",
+  "url": "sec-6-7-exercises.html#ch-6-4-bridges",
+  "type": "Exercise",
+  "number": "6.5.4",
+  "title": "",
+  "body": "  There are three bridges connecting two towns, A and B. Between towns B and C, there are four bridges. A traveler wishes to travel from town A to town C. Find:  the number of possible choices of bridges from A to C.  the number of possible choices of bridges for a round-trip travel from A to C.  the number of possible choices of bridges for a round-trip travel from A to C if no bridge is to be repeated.     "
+},
+{
+  "id": "ch-6-5-pascal",
+  "level": "2",
+  "url": "sec-6-7-exercises.html#ch-6-5-pascal",
+  "type": "Exercise",
+  "number": "6.5.5",
+  "title": "",
+  "body": "  Prove Pascal's formula, algebraically by using the definition of in terms of factorials.   "
+},
+{
+  "id": "ch-6-6-byte",
+  "level": "2",
+  "url": "sec-6-7-exercises.html#ch-6-6-byte",
+  "type": "Exercise",
+  "number": "6.5.6",
+  "title": "",
+  "body": "  A bit is a binary digit, i.e., either a 0 or a 1. A byte is a sequence of eight bits. Find the number of bytes that can be formed using exactly six zeros.   "
+},
+{
+  "id": "ch-6-7-die",
+  "level": "2",
+  "url": "sec-6-7-exercises.html#ch-6-7-die",
+  "type": "Exercise",
+  "number": "6.5.7",
+  "title": "",
+  "body": "  Suppose we roll a die and write down the number that shows us. Suppose we repeat this process until we've recorded five numbers, and then we add the results. The five throws constitute a trial. Find the number of possible trials for which the sum is at most 12.   "
+},
+{
+  "id": "ch-6-8-curriculum",
+  "level": "2",
+  "url": "sec-6-7-exercises.html#ch-6-8-curriculum",
+  "type": "Exercise",
+  "number": "6.5.8",
+  "title": "",
+  "body": "  Suppose athe Data Science department at some university offers 8 lower division courses, and 10 upper division courses, . A valid curriculum consists of 4 lower division courses and 3 upper division courses.  How many different curricula are possible?  Suppose that have as a prerequisite, and have both and as a prerequisite. How many different curricula are possible?     "
+},
+{
   "id": "backmatter-2",
   "level": "1",
   "url": "backmatter-2.html",
