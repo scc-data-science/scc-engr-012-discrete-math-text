@@ -40,6 +40,6 @@
   <xi:include href="sec-6-4-binomial-theorem.ptx" />
   <!-- <xi:include href="sec-6-5-pascal-triangle.ptx" /> -->
   <!-- <xi:include href="sec-6-6-pigeonhole.ptx" /> -->
-
+  <xi:include href="sec-6-7-exercises.ptx" />
 
 </chapter>

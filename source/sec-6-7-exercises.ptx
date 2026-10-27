@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-6-7-exercises" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Exercises</title>
+
+  <p>
+    Please complete the following problems. Show your work and simplify your answers whenever possible.
+  </p>
+
+  <exercise xml:id="ch-6-1-ssn">
+    <statement>
+      <p>
+        The social security number  of a person is a sequence of nine digits that are not necessarily distinct. If <m>X</m> is the set of all social security numbers, find the number of elements of <m>X</m>.
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="ch-6-2-cards">
+    <statement>
+      <p>
+        Find the number of ways of picking:
+        <ol>
+          <li><p>a king and a queen;</p></li>
+          <li><p>a king or a queen;</p></li>
+          <li><p>a king and a red card;</p></li>
+          <li><p>a king or a queen;</p></li>
+        </ol>
+        from a deck of cards.
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="ch-6-3-letters">
+    <statement>
+      <p>
+        Find the number of ways to form a four-letter sequence using the letters A, B, C, D, and E, if:
+        <ol>
+          <li><p>repetitions of letters are permitted.</p></li>
+          <li><p>repetitions of letters are not permitted.</p></li>
+          <li><p>the sequence contains the letter A but repetitions of letters are permitted.</p></li>
+          <li><p>the sequence contains the letter A but repetitions of letters are not permitted.</p></li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="ch-6-4-bridges">
+    <statement>
+      <p>
+        There are three bridges connecting two towns, A and B. Between towns B and C, there are four bridges. A traveler wishes to travel from town A to town C. Find:
+        <ol>
+          <li><p>the number of possible choices of bridges from A to C.</p></li>
+          <li><p>the number of possible choices of bridges for a round-trip travel from A to C.</p></li>
+          <li><p>the number of possible choices of bridges for a round-trip travel from A to C if no bridge is to be repeated.</p></li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="ch-6-5-pascal">
+    <statement>
+      <p>
+        Prove Pascal's formula,
+        <md>
+          \binom{n}{r} = \binom{n - 1}{r} + \binom{n - 1}{r - 1}
+        </md>
+        algebraically by using the definition of <m>\binom{n}{r}</m> in terms of factorials.
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="ch-6-6-byte">
+    <statement>
+      <p>
+        A <em>bit</em> is a binary digit, i.e., either a 0 or a 1. A <em>byte</em> is a sequence of eight bits. Find the number of bytes that can be formed using exactly six zeros.
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="ch-6-7-die">
+    <statement>
+      <p>
+        Suppose we roll a die and write down the number that shows us. Suppose we repeat this process until we've recorded five numbers, and then we add the results. The five throws constitute a trial. Find the number of possible trials for which the sum is at most 12.
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="ch-6-8-curriculum">
+    <statement>
+      <p>
+        Suppose athe Data Science department at some university offers 8 lower division courses, <m>\{L_1, L_2, \ldots, L_8\}</m> and 10 upper division courses, <m>\{U_1, U_2, \ldots, U_{10}\}</m>. A <em>valid curriculum</em> consists of 4 lower division courses and 3 upper division courses.
+        <ol>
+          <li><p>How many different curricula are possible?</p></li>
+          <li><p>Suppose that <m>\{U_1, \ldots, U_5\}</m> have <m>L_1</m> as a prerequisite, and <m>\{U_6, \ldots, U_{10}\}</m> have both <m>L_2</m> and <m>L_3</m> as a prerequisite. How many different curricula are possible?</p></li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+
+</section>
