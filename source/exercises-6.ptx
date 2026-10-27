@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext xml:lang="en-US"
+         xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <xi:include href="./docinfo.ptx" />
+
+  <article xml:id="chapter-6-exercises">
+    <title>Chapter 6: Combinatorics</title>
+    <subtitle>Solano Community College ENGR 012</subtitle>
+
+    <xi:include href="./sec-6-7-exercises.ptx" />
+
+  </article>
+
+</pretext>

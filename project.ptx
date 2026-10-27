@@ -16,6 +16,15 @@
         output-filename="scc_202680_engr_012_homework_07.pdf"
         standalone="yes"
     />
+  <target
+        name="exercises-6"
+        format="pdf"
+        source="exercises-6.ptx"
+        publication="publication-exercises.ptx"
+        output-dir="exercises-6"
+        output-filename="scc_202680_engr_012_homework_08.pdf"
+        standalone="yes"
+    />
   </targets>
 </project>
 
