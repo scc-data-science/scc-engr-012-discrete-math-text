@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-7-probability-theory" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Introduction to Probability Theory</title>
+
+  <introduction>
+    <p>
+      
+    </p>
+  </introduction>
+
+  <xi:include href="sec-7-1-prob-modeling.ptx" />
+  <xi:include href="sec-7-2-prob-properties.ptx" />
+  <xi:include href="sec-7-3-cond-prob.ptx" />
+  <xi:include href="sec-7-4-independence.ptx" />
+  <xi:include href="sec-7-5-random-variables.ptx" />
+
+</chapter>
