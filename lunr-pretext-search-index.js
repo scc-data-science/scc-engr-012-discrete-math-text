@@ -1441,6 +1441,132 @@ var ptx_lunr_docs = [
   "body": "  Suppose athe Data Science department at some university offers 8 lower division courses, and 10 upper division courses, . A valid curriculum consists of 4 lower division courses and 3 upper division courses.  How many different curricula are possible?  Suppose that have as a prerequisite, and have both and as a prerequisite. How many different curricula are possible?     "
 },
 {
+  "id": "sec-7-1-prob-modeling",
+  "level": "1",
+  "url": "sec-7-1-prob-modeling.html",
+  "type": "Section",
+  "number": "7.1",
+  "title": "Probabilistic Modeling",
+  "body": " Probabilistic Modeling   In this section, we'll introduce the mathematical formalism that underlies probability theory; namely, a probabilistic model . A probabilistic model is just a mathematical description of a uncertain situation.   Components of a Probabalistic Model   The following are components of a probabalistic model.   The sample space , , which is the set of all possible outcomes of an experiment.    The probability measure , , which encodes our belief in the likelihood of a given set of outcomes.       As a motivating example, consider tossing a pair of fair coins. This process is what we refer to as the experiment in the definition above. The sample space is the set of all outcomes, so: where represents the outcome in which a given coin landed heads-up, denotes the outcome in which the given coin landed tails-up, and the ordered pair is used to denotes the order of the events (that is, represents the outcome associated with the first coin and denotes that of the second).  Since the coins are fair, you'd expect the probability measure to somehow encode that information, so that . You would be correct about this, but we need a few more definitions before we're ready to start formally discussing the probability measure.    Probability Axioms  Every probabalistic model relies on some underlying process (like tossing a coin), called an experiment , which generates exactly one of several possible outcomes (like ). The set of all possible outcomes is called the sample space , and any subset of the sample space is called an event .  Formally, we define the probability measure to be a function from the set of possible events of an experiment into the closed interval . This is so that we can discuss probabilities of individual outcomes as well as probabilities of sets of outcomes. With this, we are ready to introduce the axioms of the probability measure.   Probability Axioms   Let be a probability measure on a sample space .    (Nonnegativity)  for every event .     (Additivity) If and are disjoint events (that is, ), then the probability of their union satisfies More generally, if is a sequence of disjoint events, then: Note that need not be finite.     (Normalization) The probability of the entire sample space is 1; that is, .        Equiprobable Outcomes   Suppose a sample space has equally likely outcomes, and an event contains outcomes. If: then is a valid probability measure on .       An event is a subset of the sample space. Since can contain no fewer than zero elements, , and so .    Suppose and are disjoint events. Then . Then, we can think of and , where none of the 's are equal to any of the 's. Then: So, .    By definition, .       Of course, any function that satisfies can be interpreted as a probability, but we can get surprisingly far with the following one.   Equiprobable Outcome: Fair Die   A fair die is rolled. Find the probability that an even number comes up.    The sample space in this case is: The event that an even number comes up is the subset . By , we have:      Equiprobable Outcome: Sum of Two Dice   Two fair dice, one red and one blue, are rolled. Find the probability that the sum of the two numbers is . Is a sum of more likely than a sum of ?    It is tempting to take the sample space to be the possible sums, . However, these outcomes are not equally likely, so does not apply to this sample space.  Instead, record the number on each die as an ordered pair, so that where is the red die and is the blue die. There are outcomes, and since the dice are fair, they are equally likely. The event that the sum is is which has elements. By ,   The event that the sum is is , so . Thus a sum of is six times as likely as a sum of , even though both are single values in the list . The sum can be produced in more ways, and the ordered-pair sample space keeps track of this.     Equiprobable Outcome: Two Aces from a Deck   Two cards are dealt from a well-shuffled standard deck of cards. Find the probability that both cards are aces.    We solve this in two ways, using two different sample spaces.   Unordered hands. Let be the set of all -element subsets of the deck. Every pair of cards is equally likely to be dealt, and The event that both cards are aces consists of the -element subsets of the aces, so . By ,    Ordered deals. Now let be the set of ordered pairs (first card, second card) of distinct cards. Then , and again all outcomes are equally likely. The event that both cards are aces has elements, so   Both sample spaces give the same answer. This is not a coincidence: each unordered hand corresponds to exactly ordered deals, so the numerator and the denominator in the second computation are each exactly twice those of the first. Either sample space may be used, provided we count the outcomes and the event consistently within the same space.     "
+},
+{
+  "id": "def-7-1-prob-model",
+  "level": "2",
+  "url": "sec-7-1-prob-modeling.html#def-7-1-prob-model",
+  "type": "Definition",
+  "number": "7.1.1",
+  "title": "Components of a Probabalistic Model.",
+  "body": " Components of a Probabalistic Model   The following are components of a probabalistic model.   The sample space , , which is the set of all possible outcomes of an experiment.    The probability measure , , which encodes our belief in the likelihood of a given set of outcomes.      "
+},
+{
+  "id": "axiom-7-1-prob-measure",
+  "level": "2",
+  "url": "sec-7-1-prob-modeling.html#axiom-7-1-prob-measure",
+  "type": "Axiom",
+  "number": "7.1.2",
+  "title": "Probability Axioms.",
+  "body": " Probability Axioms   Let be a probability measure on a sample space .    (Nonnegativity)  for every event .     (Additivity) If and are disjoint events (that is, ), then the probability of their union satisfies More generally, if is a sequence of disjoint events, then: Note that need not be finite.     (Normalization) The probability of the entire sample space is 1; that is, .      "
+},
+{
+  "id": "thm-7-1-equiprob",
+  "level": "2",
+  "url": "sec-7-1-prob-modeling.html#thm-7-1-equiprob",
+  "type": "Theorem",
+  "number": "7.1.3",
+  "title": "Equiprobable Outcomes.",
+  "body": " Equiprobable Outcomes   Suppose a sample space has equally likely outcomes, and an event contains outcomes. If: then is a valid probability measure on .       An event is a subset of the sample space. Since can contain no fewer than zero elements, , and so .    Suppose and are disjoint events. Then . Then, we can think of and , where none of the 's are equal to any of the 's. Then: So, .    By definition, .      "
+},
+{
+  "id": "ex-7-1-equiprob-1",
+  "level": "2",
+  "url": "sec-7-1-prob-modeling.html#ex-7-1-equiprob-1",
+  "type": "Example",
+  "number": "7.1.4",
+  "title": "Equiprobable Outcome: Fair Die.",
+  "body": " Equiprobable Outcome: Fair Die   A fair die is rolled. Find the probability that an even number comes up.    The sample space in this case is: The event that an even number comes up is the subset . By , we have:    "
+},
+{
+  "id": "ex-7-1-equiprob-2",
+  "level": "2",
+  "url": "sec-7-1-prob-modeling.html#ex-7-1-equiprob-2",
+  "type": "Example",
+  "number": "7.1.5",
+  "title": "Equiprobable Outcome: Sum of Two Dice.",
+  "body": " Equiprobable Outcome: Sum of Two Dice   Two fair dice, one red and one blue, are rolled. Find the probability that the sum of the two numbers is . Is a sum of more likely than a sum of ?    It is tempting to take the sample space to be the possible sums, . However, these outcomes are not equally likely, so does not apply to this sample space.  Instead, record the number on each die as an ordered pair, so that where is the red die and is the blue die. There are outcomes, and since the dice are fair, they are equally likely. The event that the sum is is which has elements. By ,   The event that the sum is is , so . Thus a sum of is six times as likely as a sum of , even though both are single values in the list . The sum can be produced in more ways, and the ordered-pair sample space keeps track of this.   "
+},
+{
+  "id": "ex-7-1-equiprob-3",
+  "level": "2",
+  "url": "sec-7-1-prob-modeling.html#ex-7-1-equiprob-3",
+  "type": "Example",
+  "number": "7.1.6",
+  "title": "Equiprobable Outcome: Two Aces from a Deck.",
+  "body": " Equiprobable Outcome: Two Aces from a Deck   Two cards are dealt from a well-shuffled standard deck of cards. Find the probability that both cards are aces.    We solve this in two ways, using two different sample spaces.   Unordered hands. Let be the set of all -element subsets of the deck. Every pair of cards is equally likely to be dealt, and The event that both cards are aces consists of the -element subsets of the aces, so . By ,    Ordered deals. Now let be the set of ordered pairs (first card, second card) of distinct cards. Then , and again all outcomes are equally likely. The event that both cards are aces has elements, so   Both sample spaces give the same answer. This is not a coincidence: each unordered hand corresponds to exactly ordered deals, so the numerator and the denominator in the second computation are each exactly twice those of the first. Either sample space may be used, provided we count the outcomes and the event consistently within the same space.   "
+},
+{
+  "id": "sec-7-2-prob-properties",
+  "level": "1",
+  "url": "sec-7-2-prob-properties.html",
+  "type": "Section",
+  "number": "7.2",
+  "title": "Basic Properties of Probability Theory",
+  "body": " Basic Properties of Probability Theory  Probability measures have several desirable properties, which can be derived directly from the axioms,     Suppose is a probability measure on and that , , and are events. Then:    .    If then .     .     .          Notice that , where . So, by the additivity and normalization axioms of , we have: Since , we conclude .    Write . Since the sets are disjoint, we can use the additivity axiom of to write: Now, from the nonnegativity axiom, we have , and so .    Left as an exercise.    Left as an exercise.        Inclusion-Exclusion for Two Events: Divisibility   A number is chosen uniformly at random from . Find the probability that it is divisible by or by .    Let , and let be the event that the number is divisible by and the event that it is divisible by . We want . Counting multiples gives The event is the event that the number is divisible by both and , that is, by , so By part (3) of ,   Note that simply adding would overcount: the multiples of are counted once in each event, so they must be subtracted once.     The Union Bound: Reliability of a System   A server runs three independent hardware components. Over one year, the probability that the disk fails is at most , the probability that the power supply fails is at most , and the probability that the network card fails is at most . Give an upper bound on the probability that at least one component fails during the year.    Let , , and be the events that the disk, power supply, and network card fail, respectively. We want to bound . We do not need to know how the failures are related to each other, which is the point of using the union bound.  Apply part (4) of to the events and : Applying part (4) again to and gives , so Thus the probability that some component fails is at most .  This bound holds regardless of whether the failures are independent, disjoint, or strongly correlated, so it is useful when the dependence between events is unknown. It is generally not exact: if the failures can occur together, the true probability is smaller, by the correction term in part (3).     Monotonicity: Bounding a Hard Probability by an Easy One   Five fair coins are flipped. Let be the event that the number of heads is or more and the first coin is heads. Show that , and then find exactly.    Let be the set of all equally likely sequences of heads and tails, and let be the event that the first coin is heads. Every outcome in has first coin heads, so . Since fixes the first coin and leaves the other four free, and . By part (2) of , This bound required no counting beyond the event .  For the exact value, an outcome in has first coin heads and at least heads among the remaining four coins. The number of such sequences is so . This is consistent with the bound, since .     Finding an Unknown Probability and Checking a Model   In a certain town, of households own a dog, own a cat, and own neither. A household is chosen at random.   What is the probability that the household owns both a dog and a cat?    A neighbor claims that of households own a dog and own a cat, and that own both. Is this claim consistent with the laws of probability?          Let be the event that the household owns a dog and the event that it owns a cat. The event that the household owns neither is the complement of , so Solving part (3) of for the intersection gives So of households own both.    The claimed values would give which is not itself a contradiction. However, the claim says has probability while has probability , and we can check the consistency conditions: since , part (2) requires , and indeed . Similarly gives . Finally, part (4) requires , which holds. All of the checks pass, so the claim is consistent with the laws of probability. (It would be inconsistent if, for example, the neighbor had claimed that own a cat and dog, since then would violate part (2).)       You might be wondering if there is an analog to part 3 of for three (or more) sets. It turns out, there is, but it is remarkably uglier.   The Principle of Inclusion-Exclusion   Suppose is a probability measure on and that , , and are events. Then:     One of the most useful tactics for proving probability theorems is to consider samples as subsets of and utilizing what we know from set theory. With this, we imagine adding these components together one at a time. Refer to .   Inclusion-exclusion for three sets. The number in each region is how many times its elements have been counted so far.    Inclusion-exclusion for three sets.   Three Venn diagrams of sets A, B, and C, shown left to right, illustrating inclusion-exclusion. In each diagram, three overlapping circles form seven regions, and each region is labeled with how many times its elements have been counted so far. In the first diagram, the three sets are added together: the regions belonging to only one set are labeled 1, the three regions shared by exactly two sets are labeled 2, and the center region shared by all three sets is labeled 3. In the second diagram, the three pairwise intersections are subtracted: the single-set and pairwise regions are all labeled 1, and the center region drops to 0. In the third diagram, the triple intersection is added back: all seven regions are labeled 1, so every element of the union is counted exactly once.     First, we compute . Notice, however, this counts the intersections more than once, so we need to subtract the intersections, , , and .  However, after we subtract the intersections of each pair, we've subtracted the inner most region, three times, we we have to add it back.    "
+},
+{
+  "id": "thm-7-2-prob-laws",
+  "level": "2",
+  "url": "sec-7-2-prob-properties.html#thm-7-2-prob-laws",
+  "type": "Theorem",
+  "number": "7.2.1",
+  "title": "",
+  "body": "  Suppose is a probability measure on and that , , and are events. Then:    .    If then .     .     .          Notice that , where . So, by the additivity and normalization axioms of , we have: Since , we conclude .    Write . Since the sets are disjoint, we can use the additivity axiom of to write: Now, from the nonnegativity axiom, we have , and so .    Left as an exercise.    Left as an exercise.      "
+},
+{
+  "id": "ex-7-2-prob-laws-1",
+  "level": "2",
+  "url": "sec-7-2-prob-properties.html#ex-7-2-prob-laws-1",
+  "type": "Example",
+  "number": "7.2.2",
+  "title": "Inclusion-Exclusion for Two Events: Divisibility.",
+  "body": " Inclusion-Exclusion for Two Events: Divisibility   A number is chosen uniformly at random from . Find the probability that it is divisible by or by .    Let , and let be the event that the number is divisible by and the event that it is divisible by . We want . Counting multiples gives The event is the event that the number is divisible by both and , that is, by , so By part (3) of ,   Note that simply adding would overcount: the multiples of are counted once in each event, so they must be subtracted once.   "
+},
+{
+  "id": "ex-7-2-prob-laws-2",
+  "level": "2",
+  "url": "sec-7-2-prob-properties.html#ex-7-2-prob-laws-2",
+  "type": "Example",
+  "number": "7.2.3",
+  "title": "The Union Bound: Reliability of a System.",
+  "body": " The Union Bound: Reliability of a System   A server runs three independent hardware components. Over one year, the probability that the disk fails is at most , the probability that the power supply fails is at most , and the probability that the network card fails is at most . Give an upper bound on the probability that at least one component fails during the year.    Let , , and be the events that the disk, power supply, and network card fail, respectively. We want to bound . We do not need to know how the failures are related to each other, which is the point of using the union bound.  Apply part (4) of to the events and : Applying part (4) again to and gives , so Thus the probability that some component fails is at most .  This bound holds regardless of whether the failures are independent, disjoint, or strongly correlated, so it is useful when the dependence between events is unknown. It is generally not exact: if the failures can occur together, the true probability is smaller, by the correction term in part (3).   "
+},
+{
+  "id": "ex-7-2-prob-laws-3",
+  "level": "2",
+  "url": "sec-7-2-prob-properties.html#ex-7-2-prob-laws-3",
+  "type": "Example",
+  "number": "7.2.4",
+  "title": "Monotonicity: Bounding a Hard Probability by an Easy One.",
+  "body": " Monotonicity: Bounding a Hard Probability by an Easy One   Five fair coins are flipped. Let be the event that the number of heads is or more and the first coin is heads. Show that , and then find exactly.    Let be the set of all equally likely sequences of heads and tails, and let be the event that the first coin is heads. Every outcome in has first coin heads, so . Since fixes the first coin and leaves the other four free, and . By part (2) of , This bound required no counting beyond the event .  For the exact value, an outcome in has first coin heads and at least heads among the remaining four coins. The number of such sequences is so . This is consistent with the bound, since .   "
+},
+{
+  "id": "ex-7-2-prob-laws-4",
+  "level": "2",
+  "url": "sec-7-2-prob-properties.html#ex-7-2-prob-laws-4",
+  "type": "Example",
+  "number": "7.2.5",
+  "title": "Finding an Unknown Probability and Checking a Model.",
+  "body": " Finding an Unknown Probability and Checking a Model   In a certain town, of households own a dog, own a cat, and own neither. A household is chosen at random.   What is the probability that the household owns both a dog and a cat?    A neighbor claims that of households own a dog and own a cat, and that own both. Is this claim consistent with the laws of probability?          Let be the event that the household owns a dog and the event that it owns a cat. The event that the household owns neither is the complement of , so Solving part (3) of for the intersection gives So of households own both.    The claimed values would give which is not itself a contradiction. However, the claim says has probability while has probability , and we can check the consistency conditions: since , part (2) requires , and indeed . Similarly gives . Finally, part (4) requires , which holds. All of the checks pass, so the claim is consistent with the laws of probability. (It would be inconsistent if, for example, the neighbor had claimed that own a cat and dog, since then would violate part (2).)      "
+},
+{
+  "id": "thm-7-2-inc-exc",
+  "level": "2",
+  "url": "sec-7-2-prob-properties.html#thm-7-2-inc-exc",
+  "type": "Theorem",
+  "number": "7.2.6",
+  "title": "The Principle of Inclusion-Exclusion.",
+  "body": " The Principle of Inclusion-Exclusion   Suppose is a probability measure on and that , , and are events. Then:     One of the most useful tactics for proving probability theorems is to consider samples as subsets of and utilizing what we know from set theory. With this, we imagine adding these components together one at a time. Refer to .   Inclusion-exclusion for three sets. The number in each region is how many times its elements have been counted so far.    Inclusion-exclusion for three sets.   Three Venn diagrams of sets A, B, and C, shown left to right, illustrating inclusion-exclusion. In each diagram, three overlapping circles form seven regions, and each region is labeled with how many times its elements have been counted so far. In the first diagram, the three sets are added together: the regions belonging to only one set are labeled 1, the three regions shared by exactly two sets are labeled 2, and the center region shared by all three sets is labeled 3. In the second diagram, the three pairwise intersections are subtracted: the single-set and pairwise regions are all labeled 1, and the center region drops to 0. In the third diagram, the triple intersection is added back: all seven regions are labeled 1, so every element of the union is counted exactly once.     First, we compute . Notice, however, this counts the intersections more than once, so we need to subtract the intersections, , , and .  However, after we subtract the intersections of each pair, we've subtracted the inner most region, three times, we we have to add it back.   "
+},
+{
   "id": "backmatter-2",
   "level": "1",
   "url": "backmatter-2.html",

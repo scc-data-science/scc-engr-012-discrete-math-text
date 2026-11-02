@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Basic Properties of Probability Theory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<style>
+@counter-style ptx-marker-0 { system: extends lower-alpha; prefix: '('; suffix: ') '; }
+</style>
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="ENGR 012 Course Notes">
+<meta property="og:title" content="ENGR 012 Course Notes">
+<meta property="book:title" content="ENGR 012 Course Notes">
+<meta name="twitter:description" content="Discrete Mathematics for Scientists and Engineers">
+<meta property="og:description" content="Discrete Mathematics for Scientists and Engineers">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.53"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.53"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.3.6';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.4beca1fdeed766a2.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.ebd33f6a21eed414.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.9963089870a016c8.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="my-great-book.html"><span class="title">ENGR 012 Course Notes</span> <span class="subtitle">Discrete Mathematics for Scientists and Engineers</span></a></div>
+<p class="byline">Cody Vig</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-embed-button" class="ptx-embed-button button" title="Embed this page"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe86f;</span><span class="name">Embed</span></button><dialog class="ptx-dialog ptx-embed-popup" id="ptx-embed-popup"><div class="ptx-embed-popup-controls">
+<p>Copy the code below to embed this page in your own website or LMS page.</p>
+<button class="ptx-embed-close-button button" id="ptx-embed-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-embed-code-container">
+<textarea class="ptx-embed-code-textbox" id="ptx-embed-code-textbox" readonly aria-label="Embed"><iframe src="https://example.com/embed" width="100%" height="1000"></iframe></textarea><button autofocus="autofocus" class="ptx-embed-copy-button button" id="ptx-embed-copy-button" title="Copy"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe14d;</span><span class="name">Copy</span></button>
+</div></dialog><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="sec-7-1-prob-modeling.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-7-probability-theory.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="1" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-1-propositional-logic.html" class="internal"><span class="codenumber">1</span> <span class="title">Introduction to Propositional Logic</span></a></div>
+<ul id="ptx-toc-group-ch-1-propositional-logic" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-1-propositional-logic-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-1-1-statements.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Statements, Arguments, and Truth Tables</span></a></div>
+<ul id="ptx-toc-group-sec-1-1-statements" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-1-statements.html#logic-overview" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Overview</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-1-1-statements.html#stmt-and-args" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Statements and Arguments.</span></a></div>
+<ul id="ptx-toc-group-stmt-and-args" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-1-statements.html#truth-tables" class="internal"><span class="codenumber">1.1.2.1</span> <span class="title">Truth Tables</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-1-statements.html#logical-equivalence" class="internal"><span class="codenumber">1.1.2.2</span> <span class="title">Logical Equivalence</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-1-statements.html#de-morgans-laws" class="internal"><span class="codenumber">1.1.2.3</span> <span class="title">De Morgan’s Laws</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-1-statements.html#tautologies-and-contradictions" class="internal"><span class="codenumber">1.1.2.4</span> <span class="title">Tautologies and Contradictions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-1-2-conditionals.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Conditionals and Biconditionals</span></a></div>
+<ul id="ptx-toc-group-sec-1-2-conditionals" class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-1-2-conditionals.html#conditionals" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Conditionals</span></a></div>
+<ul id="ptx-toc-group-conditionals" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-2-conditionals.html#representation-as-an-or-statement" class="internal"><span class="codenumber">1.2.1.1</span> <span class="title">Representation as an “Or” Statement</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-2-conditionals.html#contrapositive-converse-and-inverse" class="internal"><span class="codenumber">1.2.1.2</span> <span class="title">Contrapositive, Converse, and Inverse</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-1-2-conditionals.html#biconditionals" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Biconditionals</span></a></div>
+<ul id="ptx-toc-group-biconditionals" class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-2-conditionals.html#necessary-and-sufficient-conditions" class="internal"><span class="codenumber">1.2.2.1</span> <span class="title">Necessary and Sufficient Conditions</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-1-3-valid-arguments.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Valid and Invalid Arguments</span></a></div>
+<ul id="ptx-toc-group-sec-1-3-valid-arguments" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-3-valid-arguments.html#valid-arguments" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Valid Arguments</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-3-valid-arguments.html#invalid-arguments" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Invalid Arguments</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-3-valid-arguments.html#sound-vs-unsound-arguments" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Sound vs Unsound Arguments</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-2-predicate-logic.html" class="internal"><span class="codenumber">2</span> <span class="title">Introduction to Predicate Logic</span></a></div>
+<ul id="ptx-toc-group-ch-2-predicate-logic" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-2-predicate-logic-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-2-1-predicates.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Predicates</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-3-proof-theory.html" class="internal"><span class="codenumber">3</span> <span class="title">Introduction to Proof Theory</span></a></div>
+<ul id="ptx-toc-group-ch-3-proof-theory" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-3-proof-theory-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-3-1-proofs.html" class="internal"><span class="codenumber">3.1</span> <span class="title">An Introduction to Proofs</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-4-set-theory.html" class="internal"><span class="codenumber">4</span> <span class="title">Introduction to Set Theory</span></a></div>
+<ul id="ptx-toc-group-ch-4-set-theory" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-4-set-theory-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-4-1-basics.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Basics of Sets</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-5-number-theory.html" class="internal"><span class="codenumber">5</span> <span class="title">Introduction to Number Theory</span></a></div>
+<ul id="ptx-toc-group-ch-5-number-theory" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-5-number-theory-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-5-1-divisibility.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Divisibility</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-5-2-primes.html" class="internal"><span class="codenumber">5.2</span> <span class="title">The Prime Numbers</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-5-3-division-algorithm.html" class="internal"><span class="codenumber">5.3</span> <span class="title">The Division Algorithm</span></a></div>
+<ul id="ptx-toc-group-sec-5-3-division-algorithm" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-3-division-algorithm.html#sec-div-alg" class="internal"><span class="codenumber">5.3.1</span> <span class="title">The Division Algorithm</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-3-division-algorithm.html#subsec-gcd" class="internal"><span class="codenumber">5.3.2</span> <span class="title">The Greatest Common Divisor</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-3-division-algorithm.html#sec-euc-alg" class="internal"><span class="codenumber">5.3.3</span> <span class="title">The Euclidean Algorithm</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-5-4-modular-arithmetic.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Modular Arithmetic</span></a></div>
+<ul id="ptx-toc-group-sec-5-4-modular-arithmetic" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-4-modular-arithmetic.html#subsec-residue-classes" class="internal"><span class="codenumber">5.4.1</span> <span class="title">Residue Classes Modulo <span class="process-math">\(m\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-4-modular-arithmetic.html#subsec-mod-arith" class="internal"><span class="codenumber">5.4.2</span> <span class="title">Modular Arithmetic</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-5-5-modular-division.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Modular Division</span></a></div>
+<ul id="ptx-toc-group-sec-5-5-modular-division" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-5-modular-division.html#subsec-what-is-division" class="internal"><span class="codenumber">5.5.1</span> <span class="title">What is Division?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-5-modular-division.html#subsec-mod-inverse" class="internal"><span class="codenumber">5.5.2</span> <span class="title">Modular Inverses</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-5-6-diophantine-equations-and-congruences.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Diophantine Equations and Congruences</span></a></div>
+<ul id="ptx-toc-group-sec-5-6-diophantine-equations-and-congruences" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-6-diophantine-equations-and-congruences.html#subsec-diophantine" class="internal"><span class="codenumber">5.6.1</span> <span class="title">Diophantine Equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-6-diophantine-equations-and-congruences.html#subsec-mod-linear" class="internal"><span class="codenumber">5.6.2</span> <span class="title">Congruences of the form <span class="process-math">\(ax \equiv b\)</span> (mod <span class="process-math">\(m\)</span>)</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-5-7-sunzi.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Sunzi’s Theorem</span></a></div>
+<ul id="ptx-toc-group-sec-5-7-sunzi" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-7-sunzi.html#subsec-5-7-sunzi" class="internal"><span class="codenumber">5.7.1</span> <span class="title">Sunzi’s Theorem</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-5-8-group-theory.html" class="internal"><span class="codenumber">5.8</span> <span class="title">The Group Theoretic Perspective</span></a></div>
+<ul id="ptx-toc-group-sec-5-8-group-theory" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-8-group-theory.html#subsec-5-8-z-mod-mz" class="internal"><span class="codenumber">5.8.1</span> <span class="title">The Integers Modulo <span class="process-math">\(m\)</span> as a Set</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-8-group-theory.html#subsec-5-8-groups" class="internal"><span class="codenumber">5.8.2</span> <span class="title">The Group of Units</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-8-group-theory.html#subsec-powers" class="internal"><span class="codenumber">5.8.3</span> <span class="title">Powers of elements of <span class="process-math">\((\mathbb{Z} / m \mathbb{Z})^{\times}\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-5-9-fermat-little-theorem.html" class="internal"><span class="codenumber">5.9</span> <span class="title">Fermat’s Little Theorem</span></a></div>
+<ul id="ptx-toc-group-sec-5-9-fermat-little-theorem" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-9-fermat-little-theorem.html#subsec-5-9-fermat" class="internal"><span class="codenumber">5.9.1</span> <span class="title">Proving Fermat’s Little Theorem</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-5-10-cryptography.html" class="internal"><span class="codenumber">5.10</span> <span class="title">Introduction to Cryptography</span></a></div>
+<ul id="ptx-toc-group-sec-5-10-cryptography" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-10-cryptography.html#subsec-5-10-dlp" class="internal"><span class="codenumber">5.10.1</span> <span class="title">The Discrete Log Problem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-10-cryptography.html#subsec-5-10-setup" class="internal"><span class="codenumber">5.10.2</span> <span class="title">The Setup</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-10-cryptography.html#subsec-5-10-diffie-hellman" class="internal"><span class="codenumber">5.10.3</span> <span class="title">Symmetric Key Encrypton: Diffie Hellman</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-10-cryptography.html#subsec-5-10-el-gamal" class="internal"><span class="codenumber">5.10.4</span> <span class="title">Public Key Cryptography: ElGamal</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-5-11-exercises.html" class="internal"><span class="codenumber">5.11</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-6-combinatorics.html" class="internal"><span class="codenumber">6</span> <span class="title">Introduction to Combinatorics</span></a></div>
+<ul id="ptx-toc-group-ch-6-combinatorics" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-6-combinatorics-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-6-1-counting.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Basic Counting</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-6-2-permutations.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Permutations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-6-3-combinations.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Combinations</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-6-4-binomial-theorem.html" class="internal"><span class="codenumber">6.4</span> <span class="title">The Binomial Theorem</span></a></div>
+<ul id="ptx-toc-group-sec-6-4-binomial-theorem" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-6-4-binomial-theorem.html#subsec-6-4-binomials" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Binomials and The Binomial Theorem</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-6-4-binomial-theorem.html#subsec-6-4-multinomial" class="internal"><span class="codenumber">6.4.2</span> <span class="title">Multinomials and The Multinomial Theorem</span></a></div>
+<ul id="ptx-toc-group-subsec-6-4-multinomial" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-6-4-binomial-theorem.html#subsubsec-6-4-partitions" class="internal"><span class="codenumber">6.4.2.1</span> <span class="title">Partitions</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-6-4-binomial-theorem.html#subsubsec-6-4-multinomial-thm" class="internal"><span class="codenumber">6.4.2.2</span> <span class="title">The Multinomial Theorem</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-6-7-exercises.html" class="internal"><span class="codenumber">6.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-7-probability-theory.html" class="internal"><span class="codenumber">7</span> <span class="title">Introduction to Probability Theory</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-ch-7-probability-theory">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-7-probability-theory-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-7-1-prob-modeling.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Probabilistic Modeling</span></a></div>
+<ul id="ptx-toc-group-sec-7-1-prob-modeling" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-1-prob-modeling.html#subsec-7-1-prob-axioms" class="internal"><span class="codenumber">7.1.1</span> <span class="title">Probability Axioms</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-7-2-prob-properties.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Basic Properties of Probability Theory</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-7-2-prob-properties">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Basic Properties of Probability Theory</span>
+</h1>
+<div class="para" id="sec-7-2-prob-properties-2">Probability measures have several desirable properties, which can be derived directly from the axioms, <a href="sec-7-1-prob-modeling.html#thm-7-1-equiprob" class="xref" data-knowl="./knowl/xref/thm-7-1-equiprob.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.1.3: Equiprobable Outcomes">Theorem 7.1.3</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-7-2-prob-properties-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-7-2-prob-laws"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="thm-7-2-prob-laws-1-1">
+<div class="para">Suppose <span class="process-math">\(\mathbb{P}\)</span> is a probability measure on <span class="process-math">\(\Omega\)</span> and that <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(B\text{,}\)</span> and <span class="process-math">\(C\)</span> are events. Then:</div>
+<ol class="decimal" id="thm-7-2-prob-laws-1-1-6">
+<li id="thm-7-2-prob-laws-1-1-6-1">
+<div class="para" id="thm-7-2-prob-laws-1-1-6-1-1">
+<span class="process-math">\(\mathbb{P}(\varnothing) = 0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-7-2-prob-laws-1-1-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#thm-7-2-prob-laws-1-1-6-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="thm-7-2-prob-laws-1-1-6-2">
+<div class="para" id="thm-7-2-prob-laws-1-1-6-2-1">If <span class="process-math">\(A \subseteq B\)</span> then <span class="process-math">\(\mathbb{P}(A) \leq \mathbb{P}(B)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-7-2-prob-laws-1-1-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#thm-7-2-prob-laws-1-1-6-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="thm-7-2-prob-laws-1-1-6-3">
+<div class="para" id="thm-7-2-prob-laws-1-1-6-3-1">
+<span class="process-math">\(\mathbb{P}(A \cup B) = \mathbb{P}(A) + \mathbb{P}(B) - \mathbb{P}(A \cap B)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-7-2-prob-laws-1-1-6-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#thm-7-2-prob-laws-1-1-6-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="thm-7-2-prob-laws-1-1-6-4">
+<div class="para" id="thm-7-2-prob-laws-1-1-6-4-1">
+<span class="process-math">\(\mathbb{P}(A \cup B) \leq \mathbb{P}(A) + \mathbb{P}(B)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-7-2-prob-laws-1-1-6-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 4"><a tabindex="-1" href="#thm-7-2-prob-laws-1-1-6-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-7-2-prob-laws-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 7.2.1"><a tabindex="-1" href="#thm-7-2-prob-laws" title="Copy heading and permalink for Theorem 7.2.1" aria-label="Copy heading and permalink for Theorem 7.2.1">🔗</a></div>
+</article>
+<article class="proof" id="thm-7-2-prob-laws-2"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2>
+<div class="para logical" id="thm-7-2-prob-laws-2-1">
+<ol class="decimal" id="thm-7-2-prob-laws-2-1-1">
+<li id="thm-7-2-prob-laws-2-1-1-1">
+<div class="para logical" id="thm-7-2-prob-laws-2-1-1-1-1">
+<div class="para">Notice that <span class="process-math">\(\Omega = \Omega \cup \varnothing\text{,}\)</span> where <span class="process-math">\(\Omega \cap \varnothing = \varnothing\text{.}\)</span> So, by the additivity and normalization axioms of <a href="sec-7-1-prob-modeling.html#axiom-7-1-prob-measure" class="xref" data-knowl="./knowl/xref/axiom-7-1-prob-measure.html" data-reveal-label="Reveal" data-close-label="Close" title="Axiom 7.1.2: Probability Axioms">Axiom 7.1.2</a>, we have:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/axiom-7-1-prob-measure.html" id="thm-7-2-prob-laws-2-1-1-1-1-4">
+\begin{equation*}
+1 = \mathbb{P}(\Omega) = \mathbb{P}(\Omega \cup \varnothing) = \mathbb{P}(\Omega) + \mathbb{P}(\varnothing).
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\mathbb{P}(\Omega) = 1\text{,}\)</span> we conclude <span class="process-math">\(\mathbb{P}(\varnothing) = 0\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-7-2-prob-laws-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#thm-7-2-prob-laws-2-1-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="thm-7-2-prob-laws-2-1-1-2">
+<div class="para logical" id="thm-7-2-prob-laws-2-1-1-2-1">
+<div class="para">Write <span class="process-math">\(B = A \cup (B \smallsetminus A)\text{.}\)</span> Since the sets are disjoint, we can use the additivity axiom of <a href="sec-7-1-prob-modeling.html#axiom-7-1-prob-measure" class="xref" data-knowl="./knowl/xref/axiom-7-1-prob-measure.html" data-reveal-label="Reveal" data-close-label="Close" title="Axiom 7.1.2: Probability Axioms">Axiom 7.1.2</a> to write:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/axiom-7-1-prob-measure.html" id="thm-7-2-prob-laws-2-1-1-2-1-3">
+\begin{equation*}
+\mathbb{P}(B) = \mathbb{P}(A \cup (B \smallsetminus A)) = \mathbb{P}(A) + \mathbb{P}(B \smallsetminus A).  
+\end{equation*}
+</div>
+<div class="para">Now, from the nonnegativity axiom, we have <span class="process-math">\(\mathbb{P}(B \smallsetminus A) &gt; 0\text{,}\)</span> and so <span class="process-math">\(\mathbb{P}(B) \geq \mathbb{P}(A)\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-7-2-prob-laws-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#thm-7-2-prob-laws-2-1-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="thm-7-2-prob-laws-2-1-1-3">
+<div class="para" id="thm-7-2-prob-laws-2-1-1-3-1">Left as an exercise.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-7-2-prob-laws-2-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#thm-7-2-prob-laws-2-1-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="thm-7-2-prob-laws-2-1-1-4">
+<div class="para" id="thm-7-2-prob-laws-2-1-1-4-1">Left as an exercise.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-7-2-prob-laws-2-1-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 4"><a tabindex="-1" href="#thm-7-2-prob-laws-2-1-1-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-7-2-prob-laws-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 7.2.1.1"><a tabindex="-1" href="#thm-7-2-prob-laws-2" title="Copy heading and permalink for Proof 7.2.1.1" aria-label="Copy heading and permalink for Proof 7.2.1.1">🔗</a></div>
+</article>
+<article class="example example-like" id="ex-7-2-prob-laws-1"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Inclusion-Exclusion for Two Events: Divisibility.</span>
+</h2>
+<div class="para" id="ex-7-2-prob-laws-1-2-1">A number is chosen uniformly at random from <span class="process-math">\(\{1, 2, \dots, 100\}\text{.}\)</span> Find the probability that it is divisible by <span class="process-math">\(2\)</span> or by <span class="process-math">\(3\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-2-prob-laws-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="ex-7-2-prob-laws-1-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="ex-7-2-prob-laws-1-3-1">
+<div class="para">Let <span class="process-math">\(\Omega = \{1, 2, \dots, 100\}\text{,}\)</span> and let <span class="process-math">\(A\)</span> be the event that the number is divisible by <span class="process-math">\(2\)</span> and <span class="process-math">\(B\)</span> the event that it is divisible by <span class="process-math">\(3\text{.}\)</span> We want <span class="process-math">\(\mathbb{P}(A \cup B)\text{.}\)</span> Counting multiples gives</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-7-2-prob-laws.html" id="ex-7-2-prob-laws-1-3-1-7">
+\begin{align*}
+\mathbb{P}(A) \amp = \frac{\lfloor 100/2 \rfloor}{100} = \frac{50}{100},\\
+\mathbb{P}(B) \amp = \frac{\lfloor 100/3 \rfloor}{100} = \frac{33}{100}.
+\end{align*}
+</div>
+<div class="para">The event <span class="process-math">\(A \cap B\)</span> is the event that the number is divisible by both <span class="process-math">\(2\)</span> and <span class="process-math">\(3\text{,}\)</span> that is, by <span class="process-math">\(6\text{,}\)</span> so</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-7-2-prob-laws.html" id="ex-7-2-prob-laws-1-3-1-12">
+\begin{equation*}
+\mathbb{P}(A \cap B) = \frac{\lfloor 100/6 \rfloor}{100} = \frac{16}{100}.
+\end{equation*}
+</div>
+<div class="para">By part (3) of <a href="sec-7-2-prob-properties.html#thm-7-2-prob-laws" class="xref" data-knowl="./knowl/xref/thm-7-2-prob-laws.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.2.1">Theorem 7.2.1</a>,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-7-2-prob-laws.html" id="ex-7-2-prob-laws-1-3-1-14">
+\begin{equation*}
+\mathbb{P}(A \cup B) = \frac{50}{100} + \frac{33}{100} - \frac{16}{100} = \frac{67}{100}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-2-prob-laws-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-7-2-prob-laws-1-3-2">Note that simply adding <span class="process-math">\(\mathbb{P}(A) + \mathbb{P}(B) = \frac{83}{100}\)</span> would overcount: the <span class="process-math">\(16\)</span> multiples of <span class="process-math">\(6\)</span> are counted once in each event, so they must be subtracted once.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-2-prob-laws-1-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 7.2.2.1"><a tabindex="-1" href="#ex-7-2-prob-laws-1-3" title="Copy heading and permalink for Solution 7.2.2.1" aria-label="Copy heading and permalink for Solution 7.2.2.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 7.2.2: Inclusion-Exclusion for Two Events: Divisibility"><a tabindex="-1" href="#ex-7-2-prob-laws-1" title="Copy heading and permalink for Example 7.2.2: Inclusion-Exclusion for Two Events: Divisibility" aria-label="Copy heading and permalink for Example 7.2.2: Inclusion-Exclusion for Two Events: Divisibility">🔗</a></div>
+</article>
+<article class="example example-like" id="ex-7-2-prob-laws-2"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Union Bound: Reliability of a System.</span>
+</h2>
+<div class="para" id="ex-7-2-prob-laws-2-2-1">A server runs three independent hardware components. Over one year, the probability that the disk fails is at most <span class="process-math">\(0.02\text{,}\)</span> the probability that the power supply fails is at most <span class="process-math">\(0.01\text{,}\)</span> and the probability that the network card fails is at most <span class="process-math">\(0.03\text{.}\)</span> Give an upper bound on the probability that <em class="emphasis">at least one</em> component fails during the year.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-2-prob-laws-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="ex-7-2-prob-laws-2-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="ex-7-2-prob-laws-2-3-1">Let <span class="process-math">\(D\text{,}\)</span> <span class="process-math">\(P\text{,}\)</span> and <span class="process-math">\(N\)</span> be the events that the disk, power supply, and network card fail, respectively. We want to bound <span class="process-math">\(\mathbb{P}(D \cup P \cup N)\text{.}\)</span> We do not need to know how the failures are related to each other, which is the point of using the union bound.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-2-prob-laws-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-7-2-prob-laws-2-3-2">
+<div class="para">Apply part (4) of <a href="sec-7-2-prob-properties.html#thm-7-2-prob-laws" class="xref" data-knowl="./knowl/xref/thm-7-2-prob-laws.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.2.1">Theorem 7.2.1</a> to the events <span class="process-math">\(D \cup P\)</span> and <span class="process-math">\(N\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-7-2-prob-laws.html" id="ex-7-2-prob-laws-2-3-2-4">
+\begin{equation*}
+\mathbb{P}(D \cup P \cup N) \leq \mathbb{P}(D \cup P) + \mathbb{P}(N).
+\end{equation*}
+</div>
+<div class="para">Applying part (4) again to <span class="process-math">\(D\)</span> and <span class="process-math">\(P\)</span> gives <span class="process-math">\(\mathbb{P}(D \cup P) \leq \mathbb{P}(D) + \mathbb{P}(P)\text{,}\)</span> so</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-7-2-prob-laws.html" id="ex-7-2-prob-laws-2-3-2-8">
+\begin{equation*}
+\mathbb{P}(D \cup P \cup N) \leq \mathbb{P}(D) + \mathbb{P}(P) + \mathbb{P}(N) \leq 0.02 + 0.01 + 0.03 = 0.06.
+\end{equation*}
+</div>
+<div class="para">Thus the probability that some component fails is at most <span class="process-math">\(6\%\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-2-prob-laws-2-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-7-2-prob-laws-2-3-3">This bound holds regardless of whether the failures are independent, disjoint, or strongly correlated, so it is useful when the dependence between events is unknown. It is generally not exact: if the failures can occur together, the true probability is smaller, by the correction term in part (3).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-2-prob-laws-2-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 7.2.3.1"><a tabindex="-1" href="#ex-7-2-prob-laws-2-3" title="Copy heading and permalink for Solution 7.2.3.1" aria-label="Copy heading and permalink for Solution 7.2.3.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 7.2.3: The Union Bound: Reliability of a System"><a tabindex="-1" href="#ex-7-2-prob-laws-2" title="Copy heading and permalink for Example 7.2.3: The Union Bound: Reliability of a System" aria-label="Copy heading and permalink for Example 7.2.3: The Union Bound: Reliability of a System">🔗</a></div>
+</article>
+<article class="example example-like" id="ex-7-2-prob-laws-3"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Monotonicity: Bounding a Hard Probability by an Easy One.</span>
+</h2>
+<div class="para" id="ex-7-2-prob-laws-3-2-1">Five fair coins are flipped. Let <span class="process-math">\(E\)</span> be the event that the number of heads is <span class="process-math">\(3\)</span> or more and the first coin is heads. Show that <span class="process-math">\(\mathbb{P}(E) \leq \frac{1}{2}\text{,}\)</span> and then find <span class="process-math">\(\mathbb{P}(E)\)</span> exactly.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-2-prob-laws-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="ex-7-2-prob-laws-3-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="ex-7-2-prob-laws-3-3-1">
+<div class="para">Let <span class="process-math">\(\Omega\)</span> be the set of all <span class="process-math">\(2^5 = 32\)</span> equally likely sequences of heads and tails, and let <span class="process-math">\(F\)</span> be the event that the first coin is heads. Every outcome in <span class="process-math">\(E\)</span> has first coin heads, so <span class="process-math">\(E \subseteq F\text{.}\)</span> Since <span class="process-math">\(F\)</span> fixes the first coin and leaves the other four free, <span class="process-math">\(|F| = 2^4 = 16\)</span> and <span class="process-math">\(\mathbb{P}(F) = \frac{16}{32} = \frac{1}{2}\text{.}\)</span> By part (2) of <a href="sec-7-2-prob-properties.html#thm-7-2-prob-laws" class="xref" data-knowl="./knowl/xref/thm-7-2-prob-laws.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.2.1">Theorem 7.2.1</a>,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-7-2-prob-laws.html" id="ex-7-2-prob-laws-3-3-1-10">
+\begin{equation*}
+\mathbb{P}(E) \leq \mathbb{P}(F) = \frac{1}{2}.
+\end{equation*}
+</div>
+<div class="para">This bound required no counting beyond the event <span class="process-math">\(F\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-2-prob-laws-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-7-2-prob-laws-3-3-2">
+<div class="para">For the exact value, an outcome in <span class="process-math">\(E\)</span> has first coin heads and at least <span class="process-math">\(2\)</span> heads among the remaining four coins. The number of such sequences is</div>
+<div class="displaymath process-math" id="ex-7-2-prob-laws-3-3-2-3">
+\begin{equation*}
+\binom{4}{2} + \binom{4}{3} + \binom{4}{4} = 6 + 4 + 1 = 11,
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(\mathbb{P}(E) = \frac{11}{32}\text{.}\)</span> This is consistent with the bound, since <span class="process-math">\(\frac{11}{32} \leq \frac{16}{32}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-2-prob-laws-3-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 7.2.4.1"><a tabindex="-1" href="#ex-7-2-prob-laws-3-3" title="Copy heading and permalink for Solution 7.2.4.1" aria-label="Copy heading and permalink for Solution 7.2.4.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 7.2.4: Monotonicity: Bounding a Hard Probability by an Easy One"><a tabindex="-1" href="#ex-7-2-prob-laws-3" title="Copy heading and permalink for Example 7.2.4: Monotonicity: Bounding a Hard Probability by an Easy One" aria-label="Copy heading and permalink for Example 7.2.4: Monotonicity: Bounding a Hard Probability by an Easy One">🔗</a></div>
+</article>
+<article class="example example-like" id="ex-7-2-prob-laws-4"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Finding an Unknown Probability and Checking a Model.</span>
+</h2>
+<div class="para logical" id="ex-7-2-prob-laws-4-2-1">
+<div class="para">In a certain town, <span class="process-math">\(60\%\)</span> of households own a dog, <span class="process-math">\(45\%\)</span> own a cat, and <span class="process-math">\(20\%\)</span> own neither. A household is chosen at random.</div>
+<ol class="decimal" id="ex-7-2-prob-laws-4-2-1-4">
+<li id="ex-7-2-prob-laws-4-2-1-4-1">
+<div class="para" id="ex-7-2-prob-laws-4-2-1-4-1-1">What is the probability that the household owns both a dog and a cat?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-2-prob-laws-4-2-1-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#ex-7-2-prob-laws-4-2-1-4-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="ex-7-2-prob-laws-4-2-1-4-2">
+<div class="para" id="ex-7-2-prob-laws-4-2-1-4-2-1">A neighbor claims that <span class="process-math">\(70\%\)</span> of households own a dog and <span class="process-math">\(40\%\)</span> own a cat, and that <span class="process-math">\(25\%\)</span> own both. Is this claim consistent with the laws of probability?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-2-prob-laws-4-2-1-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#ex-7-2-prob-laws-4-2-1-4-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-2-prob-laws-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="ex-7-2-prob-laws-4-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="ex-7-2-prob-laws-4-3-1">
+<ol class="decimal" id="ex-7-2-prob-laws-4-3-1-1">
+<li id="ex-7-2-prob-laws-4-3-1-1-1">
+<div class="para logical" id="ex-7-2-prob-laws-4-3-1-1-1-1">
+<div class="para">Let <span class="process-math">\(D\)</span> be the event that the household owns a dog and <span class="process-math">\(C\)</span> the event that it owns a cat. The event that the household owns neither is the complement of <span class="process-math">\(D \cup C\text{,}\)</span> so</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-7-2-prob-laws.html" id="ex-7-2-prob-laws-4-3-1-1-1-1-4">
+\begin{equation*}
+\mathbb{P}(D \cup C) = 1 - 0.20 = 0.80.
+\end{equation*}
+</div>
+<div class="para">Solving part (3) of <a href="sec-7-2-prob-properties.html#thm-7-2-prob-laws" class="xref" data-knowl="./knowl/xref/thm-7-2-prob-laws.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.2.1">Theorem 7.2.1</a> for the intersection gives</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-7-2-prob-laws.html" id="ex-7-2-prob-laws-4-3-1-1-1-1-6">
+\begin{equation*}
+\mathbb{P}(D \cap C) = \mathbb{P}(D) + \mathbb{P}(C) - \mathbb{P}(D \cup C) = 0.60 + 0.45 - 0.80 = 0.25.
+\end{equation*}
+</div>
+<div class="para">So <span class="process-math">\(25\%\)</span> of households own both.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-2-prob-laws-4-3-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#ex-7-2-prob-laws-4-3-1-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="ex-7-2-prob-laws-4-3-1-1-2">
+<div class="para logical" id="ex-7-2-prob-laws-4-3-1-1-2-1">
+<div class="para">The claimed values would give</div>
+<div class="displaymath process-math" id="ex-7-2-prob-laws-4-3-1-1-2-1-1">
+\begin{equation*}
+\mathbb{P}(D \cup C) = 0.70 + 0.40 - 0.25 = 0.85,
+\end{equation*}
+</div>
+<div class="para">which is not itself a contradiction. However, the claim says <span class="process-math">\(D \cap C\)</span> has probability <span class="process-math">\(0.25\)</span> while <span class="process-math">\(C\)</span> has probability <span class="process-math">\(0.40\text{,}\)</span> and we can check the consistency conditions: since <span class="process-math">\(D \cap C \subseteq C\text{,}\)</span> part (2) requires <span class="process-math">\(\mathbb{P}(D \cap C) \leq \mathbb{P}(C)\text{,}\)</span> and indeed <span class="process-math">\(0.25 \leq 0.40\text{.}\)</span> Similarly <span class="process-math">\(D \cap C \subseteq D\)</span> gives <span class="process-math">\(0.25 \leq 0.70\text{.}\)</span> Finally, part (4) requires <span class="process-math">\(\mathbb{P}(D \cup C) \leq \mathbb{P}(D) + \mathbb{P}(C) = 1.10\text{,}\)</span> which holds. All of the checks pass, so the claim is consistent with the laws of probability. (It would be inconsistent if, for example, the neighbor had claimed that <span class="process-math">\(50\%\)</span> own a cat and dog, since then <span class="process-math">\(\mathbb{P}(D \cap C) = 0.50 &gt; \mathbb{P}(C) = 0.40\)</span> would violate part (2).)</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-2-prob-laws-4-3-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#ex-7-2-prob-laws-4-3-1-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-2-prob-laws-4-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 7.2.5.1"><a tabindex="-1" href="#ex-7-2-prob-laws-4-3" title="Copy heading and permalink for Solution 7.2.5.1" aria-label="Copy heading and permalink for Solution 7.2.5.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 7.2.5: Finding an Unknown Probability and Checking a Model"><a tabindex="-1" href="#ex-7-2-prob-laws-4" title="Copy heading and permalink for Example 7.2.5: Finding an Unknown Probability and Checking a Model" aria-label="Copy heading and permalink for Example 7.2.5: Finding an Unknown Probability and Checking a Model">🔗</a></div>
+</article>
+<div class="para" id="sec-7-2-prob-properties-8">You might be wondering if there is an analog to part 3 of <a href="sec-7-2-prob-properties.html#thm-7-2-prob-laws" class="xref" data-knowl="./knowl/xref/thm-7-2-prob-laws.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.2.1">Theorem 7.2.1</a> for three (or more) sets. It turns out, there is, but it is remarkably uglier.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-7-2-prob-properties-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-7-2-inc-exc"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.6</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Principle of Inclusion-Exclusion.</span>
+</h2>
+<div class="para logical" id="thm-7-2-inc-exc-2-1">
+<div class="para">Suppose <span class="process-math">\(\mathbb{P}\)</span> is a probability measure on <span class="process-math">\(\Omega\)</span> and that <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(B\text{,}\)</span> and <span class="process-math">\(C\)</span> are events. Then:</div>
+<div class="displaymath process-math" id="thm-7-2-inc-exc-2-1-6">
+\begin{align*}
+\mathbb{P}(A \cup B \cup C)
+\; = \; \amp \mathbb{P}(A) + \mathbb{P}(B) + \mathbb{P}(C)\\
+\amp \quad - [\mathbb{P}(A \cap B) + \mathbb{P}(A \cap C) + \mathbb{P}(B \cap C)]\\
+\amp \quad + \mathbb{P}(A \cap B \cap C)
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-7-2-inc-exc-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 7.2.6: The Principle of Inclusion-Exclusion"><a tabindex="-1" href="#thm-7-2-inc-exc" title="Copy heading and permalink for Theorem 7.2.6: The Principle of Inclusion-Exclusion" aria-label="Copy heading and permalink for Theorem 7.2.6: The Principle of Inclusion-Exclusion">🔗</a></div>
+</article>
+<article class="proof" id="thm-7-2-inc-exc-3"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2>
+<div class="para" id="thm-7-2-inc-exc-3-1">One of the most useful tactics for proving probability theorems is to consider samples as subsets of <span class="process-math">\(\Omega\)</span> and utilizing what we know from set theory. With this, we imagine adding these components together one at a time. Refer to <a href="sec-7-2-prob-properties.html#fig-7-2-inclusion-exclusion-3" class="xref" data-knowl="./knowl/xref/fig-7-2-inclusion-exclusion-3.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 7.2.7">Figure 7.2.7</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-7-2-inc-exc-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-7-2-inclusion-exclusion-3"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;">
+<img src="generated/latex-image/fig-7-2-inclusion-exclusion-3-2.svg" role="img" class="contained" alt="Inclusion-exclusion for three sets."><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="fig-7-2-inclusion-exclusion-3-2-description">
+<div class="para" id="fig-7-2-inclusion-exclusion-3-2-3-1">Three Venn diagrams of sets A, B, and C, shown left to right, illustrating inclusion-exclusion. In each diagram, three overlapping circles form seven regions, and each region is labeled with how many times its elements have been counted so far. In the first diagram, the three sets are added together: the regions belonging to only one set are labeled 1, the three regions shared by exactly two sets are labeled 2, and the center region shared by all three sets is labeled 3. In the second diagram, the three pairwise intersections are subtracted: the single-set and pairwise regions are all labeled 1, and the center region drops to 0. In the third diagram, the triple intersection is added back: all seven regions are labeled 1, so every element of the union is counted exactly once.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#fig-7-2-inclusion-exclusion-3-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Inclusion-exclusion for three sets. The number in each region is how many times its elements have been counted so far.<div class="autopermalink" aria-hidden="true" data-description="Figure 7.2.7"><a tabindex="-1" href="#fig-7-2-inclusion-exclusion-3" title="Copy heading and permalink for Figure 7.2.7" aria-label="Copy heading and permalink for Figure 7.2.7">🔗</a></div></figcaption>
+</figure>
+<div class="para" id="thm-7-2-inc-exc-3-3">First, we compute <span class="process-math">\(\mathbb{P}(A) + \mathbb{P}(B) + \mathbb{P}(C)\text{.}\)</span> Notice, however, this counts the intersections more than once, so we need to subtract the intersections, <span class="process-math">\(\mathbb{P}(A \cap B)\text{,}\)</span> <span class="process-math">\(\mathbb{P}(A \cap C)\text{,}\)</span> and <span class="process-math">\(\mathbb{P}(B \cap C)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-7-2-inc-exc-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="thm-7-2-inc-exc-3-4">However, after we subtract the intersections of each pair, we’ve subtracted the inner most region, <span class="process-math">\(\mathbb{P}(A \cap B \cap C)\)</span> three times, we we have to add it back.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-7-2-inc-exc-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 7.2.6.1"><a tabindex="-1" href="#thm-7-2-inc-exc-3" title="Copy heading and permalink for Proof 7.2.6.1" aria-label="Copy heading and permalink for Proof 7.2.6.1">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Section 7.2: Basic Properties of Probability Theory"><a tabindex="-1" href="#sec-7-2-prob-properties" title="Copy heading and permalink for Section 7.2: Basic Properties of Probability Theory" aria-label="Copy heading and permalink for Section 7.2: Basic Properties of Probability Theory">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-7-1-prob-modeling.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="feedback-link" href="mailto:cody.vig@solano.edu" target="_blank">Feedback</a><a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

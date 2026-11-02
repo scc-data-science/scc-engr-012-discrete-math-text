@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Equiprobable Outcomes.</span>
+</h2>
+<div class="para logical">
+<div class="para">Suppose a sample space <span class="process-math">\(\Omega\)</span> has <span class="process-math">\(n\)</span> equally likely outcomes, and an event <span class="process-math">\(A\)</span> contains <span class="process-math">\(k\)</span> outcomes. If:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbb{P}(A) = \frac{\text{Number of outcomes in $A$}}{\text{Number of outcomes in the sample space}} = \frac{\lvert A \rvert}{\lvert \Omega \rvert} = \frac{k}{n},
+\end{equation*}
+</div>
+<div class="para">then <span class="process-math">\(\mathbb{P}\)</span> is a valid probability measure on <span class="process-math">\(\Omega\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-7-1-equiprob-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 7.1.3: Equiprobable Outcomes"><a tabindex="-1" href="#thm-7-1-equiprob" title="Copy heading and permalink for Theorem 7.1.3: Equiprobable Outcomes" aria-label="Copy heading and permalink for Theorem 7.1.3: Equiprobable Outcomes">🔗</a></div>
+</article>
+<article class="proof"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2>
+<div class="para logical">
+<ol class="decimal" id="thm-7-1-equiprob-3-1-1">
+<li>
+<div class="para">An event <span class="process-math">\(A\)</span> is a subset of the sample space. Since <span class="process-math">\(A\)</span> can contain no fewer than zero elements, <span class="process-math">\(\lvert A \rvert \geq 0\text{,}\)</span> and so <span class="process-math">\(\mathbb{P}(A) \geq 0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-7-1-equiprob-3-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#thm-7-1-equiprob-3-1-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li>
+<div class="para logical">
+<div class="para">Suppose <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are disjoint events. Then <span class="process-math">\(A \cap B = \varnothing\text{.}\)</span> Then, we can think of <span class="process-math">\(A = \{a_1, a_2, \ldots, a_n\}\)</span> and <span class="process-math">\(B = \{b_1, b_2, \ldots, b_m\}\text{,}\)</span> where none of the <span class="process-math">\(a_i\)</span>’s are equal to any of the <span class="process-math">\(b_i\)</span>’s. Then:</div>
+<div class="displaymath process-math">
+\begin{align*}
+\mathbb{P}(A) =\amp \frac{n}{\lvert \Omega \rvert} \\
+\mathbb{P}(B) =\amp \frac{m}{\lvert \Omega \rvert} \\
+\mathbb{P}(A \cup B) =\amp \frac{n + m}{\lvert \Omega \rvert} 
+\end{align*}
+</div>
+<div class="para">So, <span class="process-math">\(\mathbb{P}(A) + \mathbb{P}(B) = \frac{n + m}{\lvert \Omega \rvert} = \mathbb{P}(A \cup B)\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-7-1-equiprob-3-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#thm-7-1-equiprob-3-1-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li>
+<div class="para">By definition, <span class="process-math">\(\mathbb{P}(\Omega) = \frac{\lvert \Omega \rvert}{\lvert \Omega \rvert} = 1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-7-1-equiprob-3-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#thm-7-1-equiprob-3-1-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-7-1-equiprob-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 7.1.3.1"><a tabindex="-1" href="#thm-7-1-equiprob-3" title="Copy heading and permalink for Proof 7.1.3.1" aria-label="Copy heading and permalink for Proof 7.1.3.1">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="sec-7-1-prob-modeling.html#thm-7-1-equiprob">In Context</a></span>
+</body>
+</html>
