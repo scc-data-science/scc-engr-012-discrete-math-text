@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-7-probability-theory" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Introduction to Probability Theory</title>
+
+    <introduction>
+    <p>
+      Probability theory is the mathematical study of uncertainty. It gives us a precise language for describing situations in which the outcome is not determined in advance, such as a coin flip, a shuffled deck of cards, or the arrival of a packet on a network, and it provides tools for reasoning carefully about what we should expect to happen.
+    </p>
+
+    <p>
+      There are essentially four ideas that will guide our study of probability:
+      <ol>
+        <li>
+          <p>
+            <em>Modeling.</em> How do we translate a real-world random process into a mathematical object consisting of a sample space, events, and a probability measure?
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Computing.</em> How do we use the basic laws of probability, together with the counting techniques we have already developed, to calculate the likelihood of an event?
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Updating.</em> How should our assessment of an event change when we learn that some other event has occurred, and when does learning that information tell us nothing at all? These are the ideas of <em>conditional probability</em> and <em>independence</em>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Summarizing.</em> How do we describe the numerical quantities that depend on chance, such as the number of heads in a sequence of flips, using <em>random variables</em> and their <em>distributions</em>?
+          </p>
+        </li>
+      </ol>
+    </p>
+
+    <p>
+      Our focus will be on discrete probability, where the sample space is finite or countable, and so most of the work will reduce to careful counting and careful definitions. Probability is notorious for producing answers that feel wrong even when they are right, so we will take care to set up models explicitly and check each step against the definitions rather than trusting intuition. This foundation is what makes future topics in future courses, such as expectation, statistics, randomized algorithms, and machine learning, possible.
+    </p>
+  </introduction>
+
+  <xi:include href="sec-7-1-prob-modeling.ptx" />
+  <xi:include href="sec-7-2-prob-properties.ptx" />
+  <!-- <xi:include href="sec-7-3-cond-prob.ptx" />
+  <xi:include href="sec-7-4-independence.ptx" />
+  <xi:include href="sec-7-5-random-variables.ptx" /> -->
+
+</chapter>
