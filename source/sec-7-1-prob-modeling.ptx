@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-7-1-prob-modeling" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Probabilistic Modeling</title>
+
+  <introduction>
+
+    <p>
+      In this section, we'll introduce the mathematical formalism that underlies probability theory; namely, a <em>probabilistic model</em>. A probabilistic model is just a mathematical description of a uncertain situation.
+    </p>
+
+    <definition xml:id="def-7-1-prob-model">
+      <title>Components of a Probabalistic Model</title>
+      <statement>
+        <p>
+          The following are components of a probabalistic model.
+          <ul>
+            <li>
+              <p>
+                The <em>sample space</em>, <m>\Omega</m>, which is the set of all possible outcomes of an experiment.
+              </p>
+            </li>
+            <li>
+              <p>
+                The <em>probability measure</em>, <m>\mathbb{P}</m>, which encodes our belief in the <q>likelihood</q> of a given set of outcomes.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      As a motivating example, consider tossing a pair of fair coins. This process is what we refer to as the <em>experiment</em> in the definition above. The <em>sample space</em> is the set of all outcomes, so:
+      <md>
+        \Omega = \{(H, H), (H, T), (T, H), (T, T)\},
+      </md>
+      where <m>H</m> represents the outcome in which a given coin landed heads-up, <m>T</m> denotes the outcome in which the given coin landed tails-up, and the ordered pair <m>(a, b)</m> is used to denotes the order of the events (that is, <m>a</m> represents the outcome associated with the first coin and <m>b</m> denotes that of the second).
+    </p>
+
+    <p>
+      Since the coins are fair, you'd expect the probability measure to somehow encode that information, so that <m>\mathbb{P}(\{(H, H)\}) = \mathbb{P}(\{(H, T)\}) = \mathbb{P}(\{(T, H)\}) = \mathbb{P}(\{(T, T)\})</m>. You would be correct about this, but we need a few more definitions before we're ready to start formally discussing the probability measure.
+    </p>
+
+  </introduction>
+
+  <subsection xml:id="subsec-7-1-prob-axioms">
+    <title>Probability Axioms</title>
+
+    <p>
+      Every probabalistic model relies on some underlying process (like tossing a coin), called an <em>experiment</em>, which generates exactly one of several possible <em>outcomes</em> (like <m>(H, T)</m>). The set of all possible outcomes is called <em>the sample space</em>, and any subset of the sample space is called an <em>event</em>.
+    </p>
+
+    <p>
+      Formally, we define the probability measure to be a function from the set of possible <em>events</em> of an experiment into the closed interval <m>[0, 1]</m>. This is so that we can discuss probabilities of individual outcomes as well as probabilities of sets of outcomes. With this, we are ready to introduce the axioms of the probability measure.
+    </p>
+
+    <axiom xml:id="axiom-7-1-prob-measure">
+      <title>Probability Axioms</title>
+      <statement>
+        <p>
+          Let <m>\mathbb{P}</m> be a probability measure on a sample space <m>\Omega</m>.
+          <ol>
+            <li>
+              <p>
+                <em>(Nonnegativity)</em> <m>\mathbb{P}(A) \geq 0</m> for every event <m>A</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>(Additivity)</em> If <m>A</m> and <m>B</m> are disjoint events (that is, <m>A \cap B = \varnothing</m>), then the probability of their union satisfies
+                <md>
+                  \mathbb{P}(A \cup B) = \mathbb{P}(A) + \mathbb{P}(B).
+                </md>
+                More generally, if <m>A_1, A_2, \ldots, A_n</m> is a sequence of disjoint events, then:
+                <md>
+                  \mathbb{P} \left( \bigcup_{k=1}^n A_k \right) = \sum_{k=1}^n \mathbb{P}(A_k).
+                </md>
+                Note that <m>n</m> need not be finite.
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>(Normalization)</em> The probability of the entire sample space is 1; that is, <m>\mathbb{P}(\Omega) = 1</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </axiom>
+    
+    <theorem xml:id="thm-7-1-equiprob">
+      <title>Equiprobable Outcomes</title>
+      <statement>
+        <p>
+          Suppose a sample space <m>\Omega</m> has <m>n</m> equally likely outcomes, and an event <m>A</m> contains <m>k</m> outcomes. If:
+          <md>
+            \mathbb{P}(A) = \frac{\text{Number of outcomes in $A$}}{\text{Number of outcomes in the sample space}} = \frac{\lvert A \rvert}{\lvert \Omega \rvert} = \frac{k}{n},
+          </md>
+          then <m>\mathbb{P}</m> is a valid probability measure on <m>\Omega</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          <ol>
+            <li>
+              <p>
+                An event <m>A</m> is a subset of the sample space. Since <m>A</m> can contain no fewer than zero elements, <m>\lvert A \rvert \geq 0</m>, and so <m>\mathbb{P}(A) \geq 0</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Suppose <m>A</m> and <m>B</m> are disjoint events. Then <m>A \cap B = \varnothing</m>. Then, we can think of <m>A = \{a_1, a_2, \ldots, a_n\}</m> and <m>B = \{b_1, b_2, \ldots, b_m\}</m>, where none of the <m>a_i</m>'s are equal to any of the <m>b_i</m>'s. Then:
+                <md>
+                  <mrow> \mathbb{P}(A) =\amp \frac{n}{\lvert \Omega \rvert} </mrow>
+                  <mrow> \mathbb{P}(B) =\amp \frac{m}{\lvert \Omega \rvert} </mrow>
+                  <mrow> \mathbb{P}(A \cup B) =\amp \frac{n + m}{\lvert \Omega \rvert} </mrow>
+                </md>
+                So, <m>\mathbb{P}(A) + \mathbb{P}(B) = \frac{n + m}{\lvert \Omega \rvert} = \mathbb{P}(A \cup B)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                By definition, <m>\mathbb{P}(\Omega) = \frac{\lvert \Omega \rvert}{\lvert \Omega \rvert} = 1</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </proof>
+    </theorem>
+
+    <p>
+      Of course, any function that satisfies <xref ref="thm-7-1-equiprob"/> can be interpreted as a probability, but we can get surprisingly far with the following one.
+    </p>
+
+    <example xml:id="ex-7-1-equiprob-1">
+      <title>Equiprobable Outcome: Fair Die</title>
+      <statement>
+        <p>
+          A fair die is rolled. Find the probability that an even number comes up.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          The sample space in this case is:
+          <md>
+            \Omega = \{1, 2, 3, 4, 5, 6\}.
+          </md>
+          The event that an even number comes up is the subset <m>A = \{2, 4, 6\}</m>. By <xref ref="thm-7-1-equiprob"/>, we have:
+          <md>
+            \mathbb{P}(A) = \frac{3}{6} = \frac{1}{2}.
+          </md>
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="ex-7-1-equiprob-2">
+      <title>Equiprobable Outcome: Sum of Two Dice</title>
+      <statement>
+        <p>
+          Two fair dice, one red and one blue, are rolled. Find the probability that the sum of the two numbers is <m>7</m>. Is a sum of <m>7</m> more likely than a sum of <m>2</m>?
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          It is tempting to take the sample space to be the possible sums, <m>\{2, 3, \dots, 12\}</m>. However, these <m>11</m> outcomes are <em>not</em> equally likely, so <xref ref="thm-7-1-equiprob"/> does not apply to this sample space.
+        </p>
+        <p>
+          Instead, record the number on each die as an ordered pair, so that
+          <md>
+            \Omega = \{(i, j) : i, j \in \{1, 2, 3, 4, 5, 6\}\},
+          </md>
+          where <m>i</m> is the red die and <m>j</m> is the blue die. There are <m>6 \cdot 6 = 36</m> outcomes, and since the dice are fair, they are equally likely. The event that the sum is <m>7</m> is
+          <md>
+            A = \{(1,6), (2,5), (3,4), (4,3), (5,2), (6,1)\},
+          </md>
+          which has <m>6</m> elements. By <xref ref="thm-7-1-equiprob"/>,
+          <md>
+            \mathbb{P}(A) = \frac{6}{36} = \frac{1}{6}.
+          </md>
+        </p>
+        <p>
+          The event that the sum is <m>2</m> is <m>B = \{(1,1)\}</m>, so <m>\mathbb{P}(B) = \frac{1}{36}</m>. Thus a sum of <m>7</m> is six times as likely as a sum of <m>2</m>, even though both are single values in the list <m>2, 3, \dots, 12</m>. The sum <m>7</m> can be produced in more ways, and the ordered-pair sample space keeps track of this.
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="ex-7-1-equiprob-3">
+      <title>Equiprobable Outcome: Two Aces from a Deck</title>
+      <statement>
+        <p>
+          Two cards are dealt from a well-shuffled standard deck of <m>52</m> cards. Find the probability that both cards are aces.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          We solve this in two ways, using two different sample spaces.
+        </p>
+        <p>
+          <em>Unordered hands.</em> Let <m>\Omega</m> be the set of all <m>2</m>-element subsets of the deck. Every pair of cards is equally likely to be dealt, and
+          <md>
+            |\Omega| = \binom{52}{2} = 1326.
+          </md>
+          The event <m>A</m> that both cards are aces consists of the <m>2</m>-element subsets of the <m>4</m> aces, so <m>|A| = \binom{4}{2} = 6</m>. By <xref ref="thm-7-1-equiprob"/>,
+          <md>
+            \mathbb{P}(A) = \frac{6}{1326} = \frac{1}{221}.
+          </md>
+        </p>
+        <p>
+          <em>Ordered deals.</em> Now let <m>\Omega'</m> be the set of ordered pairs (first card, second card) of distinct cards. Then <m>|\Omega'| = 52 \cdot 51 = 2652</m>, and again all outcomes are equally likely. The event <m>A'</m> that both cards are aces has <m>4 \cdot 3 = 12</m> elements, so
+          <md>
+            \mathbb{P}(A') = \frac{12}{2652} = \frac{1}{221}.
+          </md>
+        </p>
+        <p>
+          Both sample spaces give the same answer. This is not a coincidence: each unordered hand corresponds to exactly <m>2</m> ordered deals, so the numerator and the denominator in the second computation are each exactly twice those of the first. Either sample space may be used, provided we count the outcomes <em>and</em> the event consistently within the same space.
+        </p>
+      </solution>
+    </example>
+  
+  </subsection>
+
+</section>

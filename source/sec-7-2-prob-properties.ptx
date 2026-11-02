@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-7-2-prob-properties" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Basic Properties of Probability Theory</title>
+
+  <p>
+    Probability measures have several desirable properties, which can be derived directly from the axioms, <xref ref="thm-7-1-equiprob"/>
+  </p>
+
+  <theorem xml:id="thm-7-2-prob-laws">
+    <statement>
+      <p>
+        Suppose <m>\mathbb{P}</m> is a probability measure on <m>\Omega</m> and that <m>A</m>, <m>B</m>, and <m>C</m> are events. Then:
+        <ol>
+          <li>
+            <p>
+              <m>\mathbb{P}(\varnothing) = 0</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>A \subseteq B</m> then <m>\mathbb{P}(A) \leq \mathbb{P}(B)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\mathbb{P}(A \cup B) = \mathbb{P}(A) + \mathbb{P}(B) - \mathbb{P}(A \cap B)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\mathbb{P}(A \cup B) \leq \mathbb{P}(A) + \mathbb{P}(B)</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Notice that <m>\Omega = \Omega \cup \varnothing</m>, where <m>\Omega \cap \varnothing = \varnothing</m>. So, by the additivity and normalization axioms of <xref ref="axiom-7-1-prob-measure"/>, we have:
+              <md>
+                1 = \mathbb{P}(\Omega) = \mathbb{P}(\Omega \cup \varnothing) = \mathbb{P}(\Omega) + \mathbb{P}(\varnothing).
+              </md>
+              Since <m>\mathbb{P}(\Omega) = 1</m>, we conclude <m>\mathbb{P}(\varnothing) = 0</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Write <m>B = A \cup (B \smallsetminus A)</m>. Since the sets are disjoint, we can use the additivity axiom of <xref ref="axiom-7-1-prob-measure"/> to write:
+              <md>
+                \mathbb{P}(B) = \mathbb{P}(A \cup (B \smallsetminus A)) = \mathbb{P}(A) + \mathbb{P}(B \smallsetminus A).  
+              </md>
+              Now, from the nonnegativity axiom, we have <m>\mathbb{P}(B \smallsetminus A) &gt; 0</m>, and so <m>\mathbb{P}(B) \geq \mathbb{P}(A)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Left as an exercise.
+            </p>
+          </li>
+          <li>
+            <p>
+              Left as an exercise.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </proof>
+  </theorem>
+
+  <example xml:id="ex-7-2-prob-laws-1">
+    <title>Inclusion-Exclusion for Two Events: Divisibility</title>
+    <statement>
+      <p>
+        A number is chosen uniformly at random from <m>\{1, 2, \dots, 100\}</m>. Find the probability that it is divisible by <m>2</m> or by <m>3</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Let <m>\Omega = \{1, 2, \dots, 100\}</m>, and let <m>A</m> be the event that the number is divisible by <m>2</m> and <m>B</m> the event that it is divisible by <m>3</m>. We want <m>\mathbb{P}(A \cup B)</m>. Counting multiples gives
+        <md>
+          <mrow>\mathbb{P}(A) \amp = \frac{\lfloor 100/2 \rfloor}{100} = \frac{50}{100},</mrow>
+          <mrow>\mathbb{P}(B) \amp = \frac{\lfloor 100/3 \rfloor}{100} = \frac{33}{100}.</mrow>
+        </md>
+        The event <m>A \cap B</m> is the event that the number is divisible by both <m>2</m> and <m>3</m>, that is, by <m>6</m>, so
+        <md>
+          \mathbb{P}(A \cap B) = \frac{\lfloor 100/6 \rfloor}{100} = \frac{16}{100}.
+        </md>
+        By part (3) of <xref ref="thm-7-2-prob-laws"/>,
+        <md>
+          \mathbb{P}(A \cup B) = \frac{50}{100} + \frac{33}{100} - \frac{16}{100} = \frac{67}{100}.
+        </md>
+      </p>
+      <p>
+        Note that simply adding <m>\mathbb{P}(A) + \mathbb{P}(B) = \frac{83}{100}</m> would overcount: the <m>16</m> multiples of <m>6</m> are counted once in each event, so they must be subtracted once.
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="ex-7-2-prob-laws-2">
+    <title>The Union Bound: Reliability of a System</title>
+    <statement>
+      <p>
+        A server runs three independent hardware components. Over one year, the probability that the disk fails is at most <m>0.02</m>, the probability that the power supply fails is at most <m>0.01</m>, and the probability that the network card fails is at most <m>0.03</m>. Give an upper bound on the probability that <em>at least one</em> component fails during the year.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Let <m>D</m>, <m>P</m>, and <m>N</m> be the events that the disk, power supply, and network card fail, respectively. We want to bound <m>\mathbb{P}(D \cup P \cup N)</m>. We do not need to know how the failures are related to each other, which is the point of using the union bound.
+      </p>
+      <p>
+        Apply part (4) of <xref ref="thm-7-2-prob-laws"/> to the events <m>D \cup P</m> and <m>N</m>:
+        <md>
+          \mathbb{P}(D \cup P \cup N) \leq \mathbb{P}(D \cup P) + \mathbb{P}(N).
+        </md>
+        Applying part (4) again to <m>D</m> and <m>P</m> gives <m>\mathbb{P}(D \cup P) \leq \mathbb{P}(D) + \mathbb{P}(P)</m>, so
+        <md>
+          \mathbb{P}(D \cup P \cup N) \leq \mathbb{P}(D) + \mathbb{P}(P) + \mathbb{P}(N) \leq 0.02 + 0.01 + 0.03 = 0.06.
+        </md>
+        Thus the probability that some component fails is at most <m>6\%</m>.
+      </p>
+      <p>
+        This bound holds regardless of whether the failures are independent, disjoint, or strongly correlated, so it is useful when the dependence between events is unknown. It is generally not exact: if the failures can occur together, the true probability is smaller, by the correction term in part (3).
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="ex-7-2-prob-laws-3">
+    <title>Monotonicity: Bounding a Hard Probability by an Easy One</title>
+    <statement>
+      <p>
+        Five fair coins are flipped. Let <m>E</m> be the event that the number of heads is <m>3</m> or more and the first coin is heads. Show that <m>\mathbb{P}(E) \leq \frac{1}{2}</m>, and then find <m>\mathbb{P}(E)</m> exactly.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Let <m>\Omega</m> be the set of all <m>2^5 = 32</m> equally likely sequences of heads and tails, and let <m>F</m> be the event that the first coin is heads. Every outcome in <m>E</m> has first coin heads, so <m>E \subseteq F</m>. Since <m>F</m> fixes the first coin and leaves the other four free, <m>|F| = 2^4 = 16</m> and <m>\mathbb{P}(F) = \frac{16}{32} = \frac{1}{2}</m>. By part (2) of <xref ref="thm-7-2-prob-laws"/>,
+        <md>
+          \mathbb{P}(E) \leq \mathbb{P}(F) = \frac{1}{2}.
+        </md>
+        This bound required no counting beyond the event <m>F</m>.
+      </p>
+      <p>
+        For the exact value, an outcome in <m>E</m> has first coin heads and at least <m>2</m> heads among the remaining four coins. The number of such sequences is
+        <md>
+          \binom{4}{2} + \binom{4}{3} + \binom{4}{4} = 6 + 4 + 1 = 11,
+        </md>
+        so <m>\mathbb{P}(E) = \frac{11}{32}</m>. This is consistent with the bound, since <m>\frac{11}{32} \leq \frac{16}{32}</m>.
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="ex-7-2-prob-laws-4">
+    <title>Finding an Unknown Probability and Checking a Model</title>
+    <statement>
+      <p>
+        In a certain town, <m>60\%</m> of households own a dog, <m>45\%</m> own a cat, and <m>20\%</m> own neither. A household is chosen at random.
+        <ol>
+          <li>
+            <p>What is the probability that the household owns both a dog and a cat?</p>
+          </li>
+          <li>
+            <p>A neighbor claims that <m>70\%</m> of households own a dog and <m>40\%</m> own a cat, and that <m>25\%</m> own both. Is this claim consistent with the laws of probability?</p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Let <m>D</m> be the event that the household owns a dog and <m>C</m> the event that it owns a cat. The event that the household owns neither is the complement of <m>D \cup C</m>, so
+              <md>
+                \mathbb{P}(D \cup C) = 1 - 0.20 = 0.80.
+              </md>
+              Solving part (3) of <xref ref="thm-7-2-prob-laws"/> for the intersection gives
+              <md>
+                \mathbb{P}(D \cap C) = \mathbb{P}(D) + \mathbb{P}(C) - \mathbb{P}(D \cup C) = 0.60 + 0.45 - 0.80 = 0.25.
+              </md>
+              So <m>25\%</m> of households own both.
+            </p>
+          </li>
+          <li>
+            <p>
+              The claimed values would give
+              <md>
+                \mathbb{P}(D \cup C) = 0.70 + 0.40 - 0.25 = 0.85,
+              </md>
+              which is not itself a contradiction. However, the claim says <m>D \cap C</m> has probability <m>0.25</m> while <m>C</m> has probability <m>0.40</m>, and we can check the consistency conditions: since <m>D \cap C \subseteq C</m>, part (2) requires <m>\mathbb{P}(D \cap C) \leq \mathbb{P}(C)</m>, and indeed <m>0.25 \leq 0.40</m>. Similarly <m>D \cap C \subseteq D</m> gives <m>0.25 \leq 0.70</m>. Finally, part (4) requires <m>\mathbb{P}(D \cup C) \leq \mathbb{P}(D) + \mathbb{P}(C) = 1.10</m>, which holds. All of the checks pass, so the claim is consistent with the laws of probability. (It would be inconsistent if, for example, the neighbor had claimed that <m>50\%</m> own a cat and dog, since then <m>\mathbb{P}(D \cap C) = 0.50 > \mathbb{P}(C) = 0.40</m> would violate part (2).)
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    You might be wondering if there is an analog to part 3 of <xref ref="thm-7-2-prob-laws"/> for three (or more) sets. It turns out, there is, but it is remarkably uglier.
+  </p>
+
+  <theorem xml:id="thm-7-2-inc-exc">
+    <title>The Principle of Inclusion-Exclusion</title>
+    <statement>
+      <p>
+        Suppose <m>\mathbb{P}</m> is a probability measure on <m>\Omega</m> and that <m>A</m>, <m>B</m>, and <m>C</m> are events. Then:
+        <md>
+          <mrow>
+          \mathbb{P}(A \cup B \cup C)
+              \; = \; \amp \mathbb{P}(A) + \mathbb{P}(B) + \mathbb{P}(C)
+          </mrow>
+          <mrow>
+              \amp \quad - [\mathbb{P}(A \cap B) + \mathbb{P}(A \cap C) + \mathbb{P}(B \cap C)]
+          </mrow>
+          <mrow>
+              \amp \quad + \mathbb{P}(A \cap B \cap C)
+          </mrow>
+        </md>
+      </p>
+    </statement>
+
+    <proof>
+      
+      <p>
+        One of the most useful tactics for proving probability theorems is to consider samples as subsets of <m>\Omega</m> and utilizing what we know from set theory. With this, we imagine adding these components together one at a time. Refer to <xref ref="fig-7-2-inclusion-exclusion-3"/>.
+      </p>
+
+      <figure xml:id="fig-7-2-inclusion-exclusion-3">
+        <caption>
+          Inclusion-exclusion for three sets. The number in each region is how many times its elements have been counted so far.
+        </caption>
+        <image width="100%">
+          <latex-image>
+            \newcommand{\vlab}[3]{%
+              \ifnum#3=1
+                \node[font=\small\bfseries] at (#1,#2) {#3};
+              \else
+                \node[font=\small\bfseries, text=red!70!black] at (#1,#2) {#3};
+              \fi}
+            % \panel{xshift}{A}{B}{C}{AB}{AC}{BC}{ABC}{caption text}
+            \newcommand{\panel}[9]{%
+              \begin{scope}[xshift=#1 cm]
+                \draw[thick, fill=blue!30,   fill opacity=0.35] (-0.5,0)  circle (1);
+                \draw[thick, fill=green!40,  fill opacity=0.35] ( 0.5,0)  circle (1);
+                \draw[thick, fill=orange!50, fill opacity=0.35] ( 0,0.866) circle (1);
+                \node at (-1.55,-0.75) {$A$};
+                \node at ( 1.55,-0.75) {$B$};
+                \node at ( 1.05, 2.00) {$C$};
+                \vlab{-1.0}{-0.25}{#2}
+                \vlab{ 1.0}{-0.25}{#3}
+                \vlab{ 0.0}{ 1.45}{#4}
+                \vlab{ 0.0}{-0.35}{#5}
+                \vlab{-0.55}{0.75}{#6}
+                \vlab{ 0.55}{0.75}{#7}
+                \vlab{ 0.0}{ 0.35}{#8}
+                \node[align=center, font=\small] at (0,-1.8) {#9};
+              \end{scope}}
+            \begin{tikzpicture}
+              \panel{0} {1}{1}{1}{2}{2}{2}{3}{$\vert A\vert + \vert B\vert + \vert C\vert$}
+              \panel{5} {1}{1}{1}{1}{1}{1}{0}{$-\vert A\cap B\vert - \vert A\cap C\vert - \vert B\cap C\vert$}
+              \panel{10}{1}{1}{1}{1}{1}{1}{1}{$+\vert A\cap B\cap C\vert$}
+              \node[font=\footnotesize\itshape] at (0,  2.7) {Step 1: Add the sets};
+              \node[font=\footnotesize\itshape] at (5,  2.7) {Step 2: Subtract the overlaps};
+              \node[font=\footnotesize\itshape] at (10, 2.7) {Step 3: Add back the center};
+              \draw[->, thick] (1.9,0.4) -- (3.1,0.4);
+              \draw[->, thick] (6.9,0.4) -- (8.1,0.4);
+            \end{tikzpicture}
+          </latex-image>
+          <shortdescription>Inclusion-exclusion for three sets.</shortdescription>
+          <description>
+            <p>
+              Three Venn diagrams of sets A, B, and C, shown left to right, illustrating inclusion-exclusion. In each diagram, three overlapping circles form seven regions, and each region is labeled with how many times its elements have been counted so far. In the first diagram, the three sets are added together: the regions belonging to only one set are labeled 1, the three regions shared by exactly two sets are labeled 2, and the center region shared by all three sets is labeled 3. In the second diagram, the three pairwise intersections are subtracted: the single-set and pairwise regions are all labeled 1, and the center region drops to 0. In the third diagram, the triple intersection is added back: all seven regions are labeled 1, so every element of the union is counted exactly once.
+            </p>
+          </description>
+        </image>
+      </figure>
+
+      <p>
+        First, we compute <m>\mathbb{P}(A) + \mathbb{P}(B) + \mathbb{P}(C)</m>. Notice, however, this counts the intersections more than once, so we need to subtract the intersections, <m>\mathbb{P}(A \cap B)</m>, <m>\mathbb{P}(A \cap C)</m>, and <m>\mathbb{P}(B \cap C)</m>.
+      </p>
+
+      <p>
+        However, after we subtract the intersections of each pair, we've subtracted the inner most region, <m>\mathbb{P}(A \cap B \cap C)</m> three times, we we have to add it back.
+      </p>
+
+    </proof>
+  </theorem>
+
+
+</section>
