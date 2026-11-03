@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-7-3-cond-prob" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Conditional Probability</title>
+
+  <p>
+    One of the more interesting notions in probabiity is the mathematical framework by which we can update our understanding of a situation given some data about it. For instance, some examples include:
+    <ol>
+      <li>
+        <p>
+          In a word guessing game, suppose that you know the first letter is a <q>t</q>. What is the probability that the next letter is an <q>h</q>?
+        </p>
+      </li>
+      <li>
+        <p>
+          Suppose two die are thrown, and suppose you are told that the sum of the die is 11. What is the probability that the first die is a 5?
+        </p>
+      </li>
+    </ol>
+    The thought process behind question 1 is essntially how early LLMs worked.
+  </p>
+
+  <p>
+    In formal language, we suppose that we have a probability model with sample space <m>\Omega</m> together with a probability measure <m>\mathbb{P}</m>. Suppose <m>B \subset \Omega</m> and that we know the event of interest, <m>A</m>, is contained within <m>B</m> so that <m>A \subseteq B</m>. Our goal, then, is to find an expression for the probability of <m>A</m>, given our knowledge of <m>B</m>, in such a way that paints a better picture of <m>A</m>. We write this idea as <q><m>\mathbb{P}(A \mid B)</m></q> and say "the probability of <m>A</m> given <m>B</m>."
+  </p>
+
+  <p>
+    Consider the toy example of a single toss of a six-sided die, to help guide our intuition. Suppose we are interested in the probability that the die shows the number 1 given that we are told the number is odd. To use similar notation as we've written above, let's let <m>A</m> denote the event that the die is a 1, and <m>B</m> denote that event that the die is odd. Then, if we know the number is odd, then our <q>sample space</q> is 
+    <md>
+      \{1, 3, 5\}
+    </md>
+    (Notice that this "sample space" is just <m>B</m>.) Now, since each event in this new sample space is equiprobable, we can apply <xref ref="thm-7-1-equiprob"/> and say that:
+    <md>
+      \mathbb{P}(A \mid B) = \mathbb{P}( \text{the outcome is 1} \mid \text{the outcome is odd} ) = \frac{1}{3}.
+    </md>
+  </p>
+
+  <p>
+    The work above suggests that we can define conditional probability in the following way.
+  </p>
+
+  <definition xml:id="def-7-3-cond-prob">
+    <title>Conditional Probability</title>
+    <statement>
+      <p>
+        Let <m>A</m> and <m>B</m> be events in a sample space <m>\Omega</m> such that <m>A \subseteq B</m>. Then, the <em>conditional probability of <m>A</m> given <m>B</m></em> is:
+        <md>
+          \mathbb{P}(A \mid B)
+            = \frac{\text{Number of elements of $A \cap B$}}{\text{Number of elements of $B$}}
+            = \frac{\mathbb{P}(A \cap B)}{\mathbb{P}(B)}.
+        </md>
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    To be formal, we technically have to prove that the definition above satisfies the three axioms in <xref ref="axiom-7-1-prob-measure"/> before we can legitimately call it a "probability."
+  </p>
+
+  <example xml:id="ex-7-3-cond-prob-1">
+    <title>Conditional Probability from Data: A Spam Filter</title>
+    <statement>
+      <p>
+        An email service examined <m>1000</m> messages and recorded whether each was spam and whether it contained the word <q>free</q>. The results are summarized in the following table.
+      </p>
+      <table xml:id="table-7-3-spam">
+        <title>Spam and the word <q>free</q></title>
+        <tabular halign="center">
+          <row bottom="minor">
+            <cell></cell>
+            <cell>Contains <q>free</q></cell>
+            <cell>Does not contain <q>free</q></cell>
+            <cell>Total</cell>
+          </row>
+          <row>
+            <cell>Spam</cell>
+            <cell>120</cell>
+            <cell>180</cell>
+            <cell>300</cell>
+          </row>
+          <row bottom="minor">
+            <cell>Not spam</cell>
+            <cell>35</cell>
+            <cell>665</cell>
+            <cell>700</cell>
+          </row>
+          <row>
+            <cell>Total</cell>
+            <cell>155</cell>
+            <cell>845</cell>
+            <cell>1000</cell>
+          </row>
+        </tabular>
+      </table>
+      <p>
+        One of these messages is chosen uniformly at random. Let <m>S</m> be the event that it is spam and <m>F</m> the event that it contains the word <q>free</q>.
+        <ol>
+          <li>
+            <p>Find <m>\mathbb{P}(S)</m>.</p>
+          </li>
+          <li>
+            <p>Find <m>\mathbb{P}(S \mid F)</m>, the probability the message is spam given that it contains <q>free</q>.</p>
+          </li>
+          <li>
+            <p>Find <m>\mathbb{P}(F \mid S)</m>, the probability the message contains <q>free</q> given that it is spam.</p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Since the message is chosen uniformly from <m>1000</m> messages, every outcome is equally likely and probabilities are computed by counting.
+      </p>
+      <p>
+        <em>(a)</em> There are <m>300</m> spam messages, so
+        <md>
+          \mathbb{P}(S) = \frac{300}{1000} = 0.3.
+        </md>
+      </p>
+      <p>
+        <em>(b)</em> There are <m>155</m> messages containing <q>free</q>, and <m>120</m> of them are spam, so <m>\mathbb{P}(F) = \frac{155}{1000}</m> and <m>\mathbb{P}(S \cap F) = \frac{120}{1000}</m>. By <xref ref="def-7-3-cond-prob"/>,
+        <md>
+          \mathbb{P}(S \mid F) = \frac{\mathbb{P}(S \cap F)}{\mathbb{P}(F)} = \frac{120/1000}{155/1000} = \frac{120}{155} = \frac{24}{31} \approx 0.774.
+        </md>
+        Equivalently, learning that the message contains <q>free</q> restricts our attention to the <m>155</m> messages in the <q>free</q> column, and <m>120</m> of those are spam. Observing the word <q>free</q> raises the probability of spam from <m>0.3</m> to about <m>0.774</m>.
+      </p>
+      <p>
+        <em>(c)</em> Now we restrict attention to the <m>300</m> spam messages, and <m>120</m> of them contain <q>free</q>:
+        <md>
+          \mathbb{P}(F \mid S) = \frac{\mathbb{P}(F \cap S)}{\mathbb{P}(S)} = \frac{120/1000}{300/1000} = \frac{120}{300} = 0.4.
+        </md>
+      </p>
+      <p>
+        Notice that <m>\mathbb{P}(S \mid F) \approx 0.774</m> while <m>\mathbb{P}(F \mid S) = 0.4</m>. The numerator is the same in both cases, but the denominators differ, because we are conditioning on different events. In general, <m>\mathbb{P}(A \mid B)</m> and <m>\mathbb{P}(B \mid A)</m> are different quantities, and confusing them is one of the most common errors in reasoning about probability. A spam filter wants to know the first quantity (<q>given the words I see, how likely is this spam?</q>), but the second is what is easiest to estimate from labeled data. We will see how to convert between them soon.
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="ex-7-3-cond-prob-2">
+    <title>Conditioning on Different Information: Two Children</title>
+    <statement>
+      <p>
+        A family has two children. Assume that each child is equally likely to be a boy or a girl, independently of the other. Find the probability that both children are girls, given that:
+        <ol>
+          <li>
+            <p>at least one of the children is a girl;</p>
+          </li>
+          <li>
+            <p>the older child is a girl.</p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Record the children as an ordered pair (older, younger), so that
+        <md>
+          \Omega = \{BB, BG, GB, GG\}.
+        </md>
+        These four outcomes are equally likely, each with probability <m>\frac{1}{4}</m>. Let <m>A = \{GG\}</m> be the event that both children are girls.
+      </p>
+
+      <p>
+        <ol>
+          <li>
+            <p>
+              Let <m>B</m> be the event that at least one child is a girl, so <m>B = \{BG, GB, GG\}</m> and <m>\mathbb{P}(B) = \frac{3}{4}</m>. Since <m>A \subseteq B</m>, we have <m>A \cap B = A</m>, so by <xref ref="def-7-3-cond-prob"/>,
+              <md>
+                \mathbb{P}(A \mid B) = \frac{\mathbb{P}(A \cap B)}{\mathbb{P}(B)} = \frac{1/4}{3/4} = \frac{1}{3}.
+              </md>
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <m>C</m> be the event that the older child is a girl, so <m>C = \{GB, GG\}</m> and <m>\mathbb{P}(C) = \frac{1}{2}</m>. Again <m>A \subseteq C</m>, so
+              <md>
+                \mathbb{P}(A \mid C) = \frac{\mathbb{P}(A \cap C)}{\mathbb{P}(C)} = \frac{1/4}{1/2} = \frac{1}{2}.
+              </md>
+            </p>
+          </li>
+        </ol>
+      </p>
+        
+      <p>
+        The two answers differ, even though the information in parts 1 and 2 can sound nearly identical. In part 1, we only learn that the outcome is not <m>BB</m>, which leaves <m>3</m> equally likely possibilities, only one of which is <m>GG</m>. In part 2, we learn the specific identity of one child, which leaves only <m>2</m> possibilities, <m>GB</m> and <m>GG</m>. The takeaway here is that conditional probability depends on exactly which event we condition on. Writing out the sample space explicitly, as we did above, is the safest way to avoid this paradox while you are learning the subject.
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    Following the logic of conditional probability can lead to some counterintuitive results, as we saw in the latter part of <xref ref="ex-7-3-cond-prob-2"/>. Perhaps the most famous example is that of the <em>Monty Hall Problem</em>.
+  </p>
+
+  <example xml:id="ex-7-3-cond-prob-3-monty-hall">
+    <title>Monty Hall</title>
+    <statement>
+      <p>
+        You are on the classic American game show, <em>Let's Make a Deal</em>. The host, Monty Hall, sits you in front of three doors, Door #1, Door #2, and Door #3, and asks you to pick one. Behind one of the doors is a signed copy of everyone's favorite textbook, <em>Discrete Mathematics: An Open Introduction</em> by Oscar Levin. Behind the other two doors are goats.
+      </p>
+
+      <p>
+        You choose Door #1. Monty, who knows what is behind all of the doors, opens up Door #2 and reveals a goat! He then offers you the choice to stick with the door you already chose, or to switch to Door #3. (Assume that Monty always opens a door that you did not choose and that has a goat behind it, and that he always makes this offer.) If your goal is to get your hands on the text, what should you do?
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        You have two choices: stay with Door #1 or switch to Door #3. A priori, it is perfectly reasonable to suspect that the choice does not matter, since two doors remain and the prize must be behind one of them. But is that true?
+      </p>
+
+      <p>
+        Consider the strategy of not switching. Then, the revelation of the goat behind Door #2 is immaterial, and your initial choice alone determines whether or not you win the prize. Since there are three doors and the prize is behind exactly one of them, you have a <m>1/3</m> probability of guessing correctly.
+      </p>
+
+      <p>
+        Consider the strategy of switching. If the prize is behind your initially chosen door (which occurs with probability <m>1/3</m>), then you lose. Otherwise, the prize is behind one of the two doors you did not choose, which occurs with probability <m>2/3</m>. In that case, Monty cannot open your door and cannot open the door with the prize, so the goat he reveals is the only other goat, and the prize must be behind the one remaining door. In other words, switching wins exactly when your initial guess was wrong. Thus, if you switch to Door #3, you'll win with probability <m>2/3</m>! Hence the better strategy is to switch, which doubles your chances of winning!
+      </p>
+    </solution>
+  </example>
+
+</section>
