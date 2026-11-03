@@ -420,38 +420,49 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para" id="ex-7-3-cond-prob-1-3-1">Since the message is chosen uniformly from <span class="process-math">\(1000\)</span> messages, every outcome is equally likely and probabilities are computed by counting.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-3-cond-prob-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="ex-7-3-cond-prob-1-3-2">
-<div class="para">
-<em class="emphasis">(a)</em> There are <span class="process-math">\(300\)</span> spam messages, so</div>
-<div class="displaymath process-math" id="ex-7-3-cond-prob-1-3-2-3">
+<ol class="decimal" id="ex-7-3-cond-prob-1-3-2-1">
+<li id="ex-7-3-cond-prob-1-3-2-1-1">
+<div class="para logical" id="ex-7-3-cond-prob-1-3-2-1-1-1">
+<div class="para">There are <span class="process-math">\(300\)</span> spam messages, so</div>
+<div class="displaymath process-math" id="ex-7-3-cond-prob-1-3-2-1-1-1-2">
 \begin{equation*}
 \mathbb{P}(S) = \frac{300}{1000} = 0.3.
 \end{equation*}
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-3-cond-prob-1-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-3-cond-prob-1-3-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="ex-7-3-cond-prob-1-3-3">
-<div class="para">
-<em class="emphasis">(b)</em> There are <span class="process-math">\(155\)</span> messages containing “free”, and <span class="process-math">\(120\)</span> of them are spam, so <span class="process-math">\(\mathbb{P}(F) = \frac{155}{1000}\)</span> and <span class="process-math">\(\mathbb{P}(S \cap F) = \frac{120}{1000}\text{.}\)</span> By <a href="sec-7-3-cond-prob.html#def-7-3-cond-prob" class="xref" data-knowl="./knowl/xref/def-7-3-cond-prob.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 7.3.1: Conditional Probability">Definition 7.3.1</a>,</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-7-3-cond-prob.html" id="ex-7-3-cond-prob-1-3-3-8">
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#ex-7-3-cond-prob-1-3-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="ex-7-3-cond-prob-1-3-2-1-2">
+<div class="para logical" id="ex-7-3-cond-prob-1-3-2-1-2-1">
+<div class="para">There are <span class="process-math">\(155\)</span> messages containing “free”, and <span class="process-math">\(120\)</span> of them are spam, so <span class="process-math">\(\mathbb{P}(F) = \frac{155}{1000}\)</span> and <span class="process-math">\(\mathbb{P}(S \cap F) = \frac{120}{1000}\text{.}\)</span> By <a href="sec-7-3-cond-prob.html#def-7-3-cond-prob" class="xref" data-knowl="./knowl/xref/def-7-3-cond-prob.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 7.3.1: Conditional Probability">Definition 7.3.1</a>,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-7-3-cond-prob.html" id="ex-7-3-cond-prob-1-3-2-1-2-1-7">
 \begin{equation*}
 \mathbb{P}(S \mid F) = \frac{\mathbb{P}(S \cap F)}{\mathbb{P}(F)} = \frac{120/1000}{155/1000} = \frac{120}{155} = \frac{24}{31} \approx 0.774.
 \end{equation*}
 </div>
 <div class="para">Equivalently, learning that the message contains “free” restricts our attention to the <span class="process-math">\(155\)</span> messages in the “free” column, and <span class="process-math">\(120\)</span> of those are spam. Observing the word “free” raises the probability of spam from <span class="process-math">\(0.3\)</span> to about <span class="process-math">\(0.774\text{.}\)</span>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-3-cond-prob-1-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-3-cond-prob-1-3-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="ex-7-3-cond-prob-1-3-4">
-<div class="para">
-<em class="emphasis">(c)</em> Now we restrict attention to the <span class="process-math">\(300\)</span> spam messages, and <span class="process-math">\(120\)</span> of them contain “free”:</div>
-<div class="displaymath process-math" id="ex-7-3-cond-prob-1-3-4-5">
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#ex-7-3-cond-prob-1-3-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="ex-7-3-cond-prob-1-3-2-1-3">
+<div class="para logical" id="ex-7-3-cond-prob-1-3-2-1-3-1">
+<div class="para">Now we restrict attention to the <span class="process-math">\(300\)</span> spam messages, and <span class="process-math">\(120\)</span> of them contain “free”:</div>
+<div class="displaymath process-math" id="ex-7-3-cond-prob-1-3-2-1-3-1-4">
 \begin{equation*}
 \mathbb{P}(F \mid S) = \frac{\mathbb{P}(F \cap S)}{\mathbb{P}(S)} = \frac{120/1000}{300/1000} = \frac{120}{300} = 0.4.
 \end{equation*}
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-3-cond-prob-1-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-3-cond-prob-1-3-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ex-7-3-cond-prob-1-3-5">Notice that <span class="process-math">\(\mathbb{P}(S \mid F) \approx 0.774\)</span> while <span class="process-math">\(\mathbb{P}(F \mid S) = 0.4\text{.}\)</span> The numerator is the same in both cases, but the denominators differ, because we are conditioning on different events. In general, <span class="process-math">\(\mathbb{P}(A \mid B)\)</span> and <span class="process-math">\(\mathbb{P}(B \mid A)\)</span> are different quantities, and confusing them is one of the most common errors in reasoning about probability. A spam filter wants to know the first quantity (“given the words I see, how likely is this spam?”), but the second is what is easiest to estimate from labeled data. We will see how to convert between them soon.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-3-cond-prob-1-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-7-3-cond-prob-1-3-2-1-3-2">Notice that <span class="process-math">\(\mathbb{P}(S \mid F) \approx 0.774\)</span> while <span class="process-math">\(\mathbb{P}(F \mid S) = 0.4\text{.}\)</span> The numerator is the same in both cases, but the denominators differ, because we are conditioning on different events. In general, <span class="process-math">\(\mathbb{P}(A \mid B)\)</span> and <span class="process-math">\(\mathbb{P}(B \mid A)\)</span> are different quantities, and confusing them is one of the most common errors in reasoning about probability. A spam filter wants to know the first quantity (“given the words I see, how likely is this spam?”), but the second is what is easiest to estimate from labeled data. We will see how to convert between them soon.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-3-cond-prob-1-3-2-1-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#ex-7-3-cond-prob-1-3-2-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-3-cond-prob-1-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Solution 7.3.2.1"><a tabindex="-1" href="#ex-7-3-cond-prob-1-3" title="Copy heading and permalink for Solution 7.3.2.1" aria-label="Copy heading and permalink for Solution 7.3.2.1">🔗</a></div>
 </div></details>
@@ -542,7 +553,7 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="para" id="ex-7-3-cond-prob-3-monty-hall-3-2">Consider the strategy of not switching. Then, the revelation of the goat behind Door #2 is immaterial, and your initial choice alone determines whether or not you win the prize. Since there are three doors and the prize is behind exactly one of them, you have a <span class="process-math">\(1/3\)</span> probability of guessing correctly.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-3-cond-prob-3-monty-hall-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ex-7-3-cond-prob-3-monty-hall-3-3">Consider the strategy of switching. If the prize is behind your initially chosen door (which occurs with probability <span class="process-math">\(1/3\)</span>), then you lose. Otherwise, the prize is behind one of the two doors you did not choose, which occurs with probability <span class="process-math">\(2/3\text{.}\)</span> In that case, Monty cannot open your door and cannot open the door with the prize, so the goat he reveals is the only other goat, and the prize must be behind the one remaining door. In other words, switching wins exactly when your initial guess was wrong. Thus, if you switch to Door #3, you’ll win with probability <span class="process-math">\(2/3\text{!}\)</span> Hence the better strategy is to switch, which doubles your chances of winning.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-3-cond-prob-3-monty-hall-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-7-3-cond-prob-3-monty-hall-3-3">Consider the strategy of switching. If the prize is behind your initially chosen door (which occurs with probability <span class="process-math">\(1/3\)</span>), then you lose. Otherwise, the prize is behind one of the two doors you did not choose, which occurs with probability <span class="process-math">\(2/3\text{.}\)</span> In that case, Monty cannot open your door and cannot open the door with the prize, so the goat he reveals is the only other goat, and the prize must be behind the one remaining door. In other words, switching wins exactly when your initial guess was wrong. Thus, if you switch to Door #3, you’ll win with probability <span class="process-math">\(2/3\text{!}\)</span> Hence the better strategy is to switch, which doubles your chances of winning!<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-3-cond-prob-3-monty-hall-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Solution 7.3.5.1"><a tabindex="-1" href="#ex-7-3-cond-prob-3-monty-hall-3" title="Copy heading and permalink for Solution 7.3.5.1" aria-label="Copy heading and permalink for Solution 7.3.5.1">🔗</a></div>
 </div></details>
