@@ -112,27 +112,38 @@
       <p>
         Since the message is chosen uniformly from <m>1000</m> messages, every outcome is equally likely and probabilities are computed by counting.
       </p>
+
       <p>
-        <em>(a)</em> There are <m>300</m> spam messages, so
-        <md>
-          \mathbb{P}(S) = \frac{300}{1000} = 0.3.
-        </md>
-      </p>
-      <p>
-        <em>(b)</em> There are <m>155</m> messages containing <q>free</q>, and <m>120</m> of them are spam, so <m>\mathbb{P}(F) = \frac{155}{1000}</m> and <m>\mathbb{P}(S \cap F) = \frac{120}{1000}</m>. By <xref ref="def-7-3-cond-prob"/>,
-        <md>
-          \mathbb{P}(S \mid F) = \frac{\mathbb{P}(S \cap F)}{\mathbb{P}(F)} = \frac{120/1000}{155/1000} = \frac{120}{155} = \frac{24}{31} \approx 0.774.
-        </md>
-        Equivalently, learning that the message contains <q>free</q> restricts our attention to the <m>155</m> messages in the <q>free</q> column, and <m>120</m> of those are spam. Observing the word <q>free</q> raises the probability of spam from <m>0.3</m> to about <m>0.774</m>.
-      </p>
-      <p>
-        <em>(c)</em> Now we restrict attention to the <m>300</m> spam messages, and <m>120</m> of them contain <q>free</q>:
-        <md>
-          \mathbb{P}(F \mid S) = \frac{\mathbb{P}(F \cap S)}{\mathbb{P}(S)} = \frac{120/1000}{300/1000} = \frac{120}{300} = 0.4.
-        </md>
-      </p>
-      <p>
-        Notice that <m>\mathbb{P}(S \mid F) \approx 0.774</m> while <m>\mathbb{P}(F \mid S) = 0.4</m>. The numerator is the same in both cases, but the denominators differ, because we are conditioning on different events. In general, <m>\mathbb{P}(A \mid B)</m> and <m>\mathbb{P}(B \mid A)</m> are different quantities, and confusing them is one of the most common errors in reasoning about probability. A spam filter wants to know the first quantity (<q>given the words I see, how likely is this spam?</q>), but the second is what is easiest to estimate from labeled data. We will see how to convert between them soon.
+        <ol>
+          <li>
+            <p>
+              There are <m>300</m> spam messages, so
+              <md>
+                \mathbb{P}(S) = \frac{300}{1000} = 0.3.
+              </md>
+            </p>
+          </li>
+          <li>
+            <p>
+              There are <m>155</m> messages containing <q>free</q>, and <m>120</m> of them are spam, so <m>\mathbb{P}(F) = \frac{155}{1000}</m> and <m>\mathbb{P}(S \cap F) = \frac{120}{1000}</m>. By <xref ref="def-7-3-cond-prob"/>,
+              <md>
+                \mathbb{P}(S \mid F) = \frac{\mathbb{P}(S \cap F)}{\mathbb{P}(F)} = \frac{120/1000}{155/1000} = \frac{120}{155} = \frac{24}{31} \approx 0.774.
+              </md>
+              Equivalently, learning that the message contains <q>free</q> restricts our attention to the <m>155</m> messages in the <q>free</q> column, and <m>120</m> of those are spam. Observing the word <q>free</q> raises the probability of spam from <m>0.3</m> to about <m>0.774</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Now we restrict attention to the <m>300</m> spam messages, and <m>120</m> of them contain <q>free</q>:
+              <md>
+                \mathbb{P}(F \mid S) = \frac{\mathbb{P}(F \cap S)}{\mathbb{P}(S)} = \frac{120/1000}{300/1000} = \frac{120}{300} = 0.4.
+              </md>
+            </p>
+            <p>
+              Notice that <m>\mathbb{P}(S \mid F) \approx 0.774</m> while <m>\mathbb{P}(F \mid S) = 0.4</m>. The numerator is the same in both cases, but the denominators differ, because we are conditioning on different events. In general, <m>\mathbb{P}(A \mid B)</m> and <m>\mathbb{P}(B \mid A)</m> are different quantities, and confusing them is one of the most common errors in reasoning about probability. A spam filter wants to know the first quantity (<q>given the words I see, how likely is this spam?</q>), but the second is what is easiest to estimate from labeled data. We will see how to convert between them soon.
+            </p>
+          </li>
+        </ol>
       </p>
     </solution>
   </example>
