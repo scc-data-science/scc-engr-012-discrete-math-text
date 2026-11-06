@@ -19,6 +19,11 @@
           </li>
           <li>
             <p>
+              <m>\mathbb{P}(A^{c}) = 1 - \mathbb{P}(A)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
               If <m>A \subseteq B</m> then <m>\mathbb{P}(A) \leq \mathbb{P}(B)</m>.
             </p>
           </li>
@@ -46,6 +51,11 @@
                 1 = \mathbb{P}(\Omega) = \mathbb{P}(\Omega \cup \varnothing) = \mathbb{P}(\Omega) + \mathbb{P}(\varnothing).
               </md>
               Since <m>\mathbb{P}(\Omega) = 1</m>, we conclude <m>\mathbb{P}(\varnothing) = 0</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Left as an exercise.
             </p>
           </li>
           <li>
