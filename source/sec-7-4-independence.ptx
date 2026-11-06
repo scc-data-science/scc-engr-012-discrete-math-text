@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-7-4-independence" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Independence</title>
+
+  <p>
+    In <xref ref="sec-7-3-cond-prob"/>, we spent considerable time discussing how we can use information about an event <m>B</m> to update our understanding of an event <m>A</m>. There's an interesting special case, however, when conditioning on <m>B</m> gives us no additional information about <m>A</m>. In this section, we consider events of this class.
+  </p>
+
+  <definition xml:id="def-7-4-independent">
+    <statement>
+      <p>
+        Let <m>A</m> and <m>B</m> be events. If
+        <md>
+          \mathbb{P}(A \mid B) = \mathbb{P}(A)
+        </md>
+        then we say that <m>A</m> and <m>B</m> are <em>independent events</em>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    You might be concerned about the asymmetry in the definition. However, if <m>A</m> and <m>B</m> are independent, then so too are <m>B</m> and <m>A</m>. Let's see why.
+  </p>
+  
+  <p>
+    If <m>A</m> and <m>B</m> are independent, then:
+    <md>
+      \mathbb{P}(A \mid B) = \mathbb{P}(A)
+    </md>
+    Then, from <xref ref="def-7-3-cond-prob"/>, we find:
+    <md>
+      \mathbb{P}(A) = \mathbb{P}(A \mid B) = \frac{\mathbb{P}(A \cap B)}{\mathbb{P}(B)}
+    </md>
+    from which it follows:
+    <md>
+      \mathbb{P}(A \cap B) = \mathbb{P}(A) \mathbb{P}(B).
+    </md>
+    This is the most useful application of independence: we can decouple a joint probability into a product of probabilities.
+  </p>
+
+  <theorem xml:id="thm-7-4-independent">
+    <statement>
+      <p>
+        Suppose <m>A</m> and <m>B</m> are independent events. Then,
+        <md>
+          \mathbb{P}(A \cap B) = \mathbb{P}(A) \mathbb{P}(B).
+        </md>
+      </p>
+    </statement>
+  </theorem>
+
+  <p>
+    Let's look at some examples of independence.
+  </p>
+
+  <example xml:id="ex-7-4-independent-1">
+    <title>Independent Events: Rolling Two Dice</title>
+    <statement>
+      <p>
+        Two fair six-sided dice are rolled. Let <m>A</m> be the event
+        that the first die shows an even number, and let <m>B</m> be
+        the event that the second die shows a number greater than 4.
+      </p>
+      <p>
+        Determine whether the events <m>A</m> and <m>B</m> are independent.
+        Then find the probability that both events occur.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Since each die is fair, the probability of rolling an even number
+        on the first die is:
+        <md>
+          \mathbb{P}(A) = \frac{3}{6} = \frac{1}{2}.
+        </md>
+        Similarly, the probability of rolling a number greater than 4
+        on the second die is:
+        <md>
+          \mathbb{P}(B) = \frac{2}{6} = \frac{1}{3}.
+        </md>
+      </p>
+      <p>
+        To determine whether the events are independent, we use the
+        definition of independence, <xref ref="def-7-4-independent"/>
+        In particular, we check whether <m>\mathbb{P}(A \mid B) = \mathbb{P}(A)</m>.
+      </p>
+
+      <p>
+        The event <m>B</m> occurs when the second die shows either 5 or 6.
+        Given that <m>B</m> has occurred, the first die can still show
+        any of its six possible outcomes. Thus, the conditional probability
+        that the first die shows an even number is:
+        <md>
+          \mathbb{P}(A \mid B) = \frac{3}{6} = \frac{1}{2}.
+        </md>
+      </p>
+
+      <p>
+        Since
+        <md>
+          \mathbb{P}(A \mid B) = \mathbb{P}(A),
+        </md>
+        the events <m>A</m> and <m>B</m> are independent.
+      </p>
+
+      <p>
+        Finally, using <xref ref="thm-7-4-independent"/>, the probability that
+        both events occur is:
+        <md>
+          <mrow> \mathbb{P}(A \cap B) \amp = \mathbb{P}(A)\mathbb{P}(B) </mrow>
+          <mrow>   \amp = \frac{1}{2}\cdot\frac{1}{3} = \frac{1}{6}.    </mrow>
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="ex-7-4-independent-2">
+    <title>Independent Events: Analyzing Two Data Measurements</title>
+    <statement>
+      <p>
+        A data collection system performs two independent measurements. The probability that the first measurement is successfully recorded is 0.95, and the probability that the second measurement is successfully recorded is 0.90.
+      </p>
+      <p>
+        Let <m>A</m> be the event that the first measurement is successfully recorded, and let <m>B</m> be the event that the second measurement is successfully recorded.
+      </p>
+      <p>
+        Find the probability that both measurements are successfully recorded. Also, find the probability that at least one of the two measurements is not successfully recorded.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        We are told that the two measurements are independent. Therefore, the probability that both measurements are successfully recorded is the product of their individual probabilities:
+        <md>
+          <mrow> </mrow>
+          <mrow> \mathbb{P}(A \cap B) \amp = \mathbb{P}(A)\mathbb{P}(B) </mrow>
+          <mrow>   \amp = (0.95)(0.90) </mrow>
+          <mrow>   \amp = 0.855.       </mrow>
+        </md>
+        Thus, the probability that both measurements are successfully recorded is 0.855, or 85.5%.
+      </p>
+      <p>
+        Next, let <m>(A \cap B)^c</m> represent the event that at least one of the two measurements is not successfully recorded. Using the complement rule, we obtain:
+        <md>
+          <mrow> \mathbb{P}((A \cap B)^c) \amp = 1 - \mathbb{P}(A \cap B) </mrow>
+          <mrow>   \amp = 1 - 0.855 </mrow>
+          <mrow>   \amp = 0.145.    </mrow>
+        </md>
+        Therefore, the probability that at least one measurement is not successfully recorded is 0.145, or 14.5%.
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    We can extend the definition of independence to arbitrarily many events by extending <xref ref="thm-7-4-independent"/> as follows:
+  </p>
+
+  <theorem xml:id="thm-7-4-independent-several">
+    <statement>
+      <p>
+        We say that events <m>A_1, A_2, \ldots, A_n</m> are <em>independent</em> if
+        <md>
+          \mathbb{P} \left( \bigcap_{k \in S} A_k \right) = \prod_{k \in S} \mathbb{P}(A_k),
+        </md>
+        where <m>S</m> represents all subsets of <m>\{1, 2, \ldots, n\}</m> with at least two elements.
+      </p>
+    </statement>
+  </theorem>
+
+  <p>
+    For example, for three events <m>A_1, A_2, A_3</m>, <xref ref="thm-7-4-independent-several"/> reduces to satisfying the four following equations:
+    <md>
+      <mrow> \mathbb{P}(A_1 \cap A_2) \amp = \mathbb{P}(A_1) \mathbb{P}(A_2) </mrow>
+      <mrow> \mathbb{P}(A_1 \cap A_3) \amp = \mathbb{P}(A_1) \mathbb{P}(A_3) </mrow>
+      <mrow> \mathbb{P}(A_2 \cap A_3) \amp = \mathbb{P}(A_2) \mathbb{P}(A_3) </mrow>
+      <mrow> \mathbb{P}(A_1 \cap A_2 \cap A_3) \amp = \mathbb{P}(A_1) \mathbb{P}(A_2) \mathbb{P}(A_3) </mrow>
+    </md>
+  </p>
+
+  <p>
+    This might look needlessly complicated. You might have one of the following arguments:
+    <ol>
+      <li>
+        <p>
+          Isn't pairwise independence enough? That is, if <m>\mathbb{P}(A_i \cap A_j) = \mathbb{P}(A_i) \mathbb{P}(A_j)</m> for an choice of <m>i \neq j</m>, isn't that enough to guarantee independence?
+        </p>
+      </li>
+      <li>
+        <p>
+          Isn't the condition <m>\mathbb{P} \left( \bigcap_{k = 1}^n A_k \right) = \prod_{k = 1}^n \mathbb{P}(A_k)</m> enough? Why do we need to deal with the pairwise intersections too?
+        </p>
+      </li>
+    </ol>
+    These are good questions. It turns out that we need both pairwise independence and the condition in list item #2 to really guarantee that knowledge of any given event <m>A_k</m> is not gained by knowledge of any of the other <m>A_j</m>. You'll provide some justification for this in the homework for this week.
+  </p>
+
+  <p>
+    A popular applied example of independence involves modeling the failure (or reliability) of systems containing many components. Though not always physically realistic, it is often useful to assume that the failure rates of each subcomponent are independent. We'll explmore one such example below.
+  </p>
+
+  <example xml:id="ex-7-4-independent-3">
+    <title>Failure Analysis: circuit of Light Bulbs</title>
+    <statement>
+      <p>
+        A subset of a larger electrical circuit is shown in <xref ref="fig-7-4-circuit-independent-events"/>. Suppose that each component, <m>B_1, \ldots, B_5</m>, has a probability <m>p</m> of failure at any given moment (such that each failure event is independent).
+      </p>
+
+      <figure xml:id="fig-7-4-circuit-independent-events">
+        <caption>
+          A circuit containing bulbs connected in series and in parallel.
+        </caption>
+        <image width="100%">
+          <latex-image>
+            \begin{tikzpicture}[
+              bulb/.style={
+                circle,
+                draw,
+                thick,
+                minimum size=5mm,
+                inner sep=0pt,
+                font=\scriptsize
+              },
+              wire/.style={thick}
+            ]
+
+            % First bulb
+            \draw[wire] (0,0) -- (1.5,0);
+            \node[bulb] (B1) at (1.8,0) {$B_1$};
+
+            % Parallel branches
+            \draw[wire] (B1.east) -- (2.5,0);
+            \draw[wire] (2.5,0) -- (2.5,1);
+            \draw[wire] (2.5,0) -- (2.5,-1);
+
+            \draw[wire] (2.5,1) -- (3.5,1);
+            \node[bulb] (B2) at (3.8,1) {$B_2$};
+            \draw[wire] (B2.east) -- (5,1);
+
+            \draw[wire] (2.5,-1) -- (3.5,-1);
+            \node[bulb] (B3) at (3.8,-1) {$B_3$};
+            \draw[wire] (B3.east) -- (5,-1);
+
+            % Rejoin parallel branches
+            \draw[wire] (5,1) -- (5,0);
+            \draw[wire] (5,-1) -- (5,0);
+
+            % Remaining series bulbs
+            \draw[wire] (5,0) -- (6,0);
+            \node[bulb] (B4) at (6.3,0) {$B_4$};
+
+            \draw[wire] (B4.east) -- (7.3,0);
+            \node[bulb] (B5) at (7.6,0) {$B_5$};
+
+            \draw[wire] (B5.east) -- (8.6,0);
+
+            % Terminals
+            \fill (0,0) circle (1.5pt);
+            \fill (8.6,0) circle (1.5pt);
+
+            \node[below] at (0,0) {Input};
+            \node[below] at (8.6,0) {Output};
+
+            \end{tikzpicture}
+          </latex-image>
+          <shortdescription>A circuit containing bulbs connected in series and in parallel. See imagine description for more detail</shortdescription>
+          <description>
+            <p>
+              A circuit consisting of five light bulbs, labeled <m>B_1</m> through <m>B_5</m>. Bulb <m>B_1</m> is connected in series with a parallel section containing bulbs <m>B_2</m> and <m>B_3</m>. The two parallel branches then rejoin and connect in series to bulbs <m>B_4</m> and <m>B_5</m>. The circuit has an input terminal on the left and an output terminal on the right.
+            </p>
+          </description>
+        </image>
+      </figure>
+
+      <p>
+        Ideally, current will flow from the input terminal, through <m>B_1</m>, and will then split at the junction leading to <m>B_2</m> and <m>B_3</m>. The bifurcated current will then combine again at the junction leading to <m>B_4</m> and will flow through <m>B_4</m> and <m>B_5</m> before flowing out of the output terminal.
+      </p>
+
+      <aside>
+        <p>
+          <m>B_2</m> and <m>B_3</m> are said to be <em>wired in parallel</em>, while <m>B_4</m> and <m>B_5</m> are said to be <em>wired in series</em>.
+        </p>
+      </aside>
+
+      <p>
+        Current will flow through the circuit if current can flow through every bulb connected in series and at least one of the bulbs connected in parallel. So, what is the probability that current will flow from the input terminal to the output terminal? That is, what is the probability that the circuit overall will not fail?
+      </p>
+
+    </statement>
+
+    <solution>
+      <p>
+        Current will flow through the circut if:
+        <ol>
+          <li><p><m>B_1</m> does not fail, and;</p></li>
+          <li><p>either <m>B_2</m> or <m>B_3</m> does not fail, and;</p></li>
+          <li><p><m>B_4</m> does not fail, and;</p></li>
+          <li><p><m>B_5</m> does not fail.</p></li>
+        </ol>
+        Let <m>S</m> denote the event that current flows through the circuit, and let <m>S_i</m> denote the event that current flows through <m>B_i</m>. Then, the above impies that:
+        <md>
+          \mathbb{P}(S)
+            = \mathbb{P}(S_1 \cap [S_2 \cup S_3] \cap S_4 \cap S_5).
+        </md>
+        Since we know the events are independent, we can decompose the intersections into products using <xref ref="thm-7-4-independent-several"/> to get:
+        <md>
+          \mathbb{P}(S)
+            = \mathbb{P}(S_1) \mathbb{P}(S_2 \cup S_3) \mathbb{P}(S_4) \mathbb{P}(S_5).
+        </md>
+        Then, using equation 4 of <xref ref="thm-7-2-prob-laws"/>, we can write
+        <md>
+          <mrow>
+            \mathbb{P}(S_2 \cup S_3)
+              \amp = \mathbb{P}(S_2) + \mathbb{P}(S_3) - \mathbb{P}(S_2 \cap S_3)
+          </mrow>
+          <mrow>
+              \amp = \mathbb{P}(S_2) + \mathbb{P}(S_3) - \mathbb{P}(S_2)\mathbb{P}(S_2)
+          </mrow>
+        </md>
+        Now, notice from the problem statement that each component <em>fails</em> with probability <m>p</m>. So, <m>\mathbb{P}(S_2) = 1 - p</m>, and so:
+        <md>
+          \mathbb{P}(S_2 \cup S_3) = 2(1 - p) - (1 - p)^2 = 1 - p^2
+        </md>
+        and therefore:
+        <md>
+          \mathbb{P}(S)
+            = (1 - p)^3 \cdot (1 - p^2).
+        </md>
+      </p>
+    </solution>
+  </example>
+
+
+  
+
+</section>
