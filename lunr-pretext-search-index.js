@@ -1675,6 +1675,51 @@ var ptx_lunr_docs = [
   "body": " Failure Analysis: circuit of Light Bulbs   A subset of a larger electrical circuit is shown in . Suppose that each component, , has a probability of failure at any given moment (such that each failure event is independent).   A circuit containing bulbs connected in series and in parallel.    A circuit containing bulbs connected in series and in parallel. See imagine description for more detail   A circuit consisting of five light bulbs, labeled through . Bulb is connected in series with a parallel section containing bulbs and . The two parallel branches then rejoin and connect in series to bulbs and . The circuit has an input terminal on the left and an output terminal on the right.     Ideally, current will flow from the input terminal, through , and will then split at the junction leading to and . The bifurcated current will then combine again at the junction leading to and will flow through and before flowing out of the output terminal.    and are said to be wired in parallel , while and are said to be wired in series .   Current will flow through the circuit if current can flow through every bulb connected in series and at least one of the bulbs connected in parallel. So, what is the probability that current will flow from the input terminal to the output terminal? That is, what is the probability that the circuit overall will not fail?    Current will flow through the circut if:  does not fail, and;  either or does not fail, and;  does not fail, and;  does not fail.  Let denote the event that current flows through the circuit, and let denote the event that current flows through . Then, the above impies that: Since we know the events are independent, we can decompose the intersections into products using to get: Then, using equation 4 of , we can write Now, notice from the problem statement that each component fails with probability . So, , and so: and therefore:    "
 },
 {
+  "id": "sec-7-6-bayes-theorem",
+  "level": "1",
+  "url": "sec-7-6-bayes-theorem.html",
+  "type": "Section",
+  "number": "7.5",
+  "title": "Bayes’ Theorem",
+  "body": " Bayes' Theorem  There is a very interesting consequence of that follows from the fact that, for any two sets, . In particular, notice that since Multiplying both sides by the denominator, it follows that Swapping and , we get: Finally, since , we know , from which it follows: Solving for one of the conditional probability, we arrive at the aforementioned interesting consequence: Bayes' Theorem!   Bayes' Theorem   Let and events in a sample space with . Then,     In the typical lingo, we have names for each of the factors in :      Posterior probability , : The updated probability of event occurring given that event is true.     Likelihood , : The probability of observing evidence given that event is true.     Prior probability , : The initial probability of event before considering new evidence .     Marginal probability (evidence), : The total probability of observing evidence across all possible scenarios.     This theorem is actually quite remarkable, in spite of its simplicity. It is the foundation of Bayesian statistics , a major branch of the field, and it is used well beyond the classroom. For example, the Phase III clinical trial of the Pfizer-BioNTech COVID-19 vaccine (BNT162b2) used a Bayesian design and analysis for its primary efficacy endpoints. Essentially, the theorem tells us how to update the probability of an event in light of new evidence. We start with our initial belief about the event (the prior), weigh it by how likely the evidence would be if the event were true (the likelihood), and then normalize by how likely the evidence is overall (the marginal probability).  Let's look at example to motivate the utility of this theorem.   A Medical Screening Test   A certain disease affects of a population. A screening test for the disease is not perfect:   If a person has the disease, the test comes back positive of the time.    If a person does not have the disease, the test still comes back positive of the time (a false positive ).   A person is chosen at random from the population and tests positive. What is the probability that they actually have the disease?     Step 1: Define the events. Let be the event that the person has the disease, and let be the event that the person tests positive. Then is the event that the person does not have the disease.   Step 2: Translate the problem into probabilities. The problem gives us Since and are complementary, . We want the posterior probability .   Step 3: Identify the pieces of Bayes' Theorem. By , The prior and the likelihood were given to us directly. The denominator , however, was not, so we need to compute it ourselves.   Step 4: Compute the denominator. A person can test positive in exactly two ways: they have the disease and test positive, or they do not have the disease and test positive. These two possibilities cannot happen at the same time, so Using the rearranged definition of conditional probability, , and likewise for , this becomes So of all people test positive.   Step 5: Plug everything into Bayes' Theorem.    Even after a positive test, the probability that the person has the disease is only about .    This result surprises many people, since the test seems quite accurate. To see why it is correct, imagine a population of people:    of them, or people, have the disease. Of these, test positive, which is people.    The other people do not have the disease. Of these, test positive, which is people.   In total, people test positive, but only of them are actually sick. Hence the fraction of positive tests that are true positives is exactly matching our answer from Bayes' Theorem. Notice that is precisely the denominator that we computed in Step 4.  The key lesson is the role of the prior. Because the disease is rare, the healthy people vastly outnumber the sick people, so even a small false positive rate produces many more false positives than true positives. The posterior is a balance between the prior (how rare the disease is) and the likelihood (how well the test detects it), normalized by the marginal probability of a positive test.  The logic outlined in Step 4 is particulary useful. The events and formed a partition of the sample space, meaning that either happened, or happened. We can extend this idea further to get the following result.   Law of Total Probability   Let be a partition of the sample space. Then the probability of event can be written as:     If is a partition of the sample space, then: where for any in . Then, The rest follows from .     allows us to rewrite in a slightly more useful way.   Bayes' Theorem with Total Probability   Suppose is a partition of a sample space and is an event. Then,     "
+},
+{
+  "id": "thm-7-6-bayes",
+  "level": "2",
+  "url": "sec-7-6-bayes-theorem.html#thm-7-6-bayes",
+  "type": "Theorem",
+  "number": "7.5.1",
+  "title": "Bayes’ Theorem.",
+  "body": " Bayes' Theorem   Let and events in a sample space with . Then,    "
+},
+{
+  "id": "ex-7-6-bayes-medical-test",
+  "level": "2",
+  "url": "sec-7-6-bayes-theorem.html#ex-7-6-bayes-medical-test",
+  "type": "Example",
+  "number": "7.5.2",
+  "title": "A Medical Screening Test.",
+  "body": " A Medical Screening Test   A certain disease affects of a population. A screening test for the disease is not perfect:   If a person has the disease, the test comes back positive of the time.    If a person does not have the disease, the test still comes back positive of the time (a false positive ).   A person is chosen at random from the population and tests positive. What is the probability that they actually have the disease?     Step 1: Define the events. Let be the event that the person has the disease, and let be the event that the person tests positive. Then is the event that the person does not have the disease.   Step 2: Translate the problem into probabilities. The problem gives us Since and are complementary, . We want the posterior probability .   Step 3: Identify the pieces of Bayes' Theorem. By , The prior and the likelihood were given to us directly. The denominator , however, was not, so we need to compute it ourselves.   Step 4: Compute the denominator. A person can test positive in exactly two ways: they have the disease and test positive, or they do not have the disease and test positive. These two possibilities cannot happen at the same time, so Using the rearranged definition of conditional probability, , and likewise for , this becomes So of all people test positive.   Step 5: Plug everything into Bayes' Theorem.    Even after a positive test, the probability that the person has the disease is only about .   "
+},
+{
+  "id": "thm-7-6-total-prob",
+  "level": "2",
+  "url": "sec-7-6-bayes-theorem.html#thm-7-6-total-prob",
+  "type": "Theorem",
+  "number": "7.5.3",
+  "title": "Law of Total Probability.",
+  "body": " Law of Total Probability   Let be a partition of the sample space. Then the probability of event can be written as:     If is a partition of the sample space, then: where for any in . Then, The rest follows from .   "
+},
+{
+  "id": "thm-7-6-bayes-total-prob",
+  "level": "2",
+  "url": "sec-7-6-bayes-theorem.html#thm-7-6-bayes-total-prob",
+  "type": "Theorem",
+  "number": "7.5.4",
+  "title": "Bayes’ Theorem with Total Probability.",
+  "body": " Bayes' Theorem with Total Probability   Suppose is a partition of a sample space and is an event. Then,    "
+},
+{
   "id": "backmatter-2",
   "level": "1",
   "url": "backmatter-2.html",
