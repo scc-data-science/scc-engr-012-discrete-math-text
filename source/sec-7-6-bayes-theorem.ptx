@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-7-6-bayes-theorem" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Bayes' Theorem</title>
+
+  <p>
+    There is a very interesting consequence of <xref ref="def-7-3-cond-prob"/> that follows from the fact that, for any two sets, <m>A \cap B = B \cap A</m>. In particular, notice that since
+    <md>
+      \mathbb{P}(A \mid B) = \frac{\mathbb{P}(A \cap B)}{\mathbb{P}(B)},
+    </md>
+    Multiplying both sides by the denominator, it follows that
+    <md>
+      \mathbb{P}(A \cap B) = \mathbb{P}(A \mid B) \mathbb{P}(B).
+    </md>
+    Swapping <m>A</m> and <m>B</m>, we get:
+    <md>
+      \mathbb{P}(B \cap A) = \mathbb{P}(B \mid A) \mathbb{P}(A)
+    </md>
+    Finally, since <m>A \cap B = B \cap A</m>, we know <m>\mathbb{P}(A \cap B) = \mathbb{P}(B \cap A)</m>, from which it follows:
+    <md>
+      \mathbb{P}(A \mid B) \mathbb{P}(B) = \mathbb{P}(A \cap B) = \mathbb{P}(B \cap A) = \mathbb{P}(B \mid A) \mathbb{P}(A).
+    </md>
+    Solving for one of the conditional probability, we arrive at the aforementioned interesting consequence: Bayes' Theorem!
+  </p>
+
+  <theorem xml:id="thm-7-6-bayes">
+    <title>Bayes' Theorem</title>
+    <statement>
+      <p>
+        Let <m>A</m> and <m>B</m> events in a sample space <m>\Omega</m> with <m>\mathbb{P}(B) \neq 0</m>. Then,
+        <md>
+          \mathbb{P}(A \mid B) = \frac{\mathbb{P}(B \mid A) \mathbb{P}(A)}{\mathbb{P}(B)}.
+        </md>
+      </p>
+    </statement>
+  </theorem>
+
+  <p>
+    In the typical lingo, we have names for each of the factors in <xref ref="thm-7-6-bayes"/>:
+  </p>
+  
+  <p>
+    <ul>
+      <li>
+        <p>
+          <em>Posterior probability</em>, <m>\mathbb{P}(A \mid B)</m>: The updated probability of event <m>A</m> occurring given that event <m>B</m> is true.
+        </p>
+      </li>
+      <li>
+        <p>
+          <em>Likelihood</em>, <m>\mathbb{P}(B \mid A)</m>: The probability of observing evidence <m>B</m> given that event <m>A</m> is true.
+        </p>
+      </li>
+      <li>
+        <p>
+          <em>Prior probability</em>, <m>\mathbb{P}(A)</m>: The initial probability of event <m>A</m> before considering new evidence <m>B</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <em>Marginal probability</em> (evidence), <m>\mathbb{P}(B)</m>: The total probability of observing evidence <m>B</m> across all possible scenarios.
+        </p>
+      </li>
+    </ul>
+  </p>
+  
+  <p>
+    This theorem is actually quite remarkable, in spite of its simplicity. It is the foundation of <em>Bayesian statistics</em>, a major branch of the field, and it is used well beyond the classroom. For example, the Phase III clinical trial of the Pfizer-BioNTech COVID-19 vaccine (BNT162b2) used a Bayesian design and analysis for its primary efficacy endpoints. Essentially, the theorem tells us how to update the probability of an event in light of new evidence. We start with our initial belief about the event (the prior), weigh it by how likely the evidence would be if the event were true (the likelihood), and then normalize by how likely the evidence is overall (the marginal probability).
+  </p>
+  
+  <p>
+    Let's look at example to motivate the utility of this theorem.
+  </p>
+
+  <example xml:id="ex-7-6-bayes-medical-test">
+    <title>A Medical Screening Test</title>
+    <statement>
+      <p>
+        A certain disease affects <m>1\%</m> of a population. A screening test for the disease is not perfect:
+        <ul>
+          <li>
+            <p>
+              If a person has the disease, the test comes back positive <m>95\%</m> of the time.
+            </p>
+          </li>
+          <li>
+            <p>
+              If a person does not have the disease, the test still comes back positive <m>5\%</m> of the time (a <em>false positive</em>).
+            </p>
+          </li>
+        </ul>
+        A person is chosen at random from the population and tests positive. What is the probability that they actually have the disease?
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        <em>Step 1: Define the events.</em> Let <m>D</m> be the event that the person has the disease, and let <m>T</m> be the event that the person tests positive. Then <m>D^c</m> is the event that the person does not have the disease.
+      </p>
+
+      <p>
+        <em>Step 2: Translate the problem into probabilities.</em> The problem gives us
+        <md>
+          <mrow>\mathbb{P}(D) \amp = 0.01, </mrow>
+          <mrow>\mathbb{P}(T \mid D) \amp = 0.95, </mrow>
+          <mrow>\mathbb{P}(T \mid D^c) \amp = 0.05. </mrow>
+        </md>
+        Since <m>D</m> and <m>D^c</m> are complementary, <m>\mathbb{P}(D^c) = 1 - 0.01 = 0.99</m>. We want the posterior probability <m>\mathbb{P}(D \mid T)</m>.
+      </p>
+
+      <p>
+        <em>Step 3: Identify the pieces of Bayes' Theorem.</em> By <xref ref="thm-7-6-bayes"/>,
+        <md>
+          \mathbb{P}(D \mid T) = \frac{\mathbb{P}(T \mid D)\,\mathbb{P}(D)}{\mathbb{P}(T)}.
+        </md>
+        The prior <m>\mathbb{P}(D)</m> and the likelihood <m>\mathbb{P}(T \mid D)</m> were given to us directly. The denominator <m>\mathbb{P}(T)</m>, however, was not, so we need to compute it ourselves.
+      </p>
+
+      <p>
+        <em>Step 4: Compute the denominator.</em> A person can test positive in exactly two ways: they have the disease and test positive, or they do not have the disease and test positive. These two possibilities cannot happen at the same time, so
+        <md>
+          <mrow>\mathbb{P}(T) \amp = \mathbb{P}(T \cap D) + \mathbb{P}(T \cap D^c) </mrow>
+        </md>
+        Using the rearranged definition of conditional probability, <m>\mathbb{P}(T \cap D) = \mathbb{P}(T \mid D)\,\mathbb{P}(D)</m>, and likewise for <m>D^c</m>, this becomes
+        <md>
+          <mrow>\mathbb{P}(T) \amp = \mathbb{P}(T \mid D)\,\mathbb{P}(D) + \mathbb{P}(T \mid D^c)\,\mathbb{P}(D^c) </mrow>
+          <mrow> \amp = (0.95)(0.01) + (0.05)(0.99) </mrow>
+          <mrow> \amp = 0.0095 + 0.0495 </mrow>
+          <mrow> \amp = 0.059. </mrow>
+        </md>
+        So <m>5.9\%</m> of all people test positive.
+      </p>
+
+      <p>
+        <em>Step 5: Plug everything into Bayes' Theorem.</em>
+        <md>
+          <mrow>\mathbb{P}(D \mid T) \amp = \frac{(0.95)(0.01)}{0.059} </mrow>
+          <mrow> \amp = \frac{0.0095}{0.059} </mrow>
+          <mrow> \amp = \frac{19}{118} \approx 0.161. </mrow>
+        </md>
+      </p>
+
+      <p>
+        Even after a positive test, the probability that the person has the disease is only about <m>16\%</m>.
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    This result surprises many people, since the test seems quite accurate. To see why it is correct, imagine a population of <m>10{,}000</m> people:
+    <ul>
+      <li>
+        <p>
+          <m>1\%</m> of them, or <m>100</m> people, have the disease. Of these, <m>95\%</m> test positive, which is <m>95</m> people.
+        </p>
+      </li>
+      <li>
+        <p>
+          The other <m>9{,}900</m> people do not have the disease. Of these, <m>5\%</m> test positive, which is <m>495</m> people.
+        </p>
+      </li>
+    </ul>
+    In total, <m>95 + 495 = 590</m> people test positive, but only <m>95</m> of them are actually sick. Hence the fraction of positive tests that are true positives is
+    <md>
+      \frac{95}{590} = \frac{19}{118} \approx 0.161,
+    </md>
+    exactly matching our answer from Bayes' Theorem. Notice that <m>590 / 10{,}000 = 0.059</m> is precisely the denominator <m>\mathbb{P}(T)</m> that we computed in Step 4.
+  </p>
+
+  <p>
+    The key lesson is the role of the prior. Because the disease is rare, the healthy people vastly outnumber the sick people, so even a small false positive rate produces many more false positives than true positives. The posterior is a balance between the <em>prior</em> (how rare the disease is) and the <em>likelihood</em> (how well the test detects it), normalized by the <em>marginal probability</em> of a positive test.
+  </p>
+
+  <p>
+    The logic outlined in Step 4 is particulary useful. The events <m>D</m> and <m>D^c</m> formed a <em>partition</em> of the sample space, meaning that either <m>D</m> happened, or <m>D^c</m> happened. We can extend this idea further to get the following result.
+  </p>
+
+  <theorem xml:id="thm-7-6-total-prob">
+    <title>Law of Total Probability</title>
+    <statement>
+      <p>
+        Let <m>B_1, B_2, \ldots, B_n</m> be a partition of the sample space. Then the probability of event <m>A</m> can be written as:
+        <md>
+          \mathbb{P}(A) = \sum_{k=1}^n \mathbb{P}(A \cap B_k) = \sum_{k=1}^n \mathbb{P}(A \mid B_k) \mathbb{P}(B_k).
+        </md>
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+        If <m>B_1, B_2, \ldots, B_n</m> is a partition of the sample space, then:
+        <md>
+          \bigcup_{k = 1}^m B_k = \Omega,
+        </md>
+        where <m>B_k \cap B_{\ell} = \varnothing</m> for any <m>k \neq \ell</m> in <m>\{1, 2,  \ldots, n\}</m>. Then,
+        <md>
+          <mrow> \mathbb{P}(A) \amp = \mathbb{P}(A \cap \Omega) </mrow>
+          <mrow>               \amp = \mathbb{P}\left(A \cap \bigcup_{k = 1}^m B_k\right) </mrow>
+          <mrow>               \amp = \sum_{k=1}^n \mathbb{P}(A \cap B_k). </mrow>
+        </md>
+        The rest follows from <xref ref="def-7-3-cond-prob"/>.
+      </p>
+    </proof>
+  </theorem>
+
+  <p>
+    <xref ref="thm-7-6-total-prob"/> allows us to rewrite <xref ref="thm-7-6-bayes"/> in a slightly more useful way.
+  </p>
+
+  <theorem xml:id="thm-7-6-bayes-total-prob">
+    <title>Bayes' Theorem with Total Probability</title>
+    <statement>
+      <p>
+        Suppose <m>B_1, B_2, \ldots, B_n</m> is a partition of a sample space <m>\Omega</m> and <m>A</m> is an event. Then,
+        <md>
+          \mathbb{P}(B_k \mid A) = \frac{\mathbb{P}(A \mid B_k) \mathbb{P}(B_k)}{\sum_{\ell=1}^n \mathbb{P}(A \mid B_{\ell}) \mathbb{P}(B_{\ell})}.
+        </md>
+      </p>
+    </statement>
+  </theorem>
+  
+</section>
