@@ -1720,6 +1720,87 @@ var ptx_lunr_docs = [
   "body": " Bayes' Theorem with Total Probability   Suppose is a partition of a sample space and is an event. Then,    "
 },
 {
+  "id": "sec-7-7-random-variables",
+  "level": "1",
+  "url": "sec-7-7-random-variables.html",
+  "type": "Section",
+  "number": "7.6",
+  "title": "Random Variables",
+  "body": " Random Variables  Let's consider the experiment of flipping a fair coin three times, wherein we assume the tosses are independent. Suppose we are interested in keeping track of how many times we see a heads in this experiment. Let denote that number of heads. Then, Let's compute the probability of measuring heads for all possible values of . Notice that, regardless of , there are possible outcomes of this experiment, since there are three coin tosses and only two possible outcomes per toss. So:     If , then we have no heads in our list, hence we have .    If , then we need to count the number of ways to distribute one head among three coins. There are ways to do this, so we have .    If , then we need to count the number of ways to distribute two heads among three coins. There are ways to do this, so we have .    If , then all three tosses are heads, hence we have .     In total, we find:   When we enumerate all possible realizations of such an and compute their individual probabilities, the result is called the distribution of that experiment. When we treat the outcome of an experiment as a variable (like we did here with ), we call it a random variable . Let's define these terms more formally below.    A random variable is a numerical variable that represents the outcome of an experiment. More formally, it is a function that assigns a real number to each outcome of an experiment.    Below are some examples of random variables.   Rolling Two Dice   Suppose we roll two fair six-sided dice. The sample space consists of 36 ordered pairs . Defining gives us a random variable with support .     Counting Packet Loss   A batch of data packets is transmitted over a noisy channel, where each packet fails independently with probability . Let be the number of corrupted packets. This gives us a random variable with finite support: .     Web Scraping   A web scraper repeatedly pings an API until it receives a valid 200 OK response. Let be the total number of attempts required. Because the scraper could theoretically fail arbitrarily many times before succeeding, this gives us a random variable for which the support is countably infinite: .    Next, we formalize the notion of a distribution.    A discrete probability distribution is the set of all values of a discrete random variable, together with the corresponding probability. More accurately, a discrete probability distribution can be represented as the following set:     While is formally correct, it is almost never what people mean when they talk about distributions. When we speak of distributions, we're usually referring to the histogram of the distribution: one bar for each value in the support, whose height is . shows the histogram for the number of heads in three fair coin tosses. Notice that the bar heights sum to .   Distribution of the number of heads in three fair coin tosses    Bar chart with bars at 0, 1, 2 and 3 heads, with heights one eighth, three eighths, three eighths and one eighth.      For comparison, shows the distribution of the sum of two fair dice from . There are equally likely outcomes, and the sum can be obtained in of them, so . Unlike the coin example, the most likely value sits in the middle, at , and the probabilities fall off linearly on either side.   Distribution of the sum of two fair six-sided dice    Bar chart with bars at the sums 2 through 12. The heights rise from one thirty-sixth at 2 up to six thirty-sixths at 7, then fall symmetrically back to one thirty-sixth at 12.      We'll talk more about how to summarize these distributions in the next section.  "
+},
+{
+  "id": "def-7-7-random-variable",
+  "level": "2",
+  "url": "sec-7-7-random-variables.html#def-7-7-random-variable",
+  "type": "Definition",
+  "number": "7.6.1",
+  "title": "",
+  "body": "  A random variable is a numerical variable that represents the outcome of an experiment. More formally, it is a function that assigns a real number to each outcome of an experiment.   "
+},
+{
+  "id": "ex-7-7-rv-1",
+  "level": "2",
+  "url": "sec-7-7-random-variables.html#ex-7-7-rv-1",
+  "type": "Example",
+  "number": "7.6.2",
+  "title": "Rolling Two Dice.",
+  "body": " Rolling Two Dice   Suppose we roll two fair six-sided dice. The sample space consists of 36 ordered pairs . Defining gives us a random variable with support .   "
+},
+{
+  "id": "ex-7-7-rv-2",
+  "level": "2",
+  "url": "sec-7-7-random-variables.html#ex-7-7-rv-2",
+  "type": "Example",
+  "number": "7.6.3",
+  "title": "Counting Packet Loss.",
+  "body": " Counting Packet Loss   A batch of data packets is transmitted over a noisy channel, where each packet fails independently with probability . Let be the number of corrupted packets. This gives us a random variable with finite support: .   "
+},
+{
+  "id": "ex-7-7-rv-3",
+  "level": "2",
+  "url": "sec-7-7-random-variables.html#ex-7-7-rv-3",
+  "type": "Example",
+  "number": "7.6.4",
+  "title": "Web Scraping.",
+  "body": " Web Scraping   A web scraper repeatedly pings an API until it receives a valid 200 OK response. Let be the total number of attempts required. Because the scraper could theoretically fail arbitrarily many times before succeeding, this gives us a random variable for which the support is countably infinite: .   "
+},
+{
+  "id": "def-7-7-distribution",
+  "level": "2",
+  "url": "sec-7-7-random-variables.html#def-7-7-distribution",
+  "type": "Definition",
+  "number": "7.6.5",
+  "title": "",
+  "body": "  A discrete probability distribution is the set of all values of a discrete random variable, together with the corresponding probability. More accurately, a discrete probability distribution can be represented as the following set:    "
+},
+{
+  "id": "sec-7-7-random-variables-13",
+  "level": "2",
+  "url": "sec-7-7-random-variables.html#sec-7-7-random-variables-13",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "histogram "
+},
+{
+  "id": "fig-7-7-coin-histogram",
+  "level": "2",
+  "url": "sec-7-7-random-variables.html#fig-7-7-coin-histogram",
+  "type": "Figure",
+  "number": "7.6.6",
+  "title": "",
+  "body": " Distribution of the number of heads in three fair coin tosses    Bar chart with bars at 0, 1, 2 and 3 heads, with heights one eighth, three eighths, three eighths and one eighth.     "
+},
+{
+  "id": "fig-7-7-dice-histogram",
+  "level": "2",
+  "url": "sec-7-7-random-variables.html#fig-7-7-dice-histogram",
+  "type": "Figure",
+  "number": "7.6.7",
+  "title": "",
+  "body": " Distribution of the sum of two fair six-sided dice    Bar chart with bars at the sums 2 through 12. The heights rise from one thirty-sixth at 2 up to six thirty-sixths at 7, then fall symmetrically back to one thirty-sixth at 12.     "
+},
+{
   "id": "backmatter-2",
   "level": "1",
   "url": "backmatter-2.html",
