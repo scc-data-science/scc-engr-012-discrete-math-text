@@ -1801,6 +1801,60 @@ var ptx_lunr_docs = [
   "body": " Distribution of the sum of two fair six-sided dice    Bar chart with bars at the sums 2 through 12. The heights rise from one thirty-sixth at 2 up to six thirty-sixths at 7, then fall symmetrically back to one thirty-sixth at 12.     "
 },
 {
+  "id": "sec-7-8-expected-values",
+  "level": "1",
+  "url": "sec-7-8-expected-values.html",
+  "type": "Section",
+  "number": "7.7",
+  "title": "Expected Values",
+  "body": " Expected Values  Distributions are great, but they are complex to convey quickly. Sometimes, we need to convey meaning simply and without reference to the overall context. For example, the grade you earn in this class is a single number based on a rather significant amount of work done. Suppose, for the sake of simplicity, that the final grade was based only on two midterm exams and a final exam. Suppose further that you scored 80%, 90%, and 97%, respectively. If all assignments are weighted equally, what might be the best number to report? I could report the largest score, but that would not be an accurate summary of your progress. The same is true for the minimum. The most natural choice would be the arithmetic mean .    Let be a collection of real numbers. The arithmetic mean of these numbers is:     In the present case, the arithmetic mean of your grades would be:   The arithmetic mean has a few important properties.     It is sensitive to outliers. If one of the numbers is unusually large, the mean will be comparatively large. Similarly, if one of the numbers is unusually small, the mean will be comparatively small.    It lies within the range of the data. If denotes the smallest of the 's and the largest, then .     Suppose now that the 's are distinct values of a random variable out of an equiprobable experiment. Then, it would be reasonable to write: This form still makes sense when outcomes are not equally likely, so we adopt it as the definition. This is known as the expected value of a distribution and provides us with a reasonable measure of center .    Let be the support of a random variable . Then, the expected value of , denoted by , is defined by:     Essentially, we enumerate all possible outcomes of the random variable, weight each one by its probability, and then compute the sum.   Flipping a Fair Coin Three Times   What is the expected number of heads you would observe when flipping a fair coin three times?    We computed the distribution in the previous section!    Let denote the number of heads we observe. Then, our task is to find . From our introductory paragraph of , we know that: Then, applying , we have: Thus, the expected number of heads we should expect to see is 1.5.    There are two important observations that we can glean from :   The expected value is not even possible to observe. You cannot observe 1.5 heads from three coin tosses (well, unless the coin lands on its side, but let's just assume that's impossible). It does not need to be a value that our random variable can actually take, it just needs to provide a reasonable single-number summary.    The expected value sits directly at the center of the distribution. Take a look back at ! The distribution is symmetric, and the line of symmetry is at , precisely our expected value. In fact, is also sometimes referred to as the center of mass of the distribution, and it's fairly clear why in this case.      A Dice Game   You pay nothing to play the following game. You roll a fair six-sided die. If you roll a 6, you win . If you roll a 2 or a 4, you win . If you roll a 1, 3, or 5, you lose . What is your expected net winnings per play?    Group the six equally likely faces by the payout they produce, then find the probability of each payout.    Let denote your net winnings, in dollars, on one play. The support of is . Counting the faces that produce each payout, we have: As a check, these probabilities sum to . Applying : Thus, you should expect to win about per play. No single play can pay exactly this amount, but if you played many times, your average winnings per play would settle near it. The game slightly favors the player.     Sampling Mislabeled Records   A dataset contains 10 records, of which 4 are mislabeled. An analyst draws 2 records at random, without replacement, to audit. What is the expected number of mislabeled records in the sample?    There are equally likely pairs of records. Count how many pairs contain 0, 1, or 2 mislabeled records.    Let denote the number of mislabeled records in the sample, so the support of is . There are 6 correctly labeled records and 4 mislabeled ones. Counting pairs: As a check, . Applying : Thus, we expect 0.8 mislabeled records in a sample of two. Notice that this equals , the sample size times the overall fraction of mislabeled records. This is not a coincidence, and we will see why when we study the linearity of expectation.    "
+},
+{
+  "id": "def-7-8-mean",
+  "level": "2",
+  "url": "sec-7-8-expected-values.html#def-7-8-mean",
+  "type": "Definition",
+  "number": "7.7.1",
+  "title": "",
+  "body": "  Let be a collection of real numbers. The arithmetic mean of these numbers is:    "
+},
+{
+  "id": "def-7-8-expected-value",
+  "level": "2",
+  "url": "sec-7-8-expected-values.html#def-7-8-expected-value",
+  "type": "Definition",
+  "number": "7.7.2",
+  "title": "",
+  "body": "  Let be the support of a random variable . Then, the expected value of , denoted by , is defined by:    "
+},
+{
+  "id": "ex-7-8-ev-1",
+  "level": "2",
+  "url": "sec-7-8-expected-values.html#ex-7-8-ev-1",
+  "type": "Example",
+  "number": "7.7.3",
+  "title": "Flipping a Fair Coin Three Times.",
+  "body": " Flipping a Fair Coin Three Times   What is the expected number of heads you would observe when flipping a fair coin three times?    We computed the distribution in the previous section!    Let denote the number of heads we observe. Then, our task is to find . From our introductory paragraph of , we know that: Then, applying , we have: Thus, the expected number of heads we should expect to see is 1.5.   "
+},
+{
+  "id": "ex-7-8-ev-2",
+  "level": "2",
+  "url": "sec-7-8-expected-values.html#ex-7-8-ev-2",
+  "type": "Example",
+  "number": "7.7.4",
+  "title": "A Dice Game.",
+  "body": " A Dice Game   You pay nothing to play the following game. You roll a fair six-sided die. If you roll a 6, you win . If you roll a 2 or a 4, you win . If you roll a 1, 3, or 5, you lose . What is your expected net winnings per play?    Group the six equally likely faces by the payout they produce, then find the probability of each payout.    Let denote your net winnings, in dollars, on one play. The support of is . Counting the faces that produce each payout, we have: As a check, these probabilities sum to . Applying : Thus, you should expect to win about per play. No single play can pay exactly this amount, but if you played many times, your average winnings per play would settle near it. The game slightly favors the player.   "
+},
+{
+  "id": "ex-7-8-ev-3",
+  "level": "2",
+  "url": "sec-7-8-expected-values.html#ex-7-8-ev-3",
+  "type": "Example",
+  "number": "7.7.5",
+  "title": "Sampling Mislabeled Records.",
+  "body": " Sampling Mislabeled Records   A dataset contains 10 records, of which 4 are mislabeled. An analyst draws 2 records at random, without replacement, to audit. What is the expected number of mislabeled records in the sample?    There are equally likely pairs of records. Count how many pairs contain 0, 1, or 2 mislabeled records.    Let denote the number of mislabeled records in the sample, so the support of is . There are 6 correctly labeled records and 4 mislabeled ones. Counting pairs: As a check, . Applying : Thus, we expect 0.8 mislabeled records in a sample of two. Notice that this equals , the sample size times the overall fraction of mislabeled records. This is not a coincidence, and we will see why when we study the linearity of expectation.   "
+},
+{
   "id": "backmatter-2",
   "level": "1",
   "url": "backmatter-2.html",

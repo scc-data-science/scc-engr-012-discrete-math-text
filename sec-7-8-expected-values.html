@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Expected Values</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="_static/pretext/fonts/material-symbols-outlined.css">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<style>
+@counter-style ptx-marker-0 { system: extends lower-alpha; prefix: '('; suffix: ') '; }
+</style>
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer data-pretext-mathjax="true" onerror="this.dataset.loadFailed = 'true';" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="ENGR 012 Course Notes">
+<meta property="og:title" content="ENGR 012 Course Notes">
+<meta property="book:title" content="ENGR 012 Course Notes">
+<meta name="twitter:description" content="Discrete Mathematics for Scientists and Engineers">
+<meta property="og:description" content="Discrete Mathematics for Scientists and Engineers">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.56"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.56"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.4.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.82b21a4699b89209.bundle.js"></script><script src="_static/prefix-23.7d27cb317c36911a.bundle.js"></script><script src="_static/prefix-runestone.35a40fea06647cf2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-runestone.7062ede5334282a6.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="my-great-book.html"><span class="title">ENGR 012 Course Notes</span> <span class="subtitle">Discrete Mathematics for Scientists and Engineers</span></a></div>
+<p class="byline">Cody Vig</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-embed-button" class="ptx-embed-button button" title="Embed this page"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe86f;</span><span class="name">Embed</span></button><dialog class="ptx-dialog ptx-embed-popup" id="ptx-embed-popup"><div class="ptx-embed-popup-controls">
+<p>Copy the code below to embed this page in your own website or LMS page.</p>
+<button class="ptx-embed-close-button button" id="ptx-embed-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-embed-code-container">
+<textarea class="ptx-embed-code-textbox" id="ptx-embed-code-textbox" readonly aria-label="Embed"><iframe src="https://example.com/embed" width="100%" height="1000"></iframe></textarea><button autofocus="autofocus" class="ptx-embed-copy-button button" id="ptx-embed-copy-button" title="Copy"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe14d;</span><span class="name">Copy</span></button>
+</div></dialog><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="sec-7-7-random-variables.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-7-probability-theory.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="1" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-1-propositional-logic.html" class="internal"><span class="codenumber">1</span> <span class="title">Introduction to Propositional Logic</span></a></div>
+<ul id="ptx-toc-group-ch-1-propositional-logic" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-1-propositional-logic-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-1-1-statements.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Statements, Arguments, and Truth Tables</span></a></div>
+<ul id="ptx-toc-group-sec-1-1-statements" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-1-statements.html#logic-overview" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Overview</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-1-1-statements.html#stmt-and-args" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Statements and Arguments.</span></a></div>
+<ul id="ptx-toc-group-stmt-and-args" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-1-statements.html#truth-tables" class="internal"><span class="codenumber">1.1.2.1</span> <span class="title">Truth Tables</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-1-statements.html#logical-equivalence" class="internal"><span class="codenumber">1.1.2.2</span> <span class="title">Logical Equivalence</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-1-statements.html#de-morgans-laws" class="internal"><span class="codenumber">1.1.2.3</span> <span class="title">De Morgan’s Laws</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-1-statements.html#tautologies-and-contradictions" class="internal"><span class="codenumber">1.1.2.4</span> <span class="title">Tautologies and Contradictions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-1-2-conditionals.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Conditionals and Biconditionals</span></a></div>
+<ul id="ptx-toc-group-sec-1-2-conditionals" class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-1-2-conditionals.html#conditionals" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Conditionals</span></a></div>
+<ul id="ptx-toc-group-conditionals" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-2-conditionals.html#representation-as-an-or-statement" class="internal"><span class="codenumber">1.2.1.1</span> <span class="title">Representation as an “Or” Statement</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-2-conditionals.html#contrapositive-converse-and-inverse" class="internal"><span class="codenumber">1.2.1.2</span> <span class="title">Contrapositive, Converse, and Inverse</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-1-2-conditionals.html#biconditionals" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Biconditionals</span></a></div>
+<ul id="ptx-toc-group-biconditionals" class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-2-conditionals.html#necessary-and-sufficient-conditions" class="internal"><span class="codenumber">1.2.2.1</span> <span class="title">Necessary and Sufficient Conditions</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-1-3-valid-arguments.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Valid and Invalid Arguments</span></a></div>
+<ul id="ptx-toc-group-sec-1-3-valid-arguments" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-3-valid-arguments.html#valid-arguments" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Valid Arguments</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-3-valid-arguments.html#invalid-arguments" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Invalid Arguments</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-3-valid-arguments.html#sound-vs-unsound-arguments" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Sound vs Unsound Arguments</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-2-predicate-logic.html" class="internal"><span class="codenumber">2</span> <span class="title">Introduction to Predicate Logic</span></a></div>
+<ul id="ptx-toc-group-ch-2-predicate-logic" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-2-predicate-logic-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-2-1-predicates.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Predicates</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-3-proof-theory.html" class="internal"><span class="codenumber">3</span> <span class="title">Introduction to Proof Theory</span></a></div>
+<ul id="ptx-toc-group-ch-3-proof-theory" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-3-proof-theory-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-3-1-proofs.html" class="internal"><span class="codenumber">3.1</span> <span class="title">An Introduction to Proofs</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-4-set-theory.html" class="internal"><span class="codenumber">4</span> <span class="title">Introduction to Set Theory</span></a></div>
+<ul id="ptx-toc-group-ch-4-set-theory" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-4-set-theory-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-4-1-basics.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Basics of Sets</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-5-number-theory.html" class="internal"><span class="codenumber">5</span> <span class="title">Introduction to Number Theory</span></a></div>
+<ul id="ptx-toc-group-ch-5-number-theory" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-5-number-theory-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-5-1-divisibility.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Divisibility</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-5-2-primes.html" class="internal"><span class="codenumber">5.2</span> <span class="title">The Prime Numbers</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-5-3-division-algorithm.html" class="internal"><span class="codenumber">5.3</span> <span class="title">The Division Algorithm</span></a></div>
+<ul id="ptx-toc-group-sec-5-3-division-algorithm" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-3-division-algorithm.html#sec-div-alg" class="internal"><span class="codenumber">5.3.1</span> <span class="title">The Division Algorithm</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-3-division-algorithm.html#subsec-gcd" class="internal"><span class="codenumber">5.3.2</span> <span class="title">The Greatest Common Divisor</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-3-division-algorithm.html#sec-euc-alg" class="internal"><span class="codenumber">5.3.3</span> <span class="title">The Euclidean Algorithm</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-5-4-modular-arithmetic.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Modular Arithmetic</span></a></div>
+<ul id="ptx-toc-group-sec-5-4-modular-arithmetic" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-4-modular-arithmetic.html#subsec-residue-classes" class="internal"><span class="codenumber">5.4.1</span> <span class="title">Residue Classes Modulo <span class="process-math">\(m\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-4-modular-arithmetic.html#subsec-mod-arith" class="internal"><span class="codenumber">5.4.2</span> <span class="title">Modular Arithmetic</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-5-5-modular-division.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Modular Division</span></a></div>
+<ul id="ptx-toc-group-sec-5-5-modular-division" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-5-modular-division.html#subsec-what-is-division" class="internal"><span class="codenumber">5.5.1</span> <span class="title">What is Division?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-5-modular-division.html#subsec-mod-inverse" class="internal"><span class="codenumber">5.5.2</span> <span class="title">Modular Inverses</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-5-6-diophantine-equations-and-congruences.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Diophantine Equations and Congruences</span></a></div>
+<ul id="ptx-toc-group-sec-5-6-diophantine-equations-and-congruences" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-6-diophantine-equations-and-congruences.html#subsec-diophantine" class="internal"><span class="codenumber">5.6.1</span> <span class="title">Diophantine Equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-6-diophantine-equations-and-congruences.html#subsec-mod-linear" class="internal"><span class="codenumber">5.6.2</span> <span class="title">Congruences of the form <span class="process-math">\(ax \equiv b\)</span> (mod <span class="process-math">\(m\)</span>)</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-5-7-sunzi.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Sunzi’s Theorem</span></a></div>
+<ul id="ptx-toc-group-sec-5-7-sunzi" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-7-sunzi.html#subsec-5-7-sunzi" class="internal"><span class="codenumber">5.7.1</span> <span class="title">Sunzi’s Theorem</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-5-8-group-theory.html" class="internal"><span class="codenumber">5.8</span> <span class="title">The Group Theoretic Perspective</span></a></div>
+<ul id="ptx-toc-group-sec-5-8-group-theory" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-8-group-theory.html#subsec-5-8-z-mod-mz" class="internal"><span class="codenumber">5.8.1</span> <span class="title">The Integers Modulo <span class="process-math">\(m\)</span> as a Set</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-8-group-theory.html#subsec-5-8-groups" class="internal"><span class="codenumber">5.8.2</span> <span class="title">The Group of Units</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-8-group-theory.html#subsec-powers" class="internal"><span class="codenumber">5.8.3</span> <span class="title">Powers of elements of <span class="process-math">\((\mathbb{Z} / m \mathbb{Z})^{\times}\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-5-9-fermat-little-theorem.html" class="internal"><span class="codenumber">5.9</span> <span class="title">Fermat’s Little Theorem</span></a></div>
+<ul id="ptx-toc-group-sec-5-9-fermat-little-theorem" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-9-fermat-little-theorem.html#subsec-5-9-fermat" class="internal"><span class="codenumber">5.9.1</span> <span class="title">Proving Fermat’s Little Theorem</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-5-10-cryptography.html" class="internal"><span class="codenumber">5.10</span> <span class="title">Introduction to Cryptography</span></a></div>
+<ul id="ptx-toc-group-sec-5-10-cryptography" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-10-cryptography.html#subsec-5-10-dlp" class="internal"><span class="codenumber">5.10.1</span> <span class="title">The Discrete Log Problem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-10-cryptography.html#subsec-5-10-setup" class="internal"><span class="codenumber">5.10.2</span> <span class="title">The Setup</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-10-cryptography.html#subsec-5-10-diffie-hellman" class="internal"><span class="codenumber">5.10.3</span> <span class="title">Symmetric Key Encrypton: Diffie Hellman</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-10-cryptography.html#subsec-5-10-el-gamal" class="internal"><span class="codenumber">5.10.4</span> <span class="title">Public Key Cryptography: ElGamal</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-5-11-exercises.html" class="internal"><span class="codenumber">5.11</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-6-combinatorics.html" class="internal"><span class="codenumber">6</span> <span class="title">Introduction to Combinatorics</span></a></div>
+<ul id="ptx-toc-group-ch-6-combinatorics" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-6-combinatorics-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-6-1-counting.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Basic Counting</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-6-2-permutations.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Permutations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-6-3-combinations.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Combinations</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-6-4-binomial-theorem.html" class="internal"><span class="codenumber">6.4</span> <span class="title">The Binomial Theorem</span></a></div>
+<ul id="ptx-toc-group-sec-6-4-binomial-theorem" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-6-4-binomial-theorem.html#subsec-6-4-binomials" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Binomials and The Binomial Theorem</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-6-4-binomial-theorem.html#subsec-6-4-multinomial" class="internal"><span class="codenumber">6.4.2</span> <span class="title">Multinomials and The Multinomial Theorem</span></a></div>
+<ul id="ptx-toc-group-subsec-6-4-multinomial" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-6-4-binomial-theorem.html#subsubsec-6-4-partitions" class="internal"><span class="codenumber">6.4.2.1</span> <span class="title">Partitions</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-6-4-binomial-theorem.html#subsubsec-6-4-multinomial-thm" class="internal"><span class="codenumber">6.4.2.2</span> <span class="title">The Multinomial Theorem</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-6-7-exercises.html" class="internal"><span class="codenumber">6.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-7-probability-theory.html" class="internal"><span class="codenumber">7</span> <span class="title">Introduction to Probability Theory</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-ch-7-probability-theory">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-7-probability-theory-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-7-1-prob-modeling.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Probabilistic Modeling</span></a></div>
+<ul id="ptx-toc-group-sec-7-1-prob-modeling" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-1-prob-modeling.html#subsec-7-1-prob-axioms" class="internal"><span class="codenumber">7.1.1</span> <span class="title">Probability Axioms</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-7-2-prob-properties.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Basic Properties of Probability Theory</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-7-3-cond-prob.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Conditional Probability</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-7-4-independence.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Independence</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-7-6-bayes-theorem.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Bayes’ Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-7-7-random-variables.html" class="internal"><span class="codenumber">7.6</span> <span class="title">Random Variables</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-7-8-expected-values.html" class="internal"><span class="codenumber">7.7</span> <span class="title">Expected Values</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-7-8-expected-values">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.7</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Expected Values</span>
+</h1>
+<div class="para" id="sec-7-8-expected-values-2">Distributions are great, but they are complex to convey quickly. Sometimes, we need to convey meaning simply and without reference to the overall context. For example, the grade you earn in this class is a single number based on a rather significant amount of work done. Suppose, for the sake of simplicity, that the final grade was based only on two midterm exams and a final exam. Suppose further that you scored 80%, 90%, and 97%, respectively. If all assignments are weighted equally, what might be the best number to report? I could report the largest score, but that would not be an accurate summary of your progress. The same is true for the minimum. The most natural choice would be the <em class="emphasis">arithmetic mean</em>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-7-8-expected-values-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-7-8-mean"><h2 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.7.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="def-7-8-mean-1-1">
+<div class="para">Let <span class="process-math">\(x_1, x_2, \ldots, x_n\)</span> be a collection of real numbers. The <dfn class="terminology">arithmetic mean</dfn> of these numbers is:</div>
+<div class="displaymath process-math" id="def-7-8-mean-1-1-3">
+\begin{equation*}
+\bar{x} = \frac{\sum_{k=1}^n x_k}{n}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-7-8-mean-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 7.7.1"><a tabindex="-1" href="#def-7-8-mean" title="Copy heading and permalink for Definition 7.7.1" aria-label="Copy heading and permalink for Definition 7.7.1">🔗</a></div>
+</article>
+<div class="para logical" id="sec-7-8-expected-values-4">
+<div class="para">In the present case, the arithmetic mean of your grades would be:</div>
+<div class="displaymath process-math" id="sec-7-8-expected-values-4-1">
+\begin{equation*}
+\bar{x} = \frac{80\% + 90\% + 97\%}{3} = 89\%.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-7-8-expected-values-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-7-8-expected-values-5">The arithmetic mean has a few important properties.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-7-8-expected-values-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-7-8-expected-values-6">
+<ul class="disc" id="sec-7-8-expected-values-6-1">
+<li id="sec-7-8-expected-values-6-1-1">
+<div class="para" id="sec-7-8-expected-values-6-1-1-1">It is sensitive to outliers. If one of the numbers is unusually large, the mean will be comparatively large. Similarly, if one of the numbers is unusually small, the mean will be comparatively small.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-7-8-expected-values-6-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-7-8-expected-values-6-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-7-8-expected-values-6-1-2">
+<div class="para" id="sec-7-8-expected-values-6-1-2-1">It lies within the range of the data. If <span class="process-math">\(x_{(1)}\)</span> denotes the smallest of the <span class="process-math">\(x_k\)</span>’s and <span class="process-math">\(x_{(n)}\)</span> the largest, then <span class="process-math">\(x_{(1)} \leq \bar{x} \leq x_{(n)}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-7-8-expected-values-6-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-7-8-expected-values-6-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-7-8-expected-values-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-7-8-expected-values-7">
+<div class="para">Suppose now that the <span class="process-math">\(x_k\)</span>’s are distinct values of a random variable <span class="process-math">\(X\)</span> out of an equiprobable experiment. Then, it would be reasonable to write:</div>
+<div class="displaymath process-math" id="sec-7-8-expected-values-7-3">
+\begin{align*}
+\bar{x} \amp = \frac{\sum_{k=1}^n x_k}{n} \\
+\amp = \sum_{k=1}^n x_k \cdot \frac{1}{n} \\
+\amp = \sum_{k=1}^n x_k \cdot \mathbb{P}(X = x_k). 
+\end{align*}
+</div>
+<div class="para">This form still makes sense when outcomes are not equally likely, so we adopt it as the definition. This is known as the <em class="emphasis">expected value</em> of a distribution and provides us with a reasonable measure of <em class="emphasis">center</em>.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-7-8-expected-values-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-7-8-expected-value"><h2 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.7.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="def-7-8-expected-value-1-1">
+<div class="para">Let <span class="process-math">\(x_1, x_2, \ldots, x_n\)</span> be the support of a random variable <span class="process-math">\(X\text{.}\)</span> Then, the <dfn class="terminology">expected value</dfn> of <span class="process-math">\(X\text{,}\)</span> denoted by <span class="process-math">\(\mathbb{E}[X]\text{,}\)</span> is defined by:</div>
+<div class="displaymath process-math" id="def-7-8-expected-value-1-1-6">
+\begin{equation*}
+\mathbb{E}[X] = \sum_{k=1}^n x_k \cdot \mathbb{P}(X = x_k).
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-7-8-expected-value-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 7.7.2"><a tabindex="-1" href="#def-7-8-expected-value" title="Copy heading and permalink for Definition 7.7.2" aria-label="Copy heading and permalink for Definition 7.7.2">🔗</a></div>
+</article>
+<div class="para" id="sec-7-8-expected-values-9">Essentially, we enumerate all possible outcomes of the random variable, weight each one by its probability, and then compute the sum.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-7-8-expected-values-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="ex-7-8-ev-1"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.7.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Flipping a Fair Coin Three Times.</span>
+</h2>
+<div class="para" id="ex-7-8-ev-1-2-1">What is the expected number of heads you would observe when flipping a fair coin three times?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-8-ev-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="ex-7-8-ev-1-3" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
+<div class="para" id="ex-7-8-ev-1-3-1">We computed the distribution in the previous section!<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-8-ev-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Hint 7.7.3.1"><a tabindex="-1" href="#ex-7-8-ev-1-3" title="Copy heading and permalink for Hint 7.7.3.1" aria-label="Copy heading and permalink for Hint 7.7.3.1">🔗</a></div>
+</div></details>
+<details id="ex-7-8-ev-1-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="ex-7-8-ev-1-4-1">
+<div class="para">Let <span class="process-math">\(X\)</span> denote the number of heads we observe. Then, our task is to find <span class="process-math">\(\mathbb{E}[X]\text{.}\)</span> From our introductory paragraph of <a href="sec-7-7-random-variables.html" class="internal" title="Section 7.6: Random Variables">Section 7.6</a>, we know that:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sec-7-7-random-variables.html ./knowl/xref/def-7-8-expected-value.html" id="ex-7-8-ev-1-4-1-4">
+\begin{align*}
+\mathbb{P}(X = 0) \amp = \frac{1}{8} \\
+\mathbb{P}(X = 1) \amp = \frac{3}{8} \\
+\mathbb{P}(X = 2) \amp = \frac{3}{8} \\
+\mathbb{P}(X = 3) \amp = \frac{1}{8} 
+\end{align*}
+</div>
+<div class="para">Then, applying <a href="sec-7-8-expected-values.html#def-7-8-expected-value" class="xref" data-knowl="./knowl/xref/def-7-8-expected-value.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 7.7.2">Definition 7.7.2</a>, we have:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sec-7-7-random-variables.html ./knowl/xref/def-7-8-expected-value.html" id="ex-7-8-ev-1-4-1-6">
+\begin{align*}
+\mathbb{E}[X] \amp = \sum_{k=1}^4 x_k \cdot \mathbb{P}(X = x_k) \\
+\amp = 0 \cdot \mathbb{P}(X = 0) + 1 \cdot \mathbb{P}(X = 1) + 2 \cdot \mathbb{P}(X = 2) + 3 \cdot \mathbb{P}(X = 3) \\
+\amp = 1 \cdot \frac{3}{8} + 2 \cdot \frac{3}{8} + 3 \cdot \frac{1}{8} \\
+\amp = \frac{3}{2}. 
+\end{align*}
+</div>
+<div class="para">Thus, the expected number of heads we should expect to see is 1.5.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-8-ev-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 7.7.3.1"><a tabindex="-1" href="#ex-7-8-ev-1-4" title="Copy heading and permalink for Solution 7.7.3.1" aria-label="Copy heading and permalink for Solution 7.7.3.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 7.7.3: Flipping a Fair Coin Three Times"><a tabindex="-1" href="#ex-7-8-ev-1" title="Copy heading and permalink for Example 7.7.3: Flipping a Fair Coin Three Times" aria-label="Copy heading and permalink for Example 7.7.3: Flipping a Fair Coin Three Times">🔗</a></div>
+</article>
+<div class="para logical" id="sec-7-8-expected-values-11">
+<div class="para">There are two important observations that we can glean from <a href="sec-7-8-expected-values.html#ex-7-8-ev-1" class="xref" data-knowl="./knowl/xref/ex-7-8-ev-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 7.7.3: Flipping a Fair Coin Three Times">Example 7.7.3</a>:</div>
+<ol class="decimal" id="sec-7-8-expected-values-11-2">
+<li id="sec-7-8-expected-values-11-2-1">
+<div class="para" id="sec-7-8-expected-values-11-2-1-1">The expected value is <em class="emphasis">not even possible</em> to observe. You cannot observe 1.5 heads from three coin tosses (well, unless the coin lands on its side, but let’s just assume that’s impossible). It does not need to be a value that our random variable can actually take, it just needs to provide a reasonable single-number summary.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-7-8-expected-values-11-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#sec-7-8-expected-values-11-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="sec-7-8-expected-values-11-2-2">
+<div class="para" id="sec-7-8-expected-values-11-2-2-1">The expected value sits directly at the center of the distribution. Take a look back at <a href="sec-7-7-random-variables.html#fig-7-7-coin-histogram" class="xref" data-knowl="./knowl/xref/fig-7-7-coin-histogram.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 7.6.6">Figure 7.6.6</a>! The distribution is symmetric, and the line of symmetry is at <span class="process-math">\(x = 1.5\text{,}\)</span> precisely our expected value. In fact, <span class="process-math">\(\mathbb{E}[X]\)</span> is also sometimes referred to as the <em class="emphasis">center of mass</em> of the distribution, and it’s fairly clear why in this case.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-7-8-expected-values-11-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#sec-7-8-expected-values-11-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-7-8-expected-values-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="ex-7-8-ev-2"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.7.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A Dice Game.</span>
+</h2>
+<div class="para" id="ex-7-8-ev-2-2-1">You pay nothing to play the following game. You roll a fair six-sided die. If you roll a 6, you win <span class="process-math">\(\$5\text{.}\)</span> If you roll a 2 or a 4, you win <span class="process-math">\(\$1\text{.}\)</span> If you roll a 1, 3, or 5, you lose <span class="process-math">\(\$2\text{.}\)</span> What is your expected net winnings per play?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-8-ev-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="ex-7-8-ev-2-3" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
+<div class="para" id="ex-7-8-ev-2-3-1">Group the six equally likely faces by the payout they produce, then find the probability of each payout.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-8-ev-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Hint 7.7.4.1"><a tabindex="-1" href="#ex-7-8-ev-2-3" title="Copy heading and permalink for Hint 7.7.4.1" aria-label="Copy heading and permalink for Hint 7.7.4.1">🔗</a></div>
+</div></details>
+<details id="ex-7-8-ev-2-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="ex-7-8-ev-2-4-1">
+<div class="para">Let <span class="process-math">\(X\)</span> denote your net winnings, in dollars, on one play. The support of <span class="process-math">\(X\)</span> is <span class="process-math">\(\{-2, 1, 5\}\text{.}\)</span> Counting the faces that produce each payout, we have:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-7-8-expected-value.html" id="ex-7-8-ev-2-4-1-4">
+\begin{align*}
+\mathbb{P}(X = -2) \amp = \frac{3}{6} = \frac{1}{2} \\
+\mathbb{P}(X = 1) \amp = \frac{2}{6} = \frac{1}{3} \\
+\mathbb{P}(X = 5) \amp = \frac{1}{6} 
+\end{align*}
+</div>
+<div class="para">As a check, these probabilities sum to <span class="process-math">\(\frac{3}{6} + \frac{2}{6} + \frac{1}{6} = 1\text{.}\)</span> Applying <a href="sec-7-8-expected-values.html#def-7-8-expected-value" class="xref" data-knowl="./knowl/xref/def-7-8-expected-value.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 7.7.2">Definition 7.7.2</a>:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-7-8-expected-value.html" id="ex-7-8-ev-2-4-1-7">
+\begin{align*}
+\mathbb{E}[X] \amp = (-2) \cdot \frac{1}{2} + 1 \cdot \frac{1}{3} + 5 \cdot \frac{1}{6} \\
+\amp = -\frac{6}{6} + \frac{2}{6} + \frac{5}{6} \\
+\amp = \frac{1}{6}. 
+\end{align*}
+</div>
+<div class="para">Thus, you should expect to win about <span class="process-math">\(\$0.17\)</span> per play. No single play can pay exactly this amount, but if you played many times, your average winnings per play would settle near it. The game slightly favors the player.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-8-ev-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 7.7.4.1"><a tabindex="-1" href="#ex-7-8-ev-2-4" title="Copy heading and permalink for Solution 7.7.4.1" aria-label="Copy heading and permalink for Solution 7.7.4.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 7.7.4: A Dice Game"><a tabindex="-1" href="#ex-7-8-ev-2" title="Copy heading and permalink for Example 7.7.4: A Dice Game" aria-label="Copy heading and permalink for Example 7.7.4: A Dice Game">🔗</a></div>
+</article>
+<article class="example example-like" id="ex-7-8-ev-3"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.7.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Sampling Mislabeled Records.</span>
+</h2>
+<div class="para" id="ex-7-8-ev-3-2-1">A dataset contains 10 records, of which 4 are mislabeled. An analyst draws 2 records at random, without replacement, to audit. What is the expected number of mislabeled records in the sample?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-8-ev-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="ex-7-8-ev-3-3" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
+<div class="para" id="ex-7-8-ev-3-3-1">There are <span class="process-math">\(\binom{10}{2} = 45\)</span> equally likely pairs of records. Count how many pairs contain 0, 1, or 2 mislabeled records.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-8-ev-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Hint 7.7.5.1"><a tabindex="-1" href="#ex-7-8-ev-3-3" title="Copy heading and permalink for Hint 7.7.5.1" aria-label="Copy heading and permalink for Hint 7.7.5.1">🔗</a></div>
+</div></details>
+<details id="ex-7-8-ev-3-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="ex-7-8-ev-3-4-1">
+<div class="para">Let <span class="process-math">\(X\)</span> denote the number of mislabeled records in the sample, so the support of <span class="process-math">\(X\)</span> is <span class="process-math">\(\{0, 1, 2\}\text{.}\)</span> There are 6 correctly labeled records and 4 mislabeled ones. Counting pairs:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-7-8-expected-value.html" id="ex-7-8-ev-3-4-1-4">
+\begin{align*}
+\mathbb{P}(X = 0) \amp = \frac{\binom{6}{2}}{\binom{10}{2}} = \frac{15}{45} \\
+\mathbb{P}(X = 1) \amp = \frac{\binom{4}{1}\binom{6}{1}}{\binom{10}{2}} = \frac{24}{45} \\
+\mathbb{P}(X = 2) \amp = \frac{\binom{4}{2}}{\binom{10}{2}} = \frac{6}{45} 
+\end{align*}
+</div>
+<div class="para">As a check, <span class="process-math">\(\frac{15 + 24 + 6}{45} = 1\text{.}\)</span> Applying <a href="sec-7-8-expected-values.html#def-7-8-expected-value" class="xref" data-knowl="./knowl/xref/def-7-8-expected-value.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 7.7.2">Definition 7.7.2</a>:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-7-8-expected-value.html" id="ex-7-8-ev-3-4-1-7">
+\begin{align*}
+\mathbb{E}[X] \amp = 0 \cdot \frac{15}{45} + 1 \cdot \frac{24}{45} + 2 \cdot \frac{6}{45} \\
+\amp = \frac{24 + 12}{45} \\
+\amp = \frac{4}{5}. 
+\end{align*}
+</div>
+<div class="para">Thus, we expect 0.8 mislabeled records in a sample of two. Notice that this equals <span class="process-math">\(2 \cdot \frac{4}{10}\text{,}\)</span> the sample size times the overall fraction of mislabeled records. This is not a coincidence, and we will see why when we study the linearity of expectation.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-7-8-ev-3-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 7.7.5.1"><a tabindex="-1" href="#ex-7-8-ev-3-4" title="Copy heading and permalink for Solution 7.7.5.1" aria-label="Copy heading and permalink for Solution 7.7.5.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 7.7.5: Sampling Mislabeled Records"><a tabindex="-1" href="#ex-7-8-ev-3" title="Copy heading and permalink for Example 7.7.5: Sampling Mislabeled Records" aria-label="Copy heading and permalink for Example 7.7.5: Sampling Mislabeled Records">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Section 7.7: Expected Values"><a tabindex="-1" href="#sec-7-8-expected-values" title="Copy heading and permalink for Section 7.7: Expected Values" aria-label="Copy heading and permalink for Section 7.7: Expected Values">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-7-7-random-variables.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="feedback-link" href="mailto:cody.vig@solano.edu" target="_blank">Feedback</a><a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" alt="Runestone Academy logo" src="data:image/png;base64,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"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" alt="MathJax logo" src="data:image/png;base64,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"></a>
+</div>
+</body>
+</html>
