@@ -44,5 +44,6 @@
   <xi:include href="sec-7-3-cond-prob.ptx" />
   <xi:include href="sec-7-4-independence.ptx" />
   <xi:include href="sec-7-6-bayes-theorem.ptx" />
+  <xi:include href="sec-7-7-random-variables.ptx" />
 
 </chapter>
