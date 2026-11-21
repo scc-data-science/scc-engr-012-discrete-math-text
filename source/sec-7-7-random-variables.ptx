@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-7-7-random-variables" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Random Variables</title>
+
+  <p>
+    Let's consider the experiment of flipping a fair coin three times, wherein we assume the tosses are independent. Suppose we are interested in keeping track of how many times we see a heads in this experiment. Let <m>X</m> denote that number of heads. Then,
+    <md>
+      X \in \{0, 1, 2, 3\}.
+    </md>
+    Let's compute the probability of measuring <m>X = k</m> heads for all possible values of <m>k</m>. Notice that, regardless of <m>k</m>, there are <m>2^3 = 8</m> possible outcomes of this experiment, since there are three coin tosses and only two possible outcomes per toss. So:
+  </p>
+
+  <p>
+    <ol>
+      <li>
+        <p>
+          If <m>k = 0</m>, then we have no heads in our list, hence we have <m>\mathbb{P}(X = 0) = \frac{1}{8}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>k = 1</m>, then we need to count the number of ways to distribute one head among three coins. There are <m>\binom{3}{1} = 3</m> ways to do this, so we have <m>\mathbb{P}(X = 1) = \frac{3}{8}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>k = 2</m>, then we need to count the number of ways to distribute two heads among three coins. There are <m>\binom{3}{2} = 3</m> ways to do this, so we have <m>\mathbb{P}(X = 2) = \frac{3}{8}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>k = 3</m>, then all three tosses are heads, hence we have <m>\mathbb{P}(X = 3) = \frac{1}{8}</m>.
+        </p>
+      </li>
+    </ol>
+  </p>
+
+  <p>
+    In total, we find:
+    <md>
+      <mrow> \mathbb{P}(X = 0) \amp = \frac{1}{8} </mrow>
+      <mrow> \mathbb{P}(X = 1) \amp = \frac{3}{8} </mrow>
+      <mrow> \mathbb{P}(X = 2) \amp = \frac{3}{8} </mrow>
+      <mrow> \mathbb{P}(X = 3) \amp = \frac{1}{8} </mrow>
+    </md>
+  </p>
+
+  <p>
+    When we enumerate all possible realizations of such an <m>X</m> and compute their individual probabilities, the result is called the <em>distribution</em> of that experiment. When we treat the outcome of an experiment as a variable (like we did here with <m>X</m>), we call it a <em>random variable</em>. Let's define these terms more formally below.
+  </p>
+
+  <definition xml:id="def-7-7-random-variable">
+    <statement>
+      <p>
+        A <term>random variable</term> is a numerical variable that represents the outcome of an experiment. More formally, it is a function that assigns a real number to each outcome of an experiment.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    Below are some examples of random variables.
+  </p>
+
+  <example xml:id="ex-7-7-rv-1">
+    <title>Rolling Two Dice</title>
+    <statement>
+      <p>
+        Suppose we roll two fair six-sided dice. The sample space consists of 36 ordered pairs <m>\omega = (d_{1}, d_{2})</m>. Defining <m>X = d_{1} + d_{2}</m> gives us a random variable with support <m>\{2, 3, 4, \ldots, 12\}</m>.
+      </p>
+    </statement>
+  </example>
+
+  <example xml:id="ex-7-7-rv-2">
+    <title>Counting Packet Loss</title>
+    <statement>
+      <p>
+        A batch of <m>n</m> data packets is transmitted over a noisy channel, where each packet fails independently with probability <m>p</m>. Let <m>X</m> be the number of corrupted packets. This gives us a random variable with finite support: <m>\{0, 1, 2, \ldots, n\}</m>.
+      </p>
+    </statement>
+  </example>
+
+  <example xml:id="ex-7-7-rv-3">
+    <title>Web Scraping</title>
+    <statement>
+      <p>
+        A web scraper repeatedly pings an API until it receives a valid 200 OK response. Let <m>X</m> be the total number of attempts required. Because the scraper could theoretically fail arbitrarily many times before succeeding, this gives us a random variable for which the support is countably infinite: <m>\{1, 2, 3, \ldots \}</m>.
+      </p>
+    </statement>
+  </example>
+
+  <p>
+    Next, we formalize the notion of a distribution.
+  </p>
+
+  <definition xml:id="def-7-7-distribution">
+    <statement>
+      <p>
+        A <term>discrete probability distribution</term> is the set of all values of a discrete random variable, together with the corresponding probability. More accurately, a discrete probability distribution can be represented as the following set:
+        <md>
+          \left\{ \left( x, \mathbb{P}(X = x) \right) \mid x \in \mathrm{Support}(X) \right\}.
+        </md>
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    While <xref ref="def-7-7-distribution"/> is formally correct, it is almost never what people mean when they talk about distributions. When we speak of distributions, we're usually referring to the <term>histogram</term> of the distribution: one bar for each value <m>x</m> in the support, whose height is <m>\mathbb{P}(X = x)</m>. <xref ref="fig-7-7-coin-histogram"/> shows the histogram for the number of heads in three fair coin tosses. Notice that the bar heights sum to <m>1</m>.
+  </p>
+
+  <figure xml:id="fig-7-7-coin-histogram">
+    <caption>Distribution of the number of heads <m>X</m> in three fair coin tosses</caption>
+    <image xml:id="img-7-7-coin-histogram" width="70%">
+      <description>
+        <p>Bar chart with bars at 0, 1, 2 and 3 heads, with heights one eighth, three eighths, three eighths and one eighth.</p>
+      </description>
+      <latex-image>
+        <![CDATA[
+        \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            bar width=2.0cm,
+            width=10cm, height=6cm,
+            xmin=-0.5, xmax=3.5,
+            ymin=0, ymax=0.45,
+            xtick={0,1,2,3},
+            ytick={0,0.125,0.25,0.375},
+            yticklabels={$0$,$\frac{1}{8}$,$\frac{2}{8}$,$\frac{3}{8}$},
+            xlabel={Number of heads $x$},
+            ylabel={$\mathbb{P}(X = x)$},
+            nodes near coords,
+            point meta=explicit symbolic,
+            every node near coord/.append style={font=\small},
+            ymajorgrids, grid style={gray!30},
+        ]
+        \addplot[fill=blue!35, draw=blue!60!black] coordinates {
+            (0,0.125) [$\frac{1}{8}$]
+            (1,0.375) [$\frac{3}{8}$]
+            (2,0.375) [$\frac{3}{8}$]
+            (3,0.125) [$\frac{1}{8}$]
+        };
+        \end{axis}
+        \end{tikzpicture}
+        ]]>
+      </latex-image>
+    </image>
+  </figure>
+
+  <p>
+    For comparison, <xref ref="fig-7-7-dice-histogram"/> shows the distribution of the sum of two fair dice from <xref ref="ex-7-7-rv-1"/>. There are <m>36</m> equally likely outcomes, and the sum <m>x</m> can be obtained in <m>6 - |x - 7|</m> of them, so <m>\mathbb{P}(X = x) = \frac{6 - |x - 7|}{36}</m>. Unlike the coin example, the most likely value sits in the middle, at <m>x = 7</m>, and the probabilities fall off linearly on either side.
+  </p>
+
+  <figure xml:id="fig-7-7-dice-histogram">
+    <caption>Distribution of the sum <m>X</m> of two fair six-sided dice</caption>
+    <image xml:id="img-7-7-dice-histogram" width="90%">
+      <description>
+        <p>Bar chart with bars at the sums 2 through 12. The heights rise from one thirty-sixth at 2 up to six thirty-sixths at 7, then fall symmetrically back to one thirty-sixth at 12.</p>
+      </description>
+      <latex-image>
+        <![CDATA[
+        \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            bar width=0.95cm,
+            width=13cm, height=6.5cm,
+            xmin=1.5, xmax=12.5,
+            ymin=0, ymax=0.19,
+            xtick={2,3,...,12},
+            ytick={0,0.027778,0.055556,0.083333,0.111111,0.138889,0.166667},
+            yticklabels={$0$,$\frac{1}{36}$,$\frac{2}{36}$,$\frac{3}{36}$,$\frac{4}{36}$,$\frac{5}{36}$,$\frac{6}{36}$},
+            xlabel={Sum of the two dice $x$},
+            ylabel={$\mathbb{P}(X = x)$},
+            nodes near coords,
+            point meta=explicit symbolic,
+            every node near coord/.append style={font=\scriptsize},
+            ymajorgrids, grid style={gray!30},
+        ]
+        \addplot[fill=orange!40, draw=orange!70!black] coordinates {
+            (2,0.027778)  [$\frac{1}{36}$]
+            (3,0.055556)  [$\frac{2}{36}$]
+            (4,0.083333)  [$\frac{3}{36}$]
+            (5,0.111111)  [$\frac{4}{36}$]
+            (6,0.138889)  [$\frac{5}{36}$]
+            (7,0.166667)  [$\frac{6}{36}$]
+            (8,0.138889)  [$\frac{5}{36}$]
+            (9,0.111111)  [$\frac{4}{36}$]
+            (10,0.083333) [$\frac{3}{36}$]
+            (11,0.055556) [$\frac{2}{36}$]
+            (12,0.027778) [$\frac{1}{36}$]
+        };
+        \end{axis}
+        \end{tikzpicture}
+        ]]>
+      </latex-image>
+    </image>
+  </figure>
+
+  <p>
+    We'll talk more about how to summarize these distributions in the next section.
+  </p>
+
+</section>
