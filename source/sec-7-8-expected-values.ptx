@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-7-8-expected-values" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Expected Values</title>
+
+  <p>
+    Distributions are great, but they are complex to convey quickly. Sometimes, we need to convey meaning simply and without reference to the overall context. For example, the grade you earn in this class is a single number based on a rather significant amount of work done. Suppose, for the sake of simplicity, that the final grade was based only on two midterm exams and a final exam. Suppose further that you scored 80%, 90%, and 97%, respectively. If all assignments are weighted equally, what might be the best number to report? I could report the largest score, but that would not be an accurate summary of your progress. The same is true for the minimum. The most natural choice would be the <em>arithmetic mean</em>.
+  </p>
+
+  <definition xml:id="def-7-8-mean">
+    <statement>
+      <p>
+        Let <m>x_1, x_2, \ldots, x_n</m> be a collection of real numbers. The <term>arithmetic mean</term> of these numbers is:
+        <md>
+          \bar{x} = \frac{\sum_{k=1}^n x_k}{n}.
+        </md>
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    In the present case, the arithmetic mean of your grades would be:
+    <md>
+      \bar{x} = \frac{80\% + 90\% + 97\%}{3} = 89\%.
+    </md>
+  </p>
+
+  <p>
+    The arithmetic mean has a few important properties.
+  </p>
+
+  <p>
+    <ul>
+      <li>
+        <p>
+          It is sensitive to outliers. If one of the numbers is unusually large, the mean will be comparatively large. Similarly, if one of the numbers is unusually small, the mean will be comparatively small.
+        </p>
+      </li>
+      <li>
+        <p>
+          It lies within the range of the data. If <m>x_{(1)}</m> denotes the smallest of the <m>x_k</m>'s and <m>x_{(n)}</m> the largest, then <m>x_{(1)} \leq \bar{x} \leq x_{(n)}</m>.
+        </p>
+      </li>
+    </ul>
+  </p>
+
+  <p>
+    Suppose now that the <m>x_k</m>'s are distinct values of a random variable <m>X</m> out of an equiprobable experiment. Then, it would be reasonable to write:
+    <md>
+      <mrow> \bar{x} \amp = \frac{\sum_{k=1}^n x_k}{n} </mrow>
+      <mrow>         \amp = \sum_{k=1}^n x_k \cdot \frac{1}{n} </mrow>
+      <mrow>         \amp = \sum_{k=1}^n x_k \cdot \mathbb{P}(X = x_k). </mrow>
+    </md>
+    This form still makes sense when outcomes are not equally likely, so we adopt it as the definition. This is known as the <em>expected value</em> of a distribution and provides us with a reasonable measure of <em>center</em>.
+  </p>
+
+  <definition xml:id="def-7-8-expected-value">
+    <statement>
+      <p>
+        Let <m>x_1, x_2, \ldots, x_n</m> be the support of a random variable <m>X</m>. Then, the <term>expected value</term> of <m>X</m>, denoted by <m>\mathbb{E}[X]</m>, is defined by:
+        <md>
+          \mathbb{E}[X] = \sum_{k=1}^n x_k \cdot \mathbb{P}(X = x_k).
+        </md>
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    Essentially, we enumerate all possible outcomes of the random variable, weight each one by its probability, and then compute the sum.
+  </p>
+
+  <example xml:id="ex-7-8-ev-1">
+    <title>Flipping a Fair Coin Three Times</title>
+    <statement>
+      <p>
+        What is the expected number of heads you would observe when flipping a fair coin three times?
+      </p>
+    </statement>
+
+    <hint>
+      <p>
+        We computed the distribution in the previous section!
+      </p>
+    </hint>
+
+    <solution>
+      <p>
+        Let <m>X</m> denote the number of heads we observe. Then, our task is to find <m>\mathbb{E}[X]</m>. From our introductory paragraph of <xref ref="sec-7-7-random-variables"/>, we know that:
+        <md>
+          <mrow> \mathbb{P}(X = 0) \amp = \frac{1}{8} </mrow>
+          <mrow> \mathbb{P}(X = 1) \amp = \frac{3}{8} </mrow>
+          <mrow> \mathbb{P}(X = 2) \amp = \frac{3}{8} </mrow>
+          <mrow> \mathbb{P}(X = 3) \amp = \frac{1}{8} </mrow>
+        </md>
+        Then, applying <xref ref="def-7-8-expected-value"/>, we have:
+        <md>
+          <mrow> \mathbb{E}[X] \amp = \sum_{k=1}^4 x_k \cdot \mathbb{P}(X = x_k) </mrow>
+          <mrow>   \amp = 0 \cdot \mathbb{P}(X = 0) + 1 \cdot \mathbb{P}(X = 1) + 2 \cdot \mathbb{P}(X = 2) + 3 \cdot \mathbb{P}(X = 3) </mrow>
+          <mrow>   \amp = 1 \cdot \frac{3}{8} + 2 \cdot \frac{3}{8} + 3 \cdot \frac{1}{8} </mrow>
+          <mrow>   \amp = \frac{3}{2}. </mrow>
+        </md>
+        Thus, the expected number of heads we should expect to see is 1.5.
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    There are two important observations that we can glean from <xref ref="ex-7-8-ev-1"/>:
+    <ol>
+      <li>
+        <p>
+          The expected value is <em>not even possible</em> to observe. You cannot observe 1.5 heads from three coin tosses (well, unless the coin lands on its side, but let's just assume that's impossible). It does not need to be a value that our random variable can actually take, it just needs to provide a reasonable single-number summary.
+        </p>
+      </li>
+      <li>
+        <p>
+          The expected value sits directly at the center of the distribution. Take a look back at <xref ref="fig-7-7-coin-histogram"/>! The distribution is symmetric, and the line of symmetry is at <m>x = 1.5</m>, precisely our expected value. In fact, <m>\mathbb{E}[X]</m> is also sometimes referred to as the <em>center of mass</em> of the distribution, and it's fairly clear why in this case.
+        </p>
+      </li>
+    </ol>
+  </p>
+
+  <example xml:id="ex-7-8-ev-2">
+    <title>A Dice Game</title>
+    <statement>
+      <p>
+        You pay nothing to play the following game. You roll a fair six-sided die. If you roll a 6, you win <m>\$5</m>. If you roll a 2 or a 4, you win <m>\$1</m>. If you roll a 1, 3, or 5, you lose <m>\$2</m>. What is your expected net winnings per play?
+      </p>
+    </statement>
+
+    <hint>
+      <p>
+        Group the six equally likely faces by the payout they produce, then find the probability of each payout.
+      </p>
+    </hint>
+
+    <solution>
+      <p>
+        Let <m>X</m> denote your net winnings, in dollars, on one play. The support of <m>X</m> is <m>\{-2, 1, 5\}</m>. Counting the faces that produce each payout, we have:
+        <md>
+          <mrow> \mathbb{P}(X = -2) \amp = \frac{3}{6} = \frac{1}{2} </mrow>
+          <mrow> \mathbb{P}(X = 1) \amp = \frac{2}{6} = \frac{1}{3} </mrow>
+          <mrow> \mathbb{P}(X = 5) \amp = \frac{1}{6} </mrow>
+        </md>
+        As a check, these probabilities sum to <m>\frac{3}{6} + \frac{2}{6} + \frac{1}{6} = 1</m>. Applying <xref ref="def-7-8-expected-value"/>:
+        <md>
+          <mrow> \mathbb{E}[X] \amp = (-2) \cdot \frac{1}{2} + 1 \cdot \frac{1}{3} + 5 \cdot \frac{1}{6} </mrow>
+          <mrow>   \amp = -\frac{6}{6} + \frac{2}{6} + \frac{5}{6} </mrow>
+          <mrow>   \amp = \frac{1}{6}. </mrow>
+        </md>
+        Thus, you should expect to win about <m>\$0.17</m> per play. No single play can pay exactly this amount, but if you played many times, your average winnings per play would settle near it. The game slightly favors the player.
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="ex-7-8-ev-3">
+    <title>Sampling Mislabeled Records</title>
+    <statement>
+      <p>
+        A dataset contains 10 records, of which 4 are mislabeled. An analyst draws 2 records at random, without replacement, to audit. What is the expected number of mislabeled records in the sample?
+      </p>
+    </statement>
+
+    <hint>
+      <p>
+        There are <m>\binom{10}{2} = 45</m> equally likely pairs of records. Count how many pairs contain 0, 1, or 2 mislabeled records.
+      </p>
+    </hint>
+
+    <solution>
+      <p>
+        Let <m>X</m> denote the number of mislabeled records in the sample, so the support of <m>X</m> is <m>\{0, 1, 2\}</m>. There are 6 correctly labeled records and 4 mislabeled ones. Counting pairs:
+        <md>
+          <mrow> \mathbb{P}(X = 0) \amp = \frac{\binom{6}{2}}{\binom{10}{2}} = \frac{15}{45} </mrow>
+          <mrow> \mathbb{P}(X = 1) \amp = \frac{\binom{4}{1}\binom{6}{1}}{\binom{10}{2}} = \frac{24}{45} </mrow>
+          <mrow> \mathbb{P}(X = 2) \amp = \frac{\binom{4}{2}}{\binom{10}{2}} = \frac{6}{45} </mrow>
+        </md>
+        As a check, <m>\frac{15 + 24 + 6}{45} = 1</m>. Applying <xref ref="def-7-8-expected-value"/>:
+        <md>
+          <mrow> \mathbb{E}[X] \amp = 0 \cdot \frac{15}{45} + 1 \cdot \frac{24}{45} + 2 \cdot \frac{6}{45} </mrow>
+          <mrow>   \amp = \frac{24 + 12}{45} </mrow>
+          <mrow>   \amp = \frac{4}{5}. </mrow>
+        </md>
+        Thus, we expect 0.8 mislabeled records in a sample of two. Notice that this equals <m>2 \cdot \frac{4}{10}</m>, the sample size times the overall fraction of mislabeled records. This is not a coincidence, and we will see why when we study the linearity of expectation.
+      </p>
+    </solution>
+  </example>
+
+</section>
