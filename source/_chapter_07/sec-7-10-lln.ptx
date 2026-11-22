@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-7-10-lln" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>The Law of Large Numbers</title>
+
+  <!-- ============ 1. MOTIVATION ============ -->
+  <p>
+    In <xref ref="sec-7-8-expected-values"/>, we said that the expected value is the center of a distribution. There is something unsatisfying about this, though. If you roll a fair die, you can never actually observe the expected value of <m>3.5</m>, so in what sense should we <q>expect</q> it? In this section, we'll make precise the idea that an expected value describes what happens <em>on average</em> over many repetitions of an experiment.
+  </p>
+
+  <p>
+    Suppose you roll a fair six-sided die over and over to get random varibles <m>X_1, \cdots, X_n</m>, and after each roll you record the average of all of the rolls so far. These running averages are our main object of study.
+  </p>
+
+  <definition xml:id="def-7-10-sample-mean">
+    <statement>
+      <p>
+        Let <m>X_1, X_2, \ldots, X_n</m> be random variables. Their <term>sample mean</term> is:
+        <md>
+          \overline{X}_n = \frac{X_1 + X_2 + \cdots + X_n}{n}.
+        </md>
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    Note the difference in notation bewteen <xref ref="def-7-10-sample-mean"/> and <xref ref="def-7-8-mean"/>. In the latter case, the <m>x_k</m>'s were fixed numbers. In the former, the <m>X_k</m>'s are outcomes of a random experiment and are thus random variables. As such, <m>\overline{X}_n</m> itself is a random variable and has a distribution.
+  </p>
+  
+  <p>
+    In what follows, we assume that each of the <m>X_k</m>'s are independent and each come from the same distribution (e.g., they are all rolls of the same die or tosses of the same coin, etc).
+  </p>
+
+  <figure xml:id="fig-7-10-running-average">
+    <caption>The running average of twenty rolls of a fair die. The dashed line is <m>\mathbb{E}[X] = 3.5</m>, and the shaded band covers <m>3.5 \pm 0.5</m>.</caption>
+    <image width="85%">
+      <description>
+        <p>
+          A line plot of the running average of twenty die rolls. It starts at 6, swings between roughly 3.4 and 5.5 over the first ten rolls, and then stays within a shaded band around 3.5.
+        </p>  
+      </description>
+      <latex-image>
+        <![CDATA[
+          \begin{tikzpicture}[x=0.42cm, y=0.9cm]
+            % band mu +- 0.5
+            \fill[blue!10] (0,3) rectangle (20.5,4);
+            % axes
+            \draw[->] (0,2.5) -- (21.5,2.5) node[right] {$n$};
+            \draw[->] (0,2.5) -- (0,6.5) node[above] {$\overline{X}_n$};
+            \foreach \n in {5,10,15,20} \draw (\n,2.5) -- (\n,2.4) node[below] {\small \n};
+            \foreach \y in {3,4,5,6} \draw (0,\y) -- (-0.3,\y) node[left] {\small \y};
+            % expected value
+            \draw[dashed, thick] (0,3.5) -- (20.5,3.5) node[right] {\small $3.5$};
+            % running averages for the rolls 6,5,2,6,1,3,4,6,2,1,4,3,5,2,4,3,1,5,3,4
+            \draw[thick, blue] (1,6) -- (2,5.5) -- (3,4.33) -- (4,4.75) -- (5,4) -- (6,3.83)
+              -- (7,3.86) -- (8,4.13) -- (9,3.89) -- (10,3.6) -- (11,3.64) -- (12,3.58)
+              -- (13,3.69) -- (14,3.57) -- (15,3.6) -- (16,3.56) -- (17,3.41) -- (18,3.5)
+              -- (19,3.47) -- (20,3.5);
+            \foreach \n/\a in {1/6,2/5.5,3/4.33,4/4.75,5/4,6/3.83,7/3.86,8/4.13,9/3.89,10/3.6,
+                              11/3.64,12/3.58,13/3.69,14/3.57,15/3.6,16/3.56,17/3.41,18/3.5,19/3.47,20/3.5}
+              \fill[blue] (\n,\a) circle (1.6pt);
+          \end{tikzpicture}
+        ]]>
+      </latex-image>
+    </image>
+  </figure>
+
+  <p>
+    There are two important observations that we can glean from <xref ref="fig-7-10-running-average"/>:
+    <ol>
+      <li>
+        <p>
+          The early averages are wild. After a single roll, the average is just that roll. As more rolls accumulate, no single roll can move the average very much.
+        </p>
+      </li>
+      <li>
+        <p>
+          The average is itself random. If we repeated the experiment, we would trace out a different path. What stays the same is where the paths end up.
+        </p>
+      </li>
+    </ol>
+  </p>
+
+  <p>
+    It would be perfectly reasonbale to ask at this point why on earth there seems to be this pull towards the expected value. The example below motivates why this is the case.
+  </p>
+
+  <example xml:id="ex-7-10-two-dice">
+    <title>Averaging Two Dice</title>
+    <statement>
+      <p>
+        Let <m>X</m> be the result of one roll of a fair die, and let <m>\overline{X}_2</m> be the average of two independent rolls. Compare the distributions of <m>X</m> and <m>\overline{X}_2</m>.
+      </p>
+    </statement>
+
+    <hint>
+      <p>
+        There are <m>36</m> equally likely pairs of rolls. Count how many pairs give each sum.
+      </p>
+    </hint>
+
+    <solution>
+      <p>
+        The average of two rolls is half of their sum, so we organize the <m>36</m> outcomes by sum:
+      </p>
+
+      <tabular halign="center">
+        <row bottom="minor">
+          <cell>Sum</cell>
+          <cell><m>2</m></cell><cell><m>3</m></cell><cell><m>4</m></cell><cell><m>5</m></cell>
+          <cell><m>6</m></cell><cell><m>7</m></cell><cell><m>8</m></cell><cell><m>9</m></cell>
+          <cell><m>10</m></cell><cell><m>11</m></cell><cell><m>12</m></cell>
+        </row>
+        <row>
+          <cell>Average</cell>
+          <cell><m>1</m></cell><cell><m>\frac{3}{2}</m></cell><cell><m>2</m></cell><cell><m>\frac{5}{2}</m></cell>
+          <cell><m>3</m></cell><cell><m>\frac{7}{2}</m></cell><cell><m>4</m></cell><cell><m>\frac{9}{2}</m></cell>
+          <cell><m>5</m></cell><cell><m>\frac{11}{2}</m></cell><cell><m>6</m></cell>
+        </row>
+        <row>
+          <cell>Probability</cell>
+          <cell><m>\frac{1}{36}</m></cell><cell><m>\frac{2}{36}</m></cell><cell><m>\frac{3}{36}</m></cell><cell><m>\frac{4}{36}</m></cell>
+          <cell><m>\frac{5}{36}</m></cell><cell><m>\frac{6}{36}</m></cell><cell><m>\frac{5}{36}</m></cell><cell><m>\frac{4}{36}</m></cell>
+          <cell><m>\frac{3}{36}</m></cell><cell><m>\frac{2}{36}</m></cell><cell><m>\frac{1}{36}</m></cell>
+        </row>
+      </tabular>
+
+      <p>
+        <xref ref="fig-7-10-one-vs-two"/> compares the two distributions. Applying <xref ref="def-7-8-expected-value"/>, we find <m>\mathbb{E}[\overline{X}_2] = 3.5</m>, the same center as a single roll. The spread is different, however. Applying <xref ref="def-7-9-variance"/> gives <m>\mathrm{Var}[\overline{X}_2] = \frac{35}{24}</m>, exactly half of the <m>\mathrm{Var}[X] = \frac{35}{12}</m> from <xref ref="ex-7-9-var-1"/>. Moreover, the probability of landing between <m>3</m> and <m>4</m> (inclusive) rose from <m>\frac{2}{6} = \frac{1}{3}</m> to <m>\frac{16}{36} = \frac{4}{9}</m>.
+      </p>
+
+      <figure xml:id="fig-7-10-one-vs-two">
+        <caption>The distribution of one die roll (top) and of the average of two die rolls (bottom). Bar heights are probabilities, with a peak height of <m>\frac{1}{6}</m> in both panels. The dashed line is at <m>3.5</m>.</caption>
+        <image width="75%">
+          <description>
+            <p>
+              Two bar charts. The top is flat across the values 1 through 6. The bottom is triangular, with values from 1 to 6 in steps of one half, peaking at 3.5.
+            </p>
+          </description>
+          <latex-image>
+            <![CDATA[
+              \begin{tikzpicture}[x=1.1cm, y=1cm]
+                % Panel 1: one roll
+                \foreach \x in {1,...,6} {
+                  \fill[blue!40] (\x-0.4,0) rectangle (\x+0.4,2);
+                  \node[below] at (\x,0) {\small $\x$};
+                }
+                \draw[->] (0.2,0) -- (6.9,0) node[right] {$\overline{x}$};
+                \draw[dashed, thick, red!70!black] (3.5,0) -- (3.5,2.7) node[above] {\small $3.5$};
+                \node[anchor=east] at (0,1) {$n=1$};
+
+                % Panel 2: average of two rolls
+                \begin{scope}[yshift=-4.2cm]
+                  \foreach \s/\c in {2/1,3/2,4/3,5/4,6/5,7/6,8/5,9/4,10/3,11/2,12/1} {
+                    \pgfmathsetmacro{\m}{\s/2}
+                    \pgfmathsetmacro{\h}{\c/3}
+                    \fill[blue!40] (\m-0.2,0) rectangle (\m+0.2,\h);
+                  }
+                  \foreach \x in {1,...,6} \node[below] at (\x,0) {\small $\x$};
+                  \draw[->] (0.2,0) -- (6.9,0) node[right] {$\overline{x}$};
+                  \draw[dashed, thick, red!70!black] (3.5,0) -- (3.5,2.7) node[above] {\small $3.5$};
+                  \node[anchor=east] at (0,1) {$n=2$};
+                \end{scope}
+              \end{tikzpicture}
+            ]]>
+          </latex-image>
+        </image>
+      </figure>
+    </solution>
+  </example>
+
+  <p>
+    Something interesting is happening here. Averaging more rolls concentrates the probablity closer to the mean, <m>\mathbb{E}[X]</m>. As we add more and more die rolls, we'll see the concentration get even stronger. Essentially, we're seeing the distribution <q>pile up</q> on <m>\mu</m> more and more as the sample size (i.e., the number of die rolls) gets larger and larger. This is stated formally below in the folowing theorem.
+  </p>
+
+  <theorem xml:id="thm-7-10-lln">
+    <title>The Law of Large Numbers</title>
+    <statement>
+      <p>
+        Let <m>X</m> be a random variable with expected value <m>\mu = \mathbb{E}[X]</m>, and let <m>X_1, X_2, \ldots, X_n</m> be independent random variables, each with the same distribution as <m>X</m>. Then, for any <m>\varepsilon > 0</m>, the probability
+        <md>
+          \mathbb{P}\left(\left|\overline{X}_n - \mu\right| > \varepsilon\right)
+        </md>
+        can be made as small as we like by taking <m>n</m> sufficiently large.
+      </p>
+    </statement>
+  </theorem>
+
+  <figure xml:id="fig-7-10-epsilon-band">
+    <caption>The statement of <xref ref="thm-7-10-lln"/>. For any width <m>\varepsilon</m> we choose, the probability of the sample mean landing in either outer region can be made as small as we like.</caption>
+    <image width="80%">
+      <description>
+        <p>
+          A number line with a point labeled mu at the center and a shaded interval from mu minus epsilon to mu plus epsilon. The regions outside the interval are labeled as unlikely when n is large.
+        </p>
+      </description>
+      <latex-image>
+        <![CDATA[
+          \begin{tikzpicture}[x=1cm, y=1cm]
+            \fill[blue!15] (3.5,-0.3) rectangle (6.5,0.3);
+            \draw[<->, thick] (0,0) -- (10,0);
+            \foreach \p/\l in {3.5/\mu-\varepsilon, 5/\mu, 6.5/\mu+\varepsilon} {
+              \draw (\p,-0.15) -- (\p,0.15);
+              \node[below=4pt] at (\p,-0.15) {$\l$};
+            }
+            \node[red!60!black, align=center] at (1.75,0.95) {\small unlikely for large $n$:\\ \small $\overline{X}_n < \mu - \varepsilon$};
+            \node[align=center] at (5,0.95) {\small likely for large $n$:\\ \small $\overline{X}_n$ near $\mu$};
+            \node[red!60!black, align=center] at (8.25,0.95) {\small unlikely for large $n$:\\ \small $\overline{X}_n > \mu + \varepsilon$};
+            \draw[<->] (5,1.9) -- (6.5,1.9) node[midway, above] {\small $\varepsilon$};
+          \end{tikzpicture}
+        ]]>
+      </latex-image>
+    </image>
+  </figure>
+
+  <remark>
+    <title>On the proof</title>
+    <p>
+      This is an incredibly significant result in statistics (together with the <em>central limit theorem</em>, which we do not cover here). Unfortuantely, the proof relies some mathematical details that are beyond the scope of the class, but the intuition behind the proof follows that of the example above.
+    </p>
+  </remark>
+
+  <example xml:id="ex-7-10-band-coin">
+    <title>Watching the Band Close In</title>
+    <statement>
+      <p>
+        Let <m>X</m> equal <m>1</m> if a fair coin lands heads and <m>0</m> if it lands tails, so that <m>\mu = \mathbb{E}[X] = \frac{1}{2}</m>. Then <m>\overline{X}_n</m> is the proportion of heads in <m>n</m> flips. Take <m>\varepsilon = 0.2</m>, so that the band in <xref ref="fig-7-10-epsilon-band"/> runs from <m>0.3</m> to <m>0.7</m>. Find <m>\mathbb{P}\left(\left|\overline{X}_n - \mu\right| > \varepsilon\right)</m> for <m>n = 1, 2, 5, 10,</m> and <m>20</m>.
+      </p>
+    </statement>
+
+    <hint>
+      <p>
+        If the number of heads is <m>k</m>, then <m>\overline{X}_n = \frac{k}{n}</m>. Determine which values of <m>k</m> put <m>\frac{k}{n}</m> below <m>0.3</m> or above <m>0.7</m>, then count the sequences of flips that produce them.
+      </p>
+    </hint>
+
+    <solution>
+      <p>
+        There are <m>2^n</m> equally likely sequences of <m>n</m> flips, and exactly <m>\binom{n}{k}</m> of them contain <m>k</m> heads. We want the probability that <m>\frac{k}{n} \lt 0.3</m> or <m>\frac{k}{n} > 0.7</m>. We work through the smaller cases directly.
+      </p>
+
+      <p>
+        <ul>
+          <li>
+            <p>
+              <m>n = 1</m>: The proportion is either <m>0</m> or <m>1</m>, and both are outside the band. The probability is <m>1</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>n = 2</m>: The proportion is <m>0</m>, <m>0.5</m>, or <m>1</m>. Only <m>k = 0</m> and <m>k = 2</m> fall outside the band, so the probability is <m>\frac{1 + 1}{4} = \frac{1}{2}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>n = 5</m>: The possible proportions are <m>0, 0.2, 0.4, 0.6, 0.8, 1</m>. Those outside the band correspond to <m>k \in \{0, 1, 4, 5\}</m>, so the probability is <m>\frac{1 + 5 + 5 + 1}{32} = \frac{3}{8}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>n = 10</m>: We need <m>k \leq 2</m> or <m>k \geq 8</m>. Each tail contains <m>1 + 10 + 45 = 56</m> sequences, so the probability is <m>\frac{112}{1024} \approx 0.109</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>n = 20</m>: We need <m>k \leq 5</m> or <m>k \geq 15</m>. Each tail contains <m>1 + 20 + 190 + 1140 + 4845 + 15504 = 21700</m> sequences, so the probability is <m>\frac{43400}{1048576} \approx 0.041</m>.
+            </p>
+          </li>
+        </ul>
+      </p>
+
+      <p>
+        We summarize the results in a table.
+      </p>
+
+      <tabular halign="center">
+        <row bottom="minor">
+          <cell><m>n</m></cell>
+          <cell>Heads <m>k</m> outside the band</cell>
+          <cell>Favorable <m>/</m> total sequences</cell>
+          <cell><m>\mathbb{P}\left(\left|\overline{X}_n - \mu\right| > 0.2\right)</m></cell>
+        </row>
+        <row>
+          <cell><m>1</m></cell>
+          <cell><m>k \in \{0, 1\}</m></cell>
+          <cell><m>2 / 2</m></cell>
+          <cell><m>1</m></cell>
+        </row>
+        <row>
+          <cell><m>2</m></cell>
+          <cell><m>k \in \{0, 2\}</m></cell>
+          <cell><m>2 / 4</m></cell>
+          <cell><m>0.5</m></cell>
+        </row>
+        <row>
+          <cell><m>5</m></cell>
+          <cell><m>k \in \{0, 1, 4, 5\}</m></cell>
+          <cell><m>12 / 32</m></cell>
+          <cell><m>0.375</m></cell>
+        </row>
+        <row>
+          <cell><m>10</m></cell>
+          <cell><m>k \leq 2</m> or <m>k \geq 8</m></cell>
+          <cell><m>112 / 1024</m></cell>
+          <cell><m>\approx 0.109</m></cell>
+        </row>
+        <row>
+          <cell><m>20</m></cell>
+          <cell><m>k \leq 5</m> or <m>k \geq 15</m></cell>
+          <cell><m>43400 / 1048576</m></cell>
+          <cell><m>\approx 0.041</m></cell>
+        </row>
+      </tabular>
+
+      <p>
+        The probability of landing outside the band falls from certainty at <m>n = 1</m> to about <m>4\%</m> at <m>n = 20</m>, just as <xref ref="thm-7-10-lln"/> predicts! Notice that this does not mean the sample proportion is guaranteed to land inside the band. Even at <m>n = 20</m>, roughly one experiment in twenty-five still misses it. If we had chosen a smaller <m>\varepsilon</m>, the band would be narrower and we would need a larger <m>n</m> to achieve the same probability. The theorem promises that for <em>any</em> <m>\varepsilon</m>, a large enough <m>n</m> exists.
+      </p>
+    </solution>
+  </example>
+
+</section>
