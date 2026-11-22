@@ -1855,6 +1855,42 @@ var ptx_lunr_docs = [
   "body": " Sampling Mislabeled Records   A dataset contains 10 records, of which 4 are mislabeled. An analyst draws 2 records at random, without replacement, to audit. What is the expected number of mislabeled records in the sample?    There are equally likely pairs of records. Count how many pairs contain 0, 1, or 2 mislabeled records.    Let denote the number of mislabeled records in the sample, so the support of is . There are 6 correctly labeled records and 4 mislabeled ones. Counting pairs: As a check, . Applying : Thus, we expect 0.8 mislabeled records in a sample of two. Notice that this equals , the sample size times the overall fraction of mislabeled records. This is not a coincidence, and we will see why when we study the linearity of expectation.   "
 },
 {
+  "id": "sec-7-9-variance",
+  "level": "1",
+  "url": "sec-7-9-variance.html",
+  "type": "Section",
+  "number": "7.8",
+  "title": "Variance",
+  "body": " Variance  In , we discussed a way to characterize the center of a distribution. In this section, we'll discuss a way to characterize the spread of a distribution.  Let be the support of a random variable with equiprobable distribution. We want our definition of the spread to reflect the average distance of all points of the distribution from the center (i.e., from the expected value, ). So, perhaps a good candidate is precisely that: However, this is inadequate. Notice that: independent of the distribution (in fact, this zero-sum property is essentially what we mean when we say that the mean is the center of mass of a distribution). So, this is certainly not a good candidate for the spread of the data; in particular, because is sometimes positive and sometimes negative. So, maybe a better idea is to take the squares of each of the deviations to get: We can repeat the same line of reasoning we presented in to write this sum in terms of the distribution of the random variable . Indeed, This form still makes sense when outcomes are not equally likely, so we adopt it as the definition. This is known as the variance of a distribution and provides us with a reasonable measure of spread .    Let be the support of a random variable . Then, the variance of , denoted by , is defined by: The standard deviation of , denoted by , is .    Since the variance averages squared deviations, its units are the square of the units of and therefore cannot be reasonably interpreted as a distance on the distribution. We define as the square root of the variance so that we have a quantity that characterizes the spread of the data while also having the same dimensions of the data. The standard deviation has an easier physical interpretation, but the variance has nicer mathematical properties, which you'll see in great detail if you continue your statistics education.   Variance of a Fair Die Roll   Let denote the result of rolling a fair six-sided die. Find and .    Compute first. Then build a table with a column for each deviation and its square.    The support of is , and each value has probability . The expected value is: We now organize the computation of in a table.                                                     Notice that the deviations in the third column sum to zero, just as we showed in general. Summing the last column gives the variance: Therefore, .     Two Games with the Same Expected Value   Game pays with probability and with probability . Game pays with probability and with probability . Let and denote the payouts. Compare their expected values and standard deviations.    Compute and first. Then make one table for each game.    The expected values are: The games have the same center, so the expected value alone cannot distinguish them. We compute the variance of each using a table. For game :                         so . For game :                         so . Taking square roots, and dollars. Both games pay on average, but game is far more spread out: it usually pays nothing and occasionally pays a lot, while game always pays close to .    "
+},
+{
+  "id": "def-7-9-variance",
+  "level": "2",
+  "url": "sec-7-9-variance.html#def-7-9-variance",
+  "type": "Definition",
+  "number": "7.8.1",
+  "title": "",
+  "body": "  Let be the support of a random variable . Then, the variance of , denoted by , is defined by: The standard deviation of , denoted by , is .   "
+},
+{
+  "id": "ex-7-9-var-1",
+  "level": "2",
+  "url": "sec-7-9-variance.html#ex-7-9-var-1",
+  "type": "Example",
+  "number": "7.8.2",
+  "title": "Variance of a Fair Die Roll.",
+  "body": " Variance of a Fair Die Roll   Let denote the result of rolling a fair six-sided die. Find and .    Compute first. Then build a table with a column for each deviation and its square.    The support of is , and each value has probability . The expected value is: We now organize the computation of in a table.                                                     Notice that the deviations in the third column sum to zero, just as we showed in general. Summing the last column gives the variance: Therefore, .   "
+},
+{
+  "id": "ex-7-9-var-2",
+  "level": "2",
+  "url": "sec-7-9-variance.html#ex-7-9-var-2",
+  "type": "Example",
+  "number": "7.8.3",
+  "title": "Two Games with the Same Expected Value.",
+  "body": " Two Games with the Same Expected Value   Game pays with probability and with probability . Game pays with probability and with probability . Let and denote the payouts. Compare their expected values and standard deviations.    Compute and first. Then make one table for each game.    The expected values are: The games have the same center, so the expected value alone cannot distinguish them. We compute the variance of each using a table. For game :                         so . For game :                         so . Taking square roots, and dollars. Both games pay on average, but game is far more spread out: it usually pays nothing and occasionally pays a lot, while game always pays close to .   "
+},
+{
   "id": "backmatter-2",
   "level": "1",
   "url": "backmatter-2.html",
