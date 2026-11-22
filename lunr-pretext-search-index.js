@@ -1891,6 +1891,78 @@ var ptx_lunr_docs = [
   "body": " Two Games with the Same Expected Value   Game pays with probability and with probability . Game pays with probability and with probability . Let and denote the payouts. Compare their expected values and standard deviations.    Compute and first. Then make one table for each game.    The expected values are: The games have the same center, so the expected value alone cannot distinguish them. We compute the variance of each using a table. For game :                         so . For game :                         so . Taking square roots, and dollars. Both games pay on average, but game is far more spread out: it usually pays nothing and occasionally pays a lot, while game always pays close to .   "
 },
 {
+  "id": "sec-7-10-lln",
+  "level": "1",
+  "url": "sec-7-10-lln.html",
+  "type": "Section",
+  "number": "7.9",
+  "title": "The Law of Large Numbers",
+  "body": " The Law of Large Numbers   In , we said that the expected value is the center of a distribution. There is something unsatisfying about this, though. If you roll a fair die, you can never actually observe the expected value of , so in what sense should we expect it? In this section, we'll make precise the idea that an expected value describes what happens on average over many repetitions of an experiment.  Suppose you roll a fair six-sided die over and over to get random varibles , and after each roll you record the average of all of the rolls so far. These running averages are our main object of study.    Let be random variables. Their sample mean is:     Note the difference in notation bewteen and . In the latter case, the 's were fixed numbers. In the former, the 's are outcomes of a random experiment and are thus random variables. As such, itself is a random variable and has a distribution.  In what follows, we assume that each of the 's are independent and each come from the same distribution (e.g., they are all rolls of the same die or tosses of the same coin, etc).   The running average of twenty rolls of a fair die. The dashed line is , and the shaded band covers .    A line plot of the running average of twenty die rolls. It starts at 6, swings between roughly 3.4 and 5.5 over the first ten rolls, and then stays within a shaded band around 3.5.      There are two important observations that we can glean from :   The early averages are wild. After a single roll, the average is just that roll. As more rolls accumulate, no single roll can move the average very much.    The average is itself random. If we repeated the experiment, we would trace out a different path. What stays the same is where the paths end up.     It would be perfectly reasonbale to ask at this point why on earth there seems to be this pull towards the expected value. The example below motivates why this is the case.   Averaging Two Dice   Let be the result of one roll of a fair die, and let be the average of two independent rolls. Compare the distributions of and .    There are equally likely pairs of rolls. Count how many pairs give each sum.    The average of two rolls is half of their sum, so we organize the outcomes by sum:    Sum       Average       Probability        compares the two distributions. Applying , we find , the same center as a single roll. The spread is different, however. Applying gives , exactly half of the from . Moreover, the probability of landing between and (inclusive) rose from to .   The distribution of one die roll (top) and of the average of two die rolls (bottom). Bar heights are probabilities, with a peak height of in both panels. The dashed line is at .    Two bar charts. The top is flat across the values 1 through 6. The bottom is triangular, with values from 1 to 6 in steps of one half, peaking at 3.5.        Something interesting is happening here. Averaging more rolls concentrates the probablity closer to the mean, . As we add more and more die rolls, we'll see the concentration get even stronger. Essentially, we're seeing the distribution pile up on more and more as the sample size (i.e., the number of die rolls) gets larger and larger. This is stated formally below in the folowing theorem.   The Law of Large Numbers   Let be a random variable with expected value , and let be independent random variables, each with the same distribution as . Then, for any , the probability can be made as small as we like by taking sufficiently large.     The statement of . For any width we choose, the probability of the sample mean landing in either outer region can be made as small as we like.    A number line with a point labeled mu at the center and a shaded interval from mu minus epsilon to mu plus epsilon. The regions outside the interval are labeled as unlikely when n is large.       On the proof  This is an incredibly significant result in statistics (together with the central limit theorem , which we do not cover here). Unfortuantely, the proof relies some mathematical details that are beyond the scope of the class, but the intuition behind the proof follows that of the example above.    Watching the Band Close In   Let equal if a fair coin lands heads and if it lands tails, so that . Then is the proportion of heads in flips. Take , so that the band in runs from to . Find for and .    If the number of heads is , then . Determine which values of put below or above , then count the sequences of flips that produce them.    There are equally likely sequences of flips, and exactly of them contain heads. We want the probability that or . We work through the smaller cases directly.      : The proportion is either or , and both are outside the band. The probability is .     : The proportion is , , or . Only and fall outside the band, so the probability is .     : The possible proportions are . Those outside the band correspond to , so the probability is .     : We need or . Each tail contains sequences, so the probability is .     : We need or . Each tail contains sequences, so the probability is .     We summarize the results in a table.     Heads outside the band  Favorable total sequences                        or       or      The probability of landing outside the band falls from certainty at to about at , just as predicts! Notice that this does not mean the sample proportion is guaranteed to land inside the band. Even at , roughly one experiment in twenty-five still misses it. If we had chosen a smaller , the band would be narrower and we would need a larger to achieve the same probability. The theorem promises that for any  , a large enough exists.    "
+},
+{
+  "id": "def-7-10-sample-mean",
+  "level": "2",
+  "url": "sec-7-10-lln.html#def-7-10-sample-mean",
+  "type": "Definition",
+  "number": "7.9.1",
+  "title": "",
+  "body": "  Let be random variables. Their sample mean is:    "
+},
+{
+  "id": "fig-7-10-running-average",
+  "level": "2",
+  "url": "sec-7-10-lln.html#fig-7-10-running-average",
+  "type": "Figure",
+  "number": "7.9.2",
+  "title": "",
+  "body": " The running average of twenty rolls of a fair die. The dashed line is , and the shaded band covers .    A line plot of the running average of twenty die rolls. It starts at 6, swings between roughly 3.4 and 5.5 over the first ten rolls, and then stays within a shaded band around 3.5.     "
+},
+{
+  "id": "ex-7-10-two-dice",
+  "level": "2",
+  "url": "sec-7-10-lln.html#ex-7-10-two-dice",
+  "type": "Example",
+  "number": "7.9.3",
+  "title": "Averaging Two Dice.",
+  "body": " Averaging Two Dice   Let be the result of one roll of a fair die, and let be the average of two independent rolls. Compare the distributions of and .    There are equally likely pairs of rolls. Count how many pairs give each sum.    The average of two rolls is half of their sum, so we organize the outcomes by sum:    Sum       Average       Probability        compares the two distributions. Applying , we find , the same center as a single roll. The spread is different, however. Applying gives , exactly half of the from . Moreover, the probability of landing between and (inclusive) rose from to .   The distribution of one die roll (top) and of the average of two die rolls (bottom). Bar heights are probabilities, with a peak height of in both panels. The dashed line is at .    Two bar charts. The top is flat across the values 1 through 6. The bottom is triangular, with values from 1 to 6 in steps of one half, peaking at 3.5.       "
+},
+{
+  "id": "thm-7-10-lln",
+  "level": "2",
+  "url": "sec-7-10-lln.html#thm-7-10-lln",
+  "type": "Theorem",
+  "number": "7.9.5",
+  "title": "The Law of Large Numbers.",
+  "body": " The Law of Large Numbers   Let be a random variable with expected value , and let be independent random variables, each with the same distribution as . Then, for any , the probability can be made as small as we like by taking sufficiently large.   "
+},
+{
+  "id": "fig-7-10-epsilon-band",
+  "level": "2",
+  "url": "sec-7-10-lln.html#fig-7-10-epsilon-band",
+  "type": "Figure",
+  "number": "7.9.6",
+  "title": "",
+  "body": " The statement of . For any width we choose, the probability of the sample mean landing in either outer region can be made as small as we like.    A number line with a point labeled mu at the center and a shaded interval from mu minus epsilon to mu plus epsilon. The regions outside the interval are labeled as unlikely when n is large.     "
+},
+{
+  "id": "sec-7-10-lln-14",
+  "level": "2",
+  "url": "sec-7-10-lln.html#sec-7-10-lln-14",
+  "type": "Remark",
+  "number": "7.9.7",
+  "title": "On the proof.",
+  "body": " On the proof  This is an incredibly significant result in statistics (together with the central limit theorem , which we do not cover here). Unfortuantely, the proof relies some mathematical details that are beyond the scope of the class, but the intuition behind the proof follows that of the example above.  "
+},
+{
+  "id": "ex-7-10-band-coin",
+  "level": "2",
+  "url": "sec-7-10-lln.html#ex-7-10-band-coin",
+  "type": "Example",
+  "number": "7.9.8",
+  "title": "Watching the Band Close In.",
+  "body": " Watching the Band Close In   Let equal if a fair coin lands heads and if it lands tails, so that . Then is the proportion of heads in flips. Take , so that the band in runs from to . Find for and .    If the number of heads is , then . Determine which values of put below or above , then count the sequences of flips that produce them.    There are equally likely sequences of flips, and exactly of them contain heads. We want the probability that or . We work through the smaller cases directly.      : The proportion is either or , and both are outside the band. The probability is .     : The proportion is , , or . Only and fall outside the band, so the probability is .     : The possible proportions are . Those outside the band correspond to , so the probability is .     : We need or . Each tail contains sequences, so the probability is .     : We need or . Each tail contains sequences, so the probability is .     We summarize the results in a table.     Heads outside the band  Favorable total sequences                        or       or      The probability of landing outside the band falls from certainty at to about at , just as predicts! Notice that this does not mean the sample proportion is guaranteed to land inside the band. Even at , roughly one experiment in twenty-five still misses it. If we had chosen a smaller , the band would be narrower and we would need a larger to achieve the same probability. The theorem promises that for any  , a large enough exists.   "
+},
+{
   "id": "backmatter-2",
   "level": "1",
   "url": "backmatter-2.html",
