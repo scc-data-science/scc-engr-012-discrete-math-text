@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-7-9-variance" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Variance</title>
+
+  <p>
+    In <xref ref="sec-7-8-expected-values"/>, we discussed a way to characterize the center of a distribution. In this section, we'll discuss a way to characterize the <em>spread</em> of a distribution.
+  </p>
+  
+  <p>
+    Let <m>x_1, x_2, \ldots, x_n</m> be the support of a random variable <m>X</m> with equiprobable distribution. We want our definition of the <q>spread</q> to reflect the average distance of all points of the distribution from the center (i.e., from the expected value, <m>\mathbb{E}[X]</m>). So, perhaps a good candidate is precisely that:
+    <md>
+      \mathrm{Spread} = \frac{\sum_{k=1}^n (x_k - \mathbb{E}[X])}{n}.
+    </md>
+    However, this is inadequate. Notice that:
+    <md>
+      <mrow> \frac{\sum_{k=1}^n (x_k - \mathbb{E}[X])}{n} \amp = \sum_{k=1}^n \frac{x_k}{n} - \frac{n \mathbb{E}[X]}{n} </mrow>
+      <mrow>   \amp = \mathbb{E}[X] - \mathbb{E}[X] </mrow>
+      <mrow>   \amp = 0, </mrow>
+    </md>
+    independent of the distribution (in fact, this zero-sum property is essentially what we mean when we say that the mean is the <em>center of mass</em> of a distribution). So, this is certainly not a good candidate for the <q>spread</q> of the data; in particular, because <m>x_k - \mathbb{E}[X]</m> is sometimes positive and sometimes negative. So, maybe a better idea is to take the squares of each of the deviations <m>x_k - \mathbb{E}[X]</m> to get:
+    <md>
+      \mathrm{Spread} = \frac{\sum_{k=1}^n (x_k - \mathbb{E}[X])^2}{n}.
+    </md>
+    We can repeat the same line of reasoning we presented in <xref ref="sec-7-8-expected-values"/> to write this sum in terms of the distribution of the random variable <m>X</m>. Indeed,
+    <md>
+      <mrow> \mathrm{Spread} \amp = \frac{\sum_{k=1}^n (x_k - \mathbb{E}[X])^2}{n} </mrow>
+      <mrow>   \amp = \sum_{k=1}^n (x_k - \mathbb{E}[X])^2 \cdot \frac{1}{n} </mrow>
+      <mrow>   \amp = \sum_{k=1}^n (x_k - \mathbb{E}[X])^2 \cdot \mathbb{P}(X = x_k) </mrow>
+      <mrow>   \amp = \mathbb{E} \left[(X - \mathbb{E}[X])^2 \right]. </mrow>
+    </md>
+    This form still makes sense when outcomes are not equally likely, so we adopt it as the definition. This is known as the <em>variance</em> of a distribution and provides us with a reasonable measure of <em>spread</em>.
+  </p>
+
+  <definition xml:id="def-7-9-variance">
+    <statement>
+      <p>
+        Let <m>x_1, x_2, \ldots, x_n</m> be the support of a random variable <m>X</m>. Then, the <term>variance</term> of <m>X</m>, denoted by <m>\mathrm{Var}[X]</m>, is defined by:
+        <md>
+          \mathrm{Var}[X] = \mathbb{E} \left[(X - \mathbb{E}[X])^2 \right] = \sum_{k=1}^n (x_k - \mathbb{E}[X])^2 \cdot \mathbb{P}(X = x_k).
+        </md>
+        The <term>standard deviation</term> of <m>X</m>, denoted by <m>\mathrm{sd}[X]</m>, is <m>\mathrm{sd}[X] = \sqrt{\mathrm{Var}[X]}</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    Since the variance averages <em>squared</em> deviations, its units are the <em>square</em> of the units of <m>X</m> and therefore cannot be reasonably interpreted as a <q>distance</q> on the distribution. We define <m>\mathrm{sd}[X]</m> as the square root of the variance so that we have a quantity that characterizes the spread of the data while also having the same dimensions of the data. The standard deviation has an easier physical interpretation, but the variance has nicer mathematical properties, which you'll see in great detail if you continue your statistics education.
+  </p>
+
+  <example xml:id="ex-7-9-var-1">
+    <title>Variance of a Fair Die Roll</title>
+    <statement>
+      <p>
+        Let <m>X</m> denote the result of rolling a fair six-sided die. Find <m>\mathrm{Var}[X]</m> and <m>\mathrm{sd}[X]</m>.
+      </p>
+    </statement>
+
+    <hint>
+      <p>
+        Compute <m>\mathbb{E}[X]</m> first. Then build a table with a column for each deviation and its square.
+      </p>
+    </hint>
+
+    <solution>
+      <p>
+        The support of <m>X</m> is <m>\{1, 2, 3, 4, 5, 6\}</m>, and each value has probability <m>\frac{1}{6}</m>. The expected value is:
+        <md>
+          \mathbb{E}[X] = \frac{1 + 2 + 3 + 4 + 5 + 6}{6} = \frac{7}{2}.
+        </md>
+        We now organize the computation of <xref ref="def-7-9-variance"/> in a table.
+      </p>
+
+      <tabular halign="center">
+        <row bottom="minor">
+          <cell><m>x_k</m></cell>
+          <cell><m>\mathbb{P}(X = x_k)</m></cell>
+          <cell><m>x_k - \mathbb{E}[X]</m></cell>
+          <cell><m>(x_k - \mathbb{E}[X])^2</m></cell>
+          <cell><m>(x_k - \mathbb{E}[X])^2 \cdot \mathbb{P}(X = x_k)</m></cell>
+        </row>
+        <row>
+          <cell><m>1</m></cell>
+          <cell><m>\frac{1}{6}</m></cell>
+          <cell><m>-\frac{5}{2}</m></cell>
+          <cell><m>\frac{25}{4}</m></cell>
+          <cell><m>\frac{25}{24}</m></cell>
+        </row>
+        <row>
+          <cell><m>2</m></cell>
+          <cell><m>\frac{1}{6}</m></cell>
+          <cell><m>-\frac{3}{2}</m></cell>
+          <cell><m>\frac{9}{4}</m></cell>
+          <cell><m>\frac{9}{24}</m></cell>
+        </row>
+        <row>
+          <cell><m>3</m></cell>
+          <cell><m>\frac{1}{6}</m></cell>
+          <cell><m>-\frac{1}{2}</m></cell>
+          <cell><m>\frac{1}{4}</m></cell>
+          <cell><m>\frac{1}{24}</m></cell>
+        </row>
+        <row>
+          <cell><m>4</m></cell>
+          <cell><m>\frac{1}{6}</m></cell>
+          <cell><m>\frac{1}{2}</m></cell>
+          <cell><m>\frac{1}{4}</m></cell>
+          <cell><m>\frac{1}{24}</m></cell>
+        </row>
+        <row>
+          <cell><m>5</m></cell>
+          <cell><m>\frac{1}{6}</m></cell>
+          <cell><m>\frac{3}{2}</m></cell>
+          <cell><m>\frac{9}{4}</m></cell>
+          <cell><m>\frac{9}{24}</m></cell>
+        </row>
+        <row>
+          <cell><m>6</m></cell>
+          <cell><m>\frac{1}{6}</m></cell>
+          <cell><m>\frac{5}{2}</m></cell>
+          <cell><m>\frac{25}{4}</m></cell>
+          <cell><m>\frac{25}{24}</m></cell>
+        </row>
+      </tabular>
+
+      <p>
+        Notice that the deviations in the third column sum to zero, just as we showed in general. Summing the last column gives the variance:
+        <md>
+          <mrow> \mathrm{Var}[X] \amp = \frac{25 + 9 + 1 + 1 + 9 + 25}{24} </mrow>
+          <mrow>   \amp = \frac{70}{24} </mrow>
+          <mrow>   \amp = \frac{35}{12} \approx 2.92. </mrow>
+        </md>
+        Therefore, <m>\mathrm{sd}[X] = \sqrt{\frac{35}{12}} \approx 1.71</m>.
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="ex-7-9-var-2">
+    <title>Two Games with the Same Expected Value</title>
+    <statement>
+      <p>
+        Game <m>A</m> pays <m>\$1</m> with probability <m>\frac{1}{2}</m> and <m>\$3</m> with probability <m>\frac{1}{2}</m>. Game <m>B</m> pays <m>\$0</m> with probability <m>\frac{3}{4}</m> and <m>\$8</m> with probability <m>\frac{1}{4}</m>. Let <m>A</m> and <m>B</m> denote the payouts. Compare their expected values and standard deviations.
+      </p>
+    </statement>
+
+    <hint>
+      <p>
+        Compute <m>\mathbb{E}[A]</m> and <m>\mathbb{E}[B]</m> first. Then make one table for each game.
+      </p>
+    </hint>
+
+    <solution>
+      <p>
+        The expected values are:
+        <md>
+          <mrow> \mathbb{E}[A] \amp = 1 \cdot \frac{1}{2} + 3 \cdot \frac{1}{2} = 2 </mrow>
+          <mrow> \mathbb{E}[B] \amp = 0 \cdot \frac{3}{4} + 8 \cdot \frac{1}{4} = 2. </mrow>
+        </md>
+        The games have the same center, so the expected value alone cannot distinguish them. We compute the variance of each using a table. For game <m>A</m>:
+      </p>
+
+      <tabular halign="center">
+        <row bottom="minor">
+          <cell><m>a_k</m></cell>
+          <cell><m>\mathbb{P}(A = a_k)</m></cell>
+          <cell><m>a_k - \mathbb{E}[A]</m></cell>
+          <cell><m>(a_k - \mathbb{E}[A])^2</m></cell>
+          <cell><m>(a_k - \mathbb{E}[A])^2 \cdot \mathbb{P}(A = a_k)</m></cell>
+        </row>
+        <row>
+          <cell><m>1</m></cell>
+          <cell><m>\frac{1}{2}</m></cell>
+          <cell><m>-1</m></cell>
+          <cell><m>1</m></cell>
+          <cell><m>\frac{1}{2}</m></cell>
+        </row>
+        <row>
+          <cell><m>3</m></cell>
+          <cell><m>\frac{1}{2}</m></cell>
+          <cell><m>1</m></cell>
+          <cell><m>1</m></cell>
+          <cell><m>\frac{1}{2}</m></cell>
+        </row>
+      </tabular>
+
+      <p>
+        so <m>\mathrm{Var}[A] = \frac{1}{2} + \frac{1}{2} = 1</m>. For game <m>B</m>:
+      </p>
+
+      <tabular halign="center">
+        <row bottom="minor">
+          <cell><m>b_k</m></cell>
+          <cell><m>\mathbb{P}(B = b_k)</m></cell>
+          <cell><m>b_k - \mathbb{E}[B]</m></cell>
+          <cell><m>(b_k - \mathbb{E}[B])^2</m></cell>
+          <cell><m>(b_k - \mathbb{E}[B])^2 \cdot \mathbb{P}(B = b_k)</m></cell>
+        </row>
+        <row>
+          <cell><m>0</m></cell>
+          <cell><m>\frac{3}{4}</m></cell>
+          <cell><m>-2</m></cell>
+          <cell><m>4</m></cell>
+          <cell><m>3</m></cell>
+        </row>
+        <row>
+          <cell><m>8</m></cell>
+          <cell><m>\frac{1}{4}</m></cell>
+          <cell><m>6</m></cell>
+          <cell><m>36</m></cell>
+          <cell><m>9</m></cell>
+        </row>
+      </tabular>
+
+      <p>
+        so <m>\mathrm{Var}[B] = 3 + 9 = 12</m>. Taking square roots, <m>\mathrm{sd}[A] = 1</m> and <m>\mathrm{sd}[B] = \sqrt{12} \approx 3.46</m> dollars.
+        Both games pay <m>\$2</m> on average, but game <m>B</m> is far more spread out: it usually pays nothing and occasionally pays a lot, while game <m>A</m> always pays close to <m>\$2</m>.
+      </p>
+    </solution>
+  </example>
+
+</section>

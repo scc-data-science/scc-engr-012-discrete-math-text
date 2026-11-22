@@ -39,13 +39,13 @@
     </p>
   </introduction>
 
-  <xi:include href="sec-7-1-prob-modeling.ptx" />
-  <xi:include href="sec-7-2-prob-properties.ptx" />
-  <xi:include href="sec-7-3-cond-prob.ptx" />
-  <xi:include href="sec-7-4-independence.ptx" />
-  <xi:include href="sec-7-6-bayes-theorem.ptx" />
-  <xi:include href="sec-7-7-random-variables.ptx" />
-  <xi:include href="sec-7-8-expected-values.ptx" />
-
+  <xi:include href="./_chapter_07/sec-7-1-prob-modeling.ptx" />
+  <xi:include href="./_chapter_07/sec-7-2-prob-properties.ptx" />
+  <xi:include href="./_chapter_07/sec-7-3-cond-prob.ptx" />
+  <xi:include href="./_chapter_07/sec-7-4-independence.ptx" />
+  <xi:include href="./_chapter_07/sec-7-6-bayes-theorem.ptx" />
+  <xi:include href="./_chapter_07/sec-7-7-random-variables.ptx" />
+  <xi:include href="./_chapter_07/sec-7-8-expected-values.ptx" />
+  <xi:include href="./_chapter_07/sec-7-9-variance.ptx" />
 
 </chapter>
