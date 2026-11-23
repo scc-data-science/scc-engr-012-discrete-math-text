@@ -1969,7 +1969,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "7.10",
   "title": "Exercises",
-  "body": " Exercises  Please complete the following problems. Show your work and simplify your answers whenever possible.    Out of the students in this class, suppose 60% are computer science majors, 70% are statistics majors, and 40% are double majors in computer science and statistics. Determine the probability that a randomly selected student is neither a computer science major not a statistics major.      Suppose a sx-sided die is loaded in a way that each even face is twice as likely as each odd face. Suppose further that all even faces are equally likely, and all odd faces are equally likely. Construct a probability model (i.e., determine the sample space and the probability measure) for a single roll of this die and find the probability that the outcome is less than 4.      We are given three coins: one has a heads on both face, another has a tails on both faces, and the third has a head on one face and a tail on the other. Suppose we choose a coin at random and toss it, and the result is heads. What is the probability that the opposite face is a tails?       A payments company processes transactions through three channels: online, in-store, and by phone. Of all transactions, are online, are in-store, and are by phone. Historically, the fraction of transactions that are fraudulent is for online, for in-store, and for phone. A transaction is selected at random. Let , , and denote the events that it is online, in-store, and by phone, respectively, and let denote the event that it is fraudulent.     Explain why , , and form a partition of the sample space. Then use the Law of Total Probability to compute .    Suppose the selected transaction turns out to be fraudulent. Use Bayes' Theorem to compute , , and .    Verify that the three probabilities in part (b) sum to , and explain why they must.    Phone transactions are only of all transactions. What fraction of fraudulent transactions are phone transactions? Explain in a sentence or two why these two numbers differ.    Despite its higher fraud rate, why is a fraudulent transaction still more likely to have come from the online channel than the phone channel?          We are given three coins: one has a heads on both face, another has a tails on both faces, and the third has a head on one face and a tail on the other. Suppose we choose a coin at random and toss it, and the result is heads. What is the probability that the opposite face is a tails?      You pay a fee to play the following game. You roll a fair six-sided die. If the roll is even, you win a number of dollars equal to the roll. If the roll is odd, you win nothing. Let denote your winnings (not counting the fee).     Give the distribution of and compute .    What fee makes the game fair , meaning your expected net winnings are zero? Let denote your net winnings (winnings minus the fee) at this fee, and verify that, by definition, .    Use a table to compute and .    Compute . How does it compare to ? Explain in a sentence or two why this makes sense.          Let be a random variable with support , and write and .     Write in terms of and . Then show that if , we must have .    Suppose and . Find the distribution of .    Among all distributions on with , what is the largest possible variance? Describe the distribution that achieves it, and explain in words why it makes sense that this distribution is the most spread out.          A software company tracks the number of customer support tickets, , it receives in a randomly chosen hour. Based on past data, the distribution of is:                     Compute , , and . Organize the variance computation in a table.    What are the units of , , and ?    The outcome has only a chance of occurring. What fraction of comes from this outcome? What fraction of does it contribute? What does this tell you about how the mean and the variance respond to unusual values?        "
+  "body": " Exercises  Please complete the following problems. Show your work and simplify your answers whenever possible.    Out of the students in this class, suppose 60% are computer science majors, 70% are statistics majors, and 40% are double majors in computer science and statistics. Determine the probability that a randomly selected student is neither a computer science major nor a statistics major.      Suppose a six-sided die is loaded in a way that each even face is twice as likely as each odd face. Suppose further that all even faces are equally likely, and all odd faces are equally likely. Construct a probability model (i.e., determine the sample space and the probability measure) for a single roll of this die and find the probability that the outcome is less than 4.      We are given three coins: one has a heads on both faces, another has a tails on both faces, and the third has a head on one face and a tail on the other. Suppose we choose a coin at random and toss it, and the result is heads. What is the probability that the opposite face is a tails?       A payments company processes transactions through three channels: online, in-store, and by phone. Of all transactions, are online, are in-store, and are by phone. Historically, the fraction of transactions that are fraudulent is for online, for in-store, and for phone. A transaction is selected at random. Let , , and denote the events that it is online, in-store, and by phone, respectively, and let denote the event that it is fraudulent.     Explain why , , and form a partition of the sample space. Then use the Law of Total Probability to compute .    Suppose the selected transaction turns out to be fraudulent. Use Bayes' Theorem to compute , , and .    Verify that the three probabilities in part (b) sum to , and explain why they must.    Phone transactions are only of all transactions. What fraction of fraudulent transactions are phone transactions? Explain in a sentence or two why these two numbers differ.    Despite its higher fraud rate, why is a fraudulent transaction still more likely to have come from the online channel than the phone channel?          You pay a fee to play the following game. You roll a fair six-sided die. If the roll is even, you win a number of dollars equal to the roll. If the roll is odd, you win nothing. Let denote your winnings (not counting the fee).     Give the distribution of and compute .    What fee makes the game fair , meaning your expected net winnings are zero? Let denote your net winnings (winnings minus the fee) at this fee, and verify from the definition of expected value that .    Use a table to compute and .    Compute . How does it compare to ? Explain in a sentence or two why this makes sense.          Let be a random variable with support , and write and .     Write in terms of and . Then show that if , we must have .    Suppose and . Find the distribution of .    Among all distributions on with , what is the largest possible variance? Describe the distribution that achieves it, and explain in words why it makes sense that this distribution is the most spread out.          A software company tracks the number of customer support tickets, , it receives in a randomly chosen hour. Based on past data, the distribution of is:                     Compute , , and . Organize the variance computation in a table.    What are the units of , , and ?    The outcome has only a chance of occurring. What fraction of comes from this outcome? What fraction of does it contribute? What does this tell you about how the mean and the variance respond to unusual values?        "
 },
 {
   "id": "ch-7-1-majors",
@@ -1978,7 +1978,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "7.10.1",
   "title": "",
-  "body": "  Out of the students in this class, suppose 60% are computer science majors, 70% are statistics majors, and 40% are double majors in computer science and statistics. Determine the probability that a randomly selected student is neither a computer science major not a statistics major.   "
+  "body": "  Out of the students in this class, suppose 60% are computer science majors, 70% are statistics majors, and 40% are double majors in computer science and statistics. Determine the probability that a randomly selected student is neither a computer science major nor a statistics major.   "
 },
 {
   "id": "ch-7-2-weighted",
@@ -1987,7 +1987,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "7.10.2",
   "title": "",
-  "body": "  Suppose a sx-sided die is loaded in a way that each even face is twice as likely as each odd face. Suppose further that all even faces are equally likely, and all odd faces are equally likely. Construct a probability model (i.e., determine the sample space and the probability measure) for a single roll of this die and find the probability that the outcome is less than 4.   "
+  "body": "  Suppose a six-sided die is loaded in a way that each even face is twice as likely as each odd face. Suppose further that all even faces are equally likely, and all odd faces are equally likely. Construct a probability model (i.e., determine the sample space and the probability measure) for a single roll of this die and find the probability that the outcome is less than 4.   "
 },
 {
   "id": "ch-7-2-coins",
@@ -1996,7 +1996,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "7.10.3",
   "title": "",
-  "body": "  We are given three coins: one has a heads on both face, another has a tails on both faces, and the third has a head on one face and a tail on the other. Suppose we choose a coin at random and toss it, and the result is heads. What is the probability that the opposite face is a tails?   "
+  "body": "  We are given three coins: one has a heads on both faces, another has a tails on both faces, and the third has a head on one face and a tail on the other. Suppose we choose a coin at random and toss it, and the result is heads. What is the probability that the opposite face is a tails?   "
 },
 {
   "id": "ch-7-3-fraud-channels",
@@ -2008,29 +2008,20 @@ var ptx_lunr_docs = [
   "body": "  A payments company processes transactions through three channels: online, in-store, and by phone. Of all transactions, are online, are in-store, and are by phone. Historically, the fraction of transactions that are fraudulent is for online, for in-store, and for phone. A transaction is selected at random. Let , , and denote the events that it is online, in-store, and by phone, respectively, and let denote the event that it is fraudulent.     Explain why , , and form a partition of the sample space. Then use the Law of Total Probability to compute .    Suppose the selected transaction turns out to be fraudulent. Use Bayes' Theorem to compute , , and .    Verify that the three probabilities in part (b) sum to , and explain why they must.    Phone transactions are only of all transactions. What fraction of fraudulent transactions are phone transactions? Explain in a sentence or two why these two numbers differ.    Despite its higher fraud rate, why is a fraudulent transaction still more likely to have come from the online channel than the phone channel?       "
 },
 {
-  "id": "ch-7-4-independence",
-  "level": "2",
-  "url": "sec-7-11-exercises.html#ch-7-4-independence",
-  "type": "Exercise",
-  "number": "7.10.5",
-  "title": "",
-  "body": "  We are given three coins: one has a heads on both face, another has a tails on both faces, and the third has a head on one face and a tail on the other. Suppose we choose a coin at random and toss it, and the result is heads. What is the probability that the opposite face is a tails?   "
-},
-{
   "id": "ch-7-5-fair-game",
   "level": "2",
   "url": "sec-7-11-exercises.html#ch-7-5-fair-game",
   "type": "Exercise",
-  "number": "7.10.6",
+  "number": "7.10.5",
   "title": "",
-  "body": "  You pay a fee to play the following game. You roll a fair six-sided die. If the roll is even, you win a number of dollars equal to the roll. If the roll is odd, you win nothing. Let denote your winnings (not counting the fee).     Give the distribution of and compute .    What fee makes the game fair , meaning your expected net winnings are zero? Let denote your net winnings (winnings minus the fee) at this fee, and verify that, by definition, .    Use a table to compute and .    Compute . How does it compare to ? Explain in a sentence or two why this makes sense.       "
+  "body": "  You pay a fee to play the following game. You roll a fair six-sided die. If the roll is even, you win a number of dollars equal to the roll. If the roll is odd, you win nothing. Let denote your winnings (not counting the fee).     Give the distribution of and compute .    What fee makes the game fair , meaning your expected net winnings are zero? Let denote your net winnings (winnings minus the fee) at this fee, and verify from the definition of expected value that .    Use a table to compute and .    Compute . How does it compare to ? Explain in a sentence or two why this makes sense.       "
 },
 {
   "id": "ch-7-6-design",
   "level": "2",
   "url": "sec-7-11-exercises.html#ch-7-6-design",
   "type": "Exercise",
-  "number": "7.10.7",
+  "number": "7.10.6",
   "title": "",
   "body": "  Let be a random variable with support , and write and .     Write in terms of and . Then show that if , we must have .    Suppose and . Find the distribution of .    Among all distributions on with , what is the largest possible variance? Describe the distribution that achieves it, and explain in words why it makes sense that this distribution is the most spread out.       "
 },
@@ -2039,7 +2030,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-7-11-exercises.html#ch-7-7-support-tickets",
   "type": "Exercise",
-  "number": "7.10.8",
+  "number": "7.10.7",
   "title": "",
   "body": "  A software company tracks the number of customer support tickets, , it receives in a randomly chosen hour. Based on past data, the distribution of is:                     Compute , , and . Organize the variance computation in a table.    What are the units of , , and ?    The outcome has only a chance of occurring. What fraction of comes from this outcome? What fraction of does it contribute? What does this tell you about how the mean and the variance respond to unusual values?       "
 },
