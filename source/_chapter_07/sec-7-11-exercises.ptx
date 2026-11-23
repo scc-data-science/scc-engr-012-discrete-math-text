@@ -10,7 +10,7 @@
   <exercise xml:id="ch-7-1-majors">
     <statement>
       <p>
-        Out of the students in this class, suppose 60% are computer science majors, 70% are statistics majors, and 40% are double majors in computer science and statistics. Determine the probability that a randomly selected student is neither a computer science major not a statistics major.
+        Out of the students in this class, suppose 60% are computer science majors, 70% are statistics majors, and 40% are double majors in computer science and statistics. Determine the probability that a randomly selected student is neither a computer science major nor a statistics major.
       </p>
     </statement>
   </exercise>
@@ -18,7 +18,7 @@
   <exercise xml:id="ch-7-2-weighted">
     <statement>
       <p>
-        Suppose a sx-sided die is loaded in a way that each even face is twice as likely as each odd face. Suppose further that all even faces are equally likely, and all odd faces are equally likely. Construct a probability model (i.e., determine the sample space and the probability measure) for a single roll of this die and find the probability that the outcome is less than 4.
+        Suppose a six-sided die is loaded in a way that each even face is twice as likely as each odd face. Suppose further that all even faces are equally likely, and all odd faces are equally likely. Construct a probability model (i.e., determine the sample space and the probability measure) for a single roll of this die and find the probability that the outcome is less than 4.
       </p>
     </statement>
   </exercise>
@@ -26,7 +26,7 @@
   <exercise xml:id="ch-7-2-coins">
     <statement>
       <p>
-        We are given three coins: one has a heads on both face, another has a tails on both faces, and the third has a head on one face and a tail on the other. Suppose we choose a coin at random and toss it, and the result is heads. What is the probability that the opposite face is a tails?
+        We are given three coins: one has a heads on both faces, another has a tails on both faces, and the third has a head on one face and a tail on the other. Suppose we choose a coin at random and toss it, and the result is heads. What is the probability that the opposite face is a tails?
       </p>
     </statement>
   </exercise>
@@ -81,14 +81,6 @@
     </answer> -->
   </exercise>
 
-  <exercise xml:id="ch-7-4-independence">
-    <statement>
-      <p>
-        We are given three coins: one has a heads on both face, another has a tails on both faces, and the third has a head on one face and a tail on the other. Suppose we choose a coin at random and toss it, and the result is heads. What is the probability that the opposite face is a tails?
-      </p>
-    </statement>
-  </exercise>
-
   <exercise xml:id="ch-7-5-fair-game">
     <statement>
       <p>
@@ -103,7 +95,7 @@
           </li>
           <li>
             <p>
-              What fee makes the game <q>fair</q>, meaning your expected net winnings are zero? Let <m>X</m> denote your net winnings (winnings minus the fee) at this fee, and verify that, by definition, <m>\mathbb{E}[X] = 0</m>.
+              What fee makes the game <q>fair</q>, meaning your expected net winnings are zero? Let <m>X</m> denote your net winnings (winnings minus the fee) at this fee, and verify  from the definition of expected value that <m>\mathbb{E}[X] = 0</m>.
             </p>
           </li>
           <li>
