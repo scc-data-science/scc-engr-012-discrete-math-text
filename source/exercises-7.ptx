@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext xml:lang="en-US"
+         xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <xi:include href="./docinfo.ptx" />
+
+  <article xml:id="chapter-7-exercises">
+    <title>Chapter 7: Probability Theory</title>
+    <subtitle>Solano Community College ENGR 012</subtitle>
+
+    <xi:include href="./_chapter_07/sec-7-11-exercises.ptx" />
+
+  </article>
+
+</pretext>
