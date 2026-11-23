@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-7-11-exercises" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Exercises</title>
+
+  <p>
+    Please complete the following problems. Show your work and simplify your answers whenever possible.
+  </p>
+
+  <exercise xml:id="ch-7-1-majors">
+    <statement>
+      <p>
+        Out of the students in this class, suppose 60% are computer science majors, 70% are statistics majors, and 40% are double majors in computer science and statistics. Determine the probability that a randomly selected student is neither a computer science major not a statistics major.
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="ch-7-2-weighted">
+    <statement>
+      <p>
+        Suppose a sx-sided die is loaded in a way that each even face is twice as likely as each odd face. Suppose further that all even faces are equally likely, and all odd faces are equally likely. Construct a probability model (i.e., determine the sample space and the probability measure) for a single roll of this die and find the probability that the outcome is less than 4.
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="ch-7-2-coins">
+    <statement>
+      <p>
+        We are given three coins: one has a heads on both face, another has a tails on both faces, and the third has a head on one face and a tail on the other. Suppose we choose a coin at random and toss it, and the result is heads. What is the probability that the opposite face is a tails?
+      </p>
+    </statement>
+  </exercise>
+
+  <!-- Bayes Theorem question. -->
+  <exercise xml:id="ch-7-3-fraud-channels">
+    <statement>
+      <p>
+        A payments company processes transactions through three channels: online, in-store, and by phone. Of all transactions, <m>50\%</m> are online, <m>40\%</m> are in-store, and <m>10\%</m> are by phone. Historically, the fraction of transactions that are fraudulent is <m>2\%</m> for online, <m>0.5\%</m> for in-store, and <m>4\%</m> for phone. A transaction is selected at random. Let <m>O</m>, <m>S</m>, and <m>P</m> denote the events that it is online, in-store, and by phone, respectively, and let <m>F</m> denote the event that it is fraudulent.
+      </p>
+      <p>
+        <ol marker="(a)">
+          <li>
+            <p>
+              Explain why <m>O</m>, <m>S</m>, and <m>P</m> form a partition of the sample space. Then use the Law of Total Probability to compute <m>\mathbb{P}(F)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Suppose the selected transaction turns out to be fraudulent. Use Bayes' Theorem to compute <m>\mathbb{P}(O \mid F)</m>, <m>\mathbb{P}(S \mid F)</m>, and <m>\mathbb{P}(P \mid F)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Verify that the three probabilities in part (b) sum to <m>1</m>, and explain why they must.
+            </p>
+          </li>
+          <li>
+            <p>
+              Phone transactions are only <m>10\%</m> of all transactions. What fraction of fraudulent transactions are phone transactions? Explain in a sentence or two why these two numbers differ.
+            </p>
+          </li>
+          <li>
+            <p>
+              Despite its higher fraud rate, why is a fraudulent transaction still more likely to have come from the online channel than the phone channel?
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <!-- <answer>
+      <p>
+        (a) Every transaction belongs to exactly one channel, so the events are disjoint and their union is everything. Then
+        <me>
+          \mathbb{P}(F) = \mathbb{P}(F \mid O)\mathbb{P}(O) + \mathbb{P}(F \mid S)\mathbb{P}(S) + \mathbb{P}(F \mid P)\mathbb{P}(P) = 0.010 + 0.002 + 0.004 = 0.016.
+        </me>
+        (b) <m>\mathbb{P}(O \mid F) = \frac{0.010}{0.016} = 0.625</m>, <m>\mathbb{P}(S \mid F) = \frac{0.002}{0.016} = 0.125</m>, and <m>\mathbb{P}(P \mid F) = \frac{0.004}{0.016} = 0.25</m>.
+        (c) <m>0.625 + 0.125 + 0.25 = 1</m>. Given that the transaction is fraudulent, it must have come from exactly one of the three channels.
+        (d) <m>25\%</m> of fraudulent transactions are phone transactions, compared with <m>10\%</m> of all transactions. Phone transactions have the highest fraud rate, so they are over-represented among fraud cases.
+        (e) Online transactions are five times as common as phone transactions, which outweighs the phone channel's fraud rate being only twice as high. The posterior depends on both the likelihood and the prior.
+      </p>
+    </answer> -->
+  </exercise>
+
+  <exercise xml:id="ch-7-4-independence">
+    <statement>
+      <p>
+        We are given three coins: one has a heads on both face, another has a tails on both faces, and the third has a head on one face and a tail on the other. Suppose we choose a coin at random and toss it, and the result is heads. What is the probability that the opposite face is a tails?
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="ch-7-5-fair-game">
+    <statement>
+      <p>
+        You pay a fee to play the following game. You roll a fair six-sided die. If the roll is even, you win a number of dollars equal to the roll. If the roll is odd, you win nothing. Let <m>G</m> denote your winnings (not counting the fee).
+      </p>
+      <p>
+        <ol marker="(a)">
+          <li>
+            <p>
+              Give the distribution of <m>G</m> and compute <m>\mathbb{E}[G]</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              What fee makes the game <q>fair</q>, meaning your expected net winnings are zero? Let <m>X</m> denote your net winnings (winnings minus the fee) at this fee, and verify that, by definition, <m>\mathbb{E}[X] = 0</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Use a table to compute <m>\mathrm{Var}[X]</m> and <m>\mathrm{sd}[X]</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Compute <m>\mathrm{Var}[G]</m>. How does it compare to <m>\mathrm{Var}[X]</m>? Explain in a sentence or two why this makes sense.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <!-- <answer>
+      <p>
+        (a) <m>\mathbb{P}(G = 0) = \frac{1}{2}</m> and <m>\mathbb{P}(G = 2) = \mathbb{P}(G = 4) = \mathbb{P}(G = 6) = \frac{1}{6}</m>, so <m>\mathbb{E}[G] = 2</m>.
+        (b) The fee is <m>\$2</m>. Then <m>X</m> takes the values <m>-2, 0, 2, 4</m> with probabilities <m>\frac{1}{2}, \frac{1}{6}, \frac{1}{6}, \frac{1}{6}</m>, and <m>\mathbb{E}[X] = -1 + 0 + \frac{1}{3} + \frac{2}{3} = 0</m>.
+        (c) <m>\mathrm{Var}[X] = 4 \cdot \frac{1}{2} + 0 + 4 \cdot \frac{1}{6} + 16 \cdot \frac{1}{6} = \frac{16}{3} \approx 5.33</m>, so <m>\mathrm{sd}[X] \approx 2.31</m>.
+        (d) <m>\mathrm{Var}[G] = \frac{16}{3}</m> as well. Subtracting a constant fee shifts every outcome and the expected value by the same amount, so every deviation from the center is unchanged.
+      </p>
+    </answer> -->
+  </exercise>
+
+  <exercise xml:id="ch-7-6-design">
+    <statement>
+      <p>
+        Let <m>X</m> be a random variable with support <m>\{1, 2, 3\}</m>, and write <m>p = \mathbb{P}(X = 1)</m> and <m>q = \mathbb{P}(X = 3)</m>.
+      </p>
+      <p>
+        <ol marker="(a)">
+          <li>
+            <p>
+              Write <m>\mathbb{P}(X = 2)</m> in terms of <m>p</m> and <m>q</m>. Then show that if <m>\mathbb{E}[X] = 2</m>, we must have <m>p = q</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Suppose <m>\mathbb{E}[X] = 2</m> and <m>\mathrm{Var}[X] = \frac{1}{2}</m>. Find the distribution of <m>X</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Among all distributions on <m>\{1, 2, 3\}</m> with <m>\mathbb{E}[X] = 2</m>, what is the largest possible variance? Describe the distribution that achieves it, and explain in words why it makes sense that this distribution is the most spread out.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <!-- <answer>
+      <p>
+        (a) <m>\mathbb{P}(X = 2) = 1 - p - q</m>, and <m>\mathbb{E}[X] = p + 2(1 - p - q) + 3q = 2 + q - p</m>, which equals <m>2</m> only if <m>p = q</m>.
+        (b) With <m>p = q</m>, <m>\mathrm{Var}[X] = (1-2)^2 p + (3-2)^2 p = 2p</m>, so <m>2p = \frac{1}{2}</m> gives <m>p = \frac{1}{4}</m>. The distribution is <m>\mathbb{P}(X = 1) = \frac{1}{4}</m>, <m>\mathbb{P}(X = 2) = \frac{1}{2}</m>, <m>\mathbb{P}(X = 3) = \frac{1}{4}</m>.
+        (c) Since <m>\mathrm{Var}[X] = 2p</m> and <m>p = q \leq \frac{1}{2}</m>, the maximum is <m>1</m>, achieved when <m>p = q = \frac{1}{2}</m> and <m>\mathbb{P}(X = 2) = 0</m>. All the probability sits at the two extremes, as far from the center as possible.
+      </p>
+    </answer> -->
+  </exercise>
+
+  <exercise xml:id="ch-7-7-support-tickets">
+    <statement>
+      <p>
+        A software company tracks the number of customer support tickets, <m>T</m>, it receives in a randomly chosen hour. Based on past data, the distribution of <m>T</m> is:
+      </p>
+      <tabular halign="center">
+        <row bottom="minor">
+          <cell><m>t</m></cell>
+          <cell><m>0</m></cell>
+          <cell><m>1</m></cell>
+          <cell><m>2</m></cell>
+          <cell><m>5</m></cell>
+        </row>
+        <row>
+          <cell><m>\mathbb{P}(T = t)</m></cell>
+          <cell><m>0.3</m></cell>
+          <cell><m>0.4</m></cell>
+          <cell><m>0.2</m></cell>
+          <cell><m>0.1</m></cell>
+        </row>
+      </tabular>
+      <p>
+        <ol marker="(a)">
+          <li>
+            <p>
+              Compute <m>\mathbb{E}[T]</m>, <m>\mathrm{Var}[T]</m>, and <m>\mathrm{sd}[T]</m>. Organize the variance computation in a table.
+            </p>
+          </li>
+          <li>
+            <p>
+              What are the units of <m>\mathbb{E}[T]</m>, <m>\mathrm{Var}[T]</m>, and <m>\mathrm{sd}[T]</m>?
+            </p>
+          </li>
+          <li>
+            <p>
+              The outcome <m>t = 5</m> has only a <m>10\%</m> chance of occurring. What fraction of <m>\mathbb{E}[T]</m> comes from this outcome? What fraction of <m>\mathrm{Var}[T]</m> does it contribute? What does this tell you about how the mean and the variance respond to unusual values?
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <!-- <answer>
+      <p>
+        (a) <m>\mathbb{E}[T] = 0 + 0.4 + 0.4 + 0.5 = 1.3</m>. The squared deviations are <m>1.69, 0.09, 0.49, 13.69</m>, so <m>\mathrm{Var}[T] = 0.507 + 0.036 + 0.098 + 1.369 = 2.01</m> and <m>\mathrm{sd}[T] \approx 1.42</m>.
+        (b) Tickets, tickets squared, and tickets, respectively.
+        (c) The outcome <m>t = 5</m> contributes <m>0.5</m> of the <m>1.3</m> to the mean (about <m>38\%</m>) and <m>1.369</m> of the <m>2.01</m> to the variance (about <m>68\%</m>). A rare, extreme value matters for both, but squaring the deviation makes the variance respond even more strongly.
+      </p>
+    </answer> -->
+  </exercise>
+
+</section>

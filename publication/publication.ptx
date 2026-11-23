@@ -163,21 +163,20 @@
   <!-- <latex> -->
   <!-- Replace the <latex> tag above with the one below to try these-->
 
-  <!-- <latex
+  <latex
       print="no"
       sides="one"
       open-odd="no"
       pageref="no"
-      font-size="10"
+      font-size="11"
       draft="no"
       snapshot="no"
       link-highlight="none"
-      latex-style="dyslexic-font"
-  > -->
-  <latex
+  >
+  <!-- <latex
       print="no"
       sides="one"
-  >
+  > -->
 
 
     <!-- Page shape.  @right-alignment is "flush" (default) or "ragged"; -->

@@ -48,5 +48,6 @@
   <xi:include href="./_chapter_07/sec-7-8-expected-values.ptx" />
   <xi:include href="./_chapter_07/sec-7-9-variance.ptx" />
   <xi:include href="./_chapter_07/sec-7-10-lln.ptx" />
+  <xi:include href="./_chapter_07/sec-7-11-exercises.ptx" />
 
 </chapter>
