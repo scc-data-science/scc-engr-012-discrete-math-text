@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-8-1-recursive-seq" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Recursively Defined Sequences</title>
+
+  <introduction>
+
+    <p>
+      We've seen sequences many times over the last few chapters, but it would be beneficial to precisely define them here.
+    </p>
+  
+  </introduction>
+
+  <subsection xml:id="subsec-8-1-sequences">
+    <title>Sequences</title>
+
+    <definition xml:id="def-8-1-sequence">
+      <title>Sequence</title>
+      <statement>
+        <p>
+          A <term>sequence</term> is a function whose domain is a countable set of consecutive integers.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      For example,
+      <md>
+        2, 4, 8, 16, 32, \ldots
+      </md>
+      is a valid sequence, since it can be characterized by the function <m>f: \mathbb{N} \to \mathbb{N}</m> such that:
+      <md>
+        f(1) = 2, \quad
+        f(2) = 4, \quad
+        f(3) = 8,
+      </md>
+      and in general, <m>f(k) = 2^{k}</m>. Its domain is <m>\mathbb{N}</m> for convenience, but we could also describe the same sequence with <m>g(k) = 2^{k - m}</m> with domain <m>\{m + 1, m + 2, \ldots\}</m>. It is for this reason that we do not define sequences as functions whose domain is, say, the natural numbers.
+    </p>
+
+    <p>
+      As hinted at above, even though sequences are defined by functions, we typically forgo the standard function notation and instead write the input as a subscript. That is, we write a generic sequence as:
+      <md>
+        a_1, a_2, a_3, \ldots,
+      </md>
+      and we refer to the elements by writing <m>a_k</m> for a particular <m>k</m> in the domain.
+    </p>
+
+    <example xml:id="ex-8-1-sequence-from-formula">
+      <title>Listing Terms from a Formula</title>
+      <statement>
+        <p>
+          Consider the sequence defined by <m>a_k = \dfrac{(-1)^k}{k^2}</m> for <m>k \geq 1</m>. Find the first four terms and the tenth term.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We substitute each value of <m>k</m> into the formula:
+          <md>
+            <mrow>a_1 \amp = \frac{(-1)^1}{1^2} = -1,</mrow>
+            <mrow>a_2 \amp = \frac{(-1)^2}{2^2} = \frac{1}{4},</mrow>
+            <mrow>a_3 \amp = \frac{(-1)^3}{3^2} = -\frac{1}{9},</mrow>
+            <mrow>a_4 \amp = \frac{(-1)^4}{4^2} = \frac{1}{16},</mrow>
+            <mrow>a_{10} \amp = \frac{(-1)^{10}}{10^2} = \frac{1}{100}.</mrow>
+          </md>
+          The sequence begins
+          <md>
+            -1, \frac{1}{4}, -\frac{1}{9}, \frac{1}{16}, \ldots
+          </md>
+          Notice that the factor <m>(-1)^k</m> makes the signs alternate: odd values of <m>k</m> give negative terms and even values give positive terms.
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="ex-8-1-formula-from-terms">
+      <title>Finding a Formula from a Pattern</title>
+      <statement>
+        <p>
+          Find a formula for the <m>k</m>th term of the sequence
+          <md>
+            3, 7, 11, 15, 19, \ldots
+          </md>
+          Then determine whether <m>99</m> is a term of the sequence.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Each term is <m>4</m> larger than the one before it, so the formula should involve <m>4k</m>. Comparing with the first term,
+          <md>
+            <mrow>a_1 \amp = 3 = 4(1) - 1,</mrow>
+            <mrow>a_2 \amp = 7 = 4(2) - 1,</mrow>
+            <mrow>a_3 \amp = 11 = 4(3) - 1,</mrow>
+          </md>
+          which suggests <m>a_k = 4k - 1</m> for <m>k \geq 1</m>. As a check, <m>a_5 = 4(5) - 1 = 19</m>, as expected.
+        </p>
+        <p>
+          To see whether <m>99</m> is a term, we solve <m>4k - 1 = 99</m>. This gives <m>4k = 100</m>, so <m>k = 25</m>. Since <m>25</m> is a natural number, <m>99</m> is a term of the sequence, namely <m>a_{25}</m>. By contrast, <m>100</m> is not a term, since <m>4k - 1 = 100</m> gives <m>k = \frac{101}{4}</m>, which is not a natural number.
+        </p>
+      </solution>
+    </example>
+
+  </subsection>
+
+  <subsection xml:id="subsec-8-1-recursion">
+    <title>Recurrence Relations</title>
+
+    <p>
+      In the examples we saw above, the sequences could be defined explicitly as a function of the generic natural number <m>k</m>. That is, the definitions were <em>closed-form</em>. However, in certain situations, a closed-form expression for a sequence is difficult to express, significantly less intuitive, or sometimes completely impossible to elucidate. Sometimes, it is better to describe how a quantity changes than it is to describe what it is.
+    </p>
+    
+    <p>
+      One such way to do this is with a <em>recurrence relation</em>, which writes a given term in a sequence in terms of previous terms in the same sequence.
+    </p>
+
+    <definition xml:id="def-8-1-rec-rel">
+      <title>Recurrence Relation</title>
+      <statement>
+        <p>
+          A <term>recurrence relation</term> for a sequence <m>a_1, a_2, \ldots</m> is a formula that relates each term <m>a_k</m> to a subset (but not necessarily all) of its predecessors:
+          <md>
+            a_k = f(a_1, a_2, \ldots, a_{k - 1}).
+          </md>
+        </p>
+        
+        <p>
+          An <term>initial condition</term> specifies the starting values of the earliest terms needed to anchor the rule and uniquely determine the sequence.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      In what follows, we study what is perhaps one of the simplest recursively defined sequences: the Fibonacci sequence.
+    </p>
+
+    <example xml:id="ex-8-1-fibonacci">
+      <title>The Fibonacci Sequence</title>
+      <statement>
+        <p>
+          Define the sequence <m>f_0, f_1, \ldots</m> by the recurrence relation:
+          <md>
+            f_n = f_{n - 1} + f_{n - 2},
+          </md>
+          for <m>n \geq 2</m>, with initial conditions <m>f_0 = 0</m> and <m>f_1 = 1</m>. Determine the first five Fibonacci numbers.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The first two numbers are given to us. For the rest, we use the recurrence relation. So,
+          <md>
+            <mrow> f_0 \amp = 0, </mrow>
+            <mrow> f_1 \amp = 1, </mrow>
+            <mrow> f_2 \amp = 0 + 1 = 1, </mrow>
+            <mrow> f_3 \amp = 1 + 1 = 2, </mrow>
+            <mrow> f_4 \amp = 1 + 2 = 3. </mrow>
+          </md>
+          The sequence continues as <m>0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, \ldots</m>.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      The Fibonacci sequence is actually very old. It originated in ancient Indian mathematics, as early as around 200 BCE, for Sanskrit poetry, before Leonardo of Pisa (<q>Fibonacci</q>) introduced it to Europe in the early 1200s. When he brought the numbers to Europe, he posed the following problem:
+    </p>
+
+    <p>
+      A single pair of rabbits (male and female) is born at the beginning of the year. Assume the following conditions:
+      <ol>
+        <li>
+          <p>
+            Rabbit pairs are not fertile during their first month of life but thereafter give birth to one new male/female pair at the end of every month.
+          </p>
+        </li>
+        <li>
+          <p>
+            No rabbits die.
+          </p>
+        </li>
+      </ol>
+      How many pairs of rabbits will there be at the end of the year?
+    </p>
+
+    <exercise xml:id="ex-8-1-fibonacci-rabbits">
+      <statement>
+        <p>
+          Show that the solution to Fibonacci's rabbit problem is <m>f_{13} = 233</m>, the twelfth Fibonacci number.
+        </p>
+      </statement>
+    </exercise>
+
+    <p>
+      We'll say more about the Fibonacci sequence in the next section.
+    </p>
+
+    <example xml:id="ex-8-1-initial-conditions">
+      <title>The Importance of Initial Conditions</title>
+      <statement>
+        <p>
+          Consider the recurrence relation
+          <md>
+            a_k = 2a_{k - 1} - a_{k - 2} \quad \text{for } k \geq 3.
+          </md>
+          Find the first five terms of the sequence under each of the following initial conditions:
+          <ol marker="(a)">
+            <li><p><m>a_1 = 1</m> and <m>a_2 = 2</m>,</p></li>
+            <li><p><m>a_1 = 3</m> and <m>a_2 = 3</m>,</p></li>
+            <li><p><m>a_1 = 0</m> and <m>a_2 = 4</m>.</p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          In each case we apply the same rule, <m>a_k = 2a_{k - 1} - a_{k - 2}</m>, to the given starting values.
+        </p>
+        <p>
+          <ol marker="(a)">
+            <li>
+              <p>
+                <md>
+                  <mrow>a_3 \amp = 2(2) - 1 = 3,</mrow>
+                  <mrow>a_4 \amp = 2(3) - 2 = 4,</mrow>
+                  <mrow>a_5 \amp = 2(4) - 3 = 5.</mrow>
+                </md>
+                The sequence is <m>1, 2, 3, 4, 5, \ldots</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <md>
+                  <mrow>a_3 \amp = 2(3) - 3 = 3,</mrow>
+                  <mrow>a_4 \amp = 2(3) - 3 = 3,</mrow>
+                  <mrow>a_5 \amp = 2(3) - 3 = 3.</mrow>
+                </md>
+                The sequence is the constant sequence <m>3, 3, 3, 3, 3, \ldots</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <md>
+                  <mrow>a_3 \amp = 2(4) - 0 = 8,</mrow>
+                  <mrow>a_4 \amp = 2(8) - 4 = 12,</mrow>
+                  <mrow>a_5 \amp = 2(12) - 8 = 16.</mrow>
+                </md>
+                The sequence is <m>0, 4, 8, 12, 16, \ldots</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+        <p>
+          The three sequences are quite different, even though they obey exactly the same recurrence relation. The recurrence relation alone describes how terms relate to one another, but it is the initial conditions that determine which sequence we actually get. Without them, the recurrence does not describe a single sequence.
+        </p>
+      </solution>
+    </example>
+    
+  </subsection>
+
+</section>
