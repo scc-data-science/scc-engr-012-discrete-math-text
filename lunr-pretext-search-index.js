@@ -2035,6 +2035,78 @@ var ptx_lunr_docs = [
   "body": "  A software company tracks the number of customer support tickets, , it receives in a randomly chosen hour. Based on past data, the distribution of is:                     Compute , , and . Organize the variance computation in a table.    What are the units of , , and ?    The outcome has only a chance of occurring. What fraction of comes from this outcome? What fraction of does it contribute? What does this tell you about how the mean and the variance respond to unusual values?       "
 },
 {
+  "id": "sec-8-1-recursive-seq",
+  "level": "1",
+  "url": "sec-8-1-recursive-seq.html",
+  "type": "Section",
+  "number": "8.1",
+  "title": "Recursively Defined Sequences",
+  "body": " Recursively Defined Sequences   We've seen sequences many times over the last few chapters, but it would be beneficial to precisely define them here.    Sequences   Sequence   A sequence is a function whose domain is a countable set of consecutive integers.    For example, is a valid sequence, since it can be characterized by the function such that: and in general, . Its domain is for convenience, but we could also describe the same sequence with with domain . It is for this reason that we do not define sequences as functions whose domain is, say, the natural numbers.  As hinted at above, even though sequences are defined by functions, we typically forgo the standard function notation and instead write the input as a subscript. That is, we write a generic sequence as: and we refer to the elements by writing for a particular in the domain.   Listing Terms from a Formula   Consider the sequence defined by for . Find the first four terms and the tenth term.    We substitute each value of into the formula: The sequence begins Notice that the factor makes the signs alternate: odd values of give negative terms and even values give positive terms.     Finding a Formula from a Pattern   Find a formula for the th term of the sequence Then determine whether is a term of the sequence.    Each term is larger than the one before it, so the formula should involve . Comparing with the first term, which suggests for . As a check, , as expected.  To see whether is a term, we solve . This gives , so . Since is a natural number, is a term of the sequence, namely . By contrast, is not a term, since gives , which is not a natural number.      Recurrence Relations  In the examples we saw above, the sequences could be defined explicitly as a function of the generic natural number . That is, the definitions were closed-form . However, in certain situations, a closed-form expression for a sequence is difficult to express, significantly less intuitive, or sometimes completely impossible to elucidate. Sometimes, it is better to describe how a quantity changes than it is to describe what it is.  One such way to do this is with a recurrence relation , which writes a given term in a sequence in terms of previous terms in the same sequence.   Recurrence Relation   A recurrence relation for a sequence is a formula that relates each term to a subset (but not necessarily all) of its predecessors:   An initial condition specifies the starting values of the earliest terms needed to anchor the rule and uniquely determine the sequence.    In what follows, we study what is perhaps one of the simplest recursively defined sequences: the Fibonacci sequence.   The Fibonacci Sequence   Define the sequence by the recurrence relation: for , with initial conditions and . Determine the first five Fibonacci numbers.    The first two numbers are given to us. For the rest, we use the recurrence relation. So, The sequence continues as .    The Fibonacci sequence is actually very old. It originated in ancient Indian mathematics, as early as around 200 BCE, for Sanskrit poetry, before Leonardo of Pisa ( Fibonacci ) introduced it to Europe in the early 1200s. When he brought the numbers to Europe, he posed the following problem:  A single pair of rabbits (male and female) is born at the beginning of the year. Assume the following conditions:   Rabbit pairs are not fertile during their first month of life but thereafter give birth to one new male\/female pair at the end of every month.    No rabbits die.   How many pairs of rabbits will there be at the end of the year?    Show that the solution to Fibonacci's rabbit problem is , the twelfth Fibonacci number.    We'll say more about the Fibonacci sequence in the next section.   The Importance of Initial Conditions   Consider the recurrence relation Find the first five terms of the sequence under each of the following initial conditions:  and ,  and ,  and .      In each case we apply the same rule, , to the given starting values.      The sequence is .     The sequence is the constant sequence .     The sequence is .     The three sequences are quite different, even though they obey exactly the same recurrence relation. The recurrence relation alone describes how terms relate to one another, but it is the initial conditions that determine which sequence we actually get. Without them, the recurrence does not describe a single sequence.     "
+},
+{
+  "id": "def-8-1-sequence",
+  "level": "2",
+  "url": "sec-8-1-recursive-seq.html#def-8-1-sequence",
+  "type": "Definition",
+  "number": "8.1.1",
+  "title": "Sequence.",
+  "body": " Sequence   A sequence is a function whose domain is a countable set of consecutive integers.   "
+},
+{
+  "id": "ex-8-1-sequence-from-formula",
+  "level": "2",
+  "url": "sec-8-1-recursive-seq.html#ex-8-1-sequence-from-formula",
+  "type": "Example",
+  "number": "8.1.2",
+  "title": "Listing Terms from a Formula.",
+  "body": " Listing Terms from a Formula   Consider the sequence defined by for . Find the first four terms and the tenth term.    We substitute each value of into the formula: The sequence begins Notice that the factor makes the signs alternate: odd values of give negative terms and even values give positive terms.   "
+},
+{
+  "id": "ex-8-1-formula-from-terms",
+  "level": "2",
+  "url": "sec-8-1-recursive-seq.html#ex-8-1-formula-from-terms",
+  "type": "Example",
+  "number": "8.1.3",
+  "title": "Finding a Formula from a Pattern.",
+  "body": " Finding a Formula from a Pattern   Find a formula for the th term of the sequence Then determine whether is a term of the sequence.    Each term is larger than the one before it, so the formula should involve . Comparing with the first term, which suggests for . As a check, , as expected.  To see whether is a term, we solve . This gives , so . Since is a natural number, is a term of the sequence, namely . By contrast, is not a term, since gives , which is not a natural number.   "
+},
+{
+  "id": "def-8-1-rec-rel",
+  "level": "2",
+  "url": "sec-8-1-recursive-seq.html#def-8-1-rec-rel",
+  "type": "Definition",
+  "number": "8.1.4",
+  "title": "Recurrence Relation.",
+  "body": " Recurrence Relation   A recurrence relation for a sequence is a formula that relates each term to a subset (but not necessarily all) of its predecessors:   An initial condition specifies the starting values of the earliest terms needed to anchor the rule and uniquely determine the sequence.   "
+},
+{
+  "id": "ex-8-1-fibonacci",
+  "level": "2",
+  "url": "sec-8-1-recursive-seq.html#ex-8-1-fibonacci",
+  "type": "Example",
+  "number": "8.1.5",
+  "title": "The Fibonacci Sequence.",
+  "body": " The Fibonacci Sequence   Define the sequence by the recurrence relation: for , with initial conditions and . Determine the first five Fibonacci numbers.    The first two numbers are given to us. For the rest, we use the recurrence relation. So, The sequence continues as .   "
+},
+{
+  "id": "ex-8-1-fibonacci-rabbits",
+  "level": "2",
+  "url": "sec-8-1-recursive-seq.html#ex-8-1-fibonacci-rabbits",
+  "type": "Exercise",
+  "number": "8.1.6",
+  "title": "",
+  "body": "  Show that the solution to Fibonacci's rabbit problem is , the twelfth Fibonacci number.   "
+},
+{
+  "id": "ex-8-1-initial-conditions",
+  "level": "2",
+  "url": "sec-8-1-recursive-seq.html#ex-8-1-initial-conditions",
+  "type": "Example",
+  "number": "8.1.7",
+  "title": "The Importance of Initial Conditions.",
+  "body": " The Importance of Initial Conditions   Consider the recurrence relation Find the first five terms of the sequence under each of the following initial conditions:  and ,  and ,  and .      In each case we apply the same rule, , to the given starting values.      The sequence is .     The sequence is the constant sequence .     The sequence is .     The three sequences are quite different, even though they obey exactly the same recurrence relation. The recurrence relation alone describes how terms relate to one another, but it is the initial conditions that determine which sequence we actually get. Without them, the recurrence does not describe a single sequence.   "
+},
+{
   "id": "backmatter-2",
   "level": "1",
   "url": "backmatter-2.html",
