@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-8-recursion" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Introduction to Sequences and Recursion</title>
+
+  <introduction>
+    <p>
+      Many quantities in mathematics and in the world around us are best understood by describing how they change. A population grows by a fixed percentage each year, a loan balance shrinks with each payment, etc. In such cases, it is easy to say how one value relates to the next, but it is not obvious what the hundredth or thousandth value will be.
+    </p>
+
+    <p>
+      In this short chapter, we study sequences and the recurrence relations that define them. We begin by defining sequences carefully and seeing how a rule that refers to earlier terms, together with initial conditions, determines a sequence. We then turn to the harder question of <em>solving</em> a recurrence relation: replacing a rule that must be unwound one step at a time with a closed-form formula that gives any term directly. Along the way, we will see that recurrence relations are useful both for modeling problems and for counting and analyzing algorithms.
+    </p>
+  </introduction>
+
+  <xi:include href="./_chapter_08/sec-8-1-recursive-seq.ptx" />
+
+</chapter>
