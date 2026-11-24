@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-8-2-solving-rec" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Solving Recurrence Relations</title>
+
+  <introduction>
+    <p>
+      As we mentioned in the previous section, oftentimes it is more natural (or easier) to describe how a sequence changes than it is to describe the values it can take. Nonetheless, there is far more functional utility in being able to write down an expression for the <m>n</m>th term in that sequence in closed form. That is, we would like to be able to write:
+      <md>
+        a_n = f(n)
+      </md>
+      for some explicitly defined function <m>f</m>. So, how can we do this? In this section, we'll explore one way to solve such recurrence relations.
+    </p>
+  </introduction>
+  
+  <subsection xml:id="subsec-8-2-iteration">
+    <title>The Method of Iteration</title>
+    
+    <p>
+      This method really should be called <em>guessing and checking</em>, because it is precisely what you might think it is. First, we write down the recurrence relation, start with the initial condition, and then write down each successive term in the sequence until we see a pattern emerging.
+    </p>
+
+    <example xml:id="ex-8-2-arithmetic-1">
+      <statement>
+        <p>
+          Let <m>a_0, a_1, a_2, \ldots</m> be the sequence defined recursively as follows. Let:
+          <md>
+            a_k = a_{k - 1} + 2
+          </md>
+          for <m>k \geq 1</m> together with the initial condition <m>a_0 = 1</m>. Use iteration to deduce an explicit formula for the sequence.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Start by writing <m>a_1</m>, then substitute <m>a_1</m> into the expression for <m>a_2</m>. Repeat this process for as many <m>a_k</m> as you need until you start to notice a pattern.
+        </p>
+
+        <p>
+          Try leaving each term unsimplified.
+        </p>
+      </hint>
+      <solution>
+        <p>
+          Let's write out the first few terms of the sequence.
+          <md>
+            <mrow> a_0 \amp = 1, </mrow>
+            <mrow> a_1 \amp = a_0 + 2 = 1 + 2 = 3, </mrow>
+            <mrow> a_2 \amp = a_1 + 2 = 3 + 2 = 5, </mrow>
+            <mrow> a_3 \amp = a_2 + 2 = 5 + 2 = 7. </mrow>
+          </md>
+          Do you notice a pattern? The terms seem to be the odd positive integers. Therefore, a natural guess would be that:
+          <md>
+            a_k = 2k + 1.
+          </md>
+          Indeed, <m>a_3 = 2 \cdot 3 + 1 = 7</m>, as expected, so our formula seems to be doing the right thing.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      Sequences like these come up often enough that they have a name. They are called <em>arithmetic</em> sequences.
+    </p>
+
+    <definition xml:id="def-8-2-arithmetic">
+      <title>Arithmetic Sequences</title>
+      <statement>
+        <p>
+          A sequence <m>a_0, a_1, a_2, \ldots</m> is called an <term>arithmetic sequence</term> if there is a constant <m>d</m> such that:
+          <md>
+            a_k = a_{k - 1} + d \quad \text{for each integer } k \geq 1.
+          </md>
+        </p>
+      </statement>
+    </definition>
+
+    <conjecture xml:id="conj-8-2-arithmetic">
+      <statement>
+        <p>
+          A closed form expression for the sequence in <xref ref="def-8-2-arithmetic"/> is:
+          <md>
+            a_n = a_0 + dn
+          </md>
+          for every integer <m>n \geq 0</m>.
+        </p>
+      </statement>
+    </conjecture>
+    
+    <example xml:id="ex-8-2-arithmetic-2">
+      <title>Paying Off an Interest-Free Loan</title>
+      <statement>
+        <p>
+          You borrow <m>\$1200</m> from a friend, who charges no interest. You repay <m>\$75</m> at the end of each month. Let <m>a_k</m> denote the amount you still owe after <m>k</m> payments. Write a recurrence relation for <m>a_k</m>, use iteration to find an explicit formula, and determine how many payments are needed to pay off the loan.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Each month, the balance is the previous balance minus one payment. Leave the terms unsimplified so the pattern is easier to see.
+        </p>
+      </hint>
+      <solution>
+        <p>
+          Before any payments, you owe <m>\$1200</m>, and each payment reduces the balance by <m>\$75</m>. Thus:
+          <md>
+            a_k = a_{k - 1} - 75 \quad \text{for } k \geq 1, \qquad a_0 = 1200.
+          </md>
+          Writing out the first few terms without simplifying:
+          <md>
+            <mrow> a_0 \amp = 1200, </mrow>
+            <mrow> a_1 \amp = 1200 - 75, </mrow>
+            <mrow> a_2 \amp = (1200 - 75) - 75 = 1200 - 2 \cdot 75, </mrow>
+            <mrow> a_3 \amp = (1200 - 2 \cdot 75) - 75 = 1200 - 3 \cdot 75. </mrow>
+          </md>
+          The pattern suggests that <m>a_k = 1200 - 75k</m>. This is an arithmetic sequence with common difference <m>d = -75</m>, so the difference can be negative.
+        </p>
+
+        <p>
+          The loan is paid off when <m>a_k = 0</m>:
+          <md>
+            1200 - 75k = 0 \quad \Longrightarrow \quad k = \frac{1200}{75} = 16.
+          </md>
+          As a check, <m>a_{16} = 1200 - 75 \cdot 16 = 0</m>. It takes <m>16</m> payments.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      Arithmetic sequences are sequences for which the difference of any two successive terms is constant. It is not surprising, therefore, that we are interested in the corresponding multiplicative case, in which the <em>ratio</em> of any two successive terms is constant. In such a case, we would have <m>a_k / a_{k - 1} = r</m> for some constant <m>r \neq 0</m>, and therefore <m>a_k = r a_{k - 1}</m>.
+    </p>
+
+    <example xml:id="ex-8-2-geometric-1">
+      <statement>
+        <p>
+          Let <m>a_0, a_1, a_2, \ldots</m> be the sequence defined recursively as follows. Let:
+          <md>
+            a_k = 2 \cdot a_{k - 1}
+          </md>
+          for <m>k \geq 1</m> together with the initial condition <m>a_0 = 3</m>. Use iteration to deduce an explicit formula for the sequence.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Start by writing <m>a_1</m>, then substitute <m>a_1</m> into the expression for <m>a_2</m>. Repeat this process for as many <m>a_k</m> as you need until you start to notice a pattern.
+        </p>
+      </hint>
+      <solution>
+        <p>
+          Let's write out the first few terms of the sequence.
+          <md>
+            <mrow> a_0 \amp = 3, </mrow>
+            <mrow> a_1 \amp = 2 \cdot a_0 = 2 \cdot 3, </mrow>
+            <mrow> a_2 \amp = 2 \cdot a_1 = 2 \cdot (2 \cdot 3) = 2^2 \cdot 3, </mrow>
+            <mrow> a_3 \amp = 2 \cdot a_2 = 2 \cdot (2^2 \cdot 3) = 2^3 \cdot 3. </mrow>
+          </md>
+          This time, we deliberately did <em>not</em> simplify all the way before moving on to the next term in the sequence. In general, it is beneficial to leave things unsimplified while you are searching for patterns, as this problem demonstrates.
+        </p>
+        
+        <p>
+          In this case, we see that the pattern appears to be:
+          <md>
+            a_k = 3 \cdot 2^{k}.
+          </md>
+          Indeed, <m>a_3 = 3 \cdot 2^{3}</m>, as expected, so this formula seems to be doing the right thing as well.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      Sequences such as the one in <xref ref="ex-8-2-geometric-1"/> are known as <em>geometric sequences</em>.
+    </p>
+
+    <definition xml:id="def-8-2-geometric">
+      <title>Geometric Sequences</title>
+      <statement>
+        <p>
+          A sequence <m>a_0, a_1, a_2, \ldots</m> is called a <term>geometric sequence</term> if there is a constant <m>r</m> such that:
+          <md>
+            a_k = r \cdot a_{k - 1} \quad \text{for each integer } k \geq 1.
+          </md>
+        </p>
+      </statement>
+    </definition>
+
+    <conjecture xml:id="conj-8-2-geometric">
+      <statement>
+        <p>
+          A closed form expression for the sequence in <xref ref="def-8-2-geometric"/> is:
+          <md>
+            a_n = a_0 \cdot r^n
+          </md>
+          for every integer <m>n \geq 0</m>.
+        </p>
+      </statement>
+    </conjecture>
+
+    <example xml:id="ex-8-2-geometric-2">
+      <title>Halving a Search Space</title>
+      <statement>
+        <p>
+          A sorted list contains <m>1024</m> records. To find a record, a search algorithm compares the target against the middle entry, which lets it discard half of the remaining candidates. Let <m>a_k</m> denote the number of candidates remaining after <m>k</m> comparisons. Write a recurrence relation for <m>a_k</m>, find an explicit formula using iteration, and determine how many comparisons are needed to narrow the list down to a single candidate.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Each comparison leaves half as many candidates as before. What constant <m>r</m> does that correspond to?
+        </p>
+      </hint>
+      <solution>
+        <p>
+          Since each comparison halves the number of candidates, we have:
+          <md>
+            a_k = \frac{1}{2} \cdot a_{k - 1} \quad \text{for } k \geq 1, \qquad a_0 = 1024.
+          </md>
+          Writing out the first few terms without simplifying:
+          <md>
+            <mrow> a_0 \amp = 1024, </mrow>
+            <mrow> a_1 \amp = \frac{1}{2} \cdot 1024, </mrow>
+            <mrow> a_2 \amp = \frac{1}{2} \cdot \left( \frac{1}{2} \cdot 1024 \right) = \left( \frac{1}{2} \right)^2 \cdot 1024, </mrow>
+            <mrow> a_3 \amp = \frac{1}{2} \cdot \left( \frac{1}{2} \right)^2 \cdot 1024 = \left( \frac{1}{2} \right)^3 \cdot 1024. </mrow>
+          </md>
+          The pattern suggests that:
+          <md>
+            a_k = 1024 \cdot \left( \frac{1}{2} \right)^k = \frac{2^{10}}{2^k} = 2^{10 - k}.
+          </md>
+          This is a geometric sequence with ratio <m>r = \frac{1}{2}</m>, so the ratio can be less than <m>1</m>, and the sequence then decreases.
+        </p>
+
+        <p>
+          We want <m>a_k = 1</m>, which means <m>2^{10 - k} = 1</m>, so <m>k = 10</m>. As a check, <m>a_{10} = 2^0 = 1</m>. It takes <m>10</m> comparisons. For a list whose length is not a power of <m>2</m>, the halving is not exact, and the count rounds up.
+        </p>
+      </solution>
+    </example>
+
+  </subsection>
+
+  <subsection xml:id="subsec-8-2-correctness">
+    <title>Proofs of Correctness</title>
+    
+    <p>
+    There might be something quite unsatisfying about the work we did above. We <em>guessed</em> the form of the solution for some of these sequences, but we did not formally defend these guesses. To be sure that our guesses are actually correct, we need to prove them. Luckily for us, we have already seen the proof technique necessary for such a proof: the <em>proof by induction</em>.
+    </p>
+    
+    <p>
+      Lets prove our conjectures, <xref ref="conj-8-2-arithmetic"/> and <xref ref="conj-8-2-geometric"/>, from above.
+    </p>
+
+    <theorem xml:id="thm-8-2-arithmetic">
+      <title>Explicit Formula for Arithmetic Sequences</title>
+      <statement>
+        <p>
+          Let <m>a_0, a_1, a_2, \ldots</m> be a sequence defined by <m>a_k = a_{k-1} + d</m> for each integer <m>k \geq 1</m>, where <m>d</m> is a constant. Then, for every integer <m>n \geq 0</m>,
+          <md>
+            a_n = a_0 + dn.
+          </md>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          We proceed by induction on <m>n</m>. Let <m>P(n)</m> be the statement <m>a_n = a_0 + dn</m>.
+        </p>
+        <p>
+          <em>Base case.</em> When <m>n = 0</m>, we have <m>a_0 + d \cdot 0 = a_0</m>, so <m>P(0)</m> is true.
+        </p>
+        <p>
+          <em>Inductive hypothesis.</em> Let <m>m \geq 0</m> be an integer and suppose that <m>P(m)</m> is true. That is, suppose <m>a_m = a_0 + dm</m>.
+        </p>
+        <p>
+          <em>Inductive step.</em> We must show that <m>P(m + 1)</m> is true, that is, that <m>a_{m+1} = a_0 + d(m + 1)</m>. Since <m>m + 1 \geq 1</m>, the recurrence relation applies, and we have:
+          <md>
+            <mrow> a_{m+1} \amp = a_m + d </mrow>
+            <mrow>         \amp = (a_0 + dm) + d </mrow>
+            <mrow>         \amp = a_0 + d(m + 1), </mrow>
+          </md>
+          where the second equality uses the inductive hypothesis. Thus, <m>P(m+1)</m> is true.
+        </p>
+        <p>
+          By the principle of mathematical induction, <m>P(n)</m> is true for every integer <m>n \geq 0</m>.
+        </p>
+      </proof>
+    </theorem>
+
+    <theorem xml:id="thm-8-2-geometric">
+      <title>Explicit Formula for Geometric Sequences</title>
+      <statement>
+        <p>
+          Let <m>a_0, a_1, a_2, \ldots</m> be a sequence defined by <m>a_k = r \cdot a_{k-1}</m> for each integer <m>k \geq 1</m>, where <m>r</m> is a constant. Then, for every integer <m>n \geq 0</m>,
+          <md>
+            a_n = a_0 \cdot r^n.
+          </md>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          We proceed by induction on <m>n</m>. Let <m>P(n)</m> be the statement <m>a_n = a_0 \cdot r^n</m>.
+        </p>
+        <p>
+          <em>Base case.</em> When <m>n = 0</m>, we have <m>a_0 \cdot r^0 = a_0 \cdot 1 = a_0</m>, so <m>P(0)</m> is true.
+        </p>
+        <p>
+          <em>Inductive hypothesis.</em> Let <m>m \geq 0</m> be an integer and suppose that <m>P(m)</m> is true. That is, suppose <m>a_m = a_0 \cdot r^m</m>.
+        </p>
+        <p>
+          <em>Inductive step.</em> We must show that <m>P(m + 1)</m> is true, that is, that <m>a_{m+1} = a_0 \cdot r^{m+1}</m>. Since <m>m + 1 \geq 1</m>, the recurrence relation applies, and we have:
+          <md>
+            <mrow> a_{m+1} \amp = r \cdot a_m </mrow>
+            <mrow>         \amp = r \cdot (a_0 \cdot r^m) </mrow>
+            <mrow>         \amp = a_0 \cdot r^{m+1}, </mrow>
+          </md>
+          where the second equality uses the inductive hypothesis. Thus, <m>P(m+1)</m> is true.
+        </p>
+        <p>
+          By the principle of mathematical induction, <m>P(n)</m> is true for every integer <m>n \geq 0</m>.
+        </p>
+      </proof>
+    </theorem>
+
+  </subsection>
+
+</section>
