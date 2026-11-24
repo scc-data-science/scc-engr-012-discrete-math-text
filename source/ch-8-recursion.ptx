@@ -14,5 +14,6 @@
   </introduction>
 
   <xi:include href="./_chapter_08/sec-8-1-recursive-seq.ptx" />
+  <xi:include href="./_chapter_08/sec-8-2-solving-rec.ptx" />
 
 </chapter>
