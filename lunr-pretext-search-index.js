@@ -2107,6 +2107,105 @@ var ptx_lunr_docs = [
   "body": " The Importance of Initial Conditions   Consider the recurrence relation Find the first five terms of the sequence under each of the following initial conditions:  and ,  and ,  and .      In each case we apply the same rule, , to the given starting values.      The sequence is .     The sequence is the constant sequence .     The sequence is .     The three sequences are quite different, even though they obey exactly the same recurrence relation. The recurrence relation alone describes how terms relate to one another, but it is the initial conditions that determine which sequence we actually get. Without them, the recurrence does not describe a single sequence.   "
 },
 {
+  "id": "sec-8-2-solving-rec",
+  "level": "1",
+  "url": "sec-8-2-solving-rec.html",
+  "type": "Section",
+  "number": "8.2",
+  "title": "Solving Recurrence Relations",
+  "body": " Solving Recurrence Relations   As we mentioned in the previous section, oftentimes it is more natural (or easier) to describe how a sequence changes than it is to describe the values it can take. Nonetheless, there is far more functional utility in being able to write down an expression for the th term in that sequence in closed form. That is, we would like to be able to write: for some explicitly defined function . So, how can we do this? In this section, we'll explore one way to solve such recurrence relations.    The Method of Iteration  This method really should be called guessing and checking , because it is precisely what you might think it is. First, we write down the recurrence relation, start with the initial condition, and then write down each successive term in the sequence until we see a pattern emerging.    Let be the sequence defined recursively as follows. Let: for together with the initial condition . Use iteration to deduce an explicit formula for the sequence.    Start by writing , then substitute into the expression for . Repeat this process for as many as you need until you start to notice a pattern.  Try leaving each term unsimplified.    Let's write out the first few terms of the sequence. Do you notice a pattern? The terms seem to be the odd positive integers. Therefore, a natural guess would be that: Indeed, , as expected, so our formula seems to be doing the right thing.    Sequences like these come up often enough that they have a name. They are called arithmetic sequences.   Arithmetic Sequences   A sequence is called an arithmetic sequence if there is a constant such that:       A closed form expression for the sequence in is: for every integer .     Paying Off an Interest-Free Loan   You borrow from a friend, who charges no interest. You repay at the end of each month. Let denote the amount you still owe after payments. Write a recurrence relation for , use iteration to find an explicit formula, and determine how many payments are needed to pay off the loan.    Each month, the balance is the previous balance minus one payment. Leave the terms unsimplified so the pattern is easier to see.    Before any payments, you owe , and each payment reduces the balance by . Thus: Writing out the first few terms without simplifying: The pattern suggests that . This is an arithmetic sequence with common difference , so the difference can be negative.  The loan is paid off when : As a check, . It takes payments.    Arithmetic sequences are sequences for which the difference of any two successive terms is constant. It is not surprising, therefore, that we are interested in the corresponding multiplicative case, in which the ratio of any two successive terms is constant. In such a case, we would have for some constant , and therefore .    Let be the sequence defined recursively as follows. Let: for together with the initial condition . Use iteration to deduce an explicit formula for the sequence.    Start by writing , then substitute into the expression for . Repeat this process for as many as you need until you start to notice a pattern.    Let's write out the first few terms of the sequence. This time, we deliberately did not simplify all the way before moving on to the next term in the sequence. In general, it is beneficial to leave things unsimplified while you are searching for patterns, as this problem demonstrates.  In this case, we see that the pattern appears to be: Indeed, , as expected, so this formula seems to be doing the right thing as well.    Sequences such as the one in are known as geometric sequences .   Geometric Sequences   A sequence is called a geometric sequence if there is a constant such that:       A closed form expression for the sequence in is: for every integer .     Halving a Search Space   A sorted list contains records. To find a record, a search algorithm compares the target against the middle entry, which lets it discard half of the remaining candidates. Let denote the number of candidates remaining after comparisons. Write a recurrence relation for , find an explicit formula using iteration, and determine how many comparisons are needed to narrow the list down to a single candidate.    Each comparison leaves half as many candidates as before. What constant does that correspond to?    Since each comparison halves the number of candidates, we have: Writing out the first few terms without simplifying: The pattern suggests that: This is a geometric sequence with ratio , so the ratio can be less than , and the sequence then decreases.  We want , which means , so . As a check, . It takes comparisons. For a list whose length is not a power of , the halving is not exact, and the count rounds up.      Proofs of Correctness  There might be something quite unsatisfying about the work we did above. We guessed the form of the solution for some of these sequences, but we did not formally defend these guesses. To be sure that our guesses are actually correct, we need to prove them. Luckily for us, we have already seen the proof technique necessary for such a proof: the proof by induction .  Lets prove our conjectures, and , from above.   Explicit Formula for Arithmetic Sequences   Let be a sequence defined by for each integer , where is a constant. Then, for every integer ,     We proceed by induction on . Let be the statement .   Base case. When , we have , so is true.   Inductive hypothesis. Let be an integer and suppose that is true. That is, suppose .   Inductive step. We must show that is true, that is, that . Since , the recurrence relation applies, and we have: where the second equality uses the inductive hypothesis. Thus, is true.  By the principle of mathematical induction, is true for every integer .     Explicit Formula for Geometric Sequences   Let be a sequence defined by for each integer , where is a constant. Then, for every integer ,     We proceed by induction on . Let be the statement .   Base case. When , we have , so is true.   Inductive hypothesis. Let be an integer and suppose that is true. That is, suppose .   Inductive step. We must show that is true, that is, that . Since , the recurrence relation applies, and we have: where the second equality uses the inductive hypothesis. Thus, is true.  By the principle of mathematical induction, is true for every integer .     "
+},
+{
+  "id": "ex-8-2-arithmetic-1",
+  "level": "2",
+  "url": "sec-8-2-solving-rec.html#ex-8-2-arithmetic-1",
+  "type": "Example",
+  "number": "8.2.1",
+  "title": "",
+  "body": "  Let be the sequence defined recursively as follows. Let: for together with the initial condition . Use iteration to deduce an explicit formula for the sequence.    Start by writing , then substitute into the expression for . Repeat this process for as many as you need until you start to notice a pattern.  Try leaving each term unsimplified.    Let's write out the first few terms of the sequence. Do you notice a pattern? The terms seem to be the odd positive integers. Therefore, a natural guess would be that: Indeed, , as expected, so our formula seems to be doing the right thing.   "
+},
+{
+  "id": "def-8-2-arithmetic",
+  "level": "2",
+  "url": "sec-8-2-solving-rec.html#def-8-2-arithmetic",
+  "type": "Definition",
+  "number": "8.2.2",
+  "title": "Arithmetic Sequences.",
+  "body": " Arithmetic Sequences   A sequence is called an arithmetic sequence if there is a constant such that:    "
+},
+{
+  "id": "conj-8-2-arithmetic",
+  "level": "2",
+  "url": "sec-8-2-solving-rec.html#conj-8-2-arithmetic",
+  "type": "Conjecture",
+  "number": "8.2.3",
+  "title": "",
+  "body": "  A closed form expression for the sequence in is: for every integer .   "
+},
+{
+  "id": "ex-8-2-arithmetic-2",
+  "level": "2",
+  "url": "sec-8-2-solving-rec.html#ex-8-2-arithmetic-2",
+  "type": "Example",
+  "number": "8.2.4",
+  "title": "Paying Off an Interest-Free Loan.",
+  "body": " Paying Off an Interest-Free Loan   You borrow from a friend, who charges no interest. You repay at the end of each month. Let denote the amount you still owe after payments. Write a recurrence relation for , use iteration to find an explicit formula, and determine how many payments are needed to pay off the loan.    Each month, the balance is the previous balance minus one payment. Leave the terms unsimplified so the pattern is easier to see.    Before any payments, you owe , and each payment reduces the balance by . Thus: Writing out the first few terms without simplifying: The pattern suggests that . This is an arithmetic sequence with common difference , so the difference can be negative.  The loan is paid off when : As a check, . It takes payments.   "
+},
+{
+  "id": "ex-8-2-geometric-1",
+  "level": "2",
+  "url": "sec-8-2-solving-rec.html#ex-8-2-geometric-1",
+  "type": "Example",
+  "number": "8.2.5",
+  "title": "",
+  "body": "  Let be the sequence defined recursively as follows. Let: for together with the initial condition . Use iteration to deduce an explicit formula for the sequence.    Start by writing , then substitute into the expression for . Repeat this process for as many as you need until you start to notice a pattern.    Let's write out the first few terms of the sequence. This time, we deliberately did not simplify all the way before moving on to the next term in the sequence. In general, it is beneficial to leave things unsimplified while you are searching for patterns, as this problem demonstrates.  In this case, we see that the pattern appears to be: Indeed, , as expected, so this formula seems to be doing the right thing as well.   "
+},
+{
+  "id": "def-8-2-geometric",
+  "level": "2",
+  "url": "sec-8-2-solving-rec.html#def-8-2-geometric",
+  "type": "Definition",
+  "number": "8.2.6",
+  "title": "Geometric Sequences.",
+  "body": " Geometric Sequences   A sequence is called a geometric sequence if there is a constant such that:    "
+},
+{
+  "id": "conj-8-2-geometric",
+  "level": "2",
+  "url": "sec-8-2-solving-rec.html#conj-8-2-geometric",
+  "type": "Conjecture",
+  "number": "8.2.7",
+  "title": "",
+  "body": "  A closed form expression for the sequence in is: for every integer .   "
+},
+{
+  "id": "ex-8-2-geometric-2",
+  "level": "2",
+  "url": "sec-8-2-solving-rec.html#ex-8-2-geometric-2",
+  "type": "Example",
+  "number": "8.2.8",
+  "title": "Halving a Search Space.",
+  "body": " Halving a Search Space   A sorted list contains records. To find a record, a search algorithm compares the target against the middle entry, which lets it discard half of the remaining candidates. Let denote the number of candidates remaining after comparisons. Write a recurrence relation for , find an explicit formula using iteration, and determine how many comparisons are needed to narrow the list down to a single candidate.    Each comparison leaves half as many candidates as before. What constant does that correspond to?    Since each comparison halves the number of candidates, we have: Writing out the first few terms without simplifying: The pattern suggests that: This is a geometric sequence with ratio , so the ratio can be less than , and the sequence then decreases.  We want , which means , so . As a check, . It takes comparisons. For a list whose length is not a power of , the halving is not exact, and the count rounds up.   "
+},
+{
+  "id": "thm-8-2-arithmetic",
+  "level": "2",
+  "url": "sec-8-2-solving-rec.html#thm-8-2-arithmetic",
+  "type": "Theorem",
+  "number": "8.2.9",
+  "title": "Explicit Formula for Arithmetic Sequences.",
+  "body": " Explicit Formula for Arithmetic Sequences   Let be a sequence defined by for each integer , where is a constant. Then, for every integer ,     We proceed by induction on . Let be the statement .   Base case. When , we have , so is true.   Inductive hypothesis. Let be an integer and suppose that is true. That is, suppose .   Inductive step. We must show that is true, that is, that . Since , the recurrence relation applies, and we have: where the second equality uses the inductive hypothesis. Thus, is true.  By the principle of mathematical induction, is true for every integer .   "
+},
+{
+  "id": "thm-8-2-geometric",
+  "level": "2",
+  "url": "sec-8-2-solving-rec.html#thm-8-2-geometric",
+  "type": "Theorem",
+  "number": "8.2.10",
+  "title": "Explicit Formula for Geometric Sequences.",
+  "body": " Explicit Formula for Geometric Sequences   Let be a sequence defined by for each integer , where is a constant. Then, for every integer ,     We proceed by induction on . Let be the statement .   Base case. When , we have , so is true.   Inductive hypothesis. Let be an integer and suppose that is true. That is, suppose .   Inductive step. We must show that is true, that is, that . Since , the recurrence relation applies, and we have: where the second equality uses the inductive hypothesis. Thus, is true.  By the principle of mathematical induction, is true for every integer .   "
+},
+{
   "id": "backmatter-2",
   "level": "1",
   "url": "backmatter-2.html",
